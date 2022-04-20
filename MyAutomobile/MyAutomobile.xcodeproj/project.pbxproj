@@ -100,10 +100,10 @@
 		F72188FD27FABE5D00F80AC0 /* MyAutomobile */ = {
 			isa = PBXGroup;
 			children = (
-				F72188FE27FABE5D00F80AC0 /* MyAutomobileApp.swift */,
+				F7EEF30C280FE3D90086AB03 /* App */,
 				F7FC88EE280EA436007BA063 /* Views */,
-				F7FC88EC280EA42E007BA063 /* Vehicle.swift */,
-				F721890227FABE5F00F80AC0 /* Assets.xcassets */,
+				F7EEF30E280FE3F20086AB03 /* Models */,
+				F7EEF30D280FE3E70086AB03 /* Supporting files */,
 				F721890427FABE5F00F80AC0 /* Preview Content */,
 			);
 			path = MyAutomobile;
@@ -132,6 +132,30 @@
 				F721891B27FABE5F00F80AC0 /* MyAutomobileUITestsLaunchTests.swift */,
 			);
 			path = MyAutomobileUITests;
+			sourceTree = "<group>";
+		};
+		F7EEF30C280FE3D90086AB03 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				F72188FE27FABE5D00F80AC0 /* MyAutomobileApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		F7EEF30D280FE3E70086AB03 /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				F721890227FABE5F00F80AC0 /* Assets.xcassets */,
+			);
+			path = "Supporting files";
+			sourceTree = "<group>";
+		};
+		F7EEF30E280FE3F20086AB03 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F7FC88EC280EA42E007BA063 /* Vehicle.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		F7FC88EE280EA436007BA063 /* Views */ = {
