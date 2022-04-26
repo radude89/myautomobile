@@ -8,8 +8,11 @@
 import Foundation
 
 struct Vehicle {
+    let id = UUID()
     let make: String
     let model: String
     let numberPlate: String
     let photoData: Data?
 }
+
+extension Vehicle: Identifiable {}
