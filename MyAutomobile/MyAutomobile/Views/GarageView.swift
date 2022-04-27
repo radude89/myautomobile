@@ -9,38 +9,48 @@ import SwiftUI
 
 struct GarageView: View {
     
-    @State private var cars = [Vehicle]()
+    @State private var vehicles: [Vehicle]
+    
+    init(vehicles: [Vehicle] = []) {
+        self.vehicles = vehicles
+    }
     
     var body: some View {
         NavigationView {
-            List(cars) { car in
-                HStack {
-                    VehicleImage(image: car.icon)
-                    
-                    VStack(alignment: .leading) {
-                        Text(car.numberPlate)
-                            .font(.title2)
-                            .bold()
-                            .foregroundColor(.primary)
-                        
-                        Text("\(car.make) \(car.model)")
-                    }
-                    .padding()
-                }
-            }
-            .navigationBarTitleDisplayMode(.inline)
-            .navigationTitle("Vehicles")
-            .listStyle(.plain)
-            .onAppear(perform: loadCars)
+            contentView
+                .navigationTitle("Vehicles")
         }
     }
     
-    private func loadCars() {
-        cars = [
-            .init(make: "Dacia", model: "Duster", numberPlate: "AA-123-RAD", photoData: UIImage(named: "duster")!.jpegData(compressionQuality: 1)!),
-            .init(make: "Renault", model: "Kangoo", numberPlate: "AA-124-RAD", photoData: UIImage(named: "amg")!.jpegData(compressionQuality: 1)!)
-        ]
+    private var contentView: some View {
+        if vehicles.isEmpty {
+            return AnyView(
+                Text("You haven't added any vehicles.")
+                    .font(.body)
+                    .multilineTextAlignment(.center)
+            )
+        } else {
+            return AnyView(
+                List(vehicles) { vehicle in
+                    HStack {
+                        VehicleImage(image: vehicle.icon)
+                            .padding([.top, .bottom])
+                        
+                        VStack(alignment: .leading) {
+                            Text(vehicle.numberPlate)
+                                .font(.title2)
+                                .bold()
+                                .foregroundColor(.primary)
+                            
+                            Text("\(vehicle.make) \(vehicle.model)")
+                        }
+                        .padding()
+                    }
+                }
+            )
+        }
     }
+    
 }
 
 private extension Vehicle {
@@ -66,10 +76,20 @@ private struct VehicleImage: View {
     }
 }
 
+// MARK: - Previews
+
 struct GarageView_Previews: PreviewProvider {
+    private static let cars: [Vehicle] = [
+        .init(make: "Dacia", model: "Duster", numberPlate: "AA-123-RAD", photoData: UIImage(named: "duster")!.jpegData(compressionQuality: 1)!),
+        .init(make: "Renault", model: "Kangoo", numberPlate: "AA-124-RAD", photoData: UIImage(named: "amg")!.jpegData(compressionQuality: 1)!)
+    ]
+    
     static var previews: some View {
-        GarageView()
-        
+        GarageView(vehicles: cars)
+
+        GarageView(vehicles: cars)
+            .preferredColorScheme(.dark)
+
         GarageView()
             .preferredColorScheme(.dark)
     }
