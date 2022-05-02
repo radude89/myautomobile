@@ -10,44 +10,62 @@ import SwiftUI
 struct GarageView: View {
     
     @State private var vehicles: [Vehicle]
+    @State private var editMode: EditMode
     
-    init(vehicles: [Vehicle] = []) {
-        self.vehicles = vehicles
+    init(
+        vehicles: [Vehicle] = [],
+        editMode: EditMode = .inactive
+    ) {
+        _editMode = State(initialValue: editMode)
+        _vehicles = State(initialValue: vehicles)
     }
     
     var body: some View {
         NavigationView {
             contentView
                 .navigationTitle("Vehicles")
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        if !vehicles.isEmpty {
+                            EditButton()
+                        }
+                    }
+                    
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Button {
+                            print("Add...")
+                        } label: {
+                            Image(systemName: "plus")
+                        }
+                    }
+                }
+                .environment(\.editMode, $editMode)
         }
     }
     
+    @ViewBuilder
     private var contentView: some View {
         if vehicles.isEmpty {
-            return AnyView(
-                Text("You haven't added any vehicles.")
-                    .font(.body)
-                    .multilineTextAlignment(.center)
-            )
+            Text("You haven't added any vehicles.")
+                .font(.body)
+                .multilineTextAlignment(.center)
         } else {
-            return AnyView(
-                List(vehicles) { vehicle in
-                    HStack {
-                        VehicleImage(image: vehicle.icon)
-                            .padding([.top, .bottom])
+            List(vehicles) { vehicle in
+                HStack {
+                    VehicleImage(image: vehicle.icon)
+                        .padding([.top, .bottom])
+                    
+                    VStack(alignment: .leading) {
+                        Text(vehicle.numberPlate)
+                            .font(.title2)
+                            .bold()
+                            .foregroundColor(.primary)
                         
-                        VStack(alignment: .leading) {
-                            Text(vehicle.numberPlate)
-                                .font(.title2)
-                                .bold()
-                                .foregroundColor(.primary)
-                            
-                            Text("\(vehicle.make) \(vehicle.model)")
-                        }
-                        .padding()
+                        Text("\(vehicle.make) \(vehicle.model)")
                     }
+                    .padding()
                 }
-            )
+            }
         }
     }
     

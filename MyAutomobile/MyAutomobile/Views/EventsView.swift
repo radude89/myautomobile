@@ -10,31 +10,48 @@ import SwiftUI
 struct EventsView: View {
     
     @State private var events: [Event]
+    @State private var editMode: EditMode
     
-    init(events: [Event] = []) {
-        self.events = events
+    init(
+        events: [Event] = [],
+        editMode: EditMode = .inactive
+    ) {
+        _events = State(initialValue: events)
+        _editMode = State(initialValue: editMode)
     }
     
     var body: some View {
         NavigationView {
             contentView
                 .navigationTitle("Events")
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        if !events.isEmpty {
+                            EditButton()
+                        }
+                    }
+                    
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Button {
+                            print("Add...")
+                        } label: {
+                            Image(systemName: "plus")
+                        }
+                    }
+                }
         }
     }
     
+    @ViewBuilder
     private var contentView: some View {
         if events.isEmpty {
-            return AnyView(
-                Text("You haven't added any events.")
-                    .font(.body)
-                    .multilineTextAlignment(.center)
-            )
+            Text("You haven't added any events.")
+                .font(.body)
+                .multilineTextAlignment(.center)
         } else {
-            return AnyView(
-                List(events) { event in
-                    Text(event.description)
-                }
-            )
+            List(events) { event in
+                Text(event.description)
+            }
         }
     }
     
