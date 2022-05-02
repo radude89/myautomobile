@@ -1,5 +1,5 @@
 //
-//  EventsView.swift
+//  GarageView.swift
 //  MyAutomobile
 //
 //  Created by Radu Dan on 19.04.2022.
@@ -7,26 +7,26 @@
 
 import SwiftUI
 
-struct EventsView: View {
+struct GarageView: View {
     
-    @State private var events: [Event]
+    @StateObject private var viewModel: GarageViewModel
     @State private var editMode: EditMode
     
     init(
-        events: [Event] = [],
+        viewModel: GarageViewModel = .init(),
         editMode: EditMode = .inactive
     ) {
-        _events = State(initialValue: events)
+        _viewModel = StateObject(wrappedValue: viewModel)
         _editMode = State(initialValue: editMode)
     }
     
     var body: some View {
         NavigationView {
             contentView
-                .navigationTitle("Events")
+                .navigationTitle("Vehicles")
                 .toolbar {
                     ToolbarItem(placement: .navigationBarLeading) {
-                        if !events.isEmpty {
+                        if !viewModel.hasVehicles {
                             EditButton()
                         }
                     }
@@ -39,19 +39,18 @@ struct EventsView: View {
                         }
                     }
                 }
+                .environment(\.editMode, $editMode)
         }
     }
     
     @ViewBuilder
     private var contentView: some View {
-        if events.isEmpty {
-            Text("You haven't added any events.")
+        if viewModel.hasVehicles {
+            Text("You haven't added any vehicles.")
                 .font(.body)
                 .multilineTextAlignment(.center)
         } else {
-            List(events) { event in
-                Text(event.description)
-            }
+            List(viewModel.vehicles) { VehicleRowView(vehicle: $0) }
         }
     }
     
@@ -59,14 +58,14 @@ struct EventsView: View {
 
 // MARK: - Previews
 
-struct EventsView_Previews: PreviewProvider {
+struct GarageView_Previews: PreviewProvider {
     static var previews: some View {
-        EventsView(events: .demoEvents)
-        
-        EventsView(events: .demoEvents)
+        GarageView(viewModel: .init(vehicles: .demoVehicles))
+
+        GarageView(viewModel: .init(vehicles: .demoVehicles))
             .preferredColorScheme(.dark)
-        
-        EventsView()
+
+        GarageView()
             .preferredColorScheme(.dark)
     }
 }
