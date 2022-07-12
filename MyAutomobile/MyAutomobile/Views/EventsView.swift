@@ -63,9 +63,6 @@ struct EventsView_Previews: PreviewProvider {
     static var previews: some View {
         EventsView(events: .demoEvents)
         
-        EventsView(events: .demoEvents)
-            .preferredColorScheme(.dark)
-        
         EventsView()
             .preferredColorScheme(.dark)
     }

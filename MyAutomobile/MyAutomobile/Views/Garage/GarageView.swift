@@ -62,9 +62,6 @@ struct GarageView_Previews: PreviewProvider {
     static var previews: some View {
         GarageView(viewModel: .init(vehicles: .demoVehicles))
 
-        GarageView(viewModel: .init(vehicles: .demoVehicles))
-            .preferredColorScheme(.dark)
-
         GarageView()
             .preferredColorScheme(.dark)
     }
