@@ -9,21 +9,21 @@ import SwiftUI
 
 struct GarageView: View {
     
+    @Environment(\.editMode) private var editMode
     @StateObject private var viewModel: GarageViewModel
-    @State private var editMode: EditMode
+    @State private var showAddView = false
     
-    init(
-        viewModel: GarageViewModel = .init(),
-        editMode: EditMode = .inactive
-    ) {
+    init(viewModel: GarageViewModel = .init()) {
         _viewModel = StateObject(wrappedValue: viewModel)
-        _editMode = State(initialValue: editMode)
     }
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             contentView
                 .navigationTitle("Vehicles")
+                .navigationDestination(for: Vehicle.self) { vehicle in
+                    VehicleDetailsView(vehicle: .constant(vehicle))
+                }
                 .toolbar {
                     ToolbarItem(placement: .navigationBarLeading) {
                         if !viewModel.hasVehicles {
@@ -33,13 +33,15 @@ struct GarageView: View {
                     
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Button {
-                            print("Add...")
+                            showAddView.toggle()
                         } label: {
                             Image(systemName: "plus")
                         }
                     }
                 }
-                .environment(\.editMode, $editMode)
+                .sheet(isPresented: $showAddView) {
+                    Text("Add View")
+                }
         }
     }
     
@@ -50,7 +52,14 @@ struct GarageView: View {
                 .font(.body)
                 .multilineTextAlignment(.center)
         } else {
-            List(viewModel.vehicles) { VehicleRowView(vehicle: $0) }
+            List {
+                ForEach(viewModel.vehicles) { vehicle in
+                    NavigationLink(value: vehicle) {
+                        VehicleRowView(vehicle: vehicle)
+                    }
+                }
+                .onDelete(perform: viewModel.delete)
+            }
         }
     }
     
@@ -61,8 +70,8 @@ struct GarageView: View {
 struct GarageView_Previews: PreviewProvider {
     static var previews: some View {
         GarageView(viewModel: .init(vehicles: .demoVehicles))
-
-        GarageView()
+        
+        GarageView(viewModel: .init(vehicles: []))
             .preferredColorScheme(.dark)
     }
 }

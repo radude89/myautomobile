@@ -16,3 +16,5 @@ struct Vehicle {
 }
 
 extension Vehicle: Identifiable {}
+
+extension Vehicle: Hashable {}
