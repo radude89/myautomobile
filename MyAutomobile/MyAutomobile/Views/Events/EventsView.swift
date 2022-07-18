@@ -9,48 +9,54 @@ import SwiftUI
 
 struct EventsView: View {
     
-    @State private var events: [Event]
-    @State private var editMode: EditMode
+    @Environment(\.editMode) private var editMode
+    @StateObject private var viewModel: EventsViewModel
+    @State private var showAddView = false
     
-    init(
-        events: [Event] = [],
-        editMode: EditMode = .inactive
-    ) {
-        _events = State(initialValue: events)
-        _editMode = State(initialValue: editMode)
+    init(viewModel: EventsViewModel = .init()) {
+        _viewModel = StateObject(wrappedValue: viewModel)
     }
-    
+
     var body: some View {
         NavigationView {
             contentView
                 .navigationTitle("Events")
                 .toolbar {
                     ToolbarItem(placement: .navigationBarLeading) {
-                        if !events.isEmpty {
+                        if !viewModel.hasEvents {
                             EditButton()
                         }
                     }
                     
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Button {
-                            print("Add...")
+                            showAddView.toggle()
                         } label: {
                             Image(systemName: "plus")
                         }
                     }
                 }
+                .sheet(isPresented: $showAddView) {
+                    Text("Add View")
+                }
+
         }
     }
     
     @ViewBuilder
     private var contentView: some View {
-        if events.isEmpty {
+        if viewModel.hasEvents {
             Text("You haven't added any events.")
                 .font(.body)
                 .multilineTextAlignment(.center)
         } else {
-            List(events) { event in
-                Text(event.description)
+            List {
+                ForEach(viewModel.events) { event in
+                    NavigationLink(value: event) {
+                        Text(event.description)
+                    }
+                }
+                .onDelete(perform: viewModel.delete)
             }
         }
     }
@@ -61,9 +67,9 @@ struct EventsView: View {
 
 struct EventsView_Previews: PreviewProvider {
     static var previews: some View {
-        EventsView(events: .demoEvents)
+        EventsView(viewModel: .init(events: .demoEvents))
         
-        EventsView()
+        EventsView(viewModel: .init(events: []))
             .preferredColorScheme(.dark)
     }
 }

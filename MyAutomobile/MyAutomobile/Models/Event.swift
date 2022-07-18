@@ -14,3 +14,5 @@ struct Event {
 }
 
 extension Event: Identifiable {}
+
+extension Event: Hashable {}
