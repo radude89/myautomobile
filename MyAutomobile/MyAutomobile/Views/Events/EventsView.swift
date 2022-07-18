@@ -18,9 +18,12 @@ struct EventsView: View {
     }
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             contentView
                 .navigationTitle("Events")
+                .navigationDestination(for: Event.self) { event in
+                    Text("Event details \(event.description)")
+                }
                 .toolbar {
                     ToolbarItem(placement: .navigationBarLeading) {
                         if !viewModel.hasEvents {
