@@ -20,6 +20,7 @@
 		F7C5D7B7282019C100C4D213 /* MockModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C5D7B6282019C100C4D213 /* MockModels.swift */; };
 		F7C5D7B928201B4E00C4D213 /* Vehicle+Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C5D7B828201B4E00C4D213 /* Vehicle+Icon.swift */; };
 		F7C5F19A2885004800375D91 /* EventsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C5F1992885004800375D91 /* EventsViewModel.swift */; };
+		F7C5F19D288659EC00375D91 /* VehicleTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C5F19C288659EC00375D91 /* VehicleTitle.swift */; };
 		F7D931AA287D300200289230 /* VehicleDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D931A9287D300200289230 /* VehicleDetailsView.swift */; };
 		F7EEF310280FE8AB0086AB03 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EEF30F280FE8AB0086AB03 /* Event.swift */; };
 		F7FC88E9280EA29C007BA063 /* GarageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FC88E8280EA29C007BA063 /* GarageView.swift */; };
@@ -61,6 +62,7 @@
 		F7C5D7B6282019C100C4D213 /* MockModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockModels.swift; sourceTree = "<group>"; };
 		F7C5D7B828201B4E00C4D213 /* Vehicle+Icon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Vehicle+Icon.swift"; sourceTree = "<group>"; };
 		F7C5F1992885004800375D91 /* EventsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewModel.swift; sourceTree = "<group>"; };
+		F7C5F19C288659EC00375D91 /* VehicleTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleTitle.swift; sourceTree = "<group>"; };
 		F7D931A9287D300200289230 /* VehicleDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleDetailsView.swift; sourceTree = "<group>"; };
 		F7EEF30F280FE8AB0086AB03 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		F7FC88E8280EA29C007BA063 /* GarageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarageView.swift; sourceTree = "<group>"; };
@@ -156,10 +158,18 @@
 				F7FC88E8280EA29C007BA063 /* GarageView.swift */,
 				F7C5D7AE282016FE00C4D213 /* GarageViewModel.swift */,
 				F7C5D7B02820191E00C4D213 /* VehicleRowView.swift */,
-				F7C5D7B22820198A00C4D213 /* VehicleImage.swift */,
 				F7C5D7B828201B4E00C4D213 /* Vehicle+Icon.swift */,
 			);
 			path = Garage;
+			sourceTree = "<group>";
+		};
+		F7C5F19B288659CF00375D91 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				F7C5F19C288659EC00375D91 /* VehicleTitle.swift */,
+				F7C5D7B22820198A00C4D213 /* VehicleImage.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		F7D931A7287D2FEB00289230 /* Main */ = {
@@ -216,6 +226,7 @@
 		F7FC88EE280EA436007BA063 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F7C5F19B288659CF00375D91 /* Common */,
 				F7D931A7287D2FEB00289230 /* Main */,
 				F7C5D7BA28201BAD00C4D213 /* Garage */,
 				F7D931A8287D2FF200289230 /* VehicleDetails */,
@@ -366,6 +377,7 @@
 				F7C5D7B7282019C100C4D213 /* MockModels.swift in Sources */,
 				F7EEF310280FE8AB0086AB03 /* Event.swift in Sources */,
 				F7C5D7AF282016FE00C4D213 /* GarageViewModel.swift in Sources */,
+				F7C5F19D288659EC00375D91 /* VehicleTitle.swift in Sources */,
 				F7FC88EB280EA2AF007BA063 /* EventsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

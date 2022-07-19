@@ -9,10 +9,10 @@ import Foundation
 
 struct Vehicle {
     let id = UUID()
-    let make: String
-    let model: String
-    let numberPlate: String
-    let photoData: Data?
+    var make: String
+    var model: String
+    var numberPlate: String
+    var photoData: Data?
 }
 
 extension Vehicle: Identifiable {}

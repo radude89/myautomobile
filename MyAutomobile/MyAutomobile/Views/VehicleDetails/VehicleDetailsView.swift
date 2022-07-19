@@ -11,8 +11,37 @@ struct VehicleDetailsView: View {
     
     @Binding var vehicle: Vehicle
     
+    @Environment(\.presentationMode) private var presentationMode
+    @State private var make = ""
+    @State private var model = ""
+    
     var body: some View {
-        Text(vehicle.numberPlate)
+        Form {
+            Section {
+                HStack {
+                    VehicleImage(image: vehicle.icon)
+                    Text(vehicle.numberPlate)
+                        .titleStyle
+                        .padding(.leading)
+                }
+            }
+            Section {
+                TextField("Make", text: $make)
+                TextField("Model", text: $model)
+            } header: {
+                Text("Vehicle information")
+            }
+            
+            Section {
+                Button("Save Details") {
+                    presentationMode.wrappedValue.dismiss()
+                }
+            }
+        }
+        .onAppear {
+            make = vehicle.make
+            model = vehicle.model
+        }
     }
 }
 

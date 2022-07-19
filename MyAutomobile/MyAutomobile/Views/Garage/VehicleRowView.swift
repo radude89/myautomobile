@@ -17,9 +17,7 @@ struct VehicleRowView: View {
             
             VStack(alignment: .leading) {
                 Text(vehicle.numberPlate)
-                    .font(.title2)
-                    .bold()
-                    .foregroundColor(.primary)
+                    .titleStyle
                 
                 Text("\(vehicle.make) \(vehicle.model)")
             }
