@@ -12,7 +12,7 @@ struct VehicleRowView: View {
     
     var body: some View {
         HStack {
-            VehicleImage(image: vehicle.icon)
+            VehicleImage(color: vehicle.color)
                 .padding([.top, .bottom])
             
             VStack(alignment: .leading) {

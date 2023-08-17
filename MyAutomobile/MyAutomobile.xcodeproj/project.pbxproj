@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F713B75C2A8C71A500EBB0BF /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F713B75B2A8C71A500EBB0BF /* ImagePicker.swift */; };
 		F72188FF27FABE5D00F80AC0 /* MyAutomobileApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72188FE27FABE5D00F80AC0 /* MyAutomobileApp.swift */; };
 		F721890127FABE5D00F80AC0 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F721890027FABE5D00F80AC0 /* MainTabView.swift */; };
 		F721890327FABE5F00F80AC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F721890227FABE5F00F80AC0 /* Assets.xcassets */; };
@@ -18,7 +19,6 @@
 		F7C5D7B12820191E00C4D213 /* VehicleRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C5D7B02820191E00C4D213 /* VehicleRowView.swift */; };
 		F7C5D7B32820198A00C4D213 /* VehicleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C5D7B22820198A00C4D213 /* VehicleImage.swift */; };
 		F7C5D7B7282019C100C4D213 /* MockModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C5D7B6282019C100C4D213 /* MockModels.swift */; };
-		F7C5D7B928201B4E00C4D213 /* Vehicle+Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C5D7B828201B4E00C4D213 /* Vehicle+Icon.swift */; };
 		F7C5F19A2885004800375D91 /* EventsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C5F1992885004800375D91 /* EventsViewModel.swift */; };
 		F7C5F19D288659EC00375D91 /* VehicleTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C5F19C288659EC00375D91 /* VehicleTitle.swift */; };
 		F7D931AA287D300200289230 /* VehicleDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D931A9287D300200289230 /* VehicleDetailsView.swift */; };
@@ -46,6 +46,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F70D1F3F2898C453005FFC66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		F713B75B2A8C71A500EBB0BF /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		F72188FB27FABE5D00F80AC0 /* MyAutomobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyAutomobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F72188FE27FABE5D00F80AC0 /* MyAutomobileApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAutomobileApp.swift; sourceTree = "<group>"; };
 		F721890027FABE5D00F80AC0 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
@@ -60,7 +62,6 @@
 		F7C5D7B02820191E00C4D213 /* VehicleRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleRowView.swift; sourceTree = "<group>"; };
 		F7C5D7B22820198A00C4D213 /* VehicleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleImage.swift; sourceTree = "<group>"; };
 		F7C5D7B6282019C100C4D213 /* MockModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockModels.swift; sourceTree = "<group>"; };
-		F7C5D7B828201B4E00C4D213 /* Vehicle+Icon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Vehicle+Icon.swift"; sourceTree = "<group>"; };
 		F7C5F1992885004800375D91 /* EventsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewModel.swift; sourceTree = "<group>"; };
 		F7C5F19C288659EC00375D91 /* VehicleTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleTitle.swift; sourceTree = "<group>"; };
 		F7D931A9287D300200289230 /* VehicleDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleDetailsView.swift; sourceTree = "<group>"; };
@@ -118,6 +119,7 @@
 		F72188FD27FABE5D00F80AC0 /* MyAutomobile */ = {
 			isa = PBXGroup;
 			children = (
+				F70D1F3F2898C453005FFC66 /* Info.plist */,
 				F7EEF30C280FE3D90086AB03 /* App */,
 				F7FC88EE280EA436007BA063 /* Views */,
 				F7EEF30E280FE3F20086AB03 /* Models */,
@@ -158,7 +160,6 @@
 				F7FC88E8280EA29C007BA063 /* GarageView.swift */,
 				F7C5D7AE282016FE00C4D213 /* GarageViewModel.swift */,
 				F7C5D7B02820191E00C4D213 /* VehicleRowView.swift */,
-				F7C5D7B828201B4E00C4D213 /* Vehicle+Icon.swift */,
 			);
 			path = Garage;
 			sourceTree = "<group>";
@@ -184,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				F7D931A9287D300200289230 /* VehicleDetailsView.swift */,
+				F713B75B2A8C71A500EBB0BF /* ImagePicker.swift */,
 			);
 			path = VehicleDetails;
 			sourceTree = "<group>";
@@ -365,7 +367,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F7C5D7B928201B4E00C4D213 /* Vehicle+Icon.swift in Sources */,
 				F7C5F19A2885004800375D91 /* EventsViewModel.swift in Sources */,
 				F721890127FABE5D00F80AC0 /* MainTabView.swift in Sources */,
 				F7FC88E9280EA29C007BA063 /* GarageView.swift in Sources */,
@@ -377,6 +378,7 @@
 				F7C5D7B7282019C100C4D213 /* MockModels.swift in Sources */,
 				F7EEF310280FE8AB0086AB03 /* Event.swift in Sources */,
 				F7C5D7AF282016FE00C4D213 /* GarageViewModel.swift in Sources */,
+				F713B75C2A8C71A500EBB0BF /* ImagePicker.swift in Sources */,
 				F7C5F19D288659EC00375D91 /* VehicleTitle.swift in Sources */,
 				F7FC88EB280EA2AF007BA063 /* EventsView.swift in Sources */,
 			);
@@ -540,8 +542,11 @@
 				DEVELOPMENT_TEAM = 42L6GB6DU6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MyAutomobile/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "My Automobile";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSCameraUsageDescription = "We require access to your camera, so you can take a photo of your vehicle.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "We require access to your photo library, so you can add your vehicle's image.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -570,8 +575,11 @@
 				DEVELOPMENT_TEAM = 42L6GB6DU6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MyAutomobile/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "My Automobile";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSCameraUsageDescription = "We require access to your camera, so you can take a photo of your vehicle.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "We require access to your photo library, so you can add your vehicle's image.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

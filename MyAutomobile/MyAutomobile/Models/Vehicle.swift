@@ -5,14 +5,14 @@
 //  Created by Radu Dan on 19.04.2022.
 //
 
-import Foundation
+import SwiftUI
 
 struct Vehicle {
     let id = UUID()
     var make: String
     var model: String
     var numberPlate: String
-    var photoData: Data?
+    var color: Color
 }
 
 extension Vehicle: Identifiable {}

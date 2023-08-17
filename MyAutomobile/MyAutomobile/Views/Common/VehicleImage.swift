@@ -8,23 +8,27 @@
 import SwiftUI
 
 struct VehicleImage: View {
-    let image: UIImage
+    let color: Color
     
     var body: some View {
-        Image(uiImage: image)
+        Image(systemName: "car.side.fill")
             .resizable()
-            .frame(width: 80, height: 80)
+            .aspectRatio(contentMode: .fit)
+            .symbolRenderingMode(.palette)
+            .foregroundStyle(color)
+            .padding(.all, 15)
+            .frame(width: 60, height: 60)
             .clipShape(Circle())
-            .shadow(radius: 4)
             .overlay(
                 Circle()
-                    .stroke(.gray, lineWidth: 1)
+                    .stroke(.foreground, lineWidth: 0.5)
+                    .shadow(radius: 2)
             )
     }
 }
 
 struct VehicleImage_Previews: PreviewProvider {
     static var previews: some View {
-        VehicleImage(image: Array.demoVehicles.randomElement()!.icon)
+        VehicleImage(color: .cyan)
     }
 }

@@ -17,8 +17,8 @@ extension Event {
 
 extension Array where Self.Element == Vehicle {
     static let demoVehicles: [Vehicle] = [
-        .init(make: "Dacia", model: "Duster", numberPlate: "AA-123-RAD", photoData: UIImage(named: "duster")!.jpegData(compressionQuality: 1)!),
-        .init(make: "Renault", model: "Kangoo", numberPlate: "AA-124-RAD", photoData: UIImage(named: "amg")!.jpegData(compressionQuality: 1)!)
+        .init(make: "Dacia", model: "Duster", numberPlate: "AA-123-RAD", color: .cyan),
+        .init(make: "Renault", model: "Kangoo", numberPlate: "AA-124-RAD", color: .cyan)
     ]
 }
 
