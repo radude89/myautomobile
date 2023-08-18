@@ -26,16 +26,15 @@ struct EventsView: View {
                 }
                 .toolbar {
                     ToolbarItem(placement: .navigationBarLeading) {
-                        if !viewModel.hasEvents {
-                            EditButton()
-                        }
-                    }
-                    
-                    ToolbarItem(placement: .navigationBarTrailing) {
                         Button {
                             showAddView.toggle()
                         } label: {
                             Image(systemName: "plus")
+                        }
+                    }
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        if !viewModel.hasEvents {
+                            EditButton()
                         }
                     }
                 }

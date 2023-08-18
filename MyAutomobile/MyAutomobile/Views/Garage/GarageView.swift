@@ -22,20 +22,19 @@ struct GarageView: View {
             contentView
                 .navigationTitle("Vehicles")
                 .navigationDestination(for: Vehicle.self) { vehicle in
-                    VehicleDetailsView(vehicle: .constant(vehicle))
+                    VehicleDetailsView(vehicle: vehicle)
                 }
                 .toolbar {
                     ToolbarItem(placement: .navigationBarLeading) {
-                        if !viewModel.hasVehicles {
-                            EditButton()
-                        }
-                    }
-                    
-                    ToolbarItem(placement: .navigationBarTrailing) {
                         Button {
                             showAddView.toggle()
                         } label: {
                             Image(systemName: "plus")
+                        }
+                    }
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        if !viewModel.hasVehicles {
+                            EditButton()
                         }
                     }
                 }

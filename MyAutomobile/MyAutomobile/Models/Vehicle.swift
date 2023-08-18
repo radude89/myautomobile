@@ -13,6 +13,14 @@ struct Vehicle {
     var model: String
     var numberPlate: String
     var color: Color
+    var customFields: [String: FieldDetails] = [:]
+}
+
+extension Vehicle {
+    struct FieldDetails: Equatable, Hashable {
+        let key: String
+        let value: String
+    }
 }
 
 extension Vehicle: Identifiable {}
