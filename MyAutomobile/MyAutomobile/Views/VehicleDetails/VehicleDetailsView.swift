@@ -11,84 +11,37 @@ struct VehicleDetailsView: View {
     
     @Environment(\.editMode) private var editMode
     
-    @State var vehicle: Vehicle
-    
-    @State private var make = ""
-    @State private var model = ""
-    @State private var numberPlate = ""
-    
-    @State private var vehicleColor = Color.red
+    @StateObject private var viewModel: VehicleDetailsViewModel
 
-    @State private var customFieldAlertIsPresented = false
-    @State private var customFieldLabelText = ""
-    @State private var customFieldValueText = ""
+    @State private var makeText = ""
+    @State private var modelText = ""
+    @State private var numberPlateText = ""
+    @State private var vehicleColor = Color.red
+    
+    init(viewModel: VehicleDetailsViewModel) {
+        _viewModel = StateObject(wrappedValue: viewModel)
+    }
     
     var body: some View {
         Form {
-            Section {
-                HStack {
-                    VehicleImage(color: vehicle.color)
-                    TextField("Number Plate", text: $numberPlate)
-                        .titleStyle
-                        .padding(.leading)
-                }
-            }
-            Section {
-                TextField("Make", text: $make)
-                TextField("Model", text: $model)
-                HStack {
-                    ColorPicker("Vehicle's color", selection: $vehicleColor)
-                        .frame(maxWidth: .infinity)
-                }
-            } header: {
-                Text("Vehicle information")
-            } footer: {
-                Text("These are your key details for your vehicle. You can edit them by diretly tapping on a row.\nTo pick a color you need to tap on the right circle of \"Vehicle's color\" row.")
-            }
-            
-            Section {
-                ForEach(Array(vehicle.customFields.keys), id: \.self) { key in
-                    if let fieldDetails = vehicle.customFields[key] {
-                        HStack {
-                            Text(fieldDetails.key)
-                            Spacer()
-                            Text(fieldDetails.value)
-                        }
-                    }
-                }
-                .onDelete { _ in
-                    print("Delete")
-                }
-                Button("Add vehicle field") {
-                    customFieldAlertIsPresented.toggle()
-                }
-                .alert("New vehicle info", isPresented: $customFieldAlertIsPresented) {
-                    TextField("Name of field", text: $customFieldLabelText)
-                    TextField("Value", text: $customFieldValueText)
-                    Button("Save") {
-                        saveDetails()
-                        clearCustomFieldValues()
-                    }
-                    Button("Cancel", role: .cancel) {
-                        clearCustomFieldValues()
-                    }
-                } message: {
-                    Text("Please enter your new vehicle details")
-                }
-            } header: {
-                Text("Additional information")
-            } footer: {
-                Text("Here you can find your optional vehicle details. You can add or delete key-value properties for your vehicle.\nFor example, you can enter the field name \"Vehicle age\" with the value \"5 years\".")
-            }
+            VehicleDetailsTopSection(
+                vehicleColor: vehicleColor,
+                numberPlateText: $numberPlateText
+            )
+            VehicleDetailsMandatoryFieldsSection(
+                makeText: $makeText,
+                modelText: $modelText,
+                vehicleColor: $vehicleColor
+            )
+            VehicleDetailsCustomFieldsSection(
+                customFields: viewModel.customFields,
+                onSave: saveDetails,
+                onDelete: viewModel.deleteFields
+            )
         }
         .scrollDismissesKeyboard(.interactively)
         .navigationTitle("Details")
-        .onAppear {
-            make = vehicle.make
-            model = vehicle.model
-            numberPlate = vehicle.numberPlate
-            vehicleColor = vehicle.color
-        }
+        .onAppear(perform: loadVehicleDetails)
         .onDisappear {
             // TODO: Save here details
         }
@@ -98,24 +51,25 @@ struct VehicleDetailsView: View {
             }
         }
     }
-    
-    private func saveDetails() {
-        guard !customFieldLabelText.isEmpty && !customFieldValueText.isEmpty else {
-            return
-        }
-
-        let newKey = UUID().uuidString
-        vehicle.customFields[newKey] = Vehicle.FieldDetails(key: customFieldLabelText, value: customFieldValueText)
-    }
-    
-    private func clearCustomFieldValues() {
-        customFieldLabelText = ""
-        customFieldValueText = ""
-    }
 }
 
-struct VehicleDetailsView_Previews: PreviewProvider {
-    static var previews: some View {
-        VehicleDetailsView(vehicle: .demoVehicles.randomElement()!)
+// MARK: - Private methods
+private extension VehicleDetailsView {
+    func loadVehicleDetails() {
+        makeText = viewModel.vehicleMake
+        modelText = viewModel.vehicleModel
+        numberPlateText = viewModel.vehicleNumberPlate
+        vehicleColor = viewModel.vehicleColor
+    }
+    
+    func saveDetails(key: String, value: String) {
+        guard !key.isEmpty && !value.isEmpty else {
+            return
+        }
+        
+        viewModel.updateCustomField(
+            labelText: key,
+            valueText: value
+        )
     }
 }

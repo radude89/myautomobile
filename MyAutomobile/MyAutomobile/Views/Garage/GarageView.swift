@@ -22,7 +22,7 @@ struct GarageView: View {
             contentView
                 .navigationTitle("Vehicles")
                 .navigationDestination(for: Vehicle.self) { vehicle in
-                    VehicleDetailsView(vehicle: vehicle)
+                    VehicleDetailsView(viewModel: .init(vehicle: vehicle))
                 }
                 .toolbar {
                     ToolbarItem(placement: .navigationBarLeading) {

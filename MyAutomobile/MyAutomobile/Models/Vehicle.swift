@@ -17,12 +17,17 @@ struct Vehicle {
 }
 
 extension Vehicle {
-    struct FieldDetails: Equatable, Hashable {
+    struct FieldDetails {
+        let dateCreated: Date
         let key: String
         let value: String
     }
 }
 
-extension Vehicle: Identifiable {}
+extension Vehicle: Equatable, Identifiable, Hashable {}
 
-extension Vehicle: Hashable {}
+extension Vehicle.FieldDetails: Equatable, Hashable, Comparable {
+    static func < (lhs: Vehicle.FieldDetails, rhs: Vehicle.FieldDetails) -> Bool {
+        lhs.dateCreated < rhs.dateCreated
+    }
+}
