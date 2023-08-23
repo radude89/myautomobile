@@ -42,7 +42,7 @@ extension VehicleDetailsViewModel {
     }
 }
 
-// MARK: - Custom fields
+// MARK: - Setters
 extension VehicleDetailsViewModel {
     func addCustomField(labelText: String, valueText: String) {
         let newKey = UUID().uuidString
