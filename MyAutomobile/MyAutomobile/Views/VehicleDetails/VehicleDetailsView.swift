@@ -36,7 +36,12 @@ struct VehicleDetailsView: View {
             VehicleDetailsCustomFieldsSection(
                 customFields: viewModel.customFields,
                 onSave: saveDetails,
-                onDelete: viewModel.deleteFields
+                onDelete: { indexSet in
+                    viewModel.deleteFields(at: indexSet)
+                    if viewModel.customFields.isEmpty {
+                        editMode?.wrappedValue = .inactive
+                    }
+                }
             )
         }
         .scrollDismissesKeyboard(.interactively)
@@ -45,6 +50,7 @@ struct VehicleDetailsView: View {
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 EditButton()
+                    .disabled(viewModel.customFields.isEmpty)
             }
         }
         .onChange(of: modelText) { set(\.model, newValue: $0) }
