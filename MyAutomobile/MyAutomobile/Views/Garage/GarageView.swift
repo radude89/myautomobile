@@ -22,13 +22,16 @@ struct GarageView: View {
             contentView
                 .navigationTitle("Vehicles")
                 .navigationDestination(for: Vehicle.self) { vehicle in
-                    VehicleDetailsView(viewModel: .init(vehicle: vehicle))
+                    VehicleDetailsView(viewModel: .init(vehicle: vehicle, vehicles: viewModel.vehicles))
                 }
                 .garageToolbar(hasVehicles: viewModel.hasVehicles) {
                     showAddView.toggle()
                 }
                 .sheet(isPresented: $showAddView) {
                     Text("Add View")
+                }
+                .onReceive(viewModel.vehicles.objectWillChange) {
+                    viewModel.objectWillChange.send()
                 }
         }
     }
@@ -37,7 +40,7 @@ struct GarageView: View {
     private var contentView: some View {
         if viewModel.hasVehicles {
             List {
-                ForEach(viewModel.vehicles) { vehicle in
+                ForEach(viewModel.vehicles.items) { vehicle in
                     NavigationLink(value: vehicle) {
                         VehicleRowView(vehicle: vehicle)
                     }
@@ -51,15 +54,4 @@ struct GarageView: View {
         }
     }
     
-}
-
-// MARK: - Previews
-
-struct GarageView_Previews: PreviewProvider {
-    static var previews: some View {
-        GarageView(viewModel: .init(vehicles: .demoVehicles))
-        
-        GarageView(viewModel: .init(vehicles: []))
-            .preferredColorScheme(.dark)
-    }
 }

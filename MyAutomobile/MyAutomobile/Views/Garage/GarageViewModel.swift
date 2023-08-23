@@ -5,22 +5,19 @@
 //  Created by Radu Dan on 02.05.2022.
 //
 
-import Foundation
+import SwiftUI
 
 final class GarageViewModel: ObservableObject {
     
-    @Published private(set) var vehicles: [Vehicle]
-    
-    init(vehicles: [Vehicle] = .demoVehicles) {
-        self.vehicles = vehicles
-    }
+    @ObservedObject var vehicles = Vehicles()
     
     var hasVehicles: Bool {
-        !vehicles.isEmpty
+        !vehicles.items.isEmpty
     }
     
     func delete(atOffsets offsets: IndexSet) {
-        vehicles.remove(atOffsets: offsets)
+        vehicles.items.remove(atOffsets: offsets)
+        objectWillChange.send()
     }
     
 }

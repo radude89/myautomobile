@@ -42,12 +42,15 @@ struct VehicleDetailsView: View {
         .scrollDismissesKeyboard(.interactively)
         .navigationTitle("Details")
         .onAppear(perform: loadVehicleDetails)
-        .onDisappear(perform: updateVehicle)
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 EditButton()
             }
         }
+        .onChange(of: modelText) { set(\.model, newValue: $0) }
+        .onChange(of: makeText) { set(\.make, newValue: $0) }
+        .onChange(of: numberPlateText) { set(\.numberPlate, newValue: $0) }
+        .onChange(of: vehicleColor) { viewModel.set(color: $0) }
     }
 }
 
@@ -65,13 +68,13 @@ private extension VehicleDetailsView {
             return
         }
         
-        viewModel.updateCustomField(
+        viewModel.addCustomField(
             labelText: key,
             valueText: value
         )
     }
     
-    func updateVehicle() {
-        viewModel.updateVehicle()
+    func set(_ keyPath: WritableKeyPath<Vehicle, String>, newValue: String) {
+        viewModel.set(text: newValue, keyPath: keyPath)
     }
 }
