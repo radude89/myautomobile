@@ -141,12 +141,13 @@
 		F72188FD27FABE5D00F80AC0 /* MyAutomobile */ = {
 			isa = PBXGroup;
 			children = (
-				F70D1F3F2898C453005FFC66 /* Info.plist */,
 				F7EEF30C280FE3D90086AB03 /* App */,
-				F7FC88EE280EA436007BA063 /* Views */,
-				F7EEF30E280FE3F20086AB03 /* Models */,
-				F7EEF30D280FE3E70086AB03 /* Supporting files */,
+				F7CF214B2A964FA900C73429 /* Scenes */,
+				F7CF214A2A964F8E00C73429 /* Entities */,
+				F7CF21492A964F8300C73429 /* Helpers */,
 				F721890427FABE5F00F80AC0 /* Preview Content */,
+				F7EEF30D280FE3E70086AB03 /* Supporting files */,
+				F70D1F3F2898C453005FFC66 /* Info.plist */,
 			);
 			path = MyAutomobile;
 			sourceTree = "<group>";
@@ -154,6 +155,7 @@
 		F721890427FABE5F00F80AC0 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				F7CF21482A964F7500C73429 /* Mocks */,
 				F721890527FABE5F00F80AC0 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
@@ -179,21 +181,75 @@
 		F7C5D7BA28201BAD00C4D213 /* Garage */ = {
 			isa = PBXGroup;
 			children = (
-				F726335D2A95A99000F7305D /* GarageToolbarViewModifier.swift */,
-				F7FC88E8280EA29C007BA063 /* GarageView.swift */,
-				F7C5D7AE282016FE00C4D213 /* GarageViewModel.swift */,
-				F7C5D7B02820191E00C4D213 /* VehicleRowView.swift */,
+				F7C5F19B288659CF00375D91 /* CustomUI */,
+				F7CF21452A964EB700C73429 /* List */,
+				F7D931A8287D2FF200289230 /* Details */,
 			);
 			path = Garage;
 			sourceTree = "<group>";
 		};
-		F7C5F19B288659CF00375D91 /* Common */ = {
+		F7C5F19B288659CF00375D91 /* CustomUI */ = {
 			isa = PBXGroup;
 			children = (
+				F726335D2A95A99000F7305D /* GarageToolbarViewModifier.swift */,
 				F7C5F19C288659EC00375D91 /* VehicleTitle.swift */,
 				F7C5D7B22820198A00C4D213 /* VehicleImage.swift */,
 			);
-			path = Common;
+			path = CustomUI;
+			sourceTree = "<group>";
+		};
+		F7CF21452A964EB700C73429 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				F7FC88E8280EA29C007BA063 /* GarageView.swift */,
+				F7C5D7AE282016FE00C4D213 /* GarageViewModel.swift */,
+				F7C5D7B02820191E00C4D213 /* VehicleRowView.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		F7CF21462A964F5900C73429 /* Observers */ = {
+			isa = PBXGroup;
+			children = (
+				F726335F2A95AE7700F7305D /* Vehicles.swift */,
+			);
+			path = Observers;
+			sourceTree = "<group>";
+		};
+		F7CF21482A964F7500C73429 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				F7C5D7B6282019C100C4D213 /* MockModels.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		F7CF21492A964F8300C73429 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				F7CF21432A95B01A00C73429 /* Color+Codable.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		F7CF214A2A964F8E00C73429 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				F7EEF30F280FE8AB0086AB03 /* Event.swift */,
+				F7FC88EC280EA42E007BA063 /* Vehicle.swift */,
+				F7CF21462A964F5900C73429 /* Observers */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		F7CF214B2A964FA900C73429 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				F7D931A7287D2FEB00289230 /* Main */,
+				F7C5D7BA28201BAD00C4D213 /* Garage */,
+				F7D931AB287D303700289230 /* Events */,
+			);
+			path = Scenes;
 			sourceTree = "<group>";
 		};
 		F7D931A7287D2FEB00289230 /* Main */ = {
@@ -204,14 +260,14 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
-		F7D931A8287D2FF200289230 /* VehicleDetails */ = {
+		F7D931A8287D2FF200289230 /* Details */ = {
 			isa = PBXGroup;
 			children = (
 				F7D931A9287D300200289230 /* VehicleDetailsView.swift */,
 				F713B7642A8FA6FE00EBB0BF /* VehicleDetailsViewModel.swift */,
 				F713B7632A8FA6EC00EBB0BF /* Sections */,
 			);
-			path = VehicleDetails;
+			path = Details;
 			sourceTree = "<group>";
 		};
 		F7D931AB287D303700289230 /* Events */ = {
@@ -237,30 +293,6 @@
 				F721890227FABE5F00F80AC0 /* Assets.xcassets */,
 			);
 			path = "Supporting files";
-			sourceTree = "<group>";
-		};
-		F7EEF30E280FE3F20086AB03 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				F7CF21432A95B01A00C73429 /* Color+Codable.swift */,
-				F7EEF30F280FE8AB0086AB03 /* Event.swift */,
-				F7C5D7B6282019C100C4D213 /* MockModels.swift */,
-				F7FC88EC280EA42E007BA063 /* Vehicle.swift */,
-				F726335F2A95AE7700F7305D /* Vehicles.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		F7FC88EE280EA436007BA063 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				F7C5F19B288659CF00375D91 /* Common */,
-				F7D931A7287D2FEB00289230 /* Main */,
-				F7C5D7BA28201BAD00C4D213 /* Garage */,
-				F7D931A8287D2FF200289230 /* VehicleDetails */,
-				F7D931AB287D303700289230 /* Events */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

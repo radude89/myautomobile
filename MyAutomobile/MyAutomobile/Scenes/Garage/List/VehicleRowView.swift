@@ -25,11 +25,3 @@ struct VehicleRowView: View {
         }
     }
 }
-
-// MARK: - Previews
-
-struct VehicleRowView_Previews: PreviewProvider {
-    static var previews: some View {
-        VehicleRowView(vehicle: .demoVehicles.randomElement()!)
-    }
-}
