@@ -40,6 +40,10 @@ final class VehicleDetailsViewModel: ObservableObject {
         }
     }
     
+    func updateVehicle() {
+        vehicle.color = .orange
+    }
+    
     private var sortedValues: [(key: String, value: Vehicle.FieldDetails)] {
         customFields.sorted(by: >)
     }

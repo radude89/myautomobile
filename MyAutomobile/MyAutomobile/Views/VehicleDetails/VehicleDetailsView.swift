@@ -16,7 +16,7 @@ struct VehicleDetailsView: View {
     @State private var makeText = ""
     @State private var modelText = ""
     @State private var numberPlateText = ""
-    @State private var vehicleColor = Color.red
+    @State private var vehicleColor = Color.clear
     
     init(viewModel: VehicleDetailsViewModel) {
         _viewModel = StateObject(wrappedValue: viewModel)
@@ -42,9 +42,7 @@ struct VehicleDetailsView: View {
         .scrollDismissesKeyboard(.interactively)
         .navigationTitle("Details")
         .onAppear(perform: loadVehicleDetails)
-        .onDisappear {
-            // TODO: Save here details
-        }
+        .onDisappear(perform: updateVehicle)
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 EditButton()
@@ -71,5 +69,9 @@ private extension VehicleDetailsView {
             labelText: key,
             valueText: value
         )
+    }
+    
+    func updateVehicle() {
+        viewModel.updateVehicle()
     }
 }

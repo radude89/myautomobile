@@ -16,7 +16,7 @@ final class GarageViewModel: ObservableObject {
     }
     
     var hasVehicles: Bool {
-        vehicles.isEmpty
+        !vehicles.isEmpty
     }
     
     func delete(atOffsets offsets: IndexSet) {

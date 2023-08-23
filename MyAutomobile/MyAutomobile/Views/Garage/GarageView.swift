@@ -24,19 +24,8 @@ struct GarageView: View {
                 .navigationDestination(for: Vehicle.self) { vehicle in
                     VehicleDetailsView(viewModel: .init(vehicle: vehicle))
                 }
-                .toolbar {
-                    ToolbarItem(placement: .navigationBarLeading) {
-                        Button {
-                            showAddView.toggle()
-                        } label: {
-                            Image(systemName: "plus")
-                        }
-                    }
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        if !viewModel.hasVehicles {
-                            EditButton()
-                        }
-                    }
+                .garageToolbar(hasVehicles: viewModel.hasVehicles) {
+                    showAddView.toggle()
                 }
                 .sheet(isPresented: $showAddView) {
                     Text("Add View")
@@ -47,10 +36,6 @@ struct GarageView: View {
     @ViewBuilder
     private var contentView: some View {
         if viewModel.hasVehicles {
-            Text("You haven't added any vehicles.")
-                .font(.body)
-                .multilineTextAlignment(.center)
-        } else {
             List {
                 ForEach(viewModel.vehicles) { vehicle in
                     NavigationLink(value: vehicle) {
@@ -59,6 +44,10 @@ struct GarageView: View {
                 }
                 .onDelete(perform: viewModel.delete)
             }
+        } else {
+            Text("You haven't added any vehicles.")
+                .font(.body)
+                .multilineTextAlignment(.center)
         }
     }
     
