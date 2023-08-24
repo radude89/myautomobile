@@ -8,8 +8,6 @@
 import SwiftUI
 
 struct VehicleAddView: View {
-
-    @Environment(\.presentationMode) private var presentationMode
     
     @StateObject private var viewModel: VehicleAddViewModel
     
@@ -26,26 +24,10 @@ struct VehicleAddView: View {
         NavigationStack {
             contentView
                 .navigationBarTitle("Add your new vehicle")
-                .toolbar {
-                    ToolbarItem(placement: .navigationBarLeading) {
-                        Button("Cancel") {
-                            presentationMode.wrappedValue.dismiss()
-                        }
-                    }
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        Button("Done") {
-                            viewModel.saveVehicle(
-                                numberPlate: numberPlateText,
-                                makeText: makeText,
-                                modelText: modelText,
-                                color: color
-                            )
-                            presentationMode.wrappedValue.dismiss()
-                        }
-                        .bold()
-                        .disabled(doneButtonIsDisabled)
-                    }
-                }
+                .vehicleAddToolbar(
+                    isDoneButtonDisabled: doneButtonIsDisabled,
+                    onDone: saveVehicle
+                )
         }
     }
 }
@@ -75,7 +57,16 @@ private extension VehicleAddView {
     }
     
     var doneButtonIsDisabled: Bool {
-        makeText.isEmpty && modelText.isEmpty && numberPlateText.isEmpty
+        makeText.isEmpty || modelText.isEmpty || numberPlateText.isEmpty
+    }
+    
+    func saveVehicle() {
+        viewModel.saveVehicle(
+            numberPlate: numberPlateText,
+            makeText: makeText,
+            modelText: modelText,
+            color: color
+        )
     }
 }
 
