@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct GarageView: View {
-    
+
     @Environment(\.editMode) private var editMode
     @StateObject private var viewModel: GarageViewModel
     @State private var showAddView = false
@@ -28,7 +28,7 @@ struct GarageView: View {
                     showAddView.toggle()
                 }
                 .sheet(isPresented: $showAddView) {
-                    Text("Add View")
+                    VehicleAddView(viewModel: .init(vehicles: viewModel.vehicles))
                 }
                 .onReceive(viewModel.vehicles.objectWillChange) {
                     viewModel.objectWillChange.send()
