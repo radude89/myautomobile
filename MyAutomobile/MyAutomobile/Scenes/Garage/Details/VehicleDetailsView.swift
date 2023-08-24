@@ -12,7 +12,7 @@ struct VehicleDetailsView: View {
     @Environment(\.editMode) private var editMode
     
     @StateObject private var viewModel: VehicleDetailsViewModel
-
+    
     @State private var makeText = ""
     @State private var modelText = ""
     @State private var numberPlateText = ""
@@ -23,6 +23,27 @@ struct VehicleDetailsView: View {
     }
     
     var body: some View {
+        contentView
+            .scrollDismissesKeyboard(.interactively)
+            .navigationTitle("Details")
+            .onAppear(perform: loadVehicleDetails)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    EditButton()
+                        .disabled(viewModel.customFields.isEmpty)
+                }
+            }
+            .onChange(of: modelText) { set(\.model, newValue: $0) }
+            .onChange(of: makeText) { set(\.make, newValue: $0) }
+            .onChange(of: numberPlateText) { set(\.numberPlate, newValue: $0) }
+            .onChange(of: vehicleColor) { viewModel.set(color: $0) }
+    }
+}
+
+// MARK: - Private methods
+private extension VehicleDetailsView {
+    @ViewBuilder
+    var contentView: some View {
         Form {
             VehicleDetailsTopSection(
                 vehicleColor: vehicleColor,
@@ -44,24 +65,8 @@ struct VehicleDetailsView: View {
                 }
             )
         }
-        .scrollDismissesKeyboard(.interactively)
-        .navigationTitle("Details")
-        .onAppear(perform: loadVehicleDetails)
-        .toolbar {
-            ToolbarItem(placement: .navigationBarTrailing) {
-                EditButton()
-                    .disabled(viewModel.customFields.isEmpty)
-            }
-        }
-        .onChange(of: modelText) { set(\.model, newValue: $0) }
-        .onChange(of: makeText) { set(\.make, newValue: $0) }
-        .onChange(of: numberPlateText) { set(\.numberPlate, newValue: $0) }
-        .onChange(of: vehicleColor) { viewModel.set(color: $0) }
     }
-}
-
-// MARK: - Private methods
-private extension VehicleDetailsView {
+    
     func loadVehicleDetails() {
         makeText = viewModel.vehicleMake
         modelText = viewModel.vehicleModel
