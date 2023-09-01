@@ -12,6 +12,7 @@ struct EventsView: View {
     @Environment(\.editMode) private var editMode
     @StateObject private var viewModel: EventsViewModel
     @State private var showAddView = false
+    @State private var sort: Int = 0
     
     init(viewModel: EventsViewModel = .init()) {
         _viewModel = StateObject(wrappedValue: viewModel)
@@ -33,8 +34,19 @@ struct EventsView: View {
                         }
                     }
                     ToolbarItem(placement: .navigationBarTrailing) {
-                        if !viewModel.hasEvents {
-                            EditButton()
+                        if viewModel.hasEvents {
+                            HStack {
+                                Menu {
+                                    Picker(selection: $sort, label: Text("Sorting options")) {
+                                        Text("All").tag(0)
+                                        Text("By Vehicle").tag(1)
+                                    }
+                                }
+                            label: {
+                                Label("Filter", systemImage: "line.3.horizontal.decrease.circle")
+                            }
+                                EditButton()
+                            }
                         }
                     }
                 }
@@ -48,30 +60,51 @@ struct EventsView: View {
     @ViewBuilder
     private var contentView: some View {
         if viewModel.hasEvents {
-            Text("You haven't added any events.")
-                .font(.body)
-                .multilineTextAlignment(.center)
+            listContentView
         } else {
-            List {
-                ForEach(viewModel.events) { event in
-                    NavigationLink(value: event) {
-                        Text(event.description)
-                    }
-                }
-                .onDelete(perform: viewModel.delete)
-            }
+            emptyView
         }
     }
     
-}
-
-// MARK: - Previews
-
-struct EventsView_Previews: PreviewProvider {
-    static var previews: some View {
-        EventsView(viewModel: .init(events: .demoEvents))
-        
-        EventsView(viewModel: .init(events: []))
-            .preferredColorScheme(.dark)
+    private var emptyView: some View {
+        Text("You haven't added any events.")
+            .font(.body)
+            .multilineTextAlignment(.center)
     }
+    
+    private var listContentView: some View {
+        if sort == 1 {
+            return AnyView(byVehiclesContentView)
+        }
+        else {
+            return AnyView(allVehiclesContentView)
+        }
+    }
+    
+    private var allVehiclesContentView: some View {
+        List {
+            ForEach(viewModel.allEvents) { event in
+                NavigationLink(value: event) {
+                    Text(event.description)
+                }
+            }
+            .onDelete(perform: viewModel.delete)
+        }
+    }
+    
+    private var byVehiclesContentView: some View {
+        List {
+            ForEach(viewModel.vehicles.items) { vehicle in
+                Section {
+                    ForEach(vehicle.events) { event in
+                        Text(event.description)
+                    }
+                } header: {
+                    Text("\(vehicle.numberPlate)")
+                }
+            }
+            .onDelete(perform: viewModel.delete)
+        }
+    }
+    
 }

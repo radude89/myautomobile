@@ -4,22 +4,22 @@
 //
 //  Created by Radu Dan on 18.07.2022.
 //
-import Foundation
+import SwiftUI
 
 final class EventsViewModel: ObservableObject {
     
-    @Published private(set) var events: [Event]
+    @ObservedObject var vehicles = Vehicles()
     
-    init(events: [Event] = .demoEvents) {
-        self.events = events
+    var allEvents: [Event] {
+        vehicles.items.flatMap { $0.events }
     }
-    
+
     var hasEvents: Bool {
-        events.isEmpty
+        !allEvents.isEmpty
     }
     
     func delete(atOffsets offsets: IndexSet) {
-        events.remove(atOffsets: offsets)
+//        events.remove(atOffsets: offsets)
     }
     
 }

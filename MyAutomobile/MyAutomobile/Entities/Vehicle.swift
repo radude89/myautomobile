@@ -15,8 +15,16 @@ struct Vehicle {
     var color: Color
     var customFields: [String: FieldDetails]
     let dateCreated: Date
+    let events: [Event]
     
-    init(id: UUID = .init(), make: String, model: String, numberPlate: String, color: Color, customFields: [String : FieldDetails] =  [:], dateCreated: Date = .now) {
+    init(id: UUID = .init(),
+         make: String,
+         model: String,
+         numberPlate: String,
+         color: Color,
+         customFields: [String : FieldDetails] =  [:],
+         dateCreated: Date = .now,
+         events: [Event] = []) {
         self.id = id
         self.make = make
         self.model = model
@@ -24,6 +32,7 @@ struct Vehicle {
         self.color = color
         self.customFields = customFields
         self.dateCreated = dateCreated
+        self.events = events
     }
 }
 

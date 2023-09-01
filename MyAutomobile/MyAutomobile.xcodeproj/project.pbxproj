@@ -217,8 +217,8 @@
 		F7CF21452A964EB700C73429 /* List */ = {
 			isa = PBXGroup;
 			children = (
-				F7FC88E8280EA29C007BA063 /* GarageView.swift */,
 				F726335D2A95A99000F7305D /* GarageToolbarViewModifier.swift */,
+				F7FC88E8280EA29C007BA063 /* GarageView.swift */,
 				F7C5D7AE282016FE00C4D213 /* GarageViewModel.swift */,
 				F7C5D7B02820191E00C4D213 /* VehicleRowView.swift */,
 			);

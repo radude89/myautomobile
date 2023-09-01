@@ -17,7 +17,7 @@ extension Event {
 
 extension Array where Self.Element == Vehicle {
     static let demoVehicles: [Vehicle] = [
-        .init(make: "Dacia", model: "Duster", numberPlate: "AA-123-RAD", color: .cyan),
+        .init(make: "Dacia", model: "Duster", numberPlate: "AA-123-RAD", color: .cyan, events: .demoEvents),
         .init(make: "Renault", model: "Kangoo", numberPlate: "AA-124-RAD", color: .cyan)
     ]
 }

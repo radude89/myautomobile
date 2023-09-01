@@ -5,9 +5,10 @@
 //  Created by Radu Dan on 23.08.2023.
 //
 
-import SwiftUI
+import Foundation
 
 final class Vehicles: ObservableObject {
+    private static let storageKey = "vehicles"
     @Published var items: [Vehicle] {
         didSet {
             if let encoded = try? JSONEncoder().encode(items) {
@@ -18,17 +19,25 @@ final class Vehicles: ObservableObject {
     }
     
     init() {
-        if let itemsAsData = UserDefaults.standard.data(forKey: "vehicles") {
-            let decoder = JSONDecoder()
-            
-            if let decoded = try? decoder.decode([Vehicle].self, from: itemsAsData) {
-                self.items = decoded.sorted(by: { v1, v2 in
-                    v1.dateCreated < v2.dateCreated
-                })
-                return
-            }
+        items = .demoVehicles
+        return
+        guard let itemsAsData = UserDefaults.standard.data(forKey: Self.storageKey) else {
+            items = []
+            return
         }
         
-        items = .demoVehicles
+        items = Self.decodedVehicles(from: itemsAsData)
+    }
+}
+
+private extension Vehicles {
+    static func decodedVehicles(from itemsAsData: Data) -> [Vehicle] {
+        guard let decoded = try? JSONDecoder().decode([Vehicle].self, from: itemsAsData) else {
+            return []
+        }
+        
+        return decoded.sorted(by: { v1, v2 in
+            v1.dateCreated < v2.dateCreated
+        })
     }
 }
