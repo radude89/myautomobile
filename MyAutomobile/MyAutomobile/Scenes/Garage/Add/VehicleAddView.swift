@@ -26,6 +26,11 @@ struct VehicleAddView: View {
                 .navigationBarTitle("Add your new vehicle")
                 .vehicleAddToolbar(
                     isDoneButtonDisabled: doneButtonIsDisabled,
+                    hasChanges: viewModel.hasChanges(
+                        makeText: makeText,
+                        modelText: modelText,
+                        numberPlateText: numberPlateText
+                    ),
                     onDone: saveVehicle
                 )
         }

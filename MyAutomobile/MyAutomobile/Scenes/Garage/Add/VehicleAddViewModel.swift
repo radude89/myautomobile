@@ -15,6 +15,10 @@ final class VehicleAddViewModel: ObservableObject {
         self.vehicles = vehicles
     }
     
+    func hasChanges(makeText: String, modelText: String, numberPlateText: String) -> Bool {
+        !makeText.isEmpty || !modelText.isEmpty || !numberPlateText.isEmpty
+    }
+    
 }
 
 // MARK: - Public APIs

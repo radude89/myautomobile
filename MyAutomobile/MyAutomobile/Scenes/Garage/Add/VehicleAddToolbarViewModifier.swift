@@ -13,13 +13,18 @@ struct VehicleAddToolbarViewModifier: ViewModifier {
     
     let onDone: () -> Void
     let isDoneButtonDisabled: Bool
+    let hasChanges: Bool
     
     func body(content: Content) -> some View {
         content
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button("Cancel") {
-                        isPresentingConfirmation = true
+                        if hasChanges {
+                            isPresentingConfirmation = true
+                        } else {
+                            presentationMode.wrappedValue.dismiss()
+                        }
                     }
                     .confirmationDialog(
                         "Are you sure you want to discard this new vehicle?",
@@ -47,9 +52,16 @@ struct VehicleAddToolbarViewModifier: ViewModifier {
 }
 
 extension View {
-    func vehicleAddToolbar(isDoneButtonDisabled: Bool, onDone: @escaping () -> Void) -> some View {
+    func vehicleAddToolbar(
+        isDoneButtonDisabled: Bool,
+        hasChanges: Bool,
+        onDone: @escaping () -> Void) -> some View {
         modifier(
-            VehicleAddToolbarViewModifier(onDone: onDone, isDoneButtonDisabled: isDoneButtonDisabled)
+            VehicleAddToolbarViewModifier(
+                onDone: onDone,
+                isDoneButtonDisabled: isDoneButtonDisabled,
+                hasChanges: hasChanges
+            )
         )
     }
 }
