@@ -10,7 +10,9 @@ import SwiftUI
 struct EventsView: View {
     
     @Environment(\.editMode) private var editMode
+
     @StateObject private var viewModel: EventsViewModel
+
     @State private var showAddView = false
     @State private var sort: Int = 0
     
@@ -22,16 +24,12 @@ struct EventsView: View {
         NavigationStack {
             contentView
                 .navigationTitle("Events")
-                .navigationDestination(for: Event.self) { event in
-                    Text("Event details \(event.description)")
-                }
                 .eventsToolbar(hasEvents: viewModel.hasEvents, sort: $sort) {
                     showAddView.toggle()
                 }
                 .sheet(isPresented: $showAddView) {
-                    Text("Add View")
+                    EventAddView(viewModel: .init(vehicles: viewModel.vehicles))
                 }
-            
         }
     }
     
@@ -85,5 +83,4 @@ private extension EventsView {
             .onDelete(perform: viewModel.delete)
         }
     }
-    
 }

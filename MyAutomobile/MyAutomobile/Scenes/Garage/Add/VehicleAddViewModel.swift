@@ -15,16 +15,9 @@ final class VehicleAddViewModel: ObservableObject {
         self.vehicles = vehicles
     }
     
-    func hasChanges(makeText: String, modelText: String, numberPlateText: String) -> Bool {
-        !makeText.isEmpty || !modelText.isEmpty || !numberPlateText.isEmpty
-    }
-    
-}
-
-// MARK: - Public APIs
-extension VehicleAddViewModel {
     func saveVehicle(numberPlate: String, makeText: String, modelText: String, color: Color) {
         let vehicle = Vehicle(make: makeText, model: modelText, numberPlate: numberPlate, color: color)
         vehicles.items.append(vehicle)
     }
+    
 }

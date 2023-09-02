@@ -13,8 +13,7 @@ struct VehicleRowView: View {
     var body: some View {
         HStack {
             VehicleImage(color: vehicle.color)
-                .padding([.top, .bottom])
-            
+
             VStack(alignment: .leading) {
                 Text(vehicle.numberPlate)
                     .titleStyle

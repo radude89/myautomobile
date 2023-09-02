@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct EventAddView: View {
-
+    
     @StateObject private var viewModel: EventAddViewModel
     
     @State private var titleText = ""
-    @State private var recurrence = 0
+    @State private var recurrenceIndex = 0
     @State private var date: Date = .now
     @State private var selectedVehicleIndex = 0
     
@@ -21,45 +21,42 @@ struct EventAddView: View {
     }
     
     var body: some View {
-        Form {
-            Section {
-                TextField("Description", text: $titleText)
-            } header: {
-                Text("Enter description")
-            }
-            
-            Section {
-                Picker("Cars", selection: $selectedVehicleIndex) {
-                    ForEach(viewModel.items.indices, id: \.self) { index in
-                        Text(viewModel.items[index].numberPlate)
-                    }
-                }
-            } header: {
-                Text("Select your car")
-            }
-            
-            Section {
-                DatePicker(
-                    selection: $date,
-                    displayedComponents: .date
-                ) {
-                    Text("Date")
-                }
-                
-                Picker("Recurrence", selection: $recurrence) {
-                    ForEach(0..<Event.Recurrence.allCases.count, id: \.self) { index in
-                        Text(Event.Recurrence.allCases[index].rawValue)
-                    }
-                }
-            } header: {
-                Text("Select date")
-            }
+        NavigationStack {
+            contentView
+                .navigationBarTitle("Add your event")
+                .addToolbar(
+                    isDoneButtonDisabled: doneButtonIsDisabled,
+                    hasChanges: hasChanges,
+                    confirmationTitle: "Are you sure you want to discard this new event?",
+                    onDone: saveEvent
+                )
+                .interactiveDismissDisabled(hasChanges)
         }
     }
+    
 }
 
-struct EventAddView_Previews: PreviewProvider {
-    static var previews: some View {
-        EventAddView(viewModel: .init(vehicles: .init()))
+private extension EventAddView {
+    var contentView: some View {
+        EventAddFormView(
+            selectedVehicleIndex: $selectedVehicleIndex,
+            recurrenceIndex: $recurrenceIndex,
+            date: $date,
+            titleText: $titleText,
+            vehicles: viewModel.vehicles.items
+        )
     }
+    
+    var doneButtonIsDisabled: Bool {
+        titleText.isEmpty
+    }
+    
+    var hasChanges: Bool {
+        !titleText.isEmpty
+    }
+    
+    func saveEvent() {
+        print("Saved")
+    }
+    
 }

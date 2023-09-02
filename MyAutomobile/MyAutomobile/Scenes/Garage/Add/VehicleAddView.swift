@@ -24,9 +24,10 @@ struct VehicleAddView: View {
         NavigationStack {
             contentView
                 .navigationBarTitle("Add your new vehicle")
-                .vehicleAddToolbar(
+                .addToolbar(
                     isDoneButtonDisabled: doneButtonIsDisabled,
                     hasChanges: hasChanges,
+                    confirmationTitle: "Are you sure you want to discard this new vehicle?",
                     onDone: saveVehicle
                 )
                 .interactiveDismissDisabled(hasChanges)
@@ -63,11 +64,7 @@ private extension VehicleAddView {
     }
     
     var hasChanges: Bool {
-        viewModel.hasChanges(
-            makeText: makeText,
-            modelText: modelText,
-            numberPlateText: numberPlateText
-        )
+        !makeText.isEmpty || !modelText.isEmpty || !numberPlateText.isEmpty
     }
     
     func saveVehicle() {

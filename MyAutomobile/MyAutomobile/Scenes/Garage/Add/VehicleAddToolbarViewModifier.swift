@@ -14,6 +14,7 @@ struct VehicleAddToolbarViewModifier: ViewModifier {
     let onDone: () -> Void
     let isDoneButtonDisabled: Bool
     let hasChanges: Bool
+    let confirmationTitle: String
     
     func body(content: Content) -> some View {
         content
@@ -27,7 +28,7 @@ struct VehicleAddToolbarViewModifier: ViewModifier {
                         }
                     }
                     .confirmationDialog(
-                        "Are you sure you want to discard this new vehicle?",
+                        confirmationTitle,
                         isPresented: $isPresentingConfirmation,
                         titleVisibility: .visible
                     ) {
@@ -52,15 +53,17 @@ struct VehicleAddToolbarViewModifier: ViewModifier {
 }
 
 extension View {
-    func vehicleAddToolbar(
+    func addToolbar(
         isDoneButtonDisabled: Bool,
         hasChanges: Bool,
+        confirmationTitle: String,
         onDone: @escaping () -> Void) -> some View {
         modifier(
             VehicleAddToolbarViewModifier(
                 onDone: onDone,
                 isDoneButtonDisabled: isDoneButtonDisabled,
-                hasChanges: hasChanges
+                hasChanges: hasChanges,
+                confirmationTitle: confirmationTitle
             )
         )
     }
