@@ -20,9 +20,13 @@
 		F721891C27FABE5F00F80AC0 /* MyAutomobileUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F721891B27FABE5F00F80AC0 /* MyAutomobileUITestsLaunchTests.swift */; };
 		F726335E2A95A99000F7305D /* GarageToolbarViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F726335D2A95A99000F7305D /* GarageToolbarViewModifier.swift */; };
 		F72633602A95AE7700F7305D /* Vehicles.swift in Sources */ = {isa = PBXBuildFile; fileRef = F726335F2A95AE7700F7305D /* Vehicles.swift */; };
+		F73028E82AA36A9B003AAEE8 /* EventsToolbarViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73028E72AA36A9B003AAEE8 /* EventsToolbarViewModifier.swift */; };
+		F73028EE2AA36D75003AAEE8 /* EventAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73028ED2AA36D75003AAEE8 /* EventAddView.swift */; };
+		F73028F02AA36D9B003AAEE8 /* EventAddViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73028EF2AA36D9B003AAEE8 /* EventAddViewModel.swift */; };
 		F760EF0B2A96FDA500C38F3B /* VehicleAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F760EF0A2A96FDA500C38F3B /* VehicleAddView.swift */; };
 		F760EF0D2A9701F300C38F3B /* VehicleAddViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F760EF0C2A9701F300C38F3B /* VehicleAddViewModel.swift */; };
 		F760EF0F2A97066700C38F3B /* VehicleAddToolbarViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F760EF0E2A97066700C38F3B /* VehicleAddToolbarViewModifier.swift */; };
+		F799E2AA2AA35F27009F3C3D /* EventRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F799E2A92AA35F27009F3C3D /* EventRowView.swift */; };
 		F7C5D7AF282016FE00C4D213 /* GarageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C5D7AE282016FE00C4D213 /* GarageViewModel.swift */; };
 		F7C5D7B12820191E00C4D213 /* VehicleRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C5D7B02820191E00C4D213 /* VehicleRowView.swift */; };
 		F7C5D7B32820198A00C4D213 /* VehicleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C5D7B22820198A00C4D213 /* VehicleImage.swift */; };
@@ -72,9 +76,13 @@
 		F721891B27FABE5F00F80AC0 /* MyAutomobileUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAutomobileUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		F726335D2A95A99000F7305D /* GarageToolbarViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarageToolbarViewModifier.swift; sourceTree = "<group>"; };
 		F726335F2A95AE7700F7305D /* Vehicles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehicles.swift; sourceTree = "<group>"; };
+		F73028E72AA36A9B003AAEE8 /* EventsToolbarViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsToolbarViewModifier.swift; sourceTree = "<group>"; };
+		F73028ED2AA36D75003AAEE8 /* EventAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventAddView.swift; sourceTree = "<group>"; };
+		F73028EF2AA36D9B003AAEE8 /* EventAddViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventAddViewModel.swift; sourceTree = "<group>"; };
 		F760EF0A2A96FDA500C38F3B /* VehicleAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleAddView.swift; sourceTree = "<group>"; };
 		F760EF0C2A9701F300C38F3B /* VehicleAddViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleAddViewModel.swift; sourceTree = "<group>"; };
 		F760EF0E2A97066700C38F3B /* VehicleAddToolbarViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleAddToolbarViewModifier.swift; sourceTree = "<group>"; };
+		F799E2A92AA35F27009F3C3D /* EventRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventRowView.swift; sourceTree = "<group>"; };
 		F7C5D7AE282016FE00C4D213 /* GarageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarageViewModel.swift; sourceTree = "<group>"; };
 		F7C5D7B02820191E00C4D213 /* VehicleRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleRowView.swift; sourceTree = "<group>"; };
 		F7C5D7B22820198A00C4D213 /* VehicleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleImage.swift; sourceTree = "<group>"; };
@@ -184,6 +192,26 @@
 			path = MyAutomobileUITests;
 			sourceTree = "<group>";
 		};
+		F73028E92AA36D2E003AAEE8 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				F799E2A92AA35F27009F3C3D /* EventRowView.swift */,
+				F73028E72AA36A9B003AAEE8 /* EventsToolbarViewModifier.swift */,
+				F7FC88EA280EA2AF007BA063 /* EventsView.swift */,
+				F7C5F1992885004800375D91 /* EventsViewModel.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		F73028EA2AA36D50003AAEE8 /* Add */ = {
+			isa = PBXGroup;
+			children = (
+				F73028ED2AA36D75003AAEE8 /* EventAddView.swift */,
+				F73028EF2AA36D9B003AAEE8 /* EventAddViewModel.swift */,
+			);
+			path = Add;
+			sourceTree = "<group>";
+		};
 		F760EF092A96FD9100C38F3B /* Add */ = {
 			isa = PBXGroup;
 			children = (
@@ -197,10 +225,10 @@
 		F7C5D7BA28201BAD00C4D213 /* Garage */ = {
 			isa = PBXGroup;
 			children = (
-				F7C5F19B288659CF00375D91 /* CustomUI */,
-				F7CF21452A964EB700C73429 /* List */,
-				F7D931A8287D2FF200289230 /* Details */,
 				F760EF092A96FD9100C38F3B /* Add */,
+				F7C5F19B288659CF00375D91 /* CustomUI */,
+				F7D931A8287D2FF200289230 /* Details */,
+				F7CF21452A964EB700C73429 /* List */,
 			);
 			path = Garage;
 			sourceTree = "<group>";
@@ -290,8 +318,8 @@
 		F7D931AB287D303700289230 /* Events */ = {
 			isa = PBXGroup;
 			children = (
-				F7FC88EA280EA2AF007BA063 /* EventsView.swift */,
-				F7C5F1992885004800375D91 /* EventsViewModel.swift */,
+				F73028EA2AA36D50003AAEE8 /* Add */,
+				F73028E92AA36D2E003AAEE8 /* List */,
 			);
 			path = Events;
 			sourceTree = "<group>";
@@ -449,19 +477,23 @@
 				F713B7652A8FA6FE00EBB0BF /* VehicleDetailsViewModel.swift in Sources */,
 				F7FC88E9280EA29C007BA063 /* GarageView.swift in Sources */,
 				F713B75E2A8F9ADF00EBB0BF /* VehicleDetailsTopSection.swift in Sources */,
+				F799E2AA2AA35F27009F3C3D /* EventRowView.swift in Sources */,
 				F7C5D7B32820198A00C4D213 /* VehicleImage.swift in Sources */,
 				F7C5D7B12820191E00C4D213 /* VehicleRowView.swift in Sources */,
 				F7D931AA287D300200289230 /* VehicleDetailsView.swift in Sources */,
 				F726335E2A95A99000F7305D /* GarageToolbarViewModifier.swift in Sources */,
 				F760EF0F2A97066700C38F3B /* VehicleAddToolbarViewModifier.swift in Sources */,
+				F73028EE2AA36D75003AAEE8 /* EventAddView.swift in Sources */,
 				F72188FF27FABE5D00F80AC0 /* MyAutomobileApp.swift in Sources */,
 				F713B7602A8F9C1500EBB0BF /* VehicleDetailsMandatoryFieldsSection.swift in Sources */,
 				F7FC88ED280EA42E007BA063 /* Vehicle.swift in Sources */,
 				F7C5D7B7282019C100C4D213 /* MockModels.swift in Sources */,
 				F7EEF310280FE8AB0086AB03 /* Event.swift in Sources */,
+				F73028F02AA36D9B003AAEE8 /* EventAddViewModel.swift in Sources */,
 				F7C5D7AF282016FE00C4D213 /* GarageViewModel.swift in Sources */,
 				F7C5F19D288659EC00375D91 /* VehicleTitle.swift in Sources */,
 				F7FC88EB280EA2AF007BA063 /* EventsView.swift in Sources */,
+				F73028E82AA36A9B003AAEE8 /* EventsToolbarViewModifier.swift in Sources */,
 				F7CF21442A95B01A00C73429 /* Color+Codable.swift in Sources */,
 				F713B7622A8F9D7D00EBB0BF /* VehicleDetailsCustomFieldsSection.swift in Sources */,
 				F760EF0D2A9701F300C38F3B /* VehicleAddViewModel.swift in Sources */,

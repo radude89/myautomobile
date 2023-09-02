@@ -20,8 +20,8 @@ struct VehicleRowView: View {
                     .titleStyle
                 
                 Text("\(vehicle.make) \(vehicle.model)")
+                    .font(.subheadline)
             }
-            .padding()
         }
     }
 }

@@ -17,7 +17,7 @@ struct EventsView: View {
     init(viewModel: EventsViewModel = .init()) {
         _viewModel = StateObject(wrappedValue: viewModel)
     }
-
+    
     var body: some View {
         NavigationStack {
             contentView
@@ -25,40 +25,21 @@ struct EventsView: View {
                 .navigationDestination(for: Event.self) { event in
                     Text("Event details \(event.description)")
                 }
-                .toolbar {
-                    ToolbarItem(placement: .navigationBarLeading) {
-                        Button {
-                            showAddView.toggle()
-                        } label: {
-                            Image(systemName: "plus")
-                        }
-                    }
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        if viewModel.hasEvents {
-                            HStack {
-                                Menu {
-                                    Picker(selection: $sort, label: Text("Sorting options")) {
-                                        Text("All").tag(0)
-                                        Text("By Vehicle").tag(1)
-                                    }
-                                }
-                            label: {
-                                Label("Filter", systemImage: "line.3.horizontal.decrease.circle")
-                            }
-                                EditButton()
-                            }
-                        }
-                    }
+                .eventsToolbar(hasEvents: viewModel.hasEvents, sort: $sort) {
+                    showAddView.toggle()
                 }
                 .sheet(isPresented: $showAddView) {
                     Text("Add View")
                 }
-
+            
         }
     }
     
+}
+
+private extension EventsView {
     @ViewBuilder
-    private var contentView: some View {
+    var contentView: some View {
         if viewModel.hasEvents {
             listContentView
         } else {
@@ -66,13 +47,13 @@ struct EventsView: View {
         }
     }
     
-    private var emptyView: some View {
+    var emptyView: some View {
         Text("You haven't added any events.")
             .font(.body)
             .multilineTextAlignment(.center)
     }
     
-    private var listContentView: some View {
+    var listContentView: some View {
         if sort == 1 {
             return AnyView(byVehiclesContentView)
         }
@@ -81,23 +62,21 @@ struct EventsView: View {
         }
     }
     
-    private var allVehiclesContentView: some View {
+    var allVehiclesContentView: some View {
         List {
             ForEach(viewModel.allEvents) { event in
-                NavigationLink(value: event) {
-                    Text(event.description)
-                }
+                EventRowView(event: event)
             }
             .onDelete(perform: viewModel.delete)
         }
     }
     
-    private var byVehiclesContentView: some View {
+    var byVehiclesContentView: some View {
         List {
             ForEach(viewModel.vehicles.items) { vehicle in
                 Section {
-                    ForEach(vehicle.events) { event in
-                        Text(event.description)
+                    ForEach(viewModel.events(for: vehicle)) { event in
+                        EventRowView(event: event)
                     }
                 } header: {
                     Text("\(vehicle.numberPlate)")

@@ -11,7 +11,13 @@ final class EventsViewModel: ObservableObject {
     @ObservedObject var vehicles = Vehicles()
     
     var allEvents: [Event] {
-        vehicles.items.flatMap { $0.events }
+        vehicles.items
+            .flatMap { $0.events }
+            .sorted { $0.date < $1.date }
+    }
+
+    func events(for vehicle: Vehicle) -> [Event] {
+        vehicle.events.sorted { $0.date < $1.date }
     }
 
     var hasEvents: Bool {
