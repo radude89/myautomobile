@@ -8,14 +8,16 @@
 import SwiftUI
 
 struct MainTabView: View {
+    @StateObject private var vehicles = Vehicles()
+
     var body: some View {
         TabView {
-            GarageView()
+            GarageView(viewModel: .init(vehicles: vehicles))
                 .tabItem {
                     Label("Garage", systemImage: "car.2.fill")
                 }
             
-            EventsView()
+            EventsView(viewModel: .init(vehicles: vehicles))
                 .tabItem {
                     Label("Events", systemImage: "calendar")
                 }

@@ -14,7 +14,7 @@ struct EventAddView: View {
     @State private var titleText = ""
     @State private var recurrenceIndex = 0
     @State private var date: Date = .now
-    @State private var selectedVehicleIndex = 0
+    @State private var vehicleIndex = 0
     
     init(viewModel: EventAddViewModel) {
         _viewModel = StateObject(wrappedValue: viewModel)
@@ -39,7 +39,7 @@ struct EventAddView: View {
 private extension EventAddView {
     var contentView: some View {
         EventAddFormView(
-            selectedVehicleIndex: $selectedVehicleIndex,
+            selectedVehicleIndex: $vehicleIndex,
             recurrenceIndex: $recurrenceIndex,
             date: $date,
             titleText: $titleText,
@@ -56,7 +56,12 @@ private extension EventAddView {
     }
     
     func saveEvent() {
-        print("Saved")
+        viewModel.saveEvent(
+            date: date,
+            titleText: titleText,
+            recurrenceIndex: recurrenceIndex,
+            vehicleIndex: vehicleIndex
+        )
     }
     
 }

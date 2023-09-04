@@ -15,7 +15,7 @@ struct Vehicle {
     var color: Color
     var customFields: [String: FieldDetails]
     let dateCreated: Date
-    let events: [Event]
+    var events: [Event]
     
     init(id: UUID = .init(),
          make: String,

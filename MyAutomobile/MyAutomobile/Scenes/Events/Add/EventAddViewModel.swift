@@ -19,4 +19,14 @@ final class EventAddViewModel: ObservableObject {
         vehicles.items
     }
     
+    func saveEvent(
+        date: Date,
+        titleText: String,
+        recurrenceIndex: Int,
+        vehicleIndex: Int
+    ) {
+        let event = Event(date: date, description: titleText, recurrence: Event.Recurrence.allCases[recurrenceIndex])
+        vehicles.items[vehicleIndex].events.append(event)
+    }
+    
 }

@@ -13,7 +13,7 @@ struct GarageView: View {
     @StateObject private var viewModel: GarageViewModel
     @State private var showAddView = false
     
-    init(viewModel: GarageViewModel = .init()) {
+    init(viewModel: GarageViewModel) {
         _viewModel = StateObject(wrappedValue: viewModel)
     }
     

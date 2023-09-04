@@ -9,7 +9,11 @@ import SwiftUI
 
 final class GarageViewModel: ObservableObject {
     
-    @ObservedObject var vehicles = Vehicles()
+    @ObservedObject var vehicles: Vehicles
+    
+    init(vehicles: Vehicles) {
+        self.vehicles = vehicles
+    }
     
     var hasVehicles: Bool {
         !vehicles.items.isEmpty

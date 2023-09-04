@@ -16,7 +16,7 @@ struct EventsView: View {
     @State private var showAddView = false
     @State private var sort: Int = 0
     
-    init(viewModel: EventsViewModel = .init()) {
+    init(viewModel: EventsViewModel) {
         _viewModel = StateObject(wrappedValue: viewModel)
     }
     

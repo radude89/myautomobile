@@ -8,7 +8,11 @@ import SwiftUI
 
 final class EventsViewModel: ObservableObject {
     
-    @ObservedObject var vehicles = Vehicles()
+    @ObservedObject var vehicles: Vehicles
+    
+    init(vehicles: Vehicles) {
+        self.vehicles = vehicles
+    }
     
     var allEvents: [Event] {
         vehicles.items
