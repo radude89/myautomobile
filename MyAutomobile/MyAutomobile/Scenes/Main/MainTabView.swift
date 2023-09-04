@@ -22,7 +22,7 @@ struct MainTabView: View {
                     Label("Events", systemImage: "calendar")
                 }
         }
-        .onReceive(NotificationCenter.default.publisher(for: UIApplication.willTerminateNotification)) { _ in
+        .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)) { _ in
             saveData()
         }
     }
@@ -31,11 +31,10 @@ struct MainTabView: View {
 private extension MainTabView {
     func saveData() {
         do {
-            let uri = FileManager.documentsDirectoryURL.appendingPathComponent(Vehicles.storageKey)
             let data = try JSONEncoder().encode(vehicles.items)
-            try data.write(to: uri, options: [.atomicWrite, .completeFileProtection])
+            try FileManager.write(data: data, fileName: Vehicles.storageKey)
         } catch {
-            print("Unable to load data, error: \(error.localizedDescription)")
+            print("Unable to save data, error: \(error.localizedDescription)")
         }
     }
 }
