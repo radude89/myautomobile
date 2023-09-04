@@ -76,10 +76,3 @@ private extension VehicleAddView {
         )
     }
 }
-
-// MARK: - Preview
-struct VehicleAddView_Previews: PreviewProvider {
-    static var previews: some View {
-        VehicleAddView(viewModel: .init(vehicles: .init()))
-    }
-}

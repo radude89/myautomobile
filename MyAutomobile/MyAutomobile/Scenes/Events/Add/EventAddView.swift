@@ -63,5 +63,4 @@ private extension EventAddView {
             vehicleIndex: vehicleIndex
         )
     }
-    
 }

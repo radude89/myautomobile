@@ -58,9 +58,7 @@ extension VehicleDetailsViewModel {
         var items = vehicles.items
         items.removeAll { $0.id == vehicle.id }
         items.append(vehicle)
-        vehicles.items = items.sorted(by: { v1, v2 in
-            v1.dateCreated < v2.dateCreated
-        })
+        vehicles.items = items.sorted { $0.dateCreated < $1.dateCreated }
     }
     
     func deleteFields(at offsets: IndexSet) {
