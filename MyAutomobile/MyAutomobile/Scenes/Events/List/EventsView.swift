@@ -24,7 +24,7 @@ struct EventsView: View {
         NavigationStack {
             contentView
                 .navigationTitle("Events")
-                .eventsToolbar(hasEvents: viewModel.hasEvents, sort: $sort) {
+                .eventsToolbar(hasVehicles: viewModel.hasVehicles, hasEvents: viewModel.hasEvents, sort: $sort) {
                     showAddView.toggle()
                 }
                 .sheet(isPresented: $showAddView) {
@@ -46,9 +46,10 @@ private extension EventsView {
     }
     
     var emptyView: some View {
-        Text("You haven't added any events.")
+        Text("You haven't added any events.\nYou need to add at least one car to be able to add events.")
             .font(.body)
             .multilineTextAlignment(.center)
+            .padding([.leading, .trailing])
     }
     
     var listContentView: some View {

@@ -8,36 +8,28 @@
 import Foundation
 
 final class Vehicles: ObservableObject {
-    private static let storageKey = "vehicles"
-    @Published var items: [Vehicle] {
-        didSet {
-            if let encoded = try? JSONEncoder().encode(items) {
-//                UserDefaults.standard.set(encoded, forKey: "vehicles")
-                print(items)
-            }
-        }
-    }
     
+    @Published var items: [Vehicle]
+    
+    static let storageKey = "saved-vehicles"
+
     init() {
-        items = .demoVehicles
-        return
-        guard let itemsAsData = UserDefaults.standard.data(forKey: Self.storageKey) else {
-            items = []
-            return
-        }
-        
-        items = Self.decodedVehicles(from: itemsAsData)
+        items = Self.loadData()
     }
+
 }
 
 private extension Vehicles {
-    static func decodedVehicles(from itemsAsData: Data) -> [Vehicle] {
-        guard let decoded = try? JSONDecoder().decode([Vehicle].self, from: itemsAsData) else {
-            return []
+    static func loadData() -> [Vehicle] {
+        do {
+            let data = try FileManager.readData(fileName: Self.storageKey)
+            return try JSONDecoder()
+                .decode([Vehicle].self, from: data)
+                .sorted { $0.dateCreated < $1.dateCreated }
+        } catch {
+            print("Unable to load data, error: \(error.localizedDescription)")
         }
         
-        return decoded.sorted(by: { v1, v2 in
-            v1.dateCreated < v2.dateCreated
-        })
+        return []
     }
 }

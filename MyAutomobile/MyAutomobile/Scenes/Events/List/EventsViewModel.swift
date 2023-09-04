@@ -28,6 +28,10 @@ final class EventsViewModel: ObservableObject {
         !allEvents.isEmpty
     }
     
+    var hasVehicles: Bool {
+        !vehicles.items.isEmpty
+    }
+    
     func delete(atOffsets offsets: IndexSet) {
 //        events.remove(atOffsets: offsets)
     }

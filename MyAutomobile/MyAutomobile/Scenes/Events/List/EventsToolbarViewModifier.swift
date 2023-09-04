@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct EventsToolbarViewModifier: ViewModifier {
+    let hasVehicles: Bool
     let hasEvents: Bool
     let onAdd: () -> Void
     
@@ -20,6 +21,7 @@ struct EventsToolbarViewModifier: ViewModifier {
                     Button(action: onAdd) {
                         Image(systemName: "plus")
                     }
+                    .disabled(!hasVehicles)
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     if hasEvents {
@@ -47,12 +49,18 @@ struct EventsToolbarViewModifier: ViewModifier {
 
 extension View {
     func eventsToolbar(
+        hasVehicles: Bool,
         hasEvents: Bool,
         sort: Binding<Int>,
         onAdd: @escaping () -> Void
     ) -> some View {
         modifier(
-            EventsToolbarViewModifier(hasEvents: hasEvents, onAdd: onAdd, sort: sort)
+            EventsToolbarViewModifier(
+                hasVehicles: hasVehicles,
+                hasEvents: hasEvents,
+                onAdd: onAdd,
+                sort: sort
+            )
         )
     }
 }
