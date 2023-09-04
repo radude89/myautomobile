@@ -33,21 +33,10 @@ struct VehicleDetailsCustomFieldsSection: View {
                 alertIsPresented.toggle()
             }
             .sheet(isPresented: $alertIsPresented) {
-                Text("Pam")
+                NavigationStack {
+                    VehicleAddCustomFieldView(onDone: onSave)
+                }
             }
-//            .alert("New vehicle info", isPresented: $alertIsPresented) {
-//                TextField("Name of field", text: $labelText)
-//                TextField("Value", text: $valueText)
-//                Button("Save") {
-//                    onSave(labelText, valueText)
-//                    clearCustomFieldValues()
-//                }
-//                Button("Cancel", role: .cancel) {
-//                    clearCustomFieldValues()
-//                }
-//            } message: {
-//                Text("Please enter your new vehicle details")
-//            }
         } header: {
             Text("Additional information")
         } footer: {
