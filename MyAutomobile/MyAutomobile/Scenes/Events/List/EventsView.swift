@@ -14,7 +14,7 @@ struct EventsView: View {
     @StateObject private var viewModel: EventsViewModel
 
     @State private var showAddView = false
-    @State private var sort: Int = 0
+    @State private var sortOption = 0
     
     init(viewModel: EventsViewModel) {
         _viewModel = StateObject(wrappedValue: viewModel)
@@ -24,7 +24,7 @@ struct EventsView: View {
         NavigationStack {
             contentView
                 .navigationTitle("Events")
-                .eventsToolbar(hasVehicles: viewModel.hasVehicles, hasEvents: viewModel.hasEvents, sort: $sort) {
+                .eventsToolbar(hasVehicles: viewModel.hasVehicles, hasEvents: viewModel.hasEvents, sort: $sortOption) {
                     showAddView.toggle()
                 }
                 .sheet(isPresented: $showAddView) {
@@ -53,7 +53,7 @@ private extension EventsView {
     }
     
     var listContentView: some View {
-        if sort == 1 {
+        if sortOption == 1 {
             return AnyView(byVehiclesContentView)
         }
         else {
@@ -66,22 +66,25 @@ private extension EventsView {
             ForEach(viewModel.allEvents) { event in
                 EventRowView(event: event)
             }
-            .onDelete(perform: viewModel.delete)
+            .onDelete(perform: viewModel.deleteEvent)
         }
     }
     
     var byVehiclesContentView: some View {
         List {
-            ForEach(viewModel.vehicles.items) { vehicle in
+            ForEach(0..<viewModel.vehicles.items.count, id: \.self) { section in
+                let vehicle = viewModel.vehicles.items[section]
                 Section {
                     ForEach(viewModel.events(for: vehicle)) { event in
                         EventRowView(event: event)
+                    }
+                    .onDelete { indexSet in
+                        viewModel.deleteEvent(forVehicle: vehicle, at: indexSet)
                     }
                 } header: {
                     Text("\(vehicle.numberPlate)")
                 }
             }
-            .onDelete(perform: viewModel.delete)
         }
     }
 }

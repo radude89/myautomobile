@@ -32,8 +32,24 @@ final class EventsViewModel: ObservableObject {
         !vehicles.items.isEmpty
     }
     
-    func delete(atOffsets offsets: IndexSet) {
-//        events.remove(atOffsets: offsets)
+    func deleteEvent(at indexSet: IndexSet) {
+        guard let vehicle = vehicles.items.first else {
+            return
+        }
+        
+        deleteEvent(forVehicle: vehicle, at: indexSet)
     }
     
+    func deleteEvent(forVehicle vehicle: Vehicle, at indexSet: IndexSet) {
+        var copyVehicle = vehicle
+        copyVehicle.events.remove(atOffsets: indexSet)
+        updateVehicles(vehicle: copyVehicle)
+    }
+    
+    private func updateVehicles(vehicle: Vehicle) {
+        var items = vehicles.items
+        items.removeAll { $0.id == vehicle.id }
+        items.append(vehicle)
+        vehicles.items = items.sorted { $0.dateCreated < $1.dateCreated }
+    }
 }
