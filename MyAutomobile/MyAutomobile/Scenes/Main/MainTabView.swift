@@ -27,6 +27,9 @@ struct MainTabView: View {
         .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)) { _ in
             saveData()
         }
+        .onReceive(NotificationCenter.default.publisher(for: UIApplication.willTerminateNotification)) { _ in
+            saveData()
+        }
     }
 }
 
