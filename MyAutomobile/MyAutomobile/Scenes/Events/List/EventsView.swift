@@ -10,6 +10,7 @@ import SwiftUI
 struct EventsView: View {
     
     @Environment(\.editMode) private var editMode
+    @EnvironmentObject private var storeManager: EventStoreManager
 
     @StateObject private var viewModel: EventsViewModel
 
@@ -28,7 +29,10 @@ struct EventsView: View {
                     showAddView.toggle()
                 }
                 .sheet(isPresented: $showAddView) {
-                    EventAddView(viewModel: .init(vehicles: viewModel.vehicles))
+                    EventAddView(viewModel: .init(
+                        vehicles: viewModel.vehicles,
+                        eventStore: storeManager.dataStore.eventStore
+                    ))
                 }
         }
     }

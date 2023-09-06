@@ -5,8 +5,9 @@
 //  Created by Radu Dan on 23.08.2023.
 //
 
-import Foundation
+import SwiftUI
 
+@MainActor
 final class Vehicles: ObservableObject {
     
     @Published var items: [Vehicle]

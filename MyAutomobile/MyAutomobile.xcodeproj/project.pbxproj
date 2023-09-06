@@ -11,6 +11,10 @@
 		F713B7602A8F9C1500EBB0BF /* VehicleDetailsMandatoryFieldsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F713B75F2A8F9C1500EBB0BF /* VehicleDetailsMandatoryFieldsSection.swift */; };
 		F713B7622A8F9D7D00EBB0BF /* VehicleDetailsCustomFieldsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F713B7612A8F9D7D00EBB0BF /* VehicleDetailsCustomFieldsSection.swift */; };
 		F713B7652A8FA6FE00EBB0BF /* VehicleDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F713B7642A8FA6FE00EBB0BF /* VehicleDetailsViewModel.swift */; };
+		F7202DFD2AA8AFB8009A17DC /* EventStoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7202DF92AA8AFB8009A17DC /* EventStoreManager.swift */; };
+		F7202DFE2AA8AFB8009A17DC /* EventStoreError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7202DFA2AA8AFB8009A17DC /* EventStoreError.swift */; };
+		F7202E032AA8AFFB009A17DC /* EventDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7202E002AA8AFFB009A17DC /* EventDataStore.swift */; };
+		F7202E062AA8F304009A17DC /* EventEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7202E052AA8F304009A17DC /* EventEditViewController.swift */; };
 		F72188FF27FABE5D00F80AC0 /* MyAutomobileApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72188FE27FABE5D00F80AC0 /* MyAutomobileApp.swift */; };
 		F721890127FABE5D00F80AC0 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F721890027FABE5D00F80AC0 /* MainTabView.swift */; };
 		F721890327FABE5F00F80AC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F721890227FABE5F00F80AC0 /* Assets.xcassets */; };
@@ -67,6 +71,10 @@
 		F713B75F2A8F9C1500EBB0BF /* VehicleDetailsMandatoryFieldsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleDetailsMandatoryFieldsSection.swift; sourceTree = "<group>"; };
 		F713B7612A8F9D7D00EBB0BF /* VehicleDetailsCustomFieldsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleDetailsCustomFieldsSection.swift; sourceTree = "<group>"; };
 		F713B7642A8FA6FE00EBB0BF /* VehicleDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleDetailsViewModel.swift; sourceTree = "<group>"; };
+		F7202DF92AA8AFB8009A17DC /* EventStoreManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventStoreManager.swift; sourceTree = "<group>"; };
+		F7202DFA2AA8AFB8009A17DC /* EventStoreError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventStoreError.swift; sourceTree = "<group>"; };
+		F7202E002AA8AFFB009A17DC /* EventDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDataStore.swift; sourceTree = "<group>"; };
+		F7202E052AA8F304009A17DC /* EventEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventEditViewController.swift; sourceTree = "<group>"; };
 		F72188FB27FABE5D00F80AC0 /* MyAutomobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyAutomobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F72188FE27FABE5D00F80AC0 /* MyAutomobileApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAutomobileApp.swift; sourceTree = "<group>"; };
 		F721890027FABE5D00F80AC0 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
@@ -139,6 +147,16 @@
 			path = Sections;
 			sourceTree = "<group>";
 		};
+		F7202DF62AA8AF91009A17DC /* EventStoreManager */ = {
+			isa = PBXGroup;
+			children = (
+				F7202E002AA8AFFB009A17DC /* EventDataStore.swift */,
+				F7202DFA2AA8AFB8009A17DC /* EventStoreError.swift */,
+				F7202DF92AA8AFB8009A17DC /* EventStoreManager.swift */,
+			);
+			path = EventStoreManager;
+			sourceTree = "<group>";
+		};
 		F72188F227FABE5D00F80AC0 = {
 			isa = PBXGroup;
 			children = (
@@ -202,6 +220,7 @@
 		F73028E92AA36D2E003AAEE8 /* List */ = {
 			isa = PBXGroup;
 			children = (
+				F7202E052AA8F304009A17DC /* EventEditViewController.swift */,
 				F799E2A92AA35F27009F3C3D /* EventRowView.swift */,
 				F73028E72AA36A9B003AAEE8 /* EventsToolbarViewModifier.swift */,
 				F7FC88EA280EA2AF007BA063 /* EventsView.swift */,
@@ -282,6 +301,7 @@
 			children = (
 				F7CF21432A95B01A00C73429 /* Color+Codable.swift */,
 				F73028F32AA5FD93003AAEE8 /* FileManagerExtensions.swift */,
+				F7202DF62AA8AF91009A17DC /* EventStoreManager */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -483,10 +503,14 @@
 				F7C5F19A2885004800375D91 /* EventsViewModel.swift in Sources */,
 				F73028F42AA5FD93003AAEE8 /* FileManagerExtensions.swift in Sources */,
 				F760EF0B2A96FDA500C38F3B /* VehicleAddView.swift in Sources */,
+				F7202E032AA8AFFB009A17DC /* EventDataStore.swift in Sources */,
 				F721890127FABE5D00F80AC0 /* MainTabView.swift in Sources */,
+				F7202DFE2AA8AFB8009A17DC /* EventStoreError.swift in Sources */,
 				F713B7652A8FA6FE00EBB0BF /* VehicleDetailsViewModel.swift in Sources */,
 				F7FC88E9280EA29C007BA063 /* GarageView.swift in Sources */,
+				F7202E062AA8F304009A17DC /* EventEditViewController.swift in Sources */,
 				F73028F62AA61637003AAEE8 /* VehicleAddCustomFieldView.swift in Sources */,
+				F7202DFD2AA8AFB8009A17DC /* EventStoreManager.swift in Sources */,
 				F713B75E2A8F9ADF00EBB0BF /* VehicleDetailsTopSection.swift in Sources */,
 				F799E2AA2AA35F27009F3C3D /* EventRowView.swift in Sources */,
 				F7C5D7B32820198A00C4D213 /* VehicleImage.swift in Sources */,
@@ -673,12 +697,10 @@
 				INFOPLIST_FILE = MyAutomobile/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "My Automobile";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
-				INFOPLIST_KEY_NSCameraUsageDescription = "We require access to your camera, so you can take a photo of your vehicle.";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "We require access to your photo library, so you can add your vehicle's image.";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -706,12 +728,10 @@
 				INFOPLIST_FILE = MyAutomobile/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "My Automobile";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
-				INFOPLIST_KEY_NSCameraUsageDescription = "We require access to your camera, so you can take a photo of your vehicle.";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "We require access to your photo library, so you can add your vehicle's image.";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

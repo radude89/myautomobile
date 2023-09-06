@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-struct VehicleAddToolbarViewModifier: ViewModifier {
+struct AddToolbarViewModifier: ViewModifier {
+    
     @Environment(\.presentationMode) private var presentationMode
     @State private var isPresentingConfirmation = false
     
@@ -43,13 +44,13 @@ struct VehicleAddToolbarViewModifier: ViewModifier {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button("Done") {
                         onDone()
-                        presentationMode.wrappedValue.dismiss()
                     }
                     .bold()
                     .disabled(isDoneButtonDisabled)
                 }
             }
     }
+
 }
 
 extension View {
@@ -58,13 +59,13 @@ extension View {
         hasChanges: Bool,
         confirmationTitle: String,
         onDone: @escaping () -> Void) -> some View {
-        modifier(
-            VehicleAddToolbarViewModifier(
-                onDone: onDone,
-                isDoneButtonDisabled: isDoneButtonDisabled,
-                hasChanges: hasChanges,
-                confirmationTitle: confirmationTitle
+            modifier(
+                AddToolbarViewModifier(
+                    onDone: onDone,
+                    isDoneButtonDisabled: isDoneButtonDisabled,
+                    hasChanges: hasChanges,
+                    confirmationTitle: confirmationTitle
+                )
             )
-        )
-    }
+        }
 }

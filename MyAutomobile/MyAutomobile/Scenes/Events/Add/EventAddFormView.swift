@@ -13,6 +13,7 @@ struct EventAddFormView: View {
     @Binding var recurrenceIndex: Int
     @Binding var date: Date
     @Binding var titleText: String
+    @Binding var addEventToLocalCalendar: Bool
     
     let vehicles: [Vehicle]
     
@@ -49,6 +50,12 @@ struct EventAddFormView: View {
                 }
             } header: {
                 Text("Select date")
+            }
+            
+            Section {
+                Toggle(isOn: $addEventToLocalCalendar) {
+                    Text("Add to your local calendar")
+                }
             }
         }
     }

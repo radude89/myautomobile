@@ -33,11 +33,12 @@ struct VehicleDetailsView: View {
                         .disabled(viewModel.customFields.isEmpty)
                 }
             }
-            .onChange(of: modelText) { set(\.model, newValue: $0) }
-            .onChange(of: makeText) { set(\.make, newValue: $0) }
-            .onChange(of: numberPlateText) { set(\.numberPlate, newValue: $0) }
-            .onChange(of: vehicleColor) { viewModel.set(color: $0) }
+            .onChange(of: modelText) { set(\.model, newValue: $1) }
+            .onChange(of: makeText) { set(\.make, newValue: $1) }
+            .onChange(of: numberPlateText) { set(\.numberPlate, newValue: $1) }
+            .onChange(of: vehicleColor) { viewModel.set(color: $1) }
     }
+
 }
 
 // MARK: - Private methods

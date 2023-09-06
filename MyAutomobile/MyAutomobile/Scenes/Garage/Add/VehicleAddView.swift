@@ -11,6 +11,8 @@ struct VehicleAddView: View {
     
     @StateObject private var viewModel: VehicleAddViewModel
     
+    @Environment(\.presentationMode) private var presentationMode
+    
     @State private var makeText = ""
     @State private var modelText = ""
     @State private var numberPlateText = ""
@@ -74,5 +76,6 @@ private extension VehicleAddView {
             modelText: modelText,
             color: color
         )
+        presentationMode.wrappedValue.dismiss()
     }
 }

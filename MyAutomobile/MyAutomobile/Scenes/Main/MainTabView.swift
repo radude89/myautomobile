@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MainTabView: View {
     @StateObject private var vehicles = Vehicles()
+    @StateObject private var storeManager = EventStoreManager()
 
     var body: some View {
         TabView {
@@ -22,6 +23,7 @@ struct MainTabView: View {
                     Label("Events", systemImage: "calendar")
                 }
         }
+        .environmentObject(storeManager)
         .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)) { _ in
             saveData()
         }
