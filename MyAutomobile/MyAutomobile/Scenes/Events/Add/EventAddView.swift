@@ -60,8 +60,7 @@ struct EventAddView: View {
                         event: viewModel.makeEKEvent(),
                         eventStore: storeManager.dataStore.eventStore
                     ) { eventID in
-                        print("Event ID: \(eventID ?? "nil")")
-                        // TODO: update event with ID
+                        viewModel.set(eventLocalID: eventID)
                         presentationMode.wrappedValue.dismiss()
                     }
                 }

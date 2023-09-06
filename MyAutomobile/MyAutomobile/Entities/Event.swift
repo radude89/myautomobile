@@ -9,12 +9,14 @@ import Foundation
 
 struct Event {
     let id: UUID
+    var localCalendarID: String?
     let date: Date
     let description: String
     let recurrence: Recurrence
     
-    init(id: UUID = .init(), date: Date, description: String, recurrence: Recurrence = .once) {
+    init(id: UUID = .init(), localCalendarID: String? = nil, date: Date, description: String, recurrence: Recurrence = .once) {
         self.id = id
+        self.localCalendarID = localCalendarID
         self.date = date
         self.description = description
         self.recurrence = recurrence

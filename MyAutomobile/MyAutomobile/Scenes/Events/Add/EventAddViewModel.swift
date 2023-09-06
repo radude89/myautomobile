@@ -12,8 +12,9 @@ final class EventAddViewModel: ObservableObject {
     
     @ObservedObject var vehicles: Vehicles
 
-    private var event: Event?
     private let eventStore: EKEventStore
+    private var event: Event?
+    private var vehicleIndex: Int?
     
     init(vehicles: Vehicles, eventStore: EKEventStore) {
         self.vehicles = vehicles
@@ -33,6 +34,19 @@ final class EventAddViewModel: ObservableObject {
         let event = Event(date: date, description: titleText, recurrence: Event.Recurrence.allCases[recurrenceIndex])
         vehicles.items[vehicleIndex].events.append(event)
         self.event = event
+        self.vehicleIndex = vehicleIndex
+    }
+    
+    func set(eventLocalID: String?) {
+        guard let eventLocalID, let vehicleIndex, var event else {
+            return
+        }
+        
+        event.localCalendarID = eventLocalID
+        var events = vehicles.items[vehicleIndex].events
+        events.removeAll { $0.id == event.id }
+        events.append(event)
+        vehicles.items[vehicleIndex].events = events
     }
     
     func makeEKEvent() -> EKEvent {
