@@ -1,5 +1,5 @@
 //
-//  EventsView.swift
+//  EventListView.swift
 //  MyAutomobile
 //
 //  Created by Radu Dan on 19.04.2022.
@@ -7,17 +7,17 @@
 
 import SwiftUI
 
-struct EventsView: View {
+struct EventListView: View {
     
     @Environment(\.editMode) private var editMode
     @EnvironmentObject private var storeManager: EventStoreManager
 
-    @StateObject private var viewModel: EventsViewModel
-
+    @StateObject private var viewModel: EventListViewModel
+    
     @State private var showAddView = false
     @State private var sortOption = 0
     
-    init(viewModel: EventsViewModel) {
+    init(viewModel: EventListViewModel) {
         _viewModel = StateObject(wrappedValue: viewModel)
     }
     
@@ -25,13 +25,12 @@ struct EventsView: View {
         NavigationStack {
             contentView
                 .navigationTitle("Events")
-                .eventsToolbar(hasVehicles: viewModel.hasVehicles, hasEvents: viewModel.hasEvents, sort: $sortOption) {
+                .eventListToolbar(hasVehicles: viewModel.hasVehicles, hasEvents: viewModel.hasEvents, sort: $sortOption) {
                     showAddView.toggle()
                 }
                 .sheet(isPresented: $showAddView) {
                     EventAddView(viewModel: .init(
-                        vehicles: viewModel.vehicles,
-                        eventStore: storeManager.dataStore.eventStore
+                        vehicles: viewModel.vehicles, eventStoreManager: viewModel.eventStoreManager
                     ))
                 }
         }
@@ -39,7 +38,7 @@ struct EventsView: View {
     
 }
 
-private extension EventsView {
+private extension EventListView {
     @ViewBuilder
     var contentView: some View {
         if viewModel.hasEvents {
@@ -68,9 +67,13 @@ private extension EventsView {
     var allVehiclesContentView: some View {
         List {
             ForEach(viewModel.allEvents) { event in
-                EventRowView(event: event)
+                EventListRowView(event: event)
             }
-            .onDelete(perform: viewModel.deleteEvent)
+            .onDelete { indexSet in
+                Task {
+                    await viewModel.deleteEvent(at: indexSet)
+                }
+            }
         }
     }
     
@@ -80,7 +83,7 @@ private extension EventsView {
                 let vehicle = viewModel.vehicles.items[section]
                 Section {
                     ForEach(viewModel.events(for: vehicle)) { event in
-                        EventRowView(event: event)
+                        EventListRowView(event: event)
                     }
                     .onDelete { indexSet in
                         viewModel.deleteEvent(forVehicle: vehicle, at: indexSet)

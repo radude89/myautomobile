@@ -10,8 +10,8 @@ import EventKit
 actor EventDataStore {
     let eventStore: EKEventStore
     
-    init() {
-        self.eventStore = EKEventStore()
+    init(eventStore: EKEventStore = .init()) {
+        self.eventStore = eventStore
     }
     
     /// Verifies the authorization status for the app.
@@ -35,17 +35,9 @@ actor EventDataStore {
     private func requestFullAccess() async throws -> Bool {
         try await eventStore.requestFullAccessToEvents()
     }
-}
-  
-// MARK: - Event object
 
-extension EventDataStore {
-    func addEvent(_ event: Event, date: Date, calendar: EKCalendar? = nil) throws {
-        // TODO: add event here
-    }
-    
-    /// Batches all the remove operations.
-    func removeEvents(_ events: [EKEvent]) throws {
+    func removeEvents(withIDs ids: [String]) throws {
+        let events = ids.compactMap { eventStore.event(withIdentifier: $0) }
         do {
             try events.forEach { event in
                 try removeEvent(event)

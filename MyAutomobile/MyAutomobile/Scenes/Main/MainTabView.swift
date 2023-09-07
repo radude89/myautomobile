@@ -13,17 +13,16 @@ struct MainTabView: View {
 
     var body: some View {
         TabView {
-            GarageView(viewModel: .init(vehicles: vehicles))
+            VehicleListView(viewModel: .init(vehicles: vehicles, eventStoreManager: storeManager))
                 .tabItem {
-                    Label("Garage", systemImage: "car.2.fill")
+                    Label("Vehicles", systemImage: "car.2.fill")
                 }
             
-            EventsView(viewModel: .init(vehicles: vehicles))
+            EventListView(viewModel: .init(vehicles: vehicles, eventStoreManager: storeManager))
                 .tabItem {
                     Label("Events", systemImage: "calendar")
                 }
         }
-        .environmentObject(storeManager)
         .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)) { _ in
             saveData()
         }

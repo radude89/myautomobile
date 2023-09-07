@@ -1,5 +1,5 @@
 //
-//  VehicleRowView.swift
+//  VehicleListRowView.swift
 //  MyAutomobile
 //
 //  Created by Radu Dan on 02.05.2022.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct VehicleRowView: View {
+struct VehicleListRowView: View {
     let vehicle: Vehicle
     
     var body: some View {

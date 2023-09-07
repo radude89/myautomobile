@@ -1,17 +1,20 @@
 //
-//  EventsViewModel.swift
+//  EventListViewModel.swift
 //  MyAutomobile
 //
 //  Created by Radu Dan on 18.07.2022.
 //
 import SwiftUI
 
-final class EventsViewModel: ObservableObject {
+final class EventListViewModel: ObservableObject {
     
     @ObservedObject var vehicles: Vehicles
     
-    init(vehicles: Vehicles) {
+    private(set) var eventStoreManager: EventStoreManager
+    
+    init(vehicles: Vehicles, eventStoreManager: EventStoreManager) {
         self.vehicles = vehicles
+        self.eventStoreManager = eventStoreManager
     }
     
     var allEvents: [Event] {
@@ -32,12 +35,13 @@ final class EventsViewModel: ObservableObject {
         !vehicles.items.isEmpty
     }
     
-    func deleteEvent(at indexSet: IndexSet) {
+    func deleteEvent(at indexSet: IndexSet) async {
         guard let vehicle = vehicles.items.first else {
             return
         }
         
         deleteEvent(forVehicle: vehicle, at: indexSet)
+        await deleteEKEvents(vehicle: vehicle, at: indexSet)
     }
     
     func deleteEvent(forVehicle vehicle: Vehicle, at indexSet: IndexSet) {
@@ -51,5 +55,14 @@ final class EventsViewModel: ObservableObject {
         items.removeAll { $0.id == vehicle.id }
         items.append(vehicle)
         vehicles.items = items.sorted { $0.dateCreated < $1.dateCreated }
+    }
+    
+    private func deleteEKEvents(vehicle: Vehicle, at indexSet: IndexSet) async {
+        let eventIDs = indexSet.compactMap { vehicle.events[$0].localCalendarID }
+        do {
+            try await eventStoreManager.removeEvents(withIDs: eventIDs)
+        } catch {
+            print(error)
+        }
     }
 }

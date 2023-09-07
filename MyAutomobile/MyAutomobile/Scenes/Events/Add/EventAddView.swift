@@ -11,7 +11,6 @@ struct EventAddView: View {
     
     @StateObject private var viewModel: EventAddViewModel
     
-    @EnvironmentObject private var storeManager: EventStoreManager
     @Environment(\.presentationMode) private var presentationMode
     
     @State private var titleText = ""
@@ -38,11 +37,7 @@ struct EventAddView: View {
                 )
                 .interactiveDismissDisabled(hasChanges)
                 .task {
-                    do {
-                        try await storeManager.setupEventStore()
-                    } catch {
-                        print(error)
-                    }
+                    await viewModel.setupEventStore()
                 }
                 .alert("Event was saved", isPresented: $showSuccessAlert) {
                     Button("OK") {
@@ -58,7 +53,7 @@ struct EventAddView: View {
                 .sheet(isPresented: $showLocalCalendarView) {
                     EventEditViewController(
                         event: viewModel.makeEKEvent(),
-                        eventStore: storeManager.dataStore.eventStore
+                        dataStore: viewModel.dataStore
                     ) { eventID in
                         viewModel.set(eventLocalID: eventID)
                         presentationMode.wrappedValue.dismiss()

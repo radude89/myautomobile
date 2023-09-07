@@ -13,19 +13,19 @@ struct EventEditViewController: UIViewControllerRepresentable {
     typealias UIViewControllerType = EKEventEditViewController
     
     private let event: EKEvent
-    private let eventStore: EKEventStore
+    private let dataStore: EventDataStore
     private let onComplete: (String?) -> Void
     
-    init(event: EKEvent, eventStore: EKEventStore, onComplete: @escaping (String?) -> Void) {
+    init(event: EKEvent, dataStore: EventDataStore, onComplete: @escaping (String?) -> Void) {
         self.event = event
-        self.eventStore = eventStore
+        self.dataStore = dataStore
         self.onComplete = onComplete
     }
     
     /// Create an event edit view controller, then configure it with the specified event and event store.
     func makeUIViewController(context: Context) -> EKEventEditViewController {
         let controller = EKEventEditViewController()
-        controller.eventStore = eventStore
+        controller.eventStore = dataStore.eventStore
         controller.event = event
         controller.editViewDelegate = context.coordinator
         return controller

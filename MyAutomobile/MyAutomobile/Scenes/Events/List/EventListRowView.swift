@@ -1,5 +1,5 @@
 //
-//  EventRowView.swift
+//  EventListRowView.swift
 //  MyAutomobile
 //
 //  Created by Radu Dan on 02.09.2023.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct EventRowView: View {
+struct EventListRowView: View {
     let event: Event
 
     var body: some View {
@@ -42,11 +42,5 @@ struct EventRowView: View {
         } else {
             return .mint
         }
-    }
-}
-
-struct EventRowView_Previews: PreviewProvider {
-    static var previews: some View {
-        EventRowView(event: .demoEvents[2])
     }
 }

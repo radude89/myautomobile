@@ -1,5 +1,5 @@
 //
-//  GarageView.swift
+//  VehicleListView.swift
 //  MyAutomobile
 //
 //  Created by Radu Dan on 19.04.2022.
@@ -7,13 +7,13 @@
 
 import SwiftUI
 
-struct GarageView: View {
+struct VehicleListView: View {
 
     @Environment(\.editMode) private var editMode
-    @StateObject private var viewModel: GarageViewModel
+    @StateObject private var viewModel: VehicleListViewModel
     @State private var showAddView = false
     
-    init(viewModel: GarageViewModel) {
+    init(viewModel: VehicleListViewModel) {
         _viewModel = StateObject(wrappedValue: viewModel)
     }
     
@@ -24,7 +24,7 @@ struct GarageView: View {
                 .navigationDestination(for: Vehicle.self) { vehicle in
                     VehicleDetailsView(viewModel: .init(vehicle: vehicle, vehicles: viewModel.vehicles))
                 }
-                .garageToolbar(hasVehicles: viewModel.hasVehicles) {
+                .vehicleListToolbar(hasVehicles: viewModel.hasVehicles) {
                     showAddView.toggle()
                 }
                 .sheet(isPresented: $showAddView) {
@@ -42,10 +42,14 @@ struct GarageView: View {
             List {
                 ForEach(viewModel.vehicles.items) { vehicle in
                     NavigationLink(value: vehicle) {
-                        VehicleRowView(vehicle: vehicle)
+                        VehicleListRowView(vehicle: vehicle)
                     }
                 }
-                .onDelete(perform: viewModel.delete)
+                .onDelete { indexSet in
+                    Task {
+                        await viewModel.delete(atOffsets: indexSet)
+                    }
+                }
             }
         } else {
             Text("You haven't added any vehicles.")

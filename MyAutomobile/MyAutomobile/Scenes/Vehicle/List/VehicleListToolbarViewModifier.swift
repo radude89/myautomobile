@@ -1,5 +1,5 @@
 //
-//  GarageToolbarViewModifier.swift
+//  VehicleListToolbarViewModifier.swift
 //  MyAutomobile
 //
 //  Created by Radu Dan on 23.08.2023.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct GarageToolbarViewModifier: ViewModifier {
+struct VehicleListToolbarViewModifier: ViewModifier {
     let hasVehicles: Bool
     let onAdd: () -> Void
     
@@ -29,9 +29,9 @@ struct GarageToolbarViewModifier: ViewModifier {
 }
 
 extension View {
-    func garageToolbar(hasVehicles: Bool, onAdd: @escaping () -> Void) -> some View {
+    func vehicleListToolbar(hasVehicles: Bool, onAdd: @escaping () -> Void) -> some View {
         modifier(
-            GarageToolbarViewModifier(
+            VehicleListToolbarViewModifier(
                 hasVehicles: hasVehicles,
                 onAdd: onAdd
             )

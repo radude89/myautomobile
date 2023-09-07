@@ -1,5 +1,5 @@
 //
-//  EventsToolbarViewModifier.swift
+//  EventListToolbarViewModifier.swift
 //  MyAutomobile
 //
 //  Created by Radu Dan on 02.09.2023.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct EventsToolbarViewModifier: ViewModifier {
+struct EventListToolbarViewModifier: ViewModifier {
     let hasVehicles: Bool
     let hasEvents: Bool
     let onAdd: () -> Void
@@ -48,14 +48,14 @@ struct EventsToolbarViewModifier: ViewModifier {
 }
 
 extension View {
-    func eventsToolbar(
+    func eventListToolbar(
         hasVehicles: Bool,
         hasEvents: Bool,
         sort: Binding<Int>,
         onAdd: @escaping () -> Void
     ) -> some View {
         modifier(
-            EventsToolbarViewModifier(
+            EventListToolbarViewModifier(
                 hasVehicles: hasVehicles,
                 hasEvents: hasEvents,
                 onAdd: onAdd,
