@@ -49,7 +49,7 @@ private extension EventListView {
     }
     
     var emptyView: some View {
-        Text("You haven't added any events.\nYou need to add at least one car to be able to add events.")
+        Text("events_empty")
             .font(.body)
             .multilineTextAlignment(.center)
             .padding([.leading, .trailing])

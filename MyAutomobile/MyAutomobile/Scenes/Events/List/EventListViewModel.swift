@@ -5,6 +5,7 @@
 //  Created by Radu Dan on 18.07.2022.
 //
 import SwiftUI
+import EventKit
 
 final class EventListViewModel: ObservableObject {
     

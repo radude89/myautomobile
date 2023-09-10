@@ -17,7 +17,7 @@ struct EventListRowView: View {
                     .font(.body)
                     .bold()
                     .frame(maxWidth: .infinity, alignment: .leading)
-                Text("Recurrence: \(event.recurrence.rawValue)")
+                Text(event.recurrence.longLocalizedKey)
                     .font(.caption)
                     .italic()
                     .frame(maxWidth: .infinity, alignment: .leading)

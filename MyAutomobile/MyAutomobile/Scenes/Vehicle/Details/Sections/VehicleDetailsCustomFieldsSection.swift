@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct VehicleDetailsCustomFieldsSection: View {
+
     @State private var alertIsPresented = false
     @State private var labelText = ""
     @State private var valueText = ""
@@ -40,9 +41,10 @@ struct VehicleDetailsCustomFieldsSection: View {
         } header: {
             Text("Additional information")
         } footer: {
-            Text("Here you can find your optional vehicle details. You can add or delete key-value properties for your vehicle.\nFor example, you can enter the field name \"Vehicle age\" with the value \"5 years\".")
+            Text("footer_additional_info")
         }
     }
+
 }
 
 private extension VehicleDetailsCustomFieldsSection {

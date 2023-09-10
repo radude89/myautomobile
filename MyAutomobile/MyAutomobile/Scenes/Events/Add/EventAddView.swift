@@ -32,7 +32,7 @@ struct EventAddView: View {
                 .addToolbar(
                     isDoneButtonDisabled: doneButtonIsDisabled,
                     hasChanges: hasChanges,
-                    confirmationTitle: "Are you sure you want to discard this new event?",
+                    confirmationTitle: "alert_confirmation_event_discard_title",
                     onDone: saveEvent
                 )
                 .interactiveDismissDisabled(hasChanges)
@@ -48,7 +48,7 @@ struct EventAddView: View {
                         }
                     }
                 } message: {
-                    Text("If \"Add to your local calendar\" toggle is on, then you will be redirected to your calendar view.")
+                    Text("alert_event_info")
                 }
                 .sheet(isPresented: $showLocalCalendarView) {
                     EventEditViewController(

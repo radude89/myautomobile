@@ -20,7 +20,7 @@ struct VehicleAddCustomFieldView: View {
             .addToolbar(
                 isDoneButtonDisabled: doneButtonIsDisabled,
                 hasChanges: hasChanges,
-                confirmationTitle: "Are you sure you want to discard this new custom field?",
+                confirmationTitle: "alert_confirmation_custom_field_discard_title",
                 onDone:  { onDone(labelText, valueText) }
             )
             .interactiveDismissDisabled(hasChanges)
@@ -36,7 +36,7 @@ private extension VehicleAddCustomFieldView {
             } header: {
                 Text("Name")
             } footer: {
-                Text("A field can be your vehicle's \"Fuel type\".")
+                Text("footer_custom_field_name")
             }
             
             Section {
@@ -44,7 +44,7 @@ private extension VehicleAddCustomFieldView {
             } header: {
                 Text("Value")
             }  footer: {
-                Text("A value can be \"Gas\" if you entered as a name \"Fuel type\".")
+                Text("footer_custom_field_value")
             }
         }
     }

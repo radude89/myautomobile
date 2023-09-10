@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct VehicleDetailsMandatoryFieldsSection: View {
+
     @Binding var makeText: String
     @Binding var modelText: String
     @Binding var vehicleColor: Color
@@ -16,12 +17,13 @@ struct VehicleDetailsMandatoryFieldsSection: View {
         Section {
             TextField("Make", text: $makeText)
             TextField("Model", text: $modelText)
-            ColorPicker("Vehicle's color", selection: $vehicleColor)
+            ColorPicker("vehicle_color", selection: $vehicleColor)
                 .frame(maxWidth: .infinity)
         } header: {
             Text("Vehicle information")
         } footer: {
-            Text("These are your key details for your vehicle. You can edit them by diretly tapping on a row.\nTo pick a color you need to tap on the right circle of \"Vehicle's color\" row.")
+            Text("footer_color")
         }
     }
+
 }

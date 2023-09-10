@@ -26,13 +26,13 @@ struct EventAddFormView: View {
             }
             
             Section {
-                Picker("Car", selection: $selectedVehicleIndex) {
+                Picker("Vehicle", selection: $selectedVehicleIndex) {
                     ForEach(vehicles.indices, id: \.self) { index in
                         Text(vehicles[index].numberPlate)
                     }
                 }
             } header: {
-                Text("Select your car")
+                Text("Select your vehicle")
             }
             
             Section {
@@ -45,7 +45,7 @@ struct EventAddFormView: View {
                 
                 Picker("Recurrence", selection: $recurrenceIndex) {
                     ForEach(0..<Event.Recurrence.allCases.count, id: \.self) { index in
-                        Text(Event.Recurrence.allCases[index].rawValue)
+                        Text(Event.Recurrence.allCases[index].localizedKey)
                     }
                 }
             } header: {

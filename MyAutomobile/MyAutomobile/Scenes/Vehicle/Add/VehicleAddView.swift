@@ -29,7 +29,7 @@ struct VehicleAddView: View {
                 .addToolbar(
                     isDoneButtonDisabled: doneButtonIsDisabled,
                     hasChanges: hasChanges,
-                    confirmationTitle: "Are you sure you want to discard this new vehicle?",
+                    confirmationTitle: "alert_confirmation_vehicle_discard_title",
                     onDone: saveVehicle
                 )
                 .interactiveDismissDisabled(hasChanges)
@@ -52,7 +52,7 @@ private extension VehicleAddView {
             
             Section {
                 HStack {
-                    ColorPicker("Vehicle's color", selection: $color)
+                    ColorPicker("vehicle_color", selection: $color)
                         .frame(maxWidth: .infinity)
                 }
             } header: {

@@ -25,12 +25,46 @@ struct Event {
 
 extension Event {
     enum Recurrence: String, Codable, CaseIterable {
-        case once = "One time"
-        case weekly = "Weekly"
-        case monthly = "Monthly"
-        case quarterly = "Every quarter"
-        case everySixMonths = "Every six months"
-        case yearly = "Every year"
+        case once
+        case weekly
+        case monthly
+        case quarterly
+        case everySixMonths
+        case yearly
+        
+        var localizedKey: String {
+            switch self {
+            case .once:
+                return String(localized: "One time")
+            case .weekly:
+                return String(localized: "Weekly")
+            case .monthly:
+                return String(localized: "Monthly")
+            case .quarterly:
+                return String(localized: "Every quarter")
+            case .everySixMonths:
+                return String(localized: "Every six months")
+            case .yearly:
+                return String(localized: "Every year")
+            }
+        }
+        
+        var longLocalizedKey: String {
+            switch self {
+            case .once:
+                return String(localized: "Recurrence: one time")
+            case .weekly:
+                return String(localized: "Recurrence: weekly")
+            case .monthly:
+                return String(localized: "Recurrence: monthly")
+            case .quarterly:
+                return String(localized: "Recurrence: every quarter")
+            case .everySixMonths:
+                return String(localized: "Recurrence: every six months")
+            case .yearly:
+                return String(localized: "Recurrence: every year")
+            }
+        }
     }
 }
 

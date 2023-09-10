@@ -52,7 +52,7 @@ struct VehicleListView: View {
                 }
             }
         } else {
-            Text("You haven't added any vehicles.")
+            Text("vehicles_empty")
                 .font(.body)
                 .multilineTextAlignment(.center)
         }
