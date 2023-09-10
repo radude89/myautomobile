@@ -1,0 +1,9 @@
+/* 
+  InfoPlist.strings
+  MyAutomobile
+
+  Created by Radu Dan on 10.09.2023.
+  
+*/
+
+"NSCalendarsFullAccessUsageDescription"="Erforderlich, um Ereignisse in Ihrem lokalen Kalender hinzuzufügen und zu löschen.";

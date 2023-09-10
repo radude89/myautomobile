@@ -34,6 +34,7 @@
 		F760EF0B2A96FDA500C38F3B /* VehicleAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F760EF0A2A96FDA500C38F3B /* VehicleAddView.swift */; };
 		F760EF0D2A9701F300C38F3B /* VehicleAddViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F760EF0C2A9701F300C38F3B /* VehicleAddViewModel.swift */; };
 		F760EF0F2A97066700C38F3B /* AddToolbarViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F760EF0E2A97066700C38F3B /* AddToolbarViewModifier.swift */; };
+		F77224772AAE52C80097E190 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F77224792AAE52C80097E190 /* InfoPlist.strings */; };
 		F799E2AA2AA35F27009F3C3D /* EventListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F799E2A92AA35F27009F3C3D /* EventListRowView.swift */; };
 		F7C5D7AF282016FE00C4D213 /* VehicleListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C5D7AE282016FE00C4D213 /* VehicleListViewModel.swift */; };
 		F7C5D7B12820191E00C4D213 /* VehicleListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C5D7B02820191E00C4D213 /* VehicleListRowView.swift */; };
@@ -98,6 +99,12 @@
 		F760EF0A2A96FDA500C38F3B /* VehicleAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleAddView.swift; sourceTree = "<group>"; };
 		F760EF0C2A9701F300C38F3B /* VehicleAddViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleAddViewModel.swift; sourceTree = "<group>"; };
 		F760EF0E2A97066700C38F3B /* AddToolbarViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToolbarViewModifier.swift; sourceTree = "<group>"; };
+		F77224782AAE52C80097E190 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F772247A2AAE52CD0097E190 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F772247B2AAE52CE0097E190 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F772247C2AAE52CF0097E190 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F772247D2AAE52D00097E190 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F772247E2AAE53530097E190 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F799E2A92AA35F27009F3C3D /* EventListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListRowView.swift; sourceTree = "<group>"; };
 		F7C5D7AE282016FE00C4D213 /* VehicleListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleListViewModel.swift; sourceTree = "<group>"; };
 		F7C5D7B02820191E00C4D213 /* VehicleListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleListRowView.swift; sourceTree = "<group>"; };
@@ -189,6 +196,7 @@
 				F721890427FABE5F00F80AC0 /* Preview Content */,
 				F7EEF30D280FE3E70086AB03 /* Supporting files */,
 				F70D1F3F2898C453005FFC66 /* Info.plist */,
+				F77224792AAE52C80097E190 /* InfoPlist.strings */,
 			);
 			path = MyAutomobile;
 			sourceTree = "<group>";
@@ -457,9 +465,11 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
 				ro,
 				es,
+				it,
+				de,
+				fr,
 			);
 			mainGroup = F72188F227FABE5D00F80AC0;
 			productRefGroup = F72188FC27FABE5D00F80AC0 /* Products */;
@@ -479,6 +489,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F721890627FABE5F00F80AC0 /* Preview Assets.xcassets in Resources */,
+				F77224772AAE52C80097E190 /* InfoPlist.strings in Resources */,
 				F721890327FABE5F00F80AC0 /* Assets.xcassets in Resources */,
 				F7202E082AAA4BE4009A17DC /* Localizable.xcstrings in Resources */,
 			);
@@ -574,6 +585,22 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		F77224792AAE52C80097E190 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F77224782AAE52C80097E190 /* en */,
+				F772247A2AAE52CD0097E190 /* de */,
+				F772247B2AAE52CE0097E190 /* it */,
+				F772247C2AAE52CF0097E190 /* ro */,
+				F772247D2AAE52D00097E190 /* es */,
+				F772247E2AAE53530097E190 /* fr */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		F721891D27FABE5F00F80AC0 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -625,7 +652,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -679,7 +706,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
