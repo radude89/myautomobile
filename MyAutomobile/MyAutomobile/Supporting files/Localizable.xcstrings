@@ -414,37 +414,37 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Wenn der Schalter \"Zum lokalen Kalender hinzufügen\" aktiviert ist, werden Sie zur Ansicht Ihres Kalenders umgeleitet."
+            "value" : "Wenn der Schalter \"Zum lokalen Kalender hinzufügen\" aktiviert ist, werden Sie zur Ansicht Ihres Kalenders umgeleitet.\nStellen Sie sicher, dass Sie der App vollen Zugriff auf Ihren Kalender über die Geräteeinstellungen gewähren."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "If \"Add to your local calendar\" toggle is on, then you will be redirected to your calendar view."
+            "value" : "If \"Add to your local calendar\" toggle is on, then you will be redirected to your calendar view.\nMake sure you give the app full access to your calendar from your device settings."
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Si el interruptor \"Agregar a tu calendario local\" está encendido, serás redirigido a la vista de tu calendario."
+            "value" : "Si el interruptor \"Agregar a tu calendario local\" está encendido, serás redirigido a la vista de tu calendario.\nAsegúrate de dar a la aplicación acceso completo a tu calendario desde la configuración de tu dispositivo."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Si le _toggle_ \"Ajouter à votre calendrier local\" est activé, vous serez redirigé vers votre vue de calendrier."
+            "value" : "Si le toggle « Ajouter à votre calendrier local » est activé, vous serez redirigé vers votre vue de calendrier.\nAssurez-vous de donner à l'application un accès complet à votre calendrier depuis les paramètres de votre appareil."
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Se il toggle \"Aggiungi al tuo calendario locale\" è attivo, verrai reindirizzato alla vista del calendario."
+            "value" : "Se il toggle \"Aggiungi al tuo calendario locale\" è attivo, verrai reindirizzato alla vista del calendario.\nAssicurati di concedere all'app pieno accesso al tuo calendario dalle impostazioni del dispositivo."
           }
         },
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Dacă _toggle-ul_ \"Adaugă în calendarul tău local\" este activat, veți fi redirecționat către vizualizarea calendarului."
+            "value" : "Dacă toggle-ul \"Adaugă în calendarul tău local\" este activat, veți fi redirecționat către vizualizarea calendarului.\nAsigurați-vă că oferiți aplicației acces complet la calendarul dvs. din setările dispozitivului."
           }
         }
       }
@@ -1074,7 +1074,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ici, vous pouvez trouver les détails optionnels de votre véhicule. Vous pouvez ajouter ou supprimer des propriétés clé-valeur pour votre véhicule.\nPar exemple, vous pouvez entrer le nom du champ \"Âge du véhicule\" avec la valeur \"5 ans\"."
+            "value" : "Ici, vous pouvez trouver les détails optionnels de votre véhicule. Vous pouvez ajouter ou supprimer des propriétés clé-valeur pour votre véhicule.\nPar exemple, vous pouvez entrer le nom du champ « Âge du véhicule » avec la valeur « 5 ans »."
           }
         },
         "it" : {
@@ -1115,7 +1115,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ce sont les détails clés de votre véhicule. Vous pouvez les modifier en appuyant directement sur une ligne.\nPour choisir une couleur, vous devez appuyer sur le cercle de droite de la ligne \"Couleur du véhicule\"."
+            "value" : "Ce sont les détails clés de votre véhicule. Vous pouvez les modifier en appuyant directement sur une ligne.\nPour choisir une couleur, vous devez appuyer sur le cercle de droite de la ligne « Couleur du véhicule »."
           }
         },
         "it" : {
@@ -1156,7 +1156,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Un champ peut être le \"Type de carburant\" de votre véhicule."
+            "value" : "Un champ peut être le « Type de carburant » de votre véhicule."
           }
         },
         "it" : {
@@ -1197,7 +1197,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Une valeur peut être \"Essence\" si vous l'avez entrée comme nom \"Type de carburant\"."
+            "value" : "Une valeur peut être « Essence » si vous l'avez entrée comme nom « Type de carburant »."
           }
         },
         "it" : {
