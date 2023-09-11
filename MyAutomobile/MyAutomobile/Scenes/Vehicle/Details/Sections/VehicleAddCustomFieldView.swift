@@ -9,6 +9,8 @@ import SwiftUI
 
 struct VehicleAddCustomFieldView: View {
 
+    @Environment(\.presentationMode) private var presentationMode
+
     @State private var labelText = ""
     @State private var valueText = ""
     
@@ -21,7 +23,10 @@ struct VehicleAddCustomFieldView: View {
                 isDoneButtonDisabled: doneButtonIsDisabled,
                 hasChanges: hasChanges,
                 confirmationTitle: "alert_confirmation_custom_field_discard_title",
-                onDone:  { onDone(labelText, valueText) }
+                onDone: {
+                    onDone(labelText, valueText)
+                    presentationMode.wrappedValue.dismiss()
+                }
             )
             .interactiveDismissDisabled(hasChanges)
     }
