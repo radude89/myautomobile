@@ -72,7 +72,8 @@ private extension EventAddView {
             date: $date,
             titleText: $titleText,
             addEventToLocalCalendar: $addEventToLocalCalendar,
-            vehicles: viewModel.vehicles.items
+            vehicles: viewModel.vehicles.items,
+            showSyncWithLocalCalendarSection: viewModel.showSyncWithLocalCalendarSection
         )
     }
     

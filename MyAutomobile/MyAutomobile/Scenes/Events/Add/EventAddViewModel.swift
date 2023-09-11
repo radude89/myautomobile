@@ -29,6 +29,15 @@ final class EventAddViewModel: ObservableObject {
         eventStoreManager.dataStore
     }
     
+    var showSyncWithLocalCalendarSection: Bool {
+        switch eventStoreManager.authorizationStatus {
+        case .notDetermined, .fullAccess, .writeOnly:
+            return true
+        default:
+            return false
+        }
+    }
+    
     func setupEventStore() async {
         do {
             try await eventStoreManager.setupEventStore()

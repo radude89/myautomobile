@@ -16,6 +16,9 @@ struct EventAddFormView: View {
     @Binding var addEventToLocalCalendar: Bool
     
     let vehicles: [Vehicle]
+    let showSyncWithLocalCalendarSection: Bool
+
+    private let recurrences = Event.Recurrence.allCases
     
     var body: some View {
         Form {
@@ -44,17 +47,19 @@ struct EventAddFormView: View {
                 }
                 
                 Picker("Recurrence", selection: $recurrenceIndex) {
-                    ForEach(0..<Event.Recurrence.allCases.count, id: \.self) { index in
-                        Text(Event.Recurrence.allCases[index].localizedKey)
+                    ForEach(0..<recurrences.count, id: \.self) { index in
+                        Text(recurrences[index].localizedKey)
                     }
                 }
             } header: {
                 Text("Select date")
             }
             
-            Section {
-                Toggle(isOn: $addEventToLocalCalendar) {
-                    Text("Add to your local calendar")
+            if showSyncWithLocalCalendarSection {
+                Section {
+                    Toggle(isOn: $addEventToLocalCalendar) {
+                        Text("Add to your local calendar")
+                    }
                 }
             }
         }
