@@ -10,12 +10,17 @@ import SwiftUI
 struct MainTabView: View {
     @StateObject private var vehicles = Vehicles()
     @StateObject private var storeManager = EventStoreManager()
+    @StateObject private var purchaseManager = PurchaseManager()
 
     var body: some View {
         TabView {
-            VehicleListView(viewModel: .init(vehicles: vehicles, eventStoreManager: storeManager))
+            VehicleListView(viewModel: .init(vehicles: vehicles, eventStoreManager: storeManager, purchaseManager: purchaseManager))
                 .tabItem {
                     Label("Vehicles", systemImage: "car.2.fill")
+                }
+                .environmentObject(purchaseManager)
+                .task {
+                    await purchaseManager.updatePurchasedProducts()
                 }
             
             EventListView(viewModel: .init(vehicles: vehicles, eventStoreManager: storeManager))

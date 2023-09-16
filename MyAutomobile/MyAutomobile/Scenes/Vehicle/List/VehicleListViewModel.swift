@@ -12,14 +12,26 @@ final class VehicleListViewModel: ObservableObject {
     
     @ObservedObject var vehicles: Vehicles
     private let eventStoreManager: EventStoreManager
+    private let purchaseManager: PurchaseManager
     
-    init(vehicles: Vehicles, eventStoreManager: EventStoreManager) {
+    init(vehicles: Vehicles, eventStoreManager: EventStoreManager, purchaseManager: PurchaseManager) {
         self.vehicles = vehicles
         self.eventStoreManager = eventStoreManager
+        self.purchaseManager = purchaseManager
     }
     
     var hasVehicles: Bool {
         !vehicles.items.isEmpty
+    }
+    
+    var canPresentAddView: Bool {
+        if purchaseManager.hasBoughtUnlimitedVehicles {
+            print("Has bought unlimited vehicles.")
+            return true
+        }
+        let numberOfVehiclesInStore = vehicles.items.count
+        let availableVehicleSlots = purchaseManager.availableVehicleSlots
+        return availableVehicleSlots > numberOfVehiclesInStore
     }
     
     func delete(atOffsets offsets: IndexSet) async {

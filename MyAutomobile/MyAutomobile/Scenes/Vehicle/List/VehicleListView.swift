@@ -28,8 +28,11 @@ struct VehicleListView: View {
                     showAddView.toggle()
                 }
                 .sheet(isPresented: $showAddView) {
-                    VehicleAddView(viewModel: .init(vehicles: viewModel.vehicles))
-//                    IAPView()
+                    if viewModel.canPresentAddView {
+                        VehicleAddView(viewModel: .init(vehicles: viewModel.vehicles))
+                    } else {
+                        IAPView()
+                    }
                 }
                 .onReceive(viewModel.vehicles.objectWillChange) {
                     viewModel.objectWillChange.send()
