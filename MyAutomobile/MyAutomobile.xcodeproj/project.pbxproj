@@ -31,6 +31,8 @@
 		F73028F22AA378E2003AAEE8 /* EventAddFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73028F12AA378E2003AAEE8 /* EventAddFormView.swift */; };
 		F73028F42AA5FD93003AAEE8 /* FileManagerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73028F32AA5FD93003AAEE8 /* FileManagerExtensions.swift */; };
 		F73028F62AA61637003AAEE8 /* VehicleAddCustomFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73028F52AA61637003AAEE8 /* VehicleAddCustomFieldView.swift */; };
+		F739B5DE2AB4DC000089D12F /* IAPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F739B5DD2AB4DC000089D12F /* IAPView.swift */; };
+		F739B5E02AB4E05D0089D12F /* IAPButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F739B5DF2AB4E05D0089D12F /* IAPButton.swift */; };
 		F760EF0B2A96FDA500C38F3B /* VehicleAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F760EF0A2A96FDA500C38F3B /* VehicleAddView.swift */; };
 		F760EF0D2A9701F300C38F3B /* VehicleAddViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F760EF0C2A9701F300C38F3B /* VehicleAddViewModel.swift */; };
 		F760EF0F2A97066700C38F3B /* AddToolbarViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F760EF0E2A97066700C38F3B /* AddToolbarViewModifier.swift */; };
@@ -96,6 +98,8 @@
 		F73028F12AA378E2003AAEE8 /* EventAddFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventAddFormView.swift; sourceTree = "<group>"; };
 		F73028F32AA5FD93003AAEE8 /* FileManagerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileManagerExtensions.swift; sourceTree = "<group>"; };
 		F73028F52AA61637003AAEE8 /* VehicleAddCustomFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleAddCustomFieldView.swift; sourceTree = "<group>"; };
+		F739B5DD2AB4DC000089D12F /* IAPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPView.swift; sourceTree = "<group>"; };
+		F739B5DF2AB4E05D0089D12F /* IAPButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPButton.swift; sourceTree = "<group>"; };
 		F760EF0A2A96FDA500C38F3B /* VehicleAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleAddView.swift; sourceTree = "<group>"; };
 		F760EF0C2A9701F300C38F3B /* VehicleAddViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleAddViewModel.swift; sourceTree = "<group>"; };
 		F760EF0E2A97066700C38F3B /* AddToolbarViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToolbarViewModifier.swift; sourceTree = "<group>"; };
@@ -248,6 +252,15 @@
 			path = Add;
 			sourceTree = "<group>";
 		};
+		F739B5DC2AB4DBDA0089D12F /* IAP */ = {
+			isa = PBXGroup;
+			children = (
+				F739B5DF2AB4E05D0089D12F /* IAPButton.swift */,
+				F739B5DD2AB4DC000089D12F /* IAPView.swift */,
+			);
+			path = IAP;
+			sourceTree = "<group>";
+		};
 		F760EF092A96FD9100C38F3B /* Add */ = {
 			isa = PBXGroup;
 			children = (
@@ -330,6 +343,7 @@
 			isa = PBXGroup;
 			children = (
 				F7D931AB287D303700289230 /* Events */,
+				F739B5DC2AB4DBDA0089D12F /* IAP */,
 				F7D931A7287D2FEB00289230 /* Main */,
 				F7C5D7BA28201BAD00C4D213 /* Vehicle */,
 			);
@@ -529,6 +543,7 @@
 				F73028F62AA61637003AAEE8 /* VehicleAddCustomFieldView.swift in Sources */,
 				F7202DFD2AA8AFB8009A17DC /* EventStoreManager.swift in Sources */,
 				F713B75E2A8F9ADF00EBB0BF /* VehicleDetailsTopSection.swift in Sources */,
+				F739B5DE2AB4DC000089D12F /* IAPView.swift in Sources */,
 				F799E2AA2AA35F27009F3C3D /* EventListRowView.swift in Sources */,
 				F7C5D7B32820198A00C4D213 /* VehicleImage.swift in Sources */,
 				F7C5D7B12820191E00C4D213 /* VehicleListRowView.swift in Sources */,
@@ -538,6 +553,7 @@
 				F73028EE2AA36D75003AAEE8 /* EventAddView.swift in Sources */,
 				F72188FF27FABE5D00F80AC0 /* MyAutomobileApp.swift in Sources */,
 				F713B7602A8F9C1500EBB0BF /* VehicleDetailsMandatoryFieldsSection.swift in Sources */,
+				F739B5E02AB4E05D0089D12F /* IAPButton.swift in Sources */,
 				F7FC88ED280EA42E007BA063 /* Vehicle.swift in Sources */,
 				F7C5D7B7282019C100C4D213 /* MockModels.swift in Sources */,
 				F7EEF310280FE8AB0086AB03 /* Event.swift in Sources */,

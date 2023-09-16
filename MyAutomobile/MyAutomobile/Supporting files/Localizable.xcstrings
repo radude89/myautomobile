@@ -1214,6 +1214,47 @@
         }
       }
     },
+    "iap.title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sie haben das Limit Ihrer Fahrzeuge erreicht.\nSie können eines der untenstehenden Pakete kaufen."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You've reached the limit of your vehicles.\nYou can purchase one of the packs below."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Has alcanzado el límite de tus vehículos.\nPuedes comprar uno de los paquetes de abajo."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vous avez atteint la limite de vos véhicules.\nVous pouvez acheter l'un des packs ci-dessous."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hai raggiunto il limite dei tuoi veicoli.\nPuoi acquistare uno dei pacchetti qui sotto."
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ați atins limita vehiculelor dumneavoastră.\nPuteți achiziționa unul dintre pachetele de mai jos."
+          }
+        }
+      }
+    },
     "Information" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1805,6 +1846,40 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Recurență: săptămânal"
+          }
+        }
+      }
+    },
+    "Restore purchases" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Einkäufe wiederherstellen"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Restaurar compras"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Restaurer les achats"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ripristina gli acquisti"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Restaurează achizițiile"
           }
         }
       }
