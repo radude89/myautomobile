@@ -110,6 +110,7 @@
 		F772247D2AAE52D00097E190 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F772247E2AAE53530097E190 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F799E2A92AA35F27009F3C3D /* EventListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListRowView.swift; sourceTree = "<group>"; };
+		F7B3DA392AB5CEE30045359B /* MainStoreKitConfig.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = MainStoreKitConfig.storekit; sourceTree = "<group>"; };
 		F7C5D7AE282016FE00C4D213 /* VehicleListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleListViewModel.swift; sourceTree = "<group>"; };
 		F7C5D7B02820191E00C4D213 /* VehicleListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleListRowView.swift; sourceTree = "<group>"; };
 		F7C5D7B22820198A00C4D213 /* VehicleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleImage.swift; sourceTree = "<group>"; };
@@ -389,6 +390,7 @@
 			isa = PBXGroup;
 			children = (
 				F721890227FABE5F00F80AC0 /* Assets.xcassets */,
+				F7B3DA392AB5CEE30045359B /* MainStoreKitConfig.storekit */,
 				F7202E072AAA4BE4009A17DC /* Localizable.xcstrings */,
 			);
 			path = "Supporting files";
