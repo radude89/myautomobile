@@ -19,7 +19,7 @@ struct IAPView: View {
             
             VStack(spacing: 20) {
                 ForEach(Array(purchaseManager.products.enumerated()), id: \.element.id) { index, product in
-                    IAPButton(title: titles[index], subtitle: product.displayName) {
+                    IAPButton(title: titles[index], subtitle: subtitle(for: product)) {
                         Task { await buyProduct(product) }
                     }
                     .disabled(purchaseManager.hasPurchasedProduct(withID: product.id))
@@ -73,6 +73,10 @@ private extension IAPView {
         } catch {
             print(error)
         }
+    }
+    
+    func subtitle(for product: Product) -> String {
+        "\(product.displayName) - \(product.displayPrice)"
     }
 }
 
