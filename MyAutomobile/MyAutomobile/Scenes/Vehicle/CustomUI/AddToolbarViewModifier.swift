@@ -15,7 +15,7 @@ struct AddToolbarViewModifier: ViewModifier {
     let onDone: () -> Void
     let isDoneButtonDisabled: Bool
     let hasChanges: Bool
-    let confirmationTitle: String
+    let confirmationTitle: String.LocalizationValue
     
     func body(content: Content) -> some View {
         content
@@ -29,7 +29,7 @@ struct AddToolbarViewModifier: ViewModifier {
                         }
                     }
                     .confirmationDialog(
-                        confirmationTitle,
+                        String(localized: confirmationTitle),
                         isPresented: $isPresentingConfirmation,
                         titleVisibility: .visible
                     ) {
@@ -57,7 +57,7 @@ extension View {
     func addToolbar(
         isDoneButtonDisabled: Bool,
         hasChanges: Bool,
-        confirmationTitle: String,
+        confirmationTitle: String.LocalizationValue,
         onDone: @escaping () -> Void) -> some View {
             modifier(
                 AddToolbarViewModifier(
