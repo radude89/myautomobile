@@ -9,7 +9,7 @@ import Foundation
 import StoreKit
 
 @MainActor
-final class PurchaseManager: ObservableObject {
+final class PurchaseManager: NSObject, ObservableObject {
     private let productIDs = [
         "com.rdan.myautomobile.iap.onevehicle",
         "com.rdan.myautomobile.iap.threevehicles",
@@ -23,8 +23,10 @@ final class PurchaseManager: ObservableObject {
     private var productsLoaded = false
     private var updates: Task<Void, Never>? = nil
     
-    init() {
+    override init() {
+        super.init()
         updates = observeTransactionUpdates()
+        SKPaymentQueue.default().add(self)
     }
     
     deinit {
@@ -114,5 +116,15 @@ private extension Collection {
     /// Returns the element at the specified index if it is within bounds, otherwise nil.
     subscript (safe index: Index) -> Element? {
         return indices.contains(index) ? self[index] : nil
+    }
+}
+
+// MARK: - SKPaymentTransactionObserver
+extension PurchaseManager: SKPaymentTransactionObserver {
+    func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
+    }
+
+    func paymentQueue(_ queue: SKPaymentQueue, shouldAddStorePayment payment: SKPayment, for product: SKProduct) -> Bool {
+        return true
     }
 }
