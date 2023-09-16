@@ -37,7 +37,15 @@ struct IAPView: View {
 
 private extension IAPView {
     var restoreButton: some View {
-        Button(action: {}, label: {
+        Button(action: {
+            Task {
+                do {
+                    try await AppStore.sync()
+                } catch {
+                    print(error)
+                }
+            }
+        }, label: {
             Text("Restore purchases")
                 .bold()
         })
