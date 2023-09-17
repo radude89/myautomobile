@@ -1,10 +1,3 @@
-/*
-See the LICENSE.txt file for this sample’s licensing information.
-
-Abstract:
-The event edit view controller to add events to Calendar.
-*/
-
 import SwiftUI
 import EventKitUI
 

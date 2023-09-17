@@ -1,20 +1,9 @@
-/*
-See the LICENSE.txt file for this sample’s licensing information.
-
-Abstract:
-The data model for the app.
-*/
-
 import EventKit
 
 @MainActor
-class EventStoreManager: ObservableObject {
-    /// Contains fetched events when the app receives a full-access authorization status.
+final class EventStoreManager: ObservableObject {
     @Published var events: [EKEvent]
-    
-    /// Specifies the authorization status for the app.
-    @Published var authorizationStatus: EKAuthorizationStatus
-    
+    @Published var authorizationStatus: EKAuthorizationStatus    
     private(set) var dataStore: EventDataStore
     
     init(store: EventDataStore = EventDataStore()) {

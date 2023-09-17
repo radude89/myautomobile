@@ -1,10 +1,3 @@
-/*
-See the LICENSE.txt file for this sample’s licensing information.
-
-Abstract:
-Manages reading and writing data from the event store.
-*/
-
 import EventKit
 
 actor EventDataStore {
@@ -14,7 +7,6 @@ actor EventDataStore {
         self.eventStore = eventStore
     }
     
-    /// Verifies the authorization status for the app.
     func verifyAuthorizationStatus() async throws -> Bool {
         let status = EKEventStore.authorizationStatus(for: .event)
         switch status {
@@ -31,7 +23,6 @@ actor EventDataStore {
         }
     }
     
-    /// Prompts the user for full-access authorization to Calendar.
     private func requestFullAccess() async throws -> Bool {
         try await eventStore.requestFullAccessToEvents()
     }
@@ -49,7 +40,6 @@ actor EventDataStore {
          }
     }
     
-    /// Removes an event.
     private func removeEvent(_ event: EKEvent) throws {
         try self.eventStore.remove(event, span: .thisEvent, commit: false)
     }
