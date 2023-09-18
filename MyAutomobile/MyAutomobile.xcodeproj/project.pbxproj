@@ -33,6 +33,7 @@
 		F73028F62AA61637003AAEE8 /* VehicleAddCustomFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73028F52AA61637003AAEE8 /* VehicleAddCustomFieldView.swift */; };
 		F739B5DE2AB4DC000089D12F /* IAPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F739B5DD2AB4DC000089D12F /* IAPView.swift */; };
 		F739B5E02AB4E05D0089D12F /* IAPButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F739B5DF2AB4E05D0089D12F /* IAPButton.swift */; };
+		F74F8B322AB807980014137C /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F74F8B312AB807980014137C /* StoreKit.framework */; };
 		F760EF0B2A96FDA500C38F3B /* VehicleAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F760EF0A2A96FDA500C38F3B /* VehicleAddView.swift */; };
 		F760EF0D2A9701F300C38F3B /* VehicleAddViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F760EF0C2A9701F300C38F3B /* VehicleAddViewModel.swift */; };
 		F760EF0F2A97066700C38F3B /* AddToolbarViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F760EF0E2A97066700C38F3B /* AddToolbarViewModifier.swift */; };
@@ -101,6 +102,8 @@
 		F73028F52AA61637003AAEE8 /* VehicleAddCustomFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleAddCustomFieldView.swift; sourceTree = "<group>"; };
 		F739B5DD2AB4DC000089D12F /* IAPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPView.swift; sourceTree = "<group>"; };
 		F739B5DF2AB4E05D0089D12F /* IAPButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPButton.swift; sourceTree = "<group>"; };
+		F74F8B2F2AB806450014137C /* MainStoreKitConfig.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = MainStoreKitConfig.storekit; sourceTree = "<group>"; };
+		F74F8B312AB807980014137C /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		F760EF0A2A96FDA500C38F3B /* VehicleAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleAddView.swift; sourceTree = "<group>"; };
 		F760EF0C2A9701F300C38F3B /* VehicleAddViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleAddViewModel.swift; sourceTree = "<group>"; };
 		F760EF0E2A97066700C38F3B /* AddToolbarViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToolbarViewModifier.swift; sourceTree = "<group>"; };
@@ -111,7 +114,6 @@
 		F772247D2AAE52D00097E190 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F772247E2AAE53530097E190 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F799E2A92AA35F27009F3C3D /* EventListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListRowView.swift; sourceTree = "<group>"; };
-		F7B3DA392AB5CEE30045359B /* MainStoreKitConfig.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = MainStoreKitConfig.storekit; sourceTree = "<group>"; };
 		F7B3DA3A2AB5D1B10045359B /* PurchaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseManager.swift; sourceTree = "<group>"; };
 		F7C5D7AE282016FE00C4D213 /* VehicleListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleListViewModel.swift; sourceTree = "<group>"; };
 		F7C5D7B02820191E00C4D213 /* VehicleListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleListRowView.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F74F8B322AB807980014137C /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -180,6 +183,7 @@
 				F721890E27FABE5F00F80AC0 /* MyAutomobileTests */,
 				F721891827FABE5F00F80AC0 /* MyAutomobileUITests */,
 				F72188FC27FABE5D00F80AC0 /* Products */,
+				F74F8B302AB807980014137C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -263,6 +267,14 @@
 				F7B3DA3A2AB5D1B10045359B /* PurchaseManager.swift */,
 			);
 			path = IAP;
+			sourceTree = "<group>";
+		};
+		F74F8B302AB807980014137C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F74F8B312AB807980014137C /* StoreKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		F760EF092A96FD9100C38F3B /* Add */ = {
@@ -393,7 +405,7 @@
 			isa = PBXGroup;
 			children = (
 				F721890227FABE5F00F80AC0 /* Assets.xcassets */,
-				F7B3DA392AB5CEE30045359B /* MainStoreKitConfig.storekit */,
+				F74F8B2F2AB806450014137C /* MainStoreKitConfig.storekit */,
 				F7202E072AAA4BE4009A17DC /* Localizable.xcstrings */,
 			);
 			path = "Supporting files";
@@ -463,7 +475,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1330;
-				LastUpgradeCheck = 1330;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					F72188FA27FABE5D00F80AC0 = {
 						CreatedOnToolsVersion = 13.3;
@@ -489,6 +501,7 @@
 				it,
 				de,
 				fr,
+				Base,
 			);
 			mainGroup = F72188F227FABE5D00F80AC0;
 			productRefGroup = F72188FC27FABE5D00F80AC0 /* Products */;
@@ -628,6 +641,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -660,6 +674,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -688,6 +703,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -720,6 +736,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -750,8 +767,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MyAutomobile/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "$(PRODUCT_NAME)";
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_CFBundleDisplayName = CarChum;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
@@ -760,7 +777,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rdan.MyAutomobile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -781,8 +798,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MyAutomobile/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "$(PRODUCT_NAME)";
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_CFBundleDisplayName = CarChum;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
@@ -791,7 +808,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rdan.MyAutomobile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

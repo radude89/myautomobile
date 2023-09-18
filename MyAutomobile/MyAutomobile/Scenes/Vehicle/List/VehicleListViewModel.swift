@@ -29,9 +29,8 @@ final class VehicleListViewModel: ObservableObject {
             print("Has bought unlimited vehicles.")
             return true
         }
-        let numberOfVehiclesInStore = vehicles.items.count
-        let availableVehicleSlots = purchaseManager.availableVehicleSlots
-        return availableVehicleSlots > numberOfVehiclesInStore
+
+        return purchaseManager.purchasedVehicleSlots > vehicles.items.count
     }
     
     func delete(atOffsets offsets: IndexSet) async {

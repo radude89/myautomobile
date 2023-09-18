@@ -10,7 +10,7 @@ import StoreKit
 
 struct IAPView: View {
     @EnvironmentObject private var purchaseManager: PurchaseManager
-    private let titles: [String] = ["1x", "3x", "5x", "∞ x"]
+    private let titles: [String] = ["1x", "∞ x"]
     
     var body: some View {
         VStack(alignment: .center) {
@@ -22,7 +22,6 @@ struct IAPView: View {
                     IAPButton(title: titles[index], subtitle: subtitle(for: product)) {
                         Task { await buyProduct(product) }
                     }
-                    .disabled(purchaseManager.hasPurchasedProduct(withID: product.id))
                 }
                 restoreButton
                 
@@ -50,17 +49,16 @@ private extension IAPView {
                 .bold()
         })
         .padding()
-        .foregroundStyle(.pink)
-        .backgroundStyle(.pink)
+        .foregroundStyle(Color("app_green"))
+        .backgroundStyle(Color("app_green"))
         .overlay(
             RoundedRectangle(cornerRadius: 6.0)
-                .stroke(.pink, lineWidth: 1.0)
+                .stroke(Color("app_green"), lineWidth: 1.0)
         )
     }
 
     func loadProducts() async {
         do {
-            _ = purchaseManager.availableVehicleSlots
             try await purchaseManager.loadProducts()
         } catch {
             print(error)

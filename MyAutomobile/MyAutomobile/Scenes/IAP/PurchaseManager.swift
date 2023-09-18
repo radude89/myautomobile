@@ -11,14 +11,15 @@ import StoreKit
 @MainActor
 final class PurchaseManager: NSObject, ObservableObject {
     private let productIDs = [
-        "com.rdan.myautomobile.iap.onevehicle",
-        "com.rdan.myautomobile.iap.threevehicles",
-        "com.rdan.myautomobile.iap.fivevehicles",
-        "com.rdan.myautomobile.iap.unlimitedvehicles",
+        "com.rdan.myautomobile.iap.onec",
+        "com.rdan.myautomobile.iap.infinitec",
     ]
+    private let storageKey = "vehicle-slots"
+    private let userDefaults = UserDefaults.standard
     
     @Published private(set) var products: [Product] = []
-    @Published private(set) var purchasedProductIDs = Set<String>()
+    @Published private(set) var purchasedNonConsumableProductIDs = Set<String>()
+    @Published private(set) var purchasedVehicleSlots = 0
     
     private var productsLoaded = false
     private var updates: Task<Void, Never>? = nil
@@ -27,6 +28,7 @@ final class PurchaseManager: NSObject, ObservableObject {
         super.init()
         updates = observeTransactionUpdates()
         SKPaymentQueue.default().add(self)
+        loadSlots()
     }
     
     deinit {
@@ -34,23 +36,7 @@ final class PurchaseManager: NSObject, ObservableObject {
     }
     
     var hasBoughtUnlimitedVehicles: Bool {
-        hasPurchasedProduct(withID: products.last?.id)
-    }
-    
-    var availableVehicleSlots: Int {
-        print("Purchased product IDs: \(purchasedProductIDs).")
-        var slots = 1
-        if hasPurchasedProduct(withID: products.first?.id) {
-            slots += 1
-        }
-        if hasPurchasedProduct(withID: products[safe: 1]?.id) {
-            slots += 3
-        }
-        if hasPurchasedProduct(withID: products[safe: 2]?.id) {
-            slots += 5
-        }
-        print("Number of vehicle slots: \(slots).")
-        return slots
+        purchasedNonConsumableProductIDs.contains(productIDs[1])
     }
     
     func loadProducts() async throws {
@@ -60,6 +46,12 @@ final class PurchaseManager: NSObject, ObservableObject {
         print(products)
     }
     
+    func updatePurchasedProducts() async {
+        for await result in Transaction.currentEntitlements {
+            handleTransactionResult(result)
+        }
+    }
+    
     func purchase(_ product: Product) async throws {
         let result = try await product.purchase()
         print(result)
@@ -67,39 +59,57 @@ final class PurchaseManager: NSObject, ObservableObject {
         switch result {
         case let .success(.verified(transaction)):
             await transaction.finish()
-            await updatePurchasedProducts()
+            handlePurchasedProduct(transaction: transaction)
         default:
             break
         }
     }
-    
-    func updatePurchasedProducts() async {
-        for await result in Transaction.currentEntitlements {
-            handleTransactionResult(result)
-        }
-    }
-    
-    func hasPurchasedProduct(withID id: String?) -> Bool {
-        guard let id else {
-            return false
-        }
+}
 
-        return purchasedProductIDs.contains(id)
+// MARK: - SKPaymentTransactionObserver
+
+extension PurchaseManager: SKPaymentTransactionObserver {
+    func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
+    }
+
+    func paymentQueue(_ queue: SKPaymentQueue, shouldAddStorePayment payment: SKPayment, for product: SKProduct) -> Bool {
+        return true
     }
 }
 
-// MARK: - Private
+// MARK: - Transactions
 
 private extension PurchaseManager {
     func handleTransactionResult(_ result: VerificationResult<Transaction>) {
         guard case .verified(let transaction) = result else {
             return
         }
-
-        if transaction.revocationDate == nil {
-            purchasedProductIDs.insert(transaction.productID)
+        
+        handlePurchasedProduct(transaction: transaction)
+    }
+    
+    func handlePurchasedProduct(transaction: Transaction) {
+        if transaction.productType == .consumable {
+            handlePurchasedConsumable(transaction: transaction)
         } else {
-            purchasedProductIDs.remove(transaction.productID)
+            handlePurchasedNonConsumable(transaction: transaction)
+        }
+    }
+    
+    func handlePurchasedConsumable(transaction: Transaction) {
+        guard transaction.productID == productIDs[0] else {
+            return
+        }
+
+        purchasedVehicleSlots += 1
+        increaseVehicleStorageSlot()
+    }
+    
+    func handlePurchasedNonConsumable(transaction: Transaction) {
+        if transaction.revocationDate == nil {
+            purchasedNonConsumableProductIDs.insert(transaction.productID)
+        } else {
+            purchasedNonConsumableProductIDs.remove(transaction.productID)
         }
     }
     
@@ -112,19 +122,32 @@ private extension PurchaseManager {
     }
 }
 
+// MARK: - Storage
+
+private extension PurchaseManager {
+    func loadSlots() {
+        let slots = userDefaults.integer(forKey: storageKey)
+        if slots == 0 {
+            increaseVehicleStorageSlot()
+        }
+        updatePurchasedVehicleSlots()
+    }
+    
+    func updatePurchasedVehicleSlots() {
+        purchasedVehicleSlots = userDefaults.integer(forKey: storageKey)
+    }
+    
+    func increaseVehicleStorageSlot() {
+        let availableSlots = userDefaults.integer(forKey: storageKey)
+        userDefaults.set(availableSlots + 1, forKey: storageKey)
+    }
+}
+
+// MARK: - Collection extension
+
 private extension Collection {
     /// Returns the element at the specified index if it is within bounds, otherwise nil.
     subscript (safe index: Index) -> Element? {
         return indices.contains(index) ? self[index] : nil
-    }
-}
-
-// MARK: - SKPaymentTransactionObserver
-extension PurchaseManager: SKPaymentTransactionObserver {
-    func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
-    }
-
-    func paymentQueue(_ queue: SKPaymentQueue, shouldAddStorePayment payment: SKPayment, for product: SKProduct) -> Bool {
-        return true
     }
 }

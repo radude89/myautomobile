@@ -1,175 +1,135 @@
 {
-  "identifier" : "F09B0790",
+  "identifier" : "7EDCFDF3",
   "nonRenewingSubscriptions" : [
 
   ],
   "products" : [
-    {
-      "displayPrice" : "6.99",
-      "familyShareable" : true,
-      "internalID" : "6465992362",
-      "localizations" : [
-        {
-          "description" : "Fügen Sie fünf weitere Fahrzeuge zu Ihrer App",
-          "displayName" : "Fünf Fahrzeugpaket",
-          "locale" : "de"
-        },
-        {
-          "description" : "Add five more vehicles to your app",
-          "displayName" : "Five vehicles pack",
-          "locale" : "en_US"
-        },
-        {
-          "description" : "Aggiungi altri cinque veicoli alla tua app",
-          "displayName" : "Pacchetto di cinque veicoli",
-          "locale" : "it"
-        },
-        {
-          "description" : "Ajoutez cinq véhicules de plus à votre app",
-          "displayName" : "Pack de cinq véhicules",
-          "locale" : "fr"
-        },
-        {
-          "description" : "Adaugă încă cinci vehicule în aplicația ta",
-          "displayName" : "Pachet pentru cinci vehicule",
-          "locale" : "ro"
-        },
-        {
-          "description" : "Agrega cinco vehículos más a tu aplicación",
-          "displayName" : "Paquete de cinco vehículos",
-          "locale" : "es_ES"
-        }
-      ],
-      "productID" : "com.rdan.myautomobile.iap.fivevehicles",
-      "referenceName" : "Five Vehicles",
-      "type" : "NonConsumable"
-    },
-    {
-      "displayPrice" : "1.99",
-      "familyShareable" : true,
-      "internalID" : "6465992239",
-      "localizations" : [
-        {
-          "description" : "Aggiungi un altro veicolo alla tua app",
-          "displayName" : "Pacchetto di un veicolo",
-          "locale" : "it"
-        },
-        {
-          "description" : "Adaugă încă un vehicul în aplicația ta",
-          "displayName" : "Pachet pentru un vehicul",
-          "locale" : "ro"
-        },
-        {
-          "description" : "Ajoutez un véhicule de plus à votre app",
-          "displayName" : "Pack d'un véhicule",
-          "locale" : "fr"
-        },
-        {
-          "description" : "Fügen Sie ein weiteres Fahrzeug zu Ihrer App",
-          "displayName" : "Ein Fahrzeugpaket",
-          "locale" : "de"
-        },
-        {
-          "description" : "Add one more vehicle to your app",
-          "displayName" : "One vehicle pack",
-          "locale" : "en_US"
-        },
-        {
-          "description" : "Agrega un vehículo más a tu aplicación",
-          "displayName" : "Paquete de un vehículo",
-          "locale" : "es_ES"
-        }
-      ],
-      "productID" : "com.rdan.myautomobile.iap.onevehicle",
-      "referenceName" : "One Vehicle",
-      "type" : "NonConsumable"
-    },
-    {
-      "displayPrice" : "3.99",
-      "familyShareable" : true,
-      "internalID" : "6465992300",
-      "localizations" : [
-        {
-          "description" : "Aggiungi altri tre veicoli alla tua app",
-          "displayName" : "Pacchetto di tre veicoli",
-          "locale" : "it"
-        },
-        {
-          "description" : "Ajoutez trois véhicules de plus à votre app",
-          "displayName" : "Pack de trois véhicules",
-          "locale" : "fr"
-        },
-        {
-          "description" : "Fügen Sie drei weitere Fahrzeuge zu Ihrer App",
-          "displayName" : "Drei Fahrzeugpaket",
-          "locale" : "de"
-        },
-        {
-          "description" : "Agrega tres vehículos más a tu aplicación",
-          "displayName" : "Paquete de tres vehículos",
-          "locale" : "es_ES"
-        },
-        {
-          "description" : "Adaugă încă trei vehicule în aplicația ta",
-          "displayName" : "Pachet pentru trei vehicule",
-          "locale" : "ro"
-        },
-        {
-          "description" : "Add three more vehicles to your app",
-          "displayName" : "Three vehicles pack",
-          "locale" : "en_US"
-        }
-      ],
-      "productID" : "com.rdan.myautomobile.iap.threevehicles",
-      "referenceName" : "Three Vehicles",
-      "type" : "NonConsumable"
-    },
     {
       "displayPrice" : "8.99",
       "familyShareable" : true,
       "internalID" : "6465992411",
       "localizations" : [
         {
-          "description" : "Add unlimited vehicles to your app",
-          "displayName" : "Unlimited vehicles pack",
-          "locale" : "en_US"
-        },
-        {
-          "description" : "Unbegrenzte Fahrzeuge",
-          "displayName" : "Unbegrenztes Fahrzeugpaket",
-          "locale" : "de"
-        },
-        {
-          "description" : "Adaugă nelimitat vehicule în aplicația ta",
-          "displayName" : "Vehicule nelimitate",
+          "description" : "Mașini infinite în aplicația ta",
+          "displayName" : "Pachet Fără Limită",
           "locale" : "ro"
         },
         {
-          "description" : "Veicoli illimitati alla tua app",
-          "displayName" : "Veicoli illimitati",
-          "locale" : "it"
+          "description" : "Infinite vehicles",
+          "displayName" : "No Limit Pack",
+          "locale" : "en_US"
         },
         {
-          "description" : "Nombre illimité de véhicules à votre app",
-          "displayName" : "Pack de véhicules illimités",
+          "description" : "Véhicules infinis pour votre application",
+          "displayName" : "Pack Illimité",
           "locale" : "fr"
         },
         {
-          "description" : "Vehículos ilimitados a tu aplicación",
-          "displayName" : "Vehículos ilimitados",
+          "description" : "Vehículos infinitos para tu aplicación",
+          "displayName" : "Pack Sin Límite",
           "locale" : "es_ES"
+        },
+        {
+          "description" : "Unbegrenzte Fahrzeuge für Ihre App",
+          "displayName" : "Unbegrenztes Paket",
+          "locale" : "de"
+        },
+        {
+          "description" : "Veicoli infiniti per la tua app",
+          "displayName" : "Pacchetto Senza Limiti",
+          "locale" : "it"
         }
       ],
       "productID" : "com.rdan.myautomobile.iap.unlimitedvehicles",
-      "referenceName" : "Unlimited Vehicles",
+      "referenceName" : "Infinite Vehicles",
       "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "8.99",
+      "familyShareable" : true,
+      "internalID" : "6466779164",
+      "localizations" : [
+        {
+          "description" : "Unbegrenzte Fahrzeuge für Ihre App",
+          "displayName" : "Unbegrenztes Paket",
+          "locale" : "de"
+        },
+        {
+          "description" : "Vehículos infinitos para tu aplicación",
+          "displayName" : "Pack Sin Límite",
+          "locale" : "ar"
+        },
+        {
+          "description" : "Mașini infinite în aplicația ta",
+          "displayName" : "Pachet Fără Limită",
+          "locale" : "ro"
+        },
+        {
+          "description" : "Véhicules infinis pour votre application",
+          "displayName" : "Pack Illimité",
+          "locale" : "fr"
+        },
+        {
+          "description" : "Infinite vehicles to your app",
+          "displayName" : "No Limit Pack",
+          "locale" : "en_US"
+        },
+        {
+          "description" : "Veicoli infiniti per la tua app",
+          "displayName" : "Pacchetto Senza Limiti",
+          "locale" : "it"
+        }
+      ],
+      "productID" : "com.rdan.myautomobile.iap.infinitec",
+      "referenceName" : "Infinite Vehicles Pack",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "2.99",
+      "familyShareable" : false,
+      "internalID" : "6466779248",
+      "localizations" : [
+        {
+          "description" : "Aggiungi un altro veicolo",
+          "displayName" : "Pacchetto Un Veicolo",
+          "locale" : "it"
+        },
+        {
+          "description" : "Añadir un vehículo más",
+          "displayName" : "Paquete de un vehículo",
+          "locale" : "es_ES"
+        },
+        {
+          "description" : "Ein weiteres Fahrzeug hinzufügen",
+          "displayName" : "Ein Fahrzeugpaket",
+          "locale" : "de"
+        },
+        {
+          "description" : "Adăugați un vehicul în plus",
+          "displayName" : "Pachet Un Singur Vehicul",
+          "locale" : "ro"
+        },
+        {
+          "description" : "Add one more vehicle",
+          "displayName" : "One Vehicle Pack",
+          "locale" : "en_US"
+        },
+        {
+          "description" : "Ajouter un véhicule de plus",
+          "displayName" : "Pack Un Véhicule",
+          "locale" : "fr"
+        }
+      ],
+      "productID" : "com.rdan.myautomobile.iap.onec",
+      "referenceName" : "One Vehicle Pack",
+      "type" : "Consumable"
     }
   ],
   "settings" : {
     "_applicationInternalID" : "6465991938",
     "_developerTeamID" : "42L6GB6DU6",
     "_failTransactionsEnabled" : false,
-    "_lastSynchronizedDate" : 716558057.28125501,
+    "_lastSynchronizedDate" : 716703305.25611699,
     "_locale" : "en_US",
     "_storefront" : "USA",
     "_storeKitErrors" : [
@@ -179,26 +139,17 @@
         "name" : "Load Products"
       },
       {
-        "current" : {
-          "index" : 1,
-          "type" : "purchase"
-        },
+        "current" : null,
         "enabled" : false,
         "name" : "Purchase"
       },
       {
-        "current" : {
-          "index" : 0,
-          "type" : "verification"
-        },
+        "current" : null,
         "enabled" : false,
         "name" : "Verification"
       },
       {
-        "current" : {
-          "index" : 2,
-          "type" : "generic"
-        },
+        "current" : null,
         "enabled" : false,
         "name" : "App Store Sync"
       },
