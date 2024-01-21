@@ -1605,6 +1605,12 @@
         }
       }
     },
+    "Parking" : {
+
+    },
+    "Parking Spot" : {
+
+    },
     "Recurrence" : {
       "extractionState" : "manual",
       "localizations" : {

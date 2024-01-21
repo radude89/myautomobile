@@ -13,28 +13,33 @@ struct MainTabView: View {
     @StateObject private var purchaseManager = PurchaseManager()
 
     var body: some View {
+        tabView
+            .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)) { _ in
+                saveData()
+            }
+    }
+}
+
+// MARK: - Private methods
+
+private extension MainTabView {
+    var tabView: some View {
         TabView {
             VehicleListView(viewModel: .init(vehicles: vehicles, eventStoreManager: storeManager, purchaseManager: purchaseManager))
-                .tabItem {
-                    Label("Vehicles", systemImage: "car.2.fill")
-                }
+                .tabItem { Label("Vehicles", systemImage: "car.2.fill") }
                 .environmentObject(purchaseManager)
                 .task {
                     await purchaseManager.updatePurchasedProducts()
                 }
             
             EventListView(viewModel: .init(vehicles: vehicles, eventStoreManager: storeManager))
-                .tabItem {
-                    Label("Events", systemImage: "calendar")
-                }
-        }
-        .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)) { _ in
-            saveData()
+                .tabItem { Label("Events", systemImage: "calendar")}
+            
+            ParkLocationView()
+                .tabItem { Label("Parking", systemImage: "parkingsign") }
         }
     }
-}
 
-private extension MainTabView {
     func saveData() {
         do {
             let data = try JSONEncoder().encode(vehicles.items)

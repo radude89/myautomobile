@@ -33,6 +33,7 @@
 		F73028F62AA61637003AAEE8 /* VehicleAddCustomFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73028F52AA61637003AAEE8 /* VehicleAddCustomFieldView.swift */; };
 		F739B5DE2AB4DC000089D12F /* IAPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F739B5DD2AB4DC000089D12F /* IAPView.swift */; };
 		F739B5E02AB4E05D0089D12F /* IAPButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F739B5DF2AB4E05D0089D12F /* IAPButton.swift */; };
+		F74C47A42ADC41F1006E131A /* ParkLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74C47A32ADC41F1006E131A /* ParkLocationView.swift */; };
 		F74F8B322AB807980014137C /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F74F8B312AB807980014137C /* StoreKit.framework */; };
 		F760EF0B2A96FDA500C38F3B /* VehicleAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F760EF0A2A96FDA500C38F3B /* VehicleAddView.swift */; };
 		F760EF0D2A9701F300C38F3B /* VehicleAddViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F760EF0C2A9701F300C38F3B /* VehicleAddViewModel.swift */; };
@@ -102,6 +103,7 @@
 		F73028F52AA61637003AAEE8 /* VehicleAddCustomFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleAddCustomFieldView.swift; sourceTree = "<group>"; };
 		F739B5DD2AB4DC000089D12F /* IAPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPView.swift; sourceTree = "<group>"; };
 		F739B5DF2AB4E05D0089D12F /* IAPButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPButton.swift; sourceTree = "<group>"; };
+		F74C47A32ADC41F1006E131A /* ParkLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkLocationView.swift; sourceTree = "<group>"; };
 		F74F8B2F2AB806450014137C /* MainStoreKitConfig.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = MainStoreKitConfig.storekit; sourceTree = "<group>"; };
 		F74F8B312AB807980014137C /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		F760EF0A2A96FDA500C38F3B /* VehicleAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleAddView.swift; sourceTree = "<group>"; };
@@ -269,6 +271,14 @@
 			path = IAP;
 			sourceTree = "<group>";
 		};
+		F74C47A22ADC41DF006E131A /* ParkLocation */ = {
+			isa = PBXGroup;
+			children = (
+				F74C47A32ADC41F1006E131A /* ParkLocationView.swift */,
+			);
+			path = ParkLocation;
+			sourceTree = "<group>";
+		};
 		F74F8B302AB807980014137C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -361,6 +371,7 @@
 				F7D931AB287D303700289230 /* Events */,
 				F739B5DC2AB4DBDA0089D12F /* IAP */,
 				F7D931A7287D2FEB00289230 /* Main */,
+				F74C47A22ADC41DF006E131A /* ParkLocation */,
 				F7C5D7BA28201BAD00C4D213 /* Vehicle */,
 			);
 			path = Scenes;
@@ -556,6 +567,7 @@
 				F7202E032AA8AFFB009A17DC /* EventDataStore.swift in Sources */,
 				F721890127FABE5D00F80AC0 /* MainTabView.swift in Sources */,
 				F7202DFE2AA8AFB8009A17DC /* EventStoreError.swift in Sources */,
+				F74C47A42ADC41F1006E131A /* ParkLocationView.swift in Sources */,
 				F713B7652A8FA6FE00EBB0BF /* VehicleDetailsViewModel.swift in Sources */,
 				F7FC88E9280EA29C007BA063 /* VehicleListView.swift in Sources */,
 				F7202E062AA8F304009A17DC /* EventEditViewController.swift in Sources */,

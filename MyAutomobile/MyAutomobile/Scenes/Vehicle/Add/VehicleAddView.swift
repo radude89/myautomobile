@@ -16,7 +16,7 @@ struct VehicleAddView: View {
     @State private var makeText = ""
     @State private var modelText = ""
     @State private var numberPlateText = ""
-    @State private var color = Color.green
+    @State private var color = Color.black
     
     init(viewModel: VehicleAddViewModel) {
         _viewModel = StateObject(wrappedValue: viewModel)
