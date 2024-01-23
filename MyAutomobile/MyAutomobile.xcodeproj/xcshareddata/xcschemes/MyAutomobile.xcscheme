@@ -71,6 +71,10 @@
             ReferencedContainer = "container:MyAutomobile.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <LocationScenarioReference
+         identifier = "London, England"
+         referenceType = "1">
+      </LocationScenarioReference>
       <StoreKitConfigurationFileReference
          identifier = "../../MyAutomobile/Supporting files/MainStoreKitConfig.storekit">
       </StoreKitConfigurationFileReference>

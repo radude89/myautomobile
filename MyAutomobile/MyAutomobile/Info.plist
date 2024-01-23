@@ -6,6 +6,11 @@
 	<true/>
 	<key>NSCalendarsFullAccessUsageDescription</key>
 	<string>Required to add and delete events from your local calendar.</string>
+	<key>NSLocationTemporaryUsageDescriptionDictionary</key>
+	<dict>
+		<key>parking</key>
+		<string>Your location is used to determine where you parked your vehicle.</string>
+	</dict>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

@@ -781,6 +781,8 @@
 				INFOPLIST_FILE = MyAutomobile/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = CarChum;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_NSLocationUsageDescription = "Required to determine where you parked your vehicle.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Required to determine where you parked your vehicle.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
@@ -812,6 +814,8 @@
 				INFOPLIST_FILE = MyAutomobile/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = CarChum;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_NSLocationUsageDescription = "Required to determine where you parked your vehicle.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Required to determine where you parked your vehicle.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";

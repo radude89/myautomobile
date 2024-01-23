@@ -7,4 +7,7 @@
 */
 
 "NSCalendarsFullAccessUsageDescription"="Erforderlich, um Ereignisse in Ihrem lokalen Kalender hinzuzufügen und zu löschen.";
+"NSLocationUsageDescription"="Required to determine where you parked your vehicle.";
+"NSLocationWhenInUseUsageDescription"="Required to determine where you parked your vehicle.";
 "CFBundleDisplayName"="CarChum";
+"parking"="Your location is used to determine where you parked your vehicle.";
