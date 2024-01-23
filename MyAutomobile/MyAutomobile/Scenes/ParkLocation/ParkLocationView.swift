@@ -5,97 +5,56 @@
 //  Created by Radu Dan on 15.10.2023.
 //
 
-import CoreLocation
 import SwiftUI
 import MapKit
 
 struct ParkLocationView: View {
-    
     private let locationHandler = LocationManager()
     @State private var cameraPosition = MapCameraPosition.userLocation(fallback: .automatic)
     
     var body: some View {
         NavigationStack {
-            MapReader { proxy in
-                Map(position: $cameraPosition) {
-                    UserAnnotation()
+            contentView
+                .navigationTitle("Parking Spot")
+                .onAppear {
+                    locationHandler.requestLocation()
                 }
-                .mapControls {
-                    MapUserLocationButton()
-                }
-                .onTapGesture { position in
-                    if let coordinate = proxy.convert(position, from: .local) {
-                        print(coordinate)
-                    }
-                }
-            }
-            .navigationTitle("Parking Spot")
-            .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Button(action: addMarker) {
-                        Image(systemName: "plus")
-                    }
-                }
-            }
-            .onAppear {
-                locationHandler.requestLocation()
-            }
         }
     }
-    
-    private func addMarker() {
-        
-    }
-    
 }
-
-@Observable
-final class LocationManager: NSObject {
-    
-    private let locationHandler = CLLocationManager()
-
-    var userLocation: CLLocation?
-    
-    init(userLocation: CLLocation? = nil) {
-        self.userLocation = userLocation
-        super.init()
-        locationHandler.delegate = self
-        locationHandler.desiredAccuracy = kCLLocationAccuracyBest
-        locationHandler.startUpdatingLocation()
-    }
-    
-    func requestLocation() {
-        locationHandler.requestWhenInUseAuthorization()
-//        locationHandler.requestTemporaryFullAccuracyAuthorization(
-//            withPurposeKey: "parking"
-//        )
-    }
-    
-}
-
-extension LocationManager: CLLocationManagerDelegate {
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        switch manager.authorizationStatus {
-        case .notDetermined:
-            print("notDetermined")
-        case .restricted:
-            print("restricted")
-        case .denied:
-            print("denied")
-        case .authorizedAlways:
-            print("authorizedAlways")
-        case .authorizedWhenInUse:
-            print("authorizedWhenInUse")
-        @unknown default:
-            print("Unknown")
+   
+private extension ParkLocationView {
+    var contentView: some View {
+        MapReader { mapProxy in
+            Map(position: $cameraPosition) {
+                UserAnnotation()
+            }
+            .mapControls {
+                MapUserLocationButton()
+            }
+            .gesture(DragGesture())
+            .gesture(makeLongPressGesture(mapProxy: mapProxy))
         }
     }
     
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let location = locations.last else {
-            return
+    func makeLongPressGesture(mapProxy: MapProxy) -> some Gesture {
+        LongPressGesture()
+            .sequenced(before: DragGesture(minimumDistance: 0))
+            .onEnded { findCoordinate(from: $0, mapProxy: mapProxy) }
+    }
+    
+    func findCoordinate(
+        from value: SequenceGesture<LongPressGesture, DragGesture>.Value,
+        mapProxy: MapProxy
+    ) {
+        switch value {
+        case .second(true, let drag):
+            let longPressLocation = drag?.location ?? .zero
+            if let coordinate = mapProxy.convert(longPressLocation, from: .local) {
+                print(coordinate)
+            }
+        default:
+            break
         }
-
-        userLocation = location
     }
 }
