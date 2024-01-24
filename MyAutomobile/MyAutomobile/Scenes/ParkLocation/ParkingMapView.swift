@@ -10,14 +10,18 @@ import MapKit
 
 struct ParkingMapView: View {
     @State private var cameraPosition = MapCameraPosition.userLocation(fallback: .automatic)
-    @State private var parkingCoordinate = CLLocationCoordinate2D(latitude: 0, longitude: 0)
+    @State private var parkingCoordinate: CLLocationCoordinate2D?
 
     var body: some View {
         MapReader { mapProxy in
             Map(position: $cameraPosition) {
                 UserAnnotation()
-                Marker(coordinate: parkingCoordinate) {
-                    Text("Test")
+                if let parkingCoordinate {
+                    Marker(
+                        "Parking Spot",
+                        systemImage: "car.front.waves.up",
+                        coordinate: parkingCoordinate
+                    )
                 }
             }
             .mapControls {

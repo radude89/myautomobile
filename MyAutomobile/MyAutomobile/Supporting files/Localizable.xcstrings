@@ -2007,9 +2007,6 @@
         }
       }
     },
-    "Test" : {
-
-    },
     "The app doesn't have permission to Calendar in Settings." : {
       "extractionState" : "manual",
       "localizations" : {

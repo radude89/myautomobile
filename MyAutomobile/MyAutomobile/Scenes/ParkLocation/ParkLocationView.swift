@@ -9,7 +9,6 @@ import SwiftUI
 import MapKit
 
 // TODO's
-// - add marker with parking location
 //
 // - clear parking location
 //
