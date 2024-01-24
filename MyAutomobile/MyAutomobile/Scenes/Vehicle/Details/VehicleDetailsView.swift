@@ -28,7 +28,7 @@ struct VehicleDetailsView: View {
             .navigationTitle("Details")
             .onAppear(perform: loadVehicleDetails)
             .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
+                ToolbarItem(placement: .topBarTrailing) {
                     EditButton()
                         .disabled(viewModel.customFields.isEmpty)
                 }

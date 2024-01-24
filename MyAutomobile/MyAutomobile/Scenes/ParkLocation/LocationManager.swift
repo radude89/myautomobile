@@ -15,6 +15,7 @@ final class LocationManager: NSObject {
     private let locationHandler = CLLocationManager()
     
     var userLocation: CLLocation?
+    var state: State = .permissionsNotChecked
     
     init(userLocation: CLLocation? = nil) {
         self.userLocation = userLocation
@@ -24,34 +25,55 @@ final class LocationManager: NSObject {
         locationHandler.startUpdatingLocation()
     }
     
-    func requestLocation() {
-        locationHandler.requestWhenInUseAuthorization()
-        //        locationHandler.requestTemporaryFullAccuracyAuthorization(
-        //            withPurposeKey: "parking"
-        //        )
-    }
-    
 }
 
+// MARK: - Public API
+extension LocationManager {
+    func requestLocation() {
+        locationHandler.requestWhenInUseAuthorization()
+    }
+}
+
+// MARK: - State
+extension LocationManager {
+    enum State {
+        case authorized
+        case permissionsNotChecked
+        case disabled
+    }
+}
+
+// MARK: - CLLocationManagerDelegate
 extension LocationManager: CLLocationManagerDelegate {
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        switch manager.authorizationStatus {
-        case .notDetermined:
-            print("notDetermined")
-        case .restricted:
-            print("restricted")
-        case .denied:
-            print("denied")
-        case .authorizedAlways:
-            print("authorizedAlways")
-        case .authorizedWhenInUse:
-            print("authorizedWhenInUse")
-        @unknown default:
-            print("Unknown")
+    func locationManager(
+        _ manager: CLLocationManager,
+        didChangeAuthorization status: CLAuthorizationStatus
+    ) {
+        updateState(locationManager: manager)
+    }
+    
+    private func updateState(locationManager: CLLocationManager) {
+        switch locationManager.authorizationStatus {
+        case .authorizedAlways, .authorizedWhenInUse:
+            state = .authorized
+            requestFullAccuracyIfNeeded(locationManager: locationManager)
+        default:
+            state = .disabled
         }
     }
     
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    private func requestFullAccuracyIfNeeded(locationManager: CLLocationManager) {
+        if locationManager.accuracyAuthorization != .fullAccuracy {
+            locationHandler.requestTemporaryFullAccuracyAuthorization(
+                withPurposeKey: "parking"
+            )
+        }
+    }
+    
+    func locationManager(
+        _ manager: CLLocationManager,
+        didUpdateLocations locations: [CLLocation]
+    ) {
         guard let location = locations.last else {
             return
         }

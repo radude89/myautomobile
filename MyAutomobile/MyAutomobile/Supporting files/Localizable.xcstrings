@@ -449,6 +449,9 @@
         }
       }
     },
+    "alert_map_info" : {
+
+    },
     "All" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1360,6 +1363,12 @@
         }
       }
     },
+    "Map info" : {
+
+    },
+    "map_empty" : {
+
+    },
     "Model" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1604,6 +1613,9 @@
           }
         }
       }
+    },
+    "Open settings" : {
+
     },
     "Parking" : {
 
@@ -1994,6 +2006,9 @@
           }
         }
       }
+    },
+    "Test" : {
+
     },
     "The app doesn't have permission to Calendar in Settings." : {
       "extractionState" : "manual",

@@ -8,9 +8,19 @@
 import SwiftUI
 import MapKit
 
+// TODO's
+// - add marker with parking location
+//
+// - clear parking location
+//
+// - save parking location to local storage
+//
+// - (?) when coming from background / app termination state present directions, marker etc
+// https://www.createwithswift.com/getting-directions-in-mapkit-with-swiftui/
+
 struct ParkLocationView: View {
     private let locationHandler = LocationManager()
-    @State private var cameraPosition = MapCameraPosition.userLocation(fallback: .automatic)
+    @State private var showInfoAlert = false
     
     var body: some View {
         NavigationStack {
@@ -19,42 +29,46 @@ struct ParkLocationView: View {
                 .onAppear {
                     locationHandler.requestLocation()
                 }
+                .parkLocationToolbar {
+                    showInfoAlert = true
+                }
+                .alert("Map info", isPresented: $showInfoAlert) {
+                    Button("OK", role: .cancel) {
+                        showInfoAlert = false
+                    }
+                } message: {
+                    Text("alert_map_info")
+                }
         }
     }
 }
    
+// MARK: - Private
 private extension ParkLocationView {
+    @ViewBuilder
     var contentView: some View {
-        MapReader { mapProxy in
-            Map(position: $cameraPosition) {
-                UserAnnotation()
-            }
-            .mapControls {
-                MapUserLocationButton()
-            }
-            .gesture(DragGesture())
-            .gesture(makeLongPressGesture(mapProxy: mapProxy))
+        if locationHandler.state == .authorized {
+            ParkingMapView()
+        } else {
+            emptyView
         }
     }
     
-    func makeLongPressGesture(mapProxy: MapProxy) -> some Gesture {
-        LongPressGesture()
-            .sequenced(before: DragGesture(minimumDistance: 0))
-            .onEnded { findCoordinate(from: $0, mapProxy: mapProxy) }
+    var emptyView: some View {
+        VStack(spacing: 16) {
+            Text("map_empty")
+                .font(.body)
+                .multilineTextAlignment(.center)
+                .padding([.leading, .trailing])
+            Button("Open settings", action: openURLSettings)
+        }
     }
     
-    func findCoordinate(
-        from value: SequenceGesture<LongPressGesture, DragGesture>.Value,
-        mapProxy: MapProxy
-    ) {
-        switch value {
-        case .second(true, let drag):
-            let longPressLocation = drag?.location ?? .zero
-            if let coordinate = mapProxy.convert(longPressLocation, from: .local) {
-                print(coordinate)
-            }
-        default:
-            break
+    func openURLSettings() {
+        let sharedApp = UIApplication.shared
+        if let url = URL(string: UIApplication.openSettingsURLString),
+           sharedApp.canOpenURL(url) {
+            sharedApp.open(url)
         }
     }
 }

@@ -17,13 +17,13 @@ struct EventListToolbarViewModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
             .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
+                ToolbarItem(placement: .topBarLeading) {
                     Button(action: onAdd) {
                         Image(systemName: "plus")
                     }
                     .disabled(!hasVehicles)
                 }
-                ToolbarItem(placement: .navigationBarTrailing) {
+                ToolbarItem(placement: .topBarTrailing) {
                     if hasEvents {
                         editView
                     }

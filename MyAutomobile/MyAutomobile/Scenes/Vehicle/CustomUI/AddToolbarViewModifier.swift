@@ -20,7 +20,7 @@ struct AddToolbarViewModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
             .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
+                ToolbarItem(placement: .topBarLeading) {
                     Button("Cancel") {
                         if hasChanges {
                             isPresentingConfirmation = true
@@ -41,7 +41,7 @@ struct AddToolbarViewModifier: ViewModifier {
                         }
                     }
                 }
-                ToolbarItem(placement: .navigationBarTrailing) {
+                ToolbarItem(placement: .topBarTrailing) {
                     Button("Done") {
                         onDone()
                     }

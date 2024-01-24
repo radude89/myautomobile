@@ -35,6 +35,8 @@
 		F739B5E02AB4E05D0089D12F /* IAPButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F739B5DF2AB4E05D0089D12F /* IAPButton.swift */; };
 		F74C47A42ADC41F1006E131A /* ParkLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74C47A32ADC41F1006E131A /* ParkLocationView.swift */; };
 		F74F8B322AB807980014137C /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F74F8B312AB807980014137C /* StoreKit.framework */; };
+		F759B9F62B60F5B700D781FC /* ParkingMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F759B9F52B60F5B700D781FC /* ParkingMapView.swift */; };
+		F759B9F82B60F68800D781FC /* ParkLocationToolbarViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F759B9F72B60F68800D781FC /* ParkLocationToolbarViewModifier.swift */; };
 		F760EF0B2A96FDA500C38F3B /* VehicleAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F760EF0A2A96FDA500C38F3B /* VehicleAddView.swift */; };
 		F760EF0D2A9701F300C38F3B /* VehicleAddViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F760EF0C2A9701F300C38F3B /* VehicleAddViewModel.swift */; };
 		F760EF0F2A97066700C38F3B /* AddToolbarViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F760EF0E2A97066700C38F3B /* AddToolbarViewModifier.swift */; };
@@ -107,6 +109,8 @@
 		F74C47A32ADC41F1006E131A /* ParkLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkLocationView.swift; sourceTree = "<group>"; };
 		F74F8B2F2AB806450014137C /* MainStoreKitConfig.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = MainStoreKitConfig.storekit; sourceTree = "<group>"; };
 		F74F8B312AB807980014137C /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		F759B9F52B60F5B700D781FC /* ParkingMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingMapView.swift; sourceTree = "<group>"; };
+		F759B9F72B60F68800D781FC /* ParkLocationToolbarViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkLocationToolbarViewModifier.swift; sourceTree = "<group>"; };
 		F760EF0A2A96FDA500C38F3B /* VehicleAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleAddView.swift; sourceTree = "<group>"; };
 		F760EF0C2A9701F300C38F3B /* VehicleAddViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleAddViewModel.swift; sourceTree = "<group>"; };
 		F760EF0E2A97066700C38F3B /* AddToolbarViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToolbarViewModifier.swift; sourceTree = "<group>"; };
@@ -276,8 +280,10 @@
 		F74C47A22ADC41DF006E131A /* ParkLocation */ = {
 			isa = PBXGroup;
 			children = (
-				F74C47A32ADC41F1006E131A /* ParkLocationView.swift */,
 				F76F49A02B5F9E3900A53799 /* LocationManager.swift */,
+				F759B9F52B60F5B700D781FC /* ParkingMapView.swift */,
+				F759B9F72B60F68800D781FC /* ParkLocationToolbarViewModifier.swift */,
+				F74C47A32ADC41F1006E131A /* ParkLocationView.swift */,
 			);
 			path = ParkLocation;
 			sourceTree = "<group>";
@@ -489,7 +495,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1330;
-				LastUpgradeCheck = 1500;
+				LastUpgradeCheck = 1520;
 				TargetAttributes = {
 					F72188FA27FABE5D00F80AC0 = {
 						CreatedOnToolsVersion = 13.3;
@@ -586,10 +592,12 @@
 				F760EF0F2A97066700C38F3B /* AddToolbarViewModifier.swift in Sources */,
 				F73028EE2AA36D75003AAEE8 /* EventAddView.swift in Sources */,
 				F72188FF27FABE5D00F80AC0 /* MyAutomobileApp.swift in Sources */,
+				F759B9F82B60F68800D781FC /* ParkLocationToolbarViewModifier.swift in Sources */,
 				F713B7602A8F9C1500EBB0BF /* VehicleDetailsMandatoryFieldsSection.swift in Sources */,
 				F739B5E02AB4E05D0089D12F /* IAPButton.swift in Sources */,
 				F7FC88ED280EA42E007BA063 /* Vehicle.swift in Sources */,
 				F7C5D7B7282019C100C4D213 /* MockModels.swift in Sources */,
+				F759B9F62B60F5B700D781FC /* ParkingMapView.swift in Sources */,
 				F7EEF310280FE8AB0086AB03 /* Event.swift in Sources */,
 				F73028F02AA36D9B003AAEE8 /* EventAddViewModel.swift in Sources */,
 				F7C5D7AF282016FE00C4D213 /* VehicleListViewModel.swift in Sources */,
@@ -657,6 +665,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -719,6 +728,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
