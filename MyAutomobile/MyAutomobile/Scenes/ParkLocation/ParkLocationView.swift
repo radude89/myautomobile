@@ -10,16 +10,17 @@ import MapKit
 
 // TODO's
 //
-// - clear parking location
-//
 // - save parking location to local storage
 //
-// - (?) when coming from background / app termination state present directions, marker etc
+// - (?) when coming from background / app termination state present stte
 // https://www.createwithswift.com/getting-directions-in-mapkit-with-swiftui/
 
 struct ParkLocationView: View {
-    private let locationHandler = LocationManager()
+    
     @State private var showInfoAlert = false
+    @State private var parkingCoordinate: CLLocationCoordinate2D?
+    
+    private let locationHandler = LocationManager()
     
     var body: some View {
         NavigationStack {
@@ -28,9 +29,15 @@ struct ParkLocationView: View {
                 .onAppear {
                     locationHandler.requestLocation()
                 }
-                .parkLocationToolbar {
-                    showInfoAlert = true
-                }
+                .parkLocationToolbar(
+                    clearButtonIsDisabled: parkingCoordinate == nil,
+                    onTapInfo: {
+                        showInfoAlert = true
+                    },
+                    onTapClear: {
+                        parkingCoordinate = nil
+                    }
+                )
                 .alert("Map info", isPresented: $showInfoAlert) {
                     Button("OK", role: .cancel) {
                         showInfoAlert = false
@@ -47,7 +54,7 @@ private extension ParkLocationView {
     @ViewBuilder
     var contentView: some View {
         if locationHandler.state == .authorized {
-            ParkingMapView()
+            ParkingMapView(parkingCoordinate: $parkingCoordinate)
         } else {
             emptyView
         }

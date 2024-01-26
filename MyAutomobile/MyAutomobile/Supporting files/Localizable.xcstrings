@@ -557,6 +557,9 @@
         }
       }
     },
+    "Clear" : {
+
+    },
     "Color" : {
       "extractionState" : "manual",
       "localizations" : {

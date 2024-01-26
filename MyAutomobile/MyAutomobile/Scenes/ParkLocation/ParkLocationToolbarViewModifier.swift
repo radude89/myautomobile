@@ -8,11 +8,17 @@
 import SwiftUI
 
 struct ParkLocationToolbarViewModifier: ViewModifier {
+    let clearButtonIsDisabled: Bool
     let onTapInfo: () -> Void
+    let onTapClear: () -> Void
 
     func body(content: Content) -> some View {
         content
             .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Button("Clear", action: onTapClear)
+                        .disabled(clearButtonIsDisabled)
+                }
                 ToolbarItem(placement: .topBarTrailing) {
                     Button(action: onTapInfo) {
                         Image(systemName: "info.circle")
@@ -24,10 +30,16 @@ struct ParkLocationToolbarViewModifier: ViewModifier {
 
 extension View {
     func parkLocationToolbar(
-        onTapInfo: @escaping () -> Void
+        clearButtonIsDisabled: Bool,
+        onTapInfo: @escaping () -> Void,
+        onTapClear: @escaping () -> Void
     ) -> some View {
         modifier(
-            ParkLocationToolbarViewModifier(onTapInfo: onTapInfo)
+            ParkLocationToolbarViewModifier(
+                clearButtonIsDisabled: clearButtonIsDisabled,
+                onTapInfo: onTapInfo,
+                onTapClear: onTapClear
+            )
         )
     }
 }

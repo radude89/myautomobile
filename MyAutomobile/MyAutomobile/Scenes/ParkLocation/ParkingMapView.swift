@@ -10,7 +10,7 @@ import MapKit
 
 struct ParkingMapView: View {
     @State private var cameraPosition = MapCameraPosition.userLocation(fallback: .automatic)
-    @State private var parkingCoordinate: CLLocationCoordinate2D?
+    @Binding var parkingCoordinate: CLLocationCoordinate2D?
 
     var body: some View {
         MapReader { mapProxy in
@@ -55,9 +55,4 @@ private extension ParkingMapView {
             break
         }
     }
-}
-
-// MARK: - Preview
-#Preview {
-    ParkingMapView()
 }
