@@ -21,4 +21,18 @@ extension FileManager {
         let readURL = url.appendingPathComponent(fileName)
         return try Data(contentsOf: readURL)
     }
+    
+    static func deleteFile(
+        from url: URL = documentsDirectoryURL,
+        fileName: String
+    ) throws {
+        let fileURL = url.appendingPathComponent(fileName)
+
+        do {
+            try FileManager.default.removeItem(at: fileURL)
+            print("File deleted successfully: \(fileURL)")
+        } catch {
+            throw error
+        }
+    }
 }

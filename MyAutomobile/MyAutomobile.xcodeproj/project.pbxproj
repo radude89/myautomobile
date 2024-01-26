@@ -37,6 +37,9 @@
 		F74F8B322AB807980014137C /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F74F8B312AB807980014137C /* StoreKit.framework */; };
 		F759B9F62B60F5B700D781FC /* ParkingMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F759B9F52B60F5B700D781FC /* ParkingMapView.swift */; };
 		F759B9F82B60F68800D781FC /* ParkLocationToolbarViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F759B9F72B60F68800D781FC /* ParkLocationToolbarViewModifier.swift */; };
+		F760D2E32B63896900DDA146 /* ParkingLocationCoordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F760D2E22B63896900DDA146 /* ParkingLocationCoordinate.swift */; };
+		F760D2E52B63926700DDA146 /* ParkingLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F760D2E42B63926700DDA146 /* ParkingLocation.swift */; };
+		F760D2E72B63963400DDA146 /* CLLocationCoordinate2D+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F760D2E62B63963400DDA146 /* CLLocationCoordinate2D+Equatable.swift */; };
 		F760EF0B2A96FDA500C38F3B /* VehicleAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F760EF0A2A96FDA500C38F3B /* VehicleAddView.swift */; };
 		F760EF0D2A9701F300C38F3B /* VehicleAddViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F760EF0C2A9701F300C38F3B /* VehicleAddViewModel.swift */; };
 		F760EF0F2A97066700C38F3B /* AddToolbarViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F760EF0E2A97066700C38F3B /* AddToolbarViewModifier.swift */; };
@@ -111,6 +114,9 @@
 		F74F8B312AB807980014137C /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		F759B9F52B60F5B700D781FC /* ParkingMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingMapView.swift; sourceTree = "<group>"; };
 		F759B9F72B60F68800D781FC /* ParkLocationToolbarViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkLocationToolbarViewModifier.swift; sourceTree = "<group>"; };
+		F760D2E22B63896900DDA146 /* ParkingLocationCoordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingLocationCoordinate.swift; sourceTree = "<group>"; };
+		F760D2E42B63926700DDA146 /* ParkingLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingLocation.swift; sourceTree = "<group>"; };
+		F760D2E62B63963400DDA146 /* CLLocationCoordinate2D+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationCoordinate2D+Equatable.swift"; sourceTree = "<group>"; };
 		F760EF0A2A96FDA500C38F3B /* VehicleAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleAddView.swift; sourceTree = "<group>"; };
 		F760EF0C2A9701F300C38F3B /* VehicleAddViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleAddViewModel.swift; sourceTree = "<group>"; };
 		F760EF0E2A97066700C38F3B /* AddToolbarViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToolbarViewModifier.swift; sourceTree = "<group>"; };
@@ -340,6 +346,7 @@
 		F7CF21462A964F5900C73429 /* Observers */ = {
 			isa = PBXGroup;
 			children = (
+				F760D2E42B63926700DDA146 /* ParkingLocation.swift */,
 				F726335F2A95AE7700F7305D /* Vehicles.swift */,
 			);
 			path = Observers;
@@ -356,6 +363,7 @@
 		F7CF21492A964F8300C73429 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				F760D2E62B63963400DDA146 /* CLLocationCoordinate2D+Equatable.swift */,
 				F7CF21432A95B01A00C73429 /* Color+Codable.swift */,
 				F7202E052AA8F304009A17DC /* EventEditViewController.swift */,
 				F73028F32AA5FD93003AAEE8 /* FileManagerExtensions.swift */,
@@ -368,6 +376,7 @@
 			isa = PBXGroup;
 			children = (
 				F7EEF30F280FE8AB0086AB03 /* Event.swift */,
+				F760D2E22B63896900DDA146 /* ParkingLocationCoordinate.swift */,
 				F7FC88EC280EA42E007BA063 /* Vehicle.swift */,
 				F7CF21462A964F5900C73429 /* Observers */,
 			);
@@ -582,10 +591,13 @@
 				F7202E062AA8F304009A17DC /* EventEditViewController.swift in Sources */,
 				F73028F62AA61637003AAEE8 /* VehicleAddCustomFieldView.swift in Sources */,
 				F7202DFD2AA8AFB8009A17DC /* EventStoreManager.swift in Sources */,
+				F760D2E72B63963400DDA146 /* CLLocationCoordinate2D+Equatable.swift in Sources */,
 				F713B75E2A8F9ADF00EBB0BF /* VehicleDetailsTopSection.swift in Sources */,
 				F739B5DE2AB4DC000089D12F /* IAPView.swift in Sources */,
 				F799E2AA2AA35F27009F3C3D /* EventListRowView.swift in Sources */,
+				F760D2E32B63896900DDA146 /* ParkingLocationCoordinate.swift in Sources */,
 				F7C5D7B32820198A00C4D213 /* VehicleImage.swift in Sources */,
+				F760D2E52B63926700DDA146 /* ParkingLocation.swift in Sources */,
 				F7C5D7B12820191E00C4D213 /* VehicleListRowView.swift in Sources */,
 				F7D931AA287D300200289230 /* VehicleDetailsView.swift in Sources */,
 				F726335E2A95A99000F7305D /* VehicleListToolbarViewModifier.swift in Sources */,
