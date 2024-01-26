@@ -450,7 +450,44 @@
       }
     },
     "alert_map_info" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wenn Sie der App die Berechtigungen erteilt haben, Ihren Standort anzuzeigen, sehen Sie eine Karte. Sie können Ihren Parkplatz mit einem langen Tipp auf der Karte markieren."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you provided the app with permissions to display your location, you will see a map. You can mark your parking spot with a long tap on the map."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si le diste permisos a la aplicación para mostrar tu ubicación, verás un mapa. Puedes marcar tu lugar de estacionamiento con una pulsación larga en el mapa."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si vous avez donné à l'application les autorisations pour afficher votre emplacement, vous verrez une carte. Vous pouvez marquer votre place de parking en maintenant le doigt appuyé sur la carte."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se hai fornito all'app le autorizzazioni per mostrare la tua posizione, vedrai una mappa. Puoi segnare il tuo parcheggio con un lungo tocco sulla mappa."
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dacă ai acordat permisiunile aplicației pentru a afișa locația ta, vei vedea o hartă. Îți poți marca locul de parcare printr-o apăsare lungă pe hartă."
+          }
+        }
+      }
     },
     "All" : {
       "extractionState" : "manual",
@@ -558,7 +595,38 @@
       }
     },
     "Clear" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Löschen"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Borrar"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Effacer"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancella"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Șterge"
+          }
+        }
+      }
     },
     "Color" : {
       "extractionState" : "manual",
@@ -1367,10 +1435,78 @@
       }
     },
     "Map info" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Karteninformation"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Información del mapa"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Info carte"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Informazioni mappa"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Informații hartă"
+          }
+        }
+      }
     },
     "map_empty" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Um Ihren Parkplatz zu markieren, gewähren Sie bitte der App Zugriff auf Ihren Standort. Vielen Dank!"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "To mark your parking spot, please grant the app access to your location. Thank you!"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Para marcar tu lugar de estacionamiento, por favor, otorga permisos de acceso a tu ubicación a la aplicación. ¡Gracias!"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pour marquer votre place de parking, veuillez accorder à l'application l'accès à votre position. Merci !"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Per segnare il tuo parcheggio, concedi all'app l'accesso alla tua posizione. Grazie!"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pentru a marca locul de parcare, acordați aplicației acces la locația dvs. Mulțumesc!"
+          }
+        }
+      }
     },
     "Model" : {
       "extractionState" : "manual",
@@ -1618,13 +1754,106 @@
       }
     },
     "Open Settings" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Einstellungen öffnen"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abrir configuración"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ouvrir les paramètres de votre dispositif"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apri Impostazioni"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deschideți Setări"
+          }
+        }
+      }
     },
     "Parking" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Parken"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Estacionamiento"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stationnement"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Parcheggio"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Parcare"
+          }
+        }
+      }
     },
     "Parking Spot" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Parkplatz"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mapa"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carte"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mappa"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hartă"
+          }
+        }
+      }
     },
     "Recurrence" : {
       "extractionState" : "manual",

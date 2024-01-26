@@ -7,7 +7,8 @@
 */
 
 "NSCalendarsFullAccessUsageDescription"="Necesar pentru adăugarea și ștergerea evenimentelor din calendarul local.";
-"NSLocationUsageDescription"="Required to determine where you parked your vehicle.";
-"NSLocationWhenInUseUsageDescription"="Required to determine where you parked your vehicle.";
+"NSLocationUsageDescription"="Necesar pentru a determina unde ați parcat vehiculul.";
+"NSLocationWhenInUseUsageDescription"="Necesar pentru a determina unde ați parcat vehiculul.";
 "CFBundleDisplayName"="CarChum";
-"parking"="Your location is used to determine where you parked your vehicle.";
+"parking"="Locația dvs. este utilizată pentru a determina unde ați parcat vehiculul.";
+
