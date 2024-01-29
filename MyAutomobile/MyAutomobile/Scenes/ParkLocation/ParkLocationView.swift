@@ -20,7 +20,7 @@ struct ParkLocationView: View {
     var body: some View {
         NavigationStack {
             contentView
-                .navigationTitle("Parking Spot")
+                .navigationTitle("Parking")
                 .onAppear {
                     locationHandler.requestLocation()
                     parkingCoordinate = parkingLocation.coordinate
