@@ -11,6 +11,7 @@ struct MainTabView: View {
     @StateObject private var vehicles = Vehicles()
     @StateObject private var storeManager = EventStoreManager()
     @StateObject private var purchaseManager = PurchaseManager()
+    @State private var selectedTab = 1
 
     var body: some View {
         tabView
@@ -24,22 +25,42 @@ struct MainTabView: View {
 
 private extension MainTabView {
     var tabView: some View {
-        TabView {
-            VehicleListView(viewModel: .init(vehicles: vehicles, eventStoreManager: storeManager, purchaseManager: purchaseManager))
-                .tabItem { Label("Vehicles", systemImage: "car.2.fill") }
-                .environmentObject(purchaseManager)
-                .task {
-                    await purchaseManager.updatePurchasedProducts()
-                }
+        TabView(selection: $selectedTab) {
+            VehicleListView(
+                viewModel: .init(
+                    vehicles: vehicles,
+                    eventStoreManager: storeManager,
+                    purchaseManager: purchaseManager
+                )
+            )
+            .tabItem { Label("Vehicles", systemImage: "car.2.fill") }
+            .tag(1)
+            .environmentObject(purchaseManager)
+            .task {
+                await purchaseManager.updatePurchasedProducts()
+            }
             
-            EventListView(viewModel: .init(vehicles: vehicles, eventStoreManager: storeManager))
-                .tabItem { Label("Events", systemImage: "calendar")}
+            EventListView(
+                viewModel: .init(vehicles: vehicles, eventStoreManager: storeManager)
+            )
+            .tabItem { Label("Events", systemImage: "calendar")}
+            .tag(2)
             
             ParkLocationView()
                 .tabItem { Label("Parking", systemImage: "parkingsign") }
+                .tag(3)
+            
+            MoreView(
+                viewModel: .init(vehicles: vehicles)
+            )
+            .tabItem { Label("More", systemImage: "gear") }
+            .tag(4)
+        }
+        .onChange(of: selectedTab) { oldValue, newValue in
+            print(selectedTab)
         }
     }
-
+    
     func saveData() {
         do {
             let data = try JSONEncoder().encode(vehicles.items)

@@ -56,17 +56,8 @@ extension LocationManager: CLLocationManagerDelegate {
         switch locationManager.authorizationStatus {
         case .authorizedAlways, .authorizedWhenInUse:
             state = .authorized
-            requestFullAccuracyIfNeeded(locationManager: locationManager)
         default:
             state = .disabled
-        }
-    }
-    
-    private func requestFullAccuracyIfNeeded(locationManager: CLLocationManager) {
-        if locationManager.accuracyAuthorization != .fullAccuracy {
-            locationHandler.requestTemporaryFullAccuracyAuthorization(
-                withPurposeKey: "parking"
-            )
         }
     }
     

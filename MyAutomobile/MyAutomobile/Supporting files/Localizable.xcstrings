@@ -1089,6 +1089,12 @@
         }
       }
     },
+    "Expense tracking" : {
+
+    },
+    "Expenses" : {
+
+    },
     "Filter" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1287,6 +1293,9 @@
           }
         }
       }
+    },
+    "Hello, World - %@!" : {
+
     },
     "iap.title" : {
       "extractionState" : "manual",
@@ -1578,6 +1587,9 @@
         }
       }
     },
+    "More" : {
+
+    },
     "Name" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1647,6 +1659,9 @@
           }
         }
       }
+    },
+    "No vehicles" : {
+
     },
     "Number Plate" : {
       "extractionState" : "manual",
@@ -2169,6 +2184,9 @@
         }
       }
     },
+    "Select vehicle" : {
+
+    },
     "Select your vehicle" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -2308,6 +2326,9 @@
           }
         }
       }
+    },
+    "Utils" : {
+
     },
     "Value" : {
       "extractionState" : "manual",
