@@ -11,7 +11,6 @@ struct MainTabView: View {
     @StateObject private var vehicles = Vehicles()
     @StateObject private var storeManager = EventStoreManager()
     @StateObject private var purchaseManager = PurchaseManager()
-    @State private var selectedTab = 1
 
     var body: some View {
         tabView
@@ -25,7 +24,7 @@ struct MainTabView: View {
 
 private extension MainTabView {
     var tabView: some View {
-        TabView(selection: $selectedTab) {
+        TabView {
             VehicleListView(
                 viewModel: .init(
                     vehicles: vehicles,
@@ -55,9 +54,6 @@ private extension MainTabView {
             )
             .tabItem { Label("More", systemImage: "gear") }
             .tag(4)
-        }
-        .onChange(of: selectedTab) { oldValue, newValue in
-            print(selectedTab)
         }
     }
     
