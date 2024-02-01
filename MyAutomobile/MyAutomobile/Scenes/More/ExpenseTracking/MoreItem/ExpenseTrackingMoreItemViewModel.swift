@@ -17,4 +17,8 @@ final class ExpenseTrackingMoreItemViewModel: ObservableObject {
     var items: [Vehicle] {
         vehicles.items
     }
+    
+    var firstVehicle: Vehicle? {
+        vehicles.items.first
+    }
 }

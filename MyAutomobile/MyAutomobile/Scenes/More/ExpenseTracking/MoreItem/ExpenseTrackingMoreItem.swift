@@ -28,19 +28,21 @@ struct ExpenseTrackingMoreItem: View {
 private extension ExpenseTrackingMoreItem {
     var expenseTrackingForm: some View {
         guard !viewModel.items.isEmpty,
-              let firstVehicle = viewModel.items.first else {
+              let firstVehicle = viewModel.firstVehicle else {
             return AnyView(emptyView)
         }
         
         return if viewModel.items.count > 1 {
             AnyView(selectionView)
         } else {
-            AnyView(ExpenseTrackingView(viewModel: .init(vehicle: firstVehicle)))
+            AnyView(
+                ExpenseTrackingView(vehicle: firstVehicle)
+            )
         }
     }
     
     var emptyView: some View {
-        Text("events_empty")
+        Text("expenses_empty")
             .font(.body)
             .multilineTextAlignment(.center)
             .padding([.leading, .trailing])
@@ -52,7 +54,7 @@ private extension ExpenseTrackingMoreItem {
                 VehiclesSelectionView(
                     viewModel: .init(vehicles: viewModel.vehicles)
                 ) { vehicle in
-                    ExpenseTrackingView(viewModel: .init(vehicle: vehicle))
+                    ExpenseTrackingView(vehicle: vehicle)
                 }
             } header: {
                 Text("Select vehicle")
