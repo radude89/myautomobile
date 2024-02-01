@@ -11,6 +11,7 @@ struct MainTabView: View {
     @StateObject private var vehicles = Vehicles()
     @StateObject private var storeManager = EventStoreManager()
     @StateObject private var purchaseManager = PurchaseManager()
+    @State private var selection = 0
 
     var body: some View {
         tabView
@@ -18,13 +19,23 @@ struct MainTabView: View {
                 saveData()
             }
     }
+    
+    var handler: Binding<Int> { Binding(
+        get: { self.selection },
+        set: {
+            if $0 == self.selection {
+                print("Reset here!!")
+            }
+            self.selection = $0
+        }
+    )}
 }
 
 // MARK: - Private methods
 
 private extension MainTabView {
     var tabView: some View {
-        TabView {
+        TabView(selection: handler) {
             VehicleListView(
                 viewModel: .init(
                     vehicles: vehicles,
@@ -33,7 +44,7 @@ private extension MainTabView {
                 )
             )
             .tabItem { Label("Vehicles", systemImage: "car.2.fill") }
-            .tag(1)
+            .tag(0)
             .environmentObject(purchaseManager)
             .task {
                 await purchaseManager.updatePurchasedProducts()
@@ -43,17 +54,17 @@ private extension MainTabView {
                 viewModel: .init(vehicles: vehicles, eventStoreManager: storeManager)
             )
             .tabItem { Label("Events", systemImage: "calendar")}
-            .tag(2)
+            .tag(1)
             
             ParkLocationView()
                 .tabItem { Label("Parking", systemImage: "parkingsign") }
-                .tag(3)
+                .tag(2)
             
             MoreView(
                 viewModel: .init(vehicles: vehicles)
             )
             .tabItem { Label("More", systemImage: "gear") }
-            .tag(4)
+            .tag(3)
         }
     }
     

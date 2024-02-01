@@ -215,6 +215,9 @@
         }
       }
     },
+    "Add your expense" : {
+
+    },
     "Add your new vehicle" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -366,6 +369,9 @@
           }
         }
       }
+    },
+    "alert_confirmation_expense_discard_title" : {
+
     },
     "alert_confirmation_vehicle_discard_title" : {
       "extractionState" : "manual",
@@ -663,6 +669,12 @@
         }
       }
     },
+    "Comment (optional)" : {
+
+    },
+    "Cost" : {
+
+    },
     "Date" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -872,6 +884,12 @@
           }
         }
       }
+    },
+    "Enter the approximate reading" : {
+
+    },
+    "Enter your expense" : {
+
     },
     "Event was saved" : {
       "extractionState" : "manual",
@@ -1090,6 +1108,9 @@
       }
     },
     "Expense tracking" : {
+
+    },
+    "Expense type" : {
 
     },
     "Expenses" : {
@@ -1697,6 +1718,9 @@
           }
         }
       }
+    },
+    "Odometer reading (optional)" : {
+
     },
     "OK" : {
       "extractionState" : "manual",

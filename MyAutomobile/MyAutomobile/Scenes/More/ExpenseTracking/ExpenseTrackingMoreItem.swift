@@ -33,10 +33,10 @@ private extension ExpenseTrackingMoreItem {
             Section {
                 if vehicles.items.count > 1 {
                     VehiclesSelectionView(vehicles: vehicles) { vehicle in
-                        makeExpenseTrackingView(vehicle: vehicle)
+                        ExpenseTrackingView(vehicle: vehicle)
                     }
                 } else if let firstVehicle = vehicles.items.first {
-                    makeExpenseTrackingView(vehicle: firstVehicle)
+                    ExpenseTrackingView(vehicle: firstVehicle)
                 } else {
                     Text("No vehicles")
                 }
@@ -44,10 +44,5 @@ private extension ExpenseTrackingMoreItem {
                 Text("Select vehicle")
             }
         }
-    }
-    
-    func makeExpenseTrackingView(vehicle: Vehicle) -> some View {
-        ExpenseTrackingView(vehicle: vehicle)
-            .navigationTitle("Expenses")
     }
 }

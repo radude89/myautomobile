@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F70537C82B6B93CD0005400B /* ExpenseAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70537C72B6B93CD0005400B /* ExpenseAddView.swift */; };
+		F70537CA2B6BFDFB0005400B /* ExpenseAddFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70537C92B6BFDFB0005400B /* ExpenseAddFormView.swift */; };
+		F70537CC2B6BFE790005400B /* ExpenseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70537CB2B6BFE790005400B /* ExpenseType.swift */; };
 		F713B75E2A8F9ADF00EBB0BF /* VehicleDetailsTopSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F713B75D2A8F9ADF00EBB0BF /* VehicleDetailsTopSection.swift */; };
 		F713B7602A8F9C1500EBB0BF /* VehicleDetailsMandatoryFieldsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F713B75F2A8F9C1500EBB0BF /* VehicleDetailsMandatoryFieldsSection.swift */; };
 		F713B7622A8F9D7D00EBB0BF /* VehicleDetailsCustomFieldsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F713B7612A8F9D7D00EBB0BF /* VehicleDetailsCustomFieldsSection.swift */; };
@@ -84,6 +87,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F70537C72B6B93CD0005400B /* ExpenseAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseAddView.swift; sourceTree = "<group>"; };
+		F70537C92B6BFDFB0005400B /* ExpenseAddFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseAddFormView.swift; sourceTree = "<group>"; };
+		F70537CB2B6BFE790005400B /* ExpenseType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseType.swift; sourceTree = "<group>"; };
 		F70D1F3F2898C453005FFC66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		F713B75D2A8F9ADF00EBB0BF /* VehicleDetailsTopSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleDetailsTopSection.swift; sourceTree = "<group>"; };
 		F713B75F2A8F9C1500EBB0BF /* VehicleDetailsMandatoryFieldsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleDetailsMandatoryFieldsSection.swift; sourceTree = "<group>"; };
@@ -446,8 +452,11 @@
 		F7E8D2CB2B67F7EE000DC750 /* ExpenseTracking */ = {
 			isa = PBXGroup;
 			children = (
+				F70537C92B6BFDFB0005400B /* ExpenseAddFormView.swift */,
+				F70537C72B6B93CD0005400B /* ExpenseAddView.swift */,
 				F7E8D2D42B68384F000DC750 /* ExpenseTrackingMoreItem.swift */,
 				F7E8D2D22B682D13000DC750 /* ExpenseTrackingView.swift */,
+				F70537CB2B6BFE790005400B /* ExpenseType.swift */,
 				F7E8D2D02B682CD7000DC750 /* VehiclesSelectionView.swift */,
 			);
 			path = ExpenseTracking;
@@ -609,6 +618,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F72633602A95AE7700F7305D /* Vehicles.swift in Sources */,
+				F70537C82B6B93CD0005400B /* ExpenseAddView.swift in Sources */,
 				F7C5F19A2885004800375D91 /* EventListViewModel.swift in Sources */,
 				F7B3DA3B2AB5D1B10045359B /* PurchaseManager.swift in Sources */,
 				F7E8D2D32B682D13000DC750 /* ExpenseTrackingView.swift in Sources */,
@@ -623,6 +633,7 @@
 				F7FC88E9280EA29C007BA063 /* VehicleListView.swift in Sources */,
 				F7202E062AA8F304009A17DC /* EventEditViewController.swift in Sources */,
 				F73028F62AA61637003AAEE8 /* VehicleAddCustomFieldView.swift in Sources */,
+				F70537CA2B6BFDFB0005400B /* ExpenseAddFormView.swift in Sources */,
 				F7202DFD2AA8AFB8009A17DC /* EventStoreManager.swift in Sources */,
 				F760D2E72B63963400DDA146 /* CLLocationCoordinate2D+Equatable.swift in Sources */,
 				F713B75E2A8F9ADF00EBB0BF /* VehicleDetailsTopSection.swift in Sources */,
@@ -652,6 +663,7 @@
 				F7FC88EB280EA2AF007BA063 /* EventListView.swift in Sources */,
 				F73028F22AA378E2003AAEE8 /* EventAddFormView.swift in Sources */,
 				F73028E82AA36A9B003AAEE8 /* EventListToolbarViewModifier.swift in Sources */,
+				F70537CC2B6BFE790005400B /* ExpenseType.swift in Sources */,
 				F7CF21442A95B01A00C73429 /* Color+Codable.swift in Sources */,
 				F713B7622A8F9D7D00EBB0BF /* VehicleDetailsCustomFieldsSection.swift in Sources */,
 				F7E8D2D72B683925000DC750 /* MoreViewModel.swift in Sources */,
