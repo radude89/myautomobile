@@ -17,11 +17,9 @@ struct ExpenseTrackingMoreItem: View {
     
     var body: some View {
         NavigationLink("Expense tracking") {
-            NavigationStack {
-                expenseTrackingForm
-            }
-            .navigationTitle("Vehicles")
-            .navigationBarTitleDisplayMode(.inline)
+            expenseTrackingForm
+                .navigationTitle("Vehicles")
+                .navigationBarTitleDisplayMode(.inline)
         }
     }
 }
