@@ -36,7 +36,7 @@ private extension ExpenseTrackingMoreItem {
             AnyView(selectionView)
         } else {
             AnyView(
-                ExpenseTrackingView(vehicle: firstVehicle)
+                makeExpenseTrackingView(vehicle: firstVehicle)
             )
         }
     }
@@ -54,11 +54,20 @@ private extension ExpenseTrackingMoreItem {
                 VehiclesSelectionView(
                     viewModel: .init(vehicles: viewModel.vehicles)
                 ) { vehicle in
-                    ExpenseTrackingView(vehicle: vehicle)
+                    makeExpenseTrackingView(vehicle: vehicle)
                 }
             } header: {
                 Text("Select vehicle")
             }
         }
+    }
+    
+    func makeExpenseTrackingView(vehicle: Vehicle) -> some View {
+        ExpenseTrackingView(
+            viewModel: .init(
+                vehicles: viewModel.vehicles,
+                vehicle: vehicle
+            )
+        )
     }
 }

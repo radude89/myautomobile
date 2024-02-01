@@ -8,15 +8,20 @@
 import SwiftUI
 
 struct ExpenseTrackingView: View {
-    private let vehicle: Vehicle
-    @State private var showAddView = false
     
-    init(vehicle: Vehicle) {
-        self.vehicle = vehicle
+    @State private var showAddView = false
+    @State private var showInfoAlert = false
+    
+    @Environment(\.presentationMode) private var presentationMode
+    
+    @StateObject private var viewModel: ExpenseTrackingViewModel
+
+    init(viewModel: ExpenseTrackingViewModel) {
+        _viewModel = StateObject(wrappedValue: viewModel)
     }
     
     var body: some View {
-        Text("Hello, World - \(vehicle.numberPlate)!")
+        Text("Hello, World - \(viewModel.vehicle.numberPlate)!")
             .sheet(isPresented: $showAddView) {
                 ExpenseAddView()
             }
@@ -27,15 +32,28 @@ struct ExpenseTrackingView: View {
                         Button(action: onAdd) {
                             Image(systemName: "plus")
                         }
-                        if true {
+                        if viewModel.shouldDisplayEdit {
                             EditButton()
                         }
                     }
                 }
             }
+            .alert("Warning", isPresented: $showInfoAlert) {
+                Button("OK", role: .cancel) {
+                    showInfoAlert = false
+                    presentationMode.wrappedValue.dismiss()
+                }
+            } message: {
+                Text("It looks like this vehicle has been deleted")
+            }
+            .onAppear {
+                if viewModel.hasDeletedVehicle {
+                    showInfoAlert = true
+                }
+            }
     }
     
     private func onAdd() {
-        showAddView.toggle()
+        
     }
 }

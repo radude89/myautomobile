@@ -1397,6 +1397,9 @@
         }
       }
     },
+    "It looks like this vehicle has been deleted" : {
+
+    },
     "Keep editing" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -2575,6 +2578,9 @@
           }
         }
       }
+    },
+    "Warning" : {
+
     },
     "Weekly" : {
       "extractionState" : "manual",
