@@ -9,10 +9,10 @@ import SwiftUI
 
 @MainActor
 struct ExpenseTrackingMoreItem: View {
-    private let viewModel: ExpenseTrackingMoreItemViewModel
+    @StateObject private var viewModel: ExpenseTrackingMoreItemViewModel
     
     init(viewModel: ExpenseTrackingMoreItemViewModel) {
-        self.viewModel = viewModel
+        _viewModel = StateObject(wrappedValue: viewModel)
     }
     
     var body: some View {
@@ -31,9 +31,9 @@ private extension ExpenseTrackingMoreItem {
             Section {
                 if viewModel.vehicles.items.count > 0 {
                     VehiclesSelectionView(
-                        vehicles: viewModel.vehicles
+                        viewModel: .init(vehicles: viewModel.vehicles)
                     ) { vehicle in
-                        ExpenseTrackingView(vehicle: vehicle)
+                        ExpenseTrackingView(viewModel: .init(vehicle: vehicle))
                     }
                 } else {
                     Text("No vehicles")

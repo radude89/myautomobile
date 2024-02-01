@@ -5,11 +5,10 @@
 //  Created by Radu Dan on 01.02.2024.
 //
 
-import Observation
+import SwiftUI
 
-@Observable
-final class ExpenseTrackingMoreItemViewModel {
-    let vehicles: Vehicles
+final class ExpenseTrackingMoreItemViewModel: ObservableObject {
+    @ObservedObject var vehicles: Vehicles
     
     init(vehicles: Vehicles) {
         self.vehicles = vehicles

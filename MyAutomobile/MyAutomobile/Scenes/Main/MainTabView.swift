@@ -15,7 +15,9 @@ struct MainTabView: View {
 
     var body: some View {
         tabView
-            .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)) { _ in
+            .onReceive(
+                NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)
+            ) { _ in
                 saveData()
             }
     }

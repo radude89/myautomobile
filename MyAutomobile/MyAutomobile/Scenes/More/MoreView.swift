@@ -6,11 +6,14 @@
 //
 
 import SwiftUI
-import Observation
 
 @MainActor
 struct MoreView: View {
-    let viewModel: MoreViewModel
+    @StateObject private var viewModel: MoreViewModel
+    
+    init(viewModel: MoreViewModel) {
+        _viewModel = StateObject(wrappedValue: viewModel)
+    }
 
     var body: some View {
         NavigationStack {

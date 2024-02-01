@@ -8,15 +8,15 @@
 import SwiftUI
 
 struct ExpenseTrackingView: View {
-    private let vehicle: Vehicle
+    private let viewModel: ExpenseTrackingViewModel
     @State private var showAddView = false
     
-    init(vehicle: Vehicle) {
-        self.vehicle = vehicle
+    init(viewModel: ExpenseTrackingViewModel) {
+        self.viewModel = viewModel
     }
     
     var body: some View {
-        Text("Hello, World - \(vehicle.numberPlate)!")
+        Text("Hello, World - \(viewModel.vehicle.numberPlate)!")
             .sheet(isPresented: $showAddView) {
                 ExpenseAddView()
             }

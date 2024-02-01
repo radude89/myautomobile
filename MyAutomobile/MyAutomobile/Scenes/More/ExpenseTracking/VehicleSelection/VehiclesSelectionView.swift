@@ -8,19 +8,19 @@
 import SwiftUI
 
 struct VehiclesSelectionView<Destination: View>: View {
-    private let vehicles: Vehicles
+    @StateObject private var viewModel: VehiclesSelectionViewModel
     private let destinationViewProvider: (Vehicle) -> Destination
 
     init(
-        vehicles: Vehicles,
+        viewModel: VehiclesSelectionViewModel,
         @ViewBuilder destinationViewProvider: @escaping (Vehicle) -> Destination
     ) {
-        self.vehicles = vehicles
+        _viewModel = StateObject(wrappedValue: viewModel)
         self.destinationViewProvider = destinationViewProvider
     }
 
     var body: some View {
-        List(vehicles.items) { vehicle in
+        List(viewModel.vehicles.items) { vehicle in
             NavigationLink(vehicle.numberPlate) {
                 destinationViewProvider(vehicle)
             }

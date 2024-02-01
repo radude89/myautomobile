@@ -1,13 +1,13 @@
 //
-//  MoreViewModel.swift
+//  VehiclesSelectionViewModel.swift
 //  MyAutomobile
 //
-//  Created by Radu Dan on 29.01.2024.
+//  Created by Radu Dan on 01.02.2024.
 //
 
 import SwiftUI
 
-final class MoreViewModel: ObservableObject {
+final class VehiclesSelectionViewModel: ObservableObject {
     @ObservedObject var vehicles: Vehicles
     
     init(vehicles: Vehicles) {
