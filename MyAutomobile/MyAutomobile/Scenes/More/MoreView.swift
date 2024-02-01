@@ -30,7 +30,9 @@ private extension MoreView {
 
     var utilsSection: some View {
         Section {
-            ExpenseTrackingMoreItem(vehicles: viewModel.vehicles)
+            ExpenseTrackingMoreItem(
+                viewModel: .init(vehicles: viewModel.vehicles)
+            )
         } header: {
             Text("Utils")
         }

@@ -9,10 +9,10 @@ import SwiftUI
 
 @MainActor
 struct ExpenseTrackingMoreItem: View {
-    private let vehicles: Vehicles
+    private let viewModel: ExpenseTrackingMoreItemViewModel
     
-    init(vehicles: Vehicles) {
-        self.vehicles = vehicles
+    init(viewModel: ExpenseTrackingMoreItemViewModel) {
+        self.viewModel = viewModel
     }
     
     var body: some View {
@@ -29,12 +29,12 @@ private extension ExpenseTrackingMoreItem {
     var expenseTrackingForm: some View {
         Form {
             Section {
-                if vehicles.items.count > 1 {
-                    VehiclesSelectionView(vehicles: vehicles) { vehicle in
+                if viewModel.vehicles.items.count > 0 {
+                    VehiclesSelectionView(
+                        vehicles: viewModel.vehicles
+                    ) { vehicle in
                         ExpenseTrackingView(vehicle: vehicle)
                     }
-                } else if let firstVehicle = vehicles.items.first {
-                    ExpenseTrackingView(vehicle: firstVehicle)
                 } else {
                     Text("No vehicles")
                 }

@@ -10,7 +10,7 @@ import Foundation
 @MainActor
 @Observable
 final class MoreViewModel {
-    private(set) var vehicles: Vehicles
+    let vehicles: Vehicles
     
     init(vehicles: Vehicles) {
         self.vehicles = vehicles

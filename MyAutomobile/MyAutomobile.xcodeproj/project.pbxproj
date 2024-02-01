@@ -10,6 +10,7 @@
 		F70537C82B6B93CD0005400B /* ExpenseAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70537C72B6B93CD0005400B /* ExpenseAddView.swift */; };
 		F70537CA2B6BFDFB0005400B /* ExpenseAddFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70537C92B6BFDFB0005400B /* ExpenseAddFormView.swift */; };
 		F70537CC2B6BFE790005400B /* ExpenseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70537CB2B6BFE790005400B /* ExpenseType.swift */; };
+		F70537CE2B6C0F040005400B /* ExpenseTrackingMoreItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70537CD2B6C0F040005400B /* ExpenseTrackingMoreItemViewModel.swift */; };
 		F713B75E2A8F9ADF00EBB0BF /* VehicleDetailsTopSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F713B75D2A8F9ADF00EBB0BF /* VehicleDetailsTopSection.swift */; };
 		F713B7602A8F9C1500EBB0BF /* VehicleDetailsMandatoryFieldsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F713B75F2A8F9C1500EBB0BF /* VehicleDetailsMandatoryFieldsSection.swift */; };
 		F713B7622A8F9D7D00EBB0BF /* VehicleDetailsCustomFieldsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F713B7612A8F9D7D00EBB0BF /* VehicleDetailsCustomFieldsSection.swift */; };
@@ -90,6 +91,7 @@
 		F70537C72B6B93CD0005400B /* ExpenseAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseAddView.swift; sourceTree = "<group>"; };
 		F70537C92B6BFDFB0005400B /* ExpenseAddFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseAddFormView.swift; sourceTree = "<group>"; };
 		F70537CB2B6BFE790005400B /* ExpenseType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseType.swift; sourceTree = "<group>"; };
+		F70537CD2B6C0F040005400B /* ExpenseTrackingMoreItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseTrackingMoreItemViewModel.swift; sourceTree = "<group>"; };
 		F70D1F3F2898C453005FFC66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		F713B75D2A8F9ADF00EBB0BF /* VehicleDetailsTopSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleDetailsTopSection.swift; sourceTree = "<group>"; };
 		F713B75F2A8F9C1500EBB0BF /* VehicleDetailsMandatoryFieldsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleDetailsMandatoryFieldsSection.swift; sourceTree = "<group>"; };
@@ -455,6 +457,7 @@
 				F70537C92B6BFDFB0005400B /* ExpenseAddFormView.swift */,
 				F70537C72B6B93CD0005400B /* ExpenseAddView.swift */,
 				F7E8D2D42B68384F000DC750 /* ExpenseTrackingMoreItem.swift */,
+				F70537CD2B6C0F040005400B /* ExpenseTrackingMoreItemViewModel.swift */,
 				F7E8D2D22B682D13000DC750 /* ExpenseTrackingView.swift */,
 				F70537CB2B6BFE790005400B /* ExpenseType.swift */,
 				F7E8D2D02B682CD7000DC750 /* VehiclesSelectionView.swift */,
@@ -630,6 +633,7 @@
 				F7202DFE2AA8AFB8009A17DC /* EventStoreError.swift in Sources */,
 				F74C47A42ADC41F1006E131A /* ParkLocationView.swift in Sources */,
 				F713B7652A8FA6FE00EBB0BF /* VehicleDetailsViewModel.swift in Sources */,
+				F70537CE2B6C0F040005400B /* ExpenseTrackingMoreItemViewModel.swift in Sources */,
 				F7FC88E9280EA29C007BA063 /* VehicleListView.swift in Sources */,
 				F7202E062AA8F304009A17DC /* EventEditViewController.swift in Sources */,
 				F73028F62AA61637003AAEE8 /* VehicleAddCustomFieldView.swift in Sources */,
