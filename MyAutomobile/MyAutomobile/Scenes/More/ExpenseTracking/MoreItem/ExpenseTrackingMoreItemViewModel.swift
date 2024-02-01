@@ -13,4 +13,8 @@ final class ExpenseTrackingMoreItemViewModel: ObservableObject {
     init(vehicles: Vehicles) {
         self.vehicles = vehicles
     }
+    
+    var items: [Vehicle] {
+        vehicles.items
+    }
 }

@@ -1681,9 +1681,6 @@
         }
       }
     },
-    "No vehicles" : {
-
-    },
     "Number Plate" : {
       "extractionState" : "manual",
       "localizations" : {
