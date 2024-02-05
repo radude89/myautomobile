@@ -18,7 +18,7 @@ struct ExpenseTrackingView: View {
     }
     
     var body: some View {
-        Text("Hello, World - \(viewModel.vehicleID)!")
+        contentView
             .sheet(isPresented: $showAddView) { addView }
             .navigationTitle("Expenses")
             .toolbar { toolbar }
@@ -40,6 +40,33 @@ struct ExpenseTrackingView: View {
 
 // MARK: - Private
 private extension ExpenseTrackingView {
+    @ViewBuilder
+    var contentView: some View {
+        if viewModel.expenses.isEmpty {
+            emptyView
+        } else {
+            listContentView
+        }
+    }
+    
+    var emptyView: some View {
+        Text("expenses_empty")
+            .font(.body)
+            .multilineTextAlignment(.center)
+            .padding([.leading, .trailing])
+    }
+    
+    var listContentView: some View {
+        List {
+            ForEach(viewModel.expenses) { expense in
+                Text("\(expense.cost)")
+            }
+            .onDelete { indexSet in
+                viewModel.deleteExpense(at: indexSet)
+            }
+        }
+    }
+
     var addView: some View {
         ExpenseAddView(
             viewModel: .init(

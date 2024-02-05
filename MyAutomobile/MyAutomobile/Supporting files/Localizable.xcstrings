@@ -75,6 +75,9 @@
         }
       }
     },
+    "%lf" : {
+
+    },
     "Add Item" : {
 
     },
@@ -1320,9 +1323,6 @@
           }
         }
       }
-    },
-    "Hello, World - %@!" : {
-
     },
     "iap.title" : {
       "extractionState" : "manual",

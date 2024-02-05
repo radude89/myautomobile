@@ -17,12 +17,42 @@ final class ExpenseTrackingViewModel: ObservableObject {
     }
     
     var shouldDisplayEdit: Bool {
-        // TODO: Change to actual business logic
-        true
+        guard let vehicle else {
+            return false
+        }
+
+        return !vehicle.expenses.isEmpty
     }
     
     var hasDeletedVehicle: Bool {
-        !vehicles.items.contains { $0.id == vehicleID }
+        vehicle == nil
     }
     
+    var expenses: [Expense] {
+        vehicle?.expenses ?? []
+    }
+    
+    func deleteExpense(at indexSet: IndexSet) {
+        guard let vehicle else {
+            return
+        }
+        
+        var copyVehicle = vehicle
+        copyVehicle.expenses.remove(atOffsets: indexSet)
+        updateVehicles(vehicle: copyVehicle)
+    }
+}
+
+// MARK: - Private
+private extension ExpenseTrackingViewModel {
+    var vehicle: Vehicle? {
+        vehicles.items.first { $0.id == vehicleID }
+    }
+    
+    func updateVehicles(vehicle: Vehicle) {
+        var items = vehicles.items
+        items.removeAll { $0.id == vehicle.id }
+        items.append(vehicle)
+        vehicles.items = items.sorted { $0.dateCreated < $1.dateCreated }
+    }
 }

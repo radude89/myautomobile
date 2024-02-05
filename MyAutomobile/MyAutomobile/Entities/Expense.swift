@@ -30,6 +30,8 @@ struct Expense {
     }
 }
 
+extension Expense: Identifiable {}
+
 extension Expense: Codable {}
 
 extension Expense: Equatable {}
