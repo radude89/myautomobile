@@ -9,7 +9,6 @@ import Foundation
 
 struct Expense {
     let id: UUID
-    let vehicleID: UUID
     let date: Date
     let odometerReading: Int?
     let expenseType: ExpenseType
