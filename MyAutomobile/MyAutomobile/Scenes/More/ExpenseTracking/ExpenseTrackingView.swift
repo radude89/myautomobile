@@ -15,7 +15,7 @@ struct ExpenseTrackingView: View {
     @Environment(\.presentationMode) private var presentationMode
     
     @StateObject private var viewModel: ExpenseTrackingViewModel
-
+    
     init(viewModel: ExpenseTrackingViewModel) {
         _viewModel = StateObject(wrappedValue: viewModel)
     }
@@ -26,18 +26,7 @@ struct ExpenseTrackingView: View {
                 ExpenseAddView()
             }
             .navigationTitle("Expenses")
-            .toolbar {
-                ToolbarItem(placement: .topBarTrailing) {
-                    HStack {
-                        Button(action: onAdd) {
-                            Image(systemName: "plus")
-                        }
-                        if viewModel.shouldDisplayEdit {
-                            EditButton()
-                        }
-                    }
-                }
-            }
+            .toolbar { toolbar }
             .alert("Warning", isPresented: $showInfoAlert) {
                 Button("OK", role: .cancel) {
                     showInfoAlert = false
@@ -52,8 +41,25 @@ struct ExpenseTrackingView: View {
                 }
             }
     }
+}
+
+// MARK: - Private
+private extension ExpenseTrackingView {
+    func onAdd() {
+        showAddView = true
+    }
     
-    private func onAdd() {
-        
+    @ToolbarContentBuilder
+    var toolbar: some ToolbarContent {
+        ToolbarItem(placement: .topBarTrailing) {
+            HStack {
+                Button(action: onAdd) {
+                    Image(systemName: "plus")
+                }
+                if viewModel.shouldDisplayEdit {
+                    EditButton()
+                }
+            }
+        }
     }
 }

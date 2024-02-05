@@ -16,3 +16,5 @@ enum ExpenseType: String, CaseIterable {
     case parking
     case other
 }
+
+extension ExpenseType: Codable {}

@@ -13,6 +13,7 @@
 		F70537CE2B6C0F040005400B /* ExpenseTrackingMoreItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70537CD2B6C0F040005400B /* ExpenseTrackingMoreItemViewModel.swift */; };
 		F70537D02B6C10E80005400B /* VehiclesSelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70537CF2B6C10E80005400B /* VehiclesSelectionViewModel.swift */; };
 		F70537D82B6C1E8A0005400B /* ExpenseTrackingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70537D72B6C1E8A0005400B /* ExpenseTrackingViewModel.swift */; };
+		F70537DA2B6C218B0005400B /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70537D92B6C218B0005400B /* Expense.swift */; };
 		F713B75E2A8F9ADF00EBB0BF /* VehicleDetailsTopSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F713B75D2A8F9ADF00EBB0BF /* VehicleDetailsTopSection.swift */; };
 		F713B7602A8F9C1500EBB0BF /* VehicleDetailsMandatoryFieldsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F713B75F2A8F9C1500EBB0BF /* VehicleDetailsMandatoryFieldsSection.swift */; };
 		F713B7622A8F9D7D00EBB0BF /* VehicleDetailsCustomFieldsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F713B7612A8F9D7D00EBB0BF /* VehicleDetailsCustomFieldsSection.swift */; };
@@ -96,6 +97,7 @@
 		F70537CD2B6C0F040005400B /* ExpenseTrackingMoreItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseTrackingMoreItemViewModel.swift; sourceTree = "<group>"; };
 		F70537CF2B6C10E80005400B /* VehiclesSelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehiclesSelectionViewModel.swift; sourceTree = "<group>"; };
 		F70537D72B6C1E8A0005400B /* ExpenseTrackingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseTrackingViewModel.swift; sourceTree = "<group>"; };
+		F70537D92B6C218B0005400B /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
 		F70D1F3F2898C453005FFC66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		F713B75D2A8F9ADF00EBB0BF /* VehicleDetailsTopSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleDetailsTopSection.swift; sourceTree = "<group>"; };
 		F713B75F2A8F9C1500EBB0BF /* VehicleDetailsMandatoryFieldsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleDetailsMandatoryFieldsSection.swift; sourceTree = "<group>"; };
@@ -207,14 +209,6 @@
 				F70537C72B6B93CD0005400B /* ExpenseAddView.swift */,
 			);
 			path = Add;
-			sourceTree = "<group>";
-		};
-		F70537D32B6C10FE0005400B /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				F70537CB2B6BFE790005400B /* ExpenseType.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		F70537D62B6C12030005400B /* MoreItem */ = {
@@ -433,6 +427,8 @@
 			isa = PBXGroup;
 			children = (
 				F7EEF30F280FE8AB0086AB03 /* Event.swift */,
+				F70537D92B6C218B0005400B /* Expense.swift */,
+				F70537CB2B6BFE790005400B /* ExpenseType.swift */,
 				F760D2E22B63896900DDA146 /* ParkingLocationCoordinate.swift */,
 				F7FC88EC280EA42E007BA063 /* Vehicle.swift */,
 				F7CF21462A964F5900C73429 /* Observers */,
@@ -496,7 +492,6 @@
 				F7E8D2D22B682D13000DC750 /* ExpenseTrackingView.swift */,
 				F70537D72B6C1E8A0005400B /* ExpenseTrackingViewModel.swift */,
 				F70537D22B6C10F50005400B /* Add */,
-				F70537D32B6C10FE0005400B /* Model */,
 				F70537D62B6C12030005400B /* MoreItem */,
 				F70537D12B6C10EC0005400B /* VehicleSelection */,
 			);
@@ -658,6 +653,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F70537DA2B6C218B0005400B /* Expense.swift in Sources */,
 				F72633602A95AE7700F7305D /* Vehicles.swift in Sources */,
 				F70537C82B6B93CD0005400B /* ExpenseAddView.swift in Sources */,
 				F7C5F19A2885004800375D91 /* EventListViewModel.swift in Sources */,
