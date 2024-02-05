@@ -66,7 +66,7 @@ private extension ExpenseTrackingMoreItem {
         ExpenseTrackingView(
             viewModel: .init(
                 vehicles: viewModel.vehicles,
-                vehicle: vehicle
+                vehicleID: vehicle.id
             )
         )
     }

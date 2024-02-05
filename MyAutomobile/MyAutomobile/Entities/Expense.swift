@@ -14,6 +14,20 @@ struct Expense {
     let expenseType: ExpenseType
     let cost: Double
     let comment: String?
+    
+    init(id: UUID = .init(),
+         date: Date,
+         odometerReading: Int?,
+         expenseType: ExpenseType,
+         cost: Double,
+         comment: String? = nil) {
+        self.id = id
+        self.date = date
+        self.odometerReading = odometerReading
+        self.expenseType = expenseType
+        self.cost = cost
+        self.comment = comment
+    }
 }
 
 extension Expense: Codable {}

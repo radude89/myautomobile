@@ -8,23 +8,18 @@
 import SwiftUI
 
 struct ExpenseTrackingView: View {
-    
     @State private var showAddView = false
     @State private var showInfoAlert = false
-    
-    @Environment(\.presentationMode) private var presentationMode
-    
     @StateObject private var viewModel: ExpenseTrackingViewModel
+    @Environment(\.presentationMode) private var presentationMode
     
     init(viewModel: ExpenseTrackingViewModel) {
         _viewModel = StateObject(wrappedValue: viewModel)
     }
     
     var body: some View {
-        Text("Hello, World - \(viewModel.vehicle.numberPlate)!")
-            .sheet(isPresented: $showAddView) {
-                ExpenseAddView()
-            }
+        Text("Hello, World - \(viewModel.vehicleID)!")
+            .sheet(isPresented: $showAddView) { addView }
             .navigationTitle("Expenses")
             .toolbar { toolbar }
             .alert("Warning", isPresented: $showInfoAlert) {
@@ -45,21 +40,30 @@ struct ExpenseTrackingView: View {
 
 // MARK: - Private
 private extension ExpenseTrackingView {
-    func onAdd() {
-        showAddView = true
+    var addView: some View {
+        ExpenseAddView(
+            viewModel: .init(
+                vehicles: viewModel.vehicles,
+                vehicleID: viewModel.vehicleID
+            )
+        )
     }
-    
+
     @ToolbarContentBuilder
     var toolbar: some ToolbarContent {
-        ToolbarItem(placement: .topBarTrailing) {
-            HStack {
-                Button(action: onAdd) {
-                    Image(systemName: "plus")
-                }
-                if viewModel.shouldDisplayEdit {
-                    EditButton()
-                }
+        ToolbarItem(placement: .navigationBarTrailing) {
+            if viewModel.shouldDisplayEdit {
+                EditButton()
             }
         }
+        ToolbarItem {
+            Button(action: onAdd) {
+                Label("Add Item", systemImage: "plus")
+            }
+        }
+    }
+
+    func onAdd() {
+        showAddView = true
     }
 }

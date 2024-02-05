@@ -67,6 +67,7 @@
 		F7E8D2D32B682D13000DC750 /* ExpenseTrackingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E8D2D22B682D13000DC750 /* ExpenseTrackingView.swift */; };
 		F7E8D2D52B68384F000DC750 /* ExpenseTrackingMoreItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E8D2D42B68384F000DC750 /* ExpenseTrackingMoreItem.swift */; };
 		F7E8D2D72B683925000DC750 /* MoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E8D2D62B683925000DC750 /* MoreViewModel.swift */; };
+		F7EE6BFA2B70B0260075D64A /* ExpenseAddViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EE6BF92B70B0260075D64A /* ExpenseAddViewModel.swift */; };
 		F7EEF310280FE8AB0086AB03 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EEF30F280FE8AB0086AB03 /* Event.swift */; };
 		F7FC88E9280EA29C007BA063 /* VehicleListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FC88E8280EA29C007BA063 /* VehicleListView.swift */; };
 		F7FC88EB280EA2AF007BA063 /* EventListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FC88EA280EA2AF007BA063 /* EventListView.swift */; };
@@ -161,6 +162,7 @@
 		F7E8D2D22B682D13000DC750 /* ExpenseTrackingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseTrackingView.swift; sourceTree = "<group>"; };
 		F7E8D2D42B68384F000DC750 /* ExpenseTrackingMoreItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseTrackingMoreItem.swift; sourceTree = "<group>"; };
 		F7E8D2D62B683925000DC750 /* MoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewModel.swift; sourceTree = "<group>"; };
+		F7EE6BF92B70B0260075D64A /* ExpenseAddViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseAddViewModel.swift; sourceTree = "<group>"; };
 		F7EEF30F280FE8AB0086AB03 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		F7FC88E8280EA29C007BA063 /* VehicleListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleListView.swift; sourceTree = "<group>"; };
 		F7FC88EA280EA2AF007BA063 /* EventListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListView.swift; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 			children = (
 				F70537C92B6BFDFB0005400B /* ExpenseAddFormView.swift */,
 				F70537C72B6B93CD0005400B /* ExpenseAddView.swift */,
+				F7EE6BF92B70B0260075D64A /* ExpenseAddViewModel.swift */,
 			);
 			path = Add;
 			sourceTree = "<group>";
@@ -680,6 +683,7 @@
 				F799E2AA2AA35F27009F3C3D /* EventListRowView.swift in Sources */,
 				F760D2E32B63896900DDA146 /* ParkingLocationCoordinate.swift in Sources */,
 				F7C5D7B32820198A00C4D213 /* VehicleImage.swift in Sources */,
+				F7EE6BFA2B70B0260075D64A /* ExpenseAddViewModel.swift in Sources */,
 				F760D2E52B63926700DDA146 /* ParkingLocation.swift in Sources */,
 				F7C5D7B12820191E00C4D213 /* VehicleListRowView.swift in Sources */,
 				F70537D82B6C1E8A0005400B /* ExpenseTrackingViewModel.swift in Sources */,

@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct EventAddFormView: View {
-    
     @Binding var selectedVehicleIndex: Int
     @Binding var recurrenceIndex: Int
     @Binding var date: Date
@@ -22,47 +21,62 @@ struct EventAddFormView: View {
     
     var body: some View {
         Form {
-            Section {
-                TextField("Description", text: $titleText)
-            } header: {
-                Text("Enter description")
-            }
-            
-            Section {
-                Picker("Vehicle", selection: $selectedVehicleIndex) {
-                    ForEach(vehicles.indices, id: \.self) { index in
-                        Text(vehicles[index].numberPlate)
-                    }
-                }
-            } header: {
-                Text("Select your vehicle")
-            }
-            
-            Section {
-                DatePicker(
-                    selection: $date,
-                    displayedComponents: .date
-                ) {
-                    Text("Date")
-                }
-                
-                Picker("Recurrence", selection: $recurrenceIndex) {
-                    ForEach(0..<recurrences.count, id: \.self) { index in
-                        Text(recurrences[index].localizedKey)
-                    }
-                }
-            } header: {
-                Text("Select date")
-            }
-            
+            descriptionSection
+            selectVehicleSection
+            dateSection
             if showSyncWithLocalCalendarSection {
-                Section {
-                    Toggle(isOn: $addEventToLocalCalendar) {
-                        Text("Add to your local calendar")
-                    }
-                }
+                addEventToggleSection
             }
         }
     }
-    
+}
+
+// MARK: - Private
+private extension EventAddFormView {
+    var descriptionSection: some View {
+        Section {
+            TextField("Description", text: $titleText)
+        } header: {
+            Text("Enter description")
+        }
+    }
+
+    var selectVehicleSection: some View {
+        Section {
+            Picker("Vehicle", selection: $selectedVehicleIndex) {
+                ForEach(vehicles.indices, id: \.self) { index in
+                    Text(vehicles[index].numberPlate)
+                }
+            }
+        } header: {
+            Text("Select your vehicle")
+        }
+    }
+
+    var dateSection: some View {
+        Section {
+            DatePicker(
+                selection: $date,
+                displayedComponents: .date
+            ) {
+                Text("Date")
+            }
+            
+            Picker("Recurrence", selection: $recurrenceIndex) {
+                ForEach(0..<recurrences.count, id: \.self) { index in
+                    Text(recurrences[index].localizedKey)
+                }
+            }
+        } header: {
+            Text("Select date")
+        }
+    }
+
+    var addEventToggleSection: some View {
+        Section {
+            Toggle(isOn: $addEventToLocalCalendar) {
+                Text("Add to your local calendar")
+            }
+        }
+    }
 }

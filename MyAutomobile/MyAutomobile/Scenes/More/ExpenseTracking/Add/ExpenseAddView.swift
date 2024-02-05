@@ -14,7 +14,12 @@ struct ExpenseAddView: View {
     @State private var cost = ""
     @State private var comment = ""
     
+    @StateObject private var viewModel: ExpenseAddViewModel
     @Environment(\.presentationMode) private var presentationMode
+    
+    init(viewModel: ExpenseAddViewModel) {
+        _viewModel = StateObject(wrappedValue: viewModel)
+    }
     
     var body: some View {
         NavigationStack {
@@ -40,7 +45,8 @@ private extension ExpenseAddView {
             date: $date,
             odometerReading: $odometerReading,
             cost: $cost,
-            comment: $comment
+            comment: $comment,
+            expenseTypes: viewModel.expenseTypes
         )
     }
     
@@ -53,6 +59,13 @@ private extension ExpenseAddView {
     }
     
     func saveExpense() {
+        viewModel.saveExpense(
+            expenseTypeIndex: expenseTypeIndex,
+            date: date,
+            odometerReadingDescription: odometerReading,
+            costDescription: cost,
+            commentDescription: comment
+        )
         presentationMode.wrappedValue.dismiss()
     }
 }

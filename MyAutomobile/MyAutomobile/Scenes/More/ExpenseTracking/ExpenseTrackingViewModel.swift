@@ -9,18 +9,20 @@ import SwiftUI
 
 final class ExpenseTrackingViewModel: ObservableObject {
     @ObservedObject var vehicles: Vehicles
-    private(set) var vehicle: Vehicle
+    let vehicleID: UUID
     
-    init(vehicles: Vehicles, vehicle: Vehicle) {
+    init(vehicles: Vehicles, vehicleID: UUID) {
         self.vehicles = vehicles
-        self.vehicle = vehicle
+        self.vehicleID = vehicleID
     }
     
     var shouldDisplayEdit: Bool {
+        // TODO: Change to actual business logic
         true
     }
     
     var hasDeletedVehicle: Bool {
-        !vehicles.items.contains(vehicle)
+        !vehicles.items.contains { $0.id == vehicleID }
     }
+    
 }

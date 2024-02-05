@@ -75,6 +75,9 @@
         }
       }
     },
+    "Add Item" : {
+
+    },
     "Add to your local calendar" : {
       "extractionState" : "manual",
       "localizations" : {
