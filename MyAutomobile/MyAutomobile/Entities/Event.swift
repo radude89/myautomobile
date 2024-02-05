@@ -14,7 +14,11 @@ struct Event {
     let description: String
     let recurrence: Recurrence
     
-    init(id: UUID = .init(), localCalendarID: String? = nil, date: Date, description: String, recurrence: Recurrence = .once) {
+    init(id: UUID = .init(), 
+         localCalendarID: String? = nil,
+         date: Date,
+         description: String,
+         recurrence: Recurrence = .once) {
         self.id = id
         self.localCalendarID = localCalendarID
         self.date = date
