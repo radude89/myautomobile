@@ -5,7 +5,7 @@
 //  Created by Radu Dan on 06.02.2024.
 //
 
-import Foundation
+import SwiftUI
 
 struct ExpenseRowViewModel {
     private let expense: Expense
@@ -68,6 +68,25 @@ struct ExpenseRowViewModel {
             "parkingsign.circle.fill"
         case .other:
             "questionmark.circle.fill"
+        }
+    }
+    
+    var color: Color {
+        switch expense.expenseType {
+        case .insurance:
+            .mint
+        case .repair:
+            .pink
+        case .maintenance:
+            .mint
+        case .fuel:
+            .orange
+        case .toll:
+            .teal
+        case .parking:
+            .cyan
+        case .other:
+            .indigo
         }
     }
 }

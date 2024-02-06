@@ -45,7 +45,11 @@ private extension ExpenseTrackingView {
         if viewModel.expenses.isEmpty {
             emptyView
         } else {
-            listContentView
+            VStack {
+                Text("Hello")
+                    .frame(height: 200)
+                listContentView
+            }
         }
     }
     
@@ -58,11 +62,15 @@ private extension ExpenseTrackingView {
     
     var listContentView: some View {
         List {
-            ForEach(viewModel.expenses) { expense in
-                ExpenseRowView(viewModel: .init(expense: expense))
-            }
-            .onDelete { indexSet in
-                viewModel.deleteExpense(at: indexSet)
+            Section {
+                ForEach(viewModel.expenses) { expense in
+                    ExpenseRowView(viewModel: .init(expense: expense))
+                }
+                .onDelete { indexSet in
+                    viewModel.deleteExpense(at: indexSet)
+                }
+            } header: {
+                Text("List of expenses")
             }
         }
     }

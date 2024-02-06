@@ -1321,6 +1321,9 @@
         }
       }
     },
+    "Hello" : {
+
+    },
     "iap.title" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1434,6 +1437,9 @@
           }
         }
       }
+    },
+    "List of expenses" : {
+
     },
     "Make" : {
       "extractionState" : "manual",

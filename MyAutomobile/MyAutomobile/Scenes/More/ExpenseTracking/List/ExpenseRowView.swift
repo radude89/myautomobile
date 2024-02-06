@@ -18,9 +18,10 @@ struct ExpenseRowView: View {
         HStack(spacing: 8) {
             Image(systemName: viewModel.imageName)
                 .resizable()
-                .frame(width: 60, height: 60)
+                .frame(width: 35, height: 35)
                 .clipShape(Circle())
-                .overlay(Circle().stroke(Color.primary, lineWidth: 1))
+                .foregroundStyle(viewModel.color)
+                .overlay(Circle().stroke(Color.primary.opacity(0.2), lineWidth: 0.5))
                 .padding([.trailing], 4)
             VStack(alignment: .leading, spacing: 4) {
                 VStack(alignment: .leading, spacing: 4) {
