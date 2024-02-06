@@ -49,7 +49,7 @@ private extension ExpenseAddFormView {
             }
             
             TextField("Odometer reading (optional)", text: $odometerReading)
-                .keyboardType(.numbersAndPunctuation)
+                .keyboardType(.numberPad)
         } header: {
             Text("Enter the approximate reading")
         }
@@ -64,7 +64,7 @@ private extension ExpenseAddFormView {
             }
             
             TextField("Cost", text: $cost)
-                .keyboardType(.numberPad)
+                .keyboardType(.decimalPad)
             
             TextField("Comment (optional)", text: $comment)
         } header: {

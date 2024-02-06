@@ -10,6 +10,7 @@ import SwiftUI
 final class ExpenseAddViewModel: ObservableObject {
     @ObservedObject var vehicles: Vehicles
     private let vehicleID: UUID
+    private let numberFormatter = NumberFormatter()
     
     let expenseTypes = ExpenseType.allCases
     
@@ -25,7 +26,8 @@ final class ExpenseAddViewModel: ObservableObject {
         costDescription: String,
         commentDescription: String
     ) {
-        guard let cost = Double(costDescription) else {
+        let number = numberFormatter.number(from: costDescription)
+        guard let cost = number?.doubleValue else {
             return
         }
         guard let vehicleIndex = vehicles.items.firstIndex(where: { vehicleID == $0.id }) else {
@@ -53,7 +55,7 @@ private extension ExpenseAddViewModel {
         cost: Double,
         commentDescription: String
     ) -> Expense {
-        let odometer = odometerReadingDescription.isEmpty ? nil : Int(odometerReadingDescription)
+        let odometer = numberFormatter.number(from: odometerReadingDescription)?.intValue
         let comment = commentDescription.isEmpty ? nil : commentDescription
         return Expense(
             date: date,
