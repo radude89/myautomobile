@@ -18,3 +18,9 @@ enum ExpenseType: String, CaseIterable {
 }
 
 extension ExpenseType: Codable {}
+
+extension ExpenseType {
+    var name: String {
+        rawValue.capitalized
+    }
+}

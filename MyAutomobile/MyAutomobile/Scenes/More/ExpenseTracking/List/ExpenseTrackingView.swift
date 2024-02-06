@@ -59,7 +59,7 @@ private extension ExpenseTrackingView {
     var listContentView: some View {
         List {
             ForEach(viewModel.expenses) { expense in
-                Text("\(expense.cost)")
+                ExpenseRowView(viewModel: .init(expense: expense))
             }
             .onDelete { indexSet in
                 viewModel.deleteExpense(at: indexSet)

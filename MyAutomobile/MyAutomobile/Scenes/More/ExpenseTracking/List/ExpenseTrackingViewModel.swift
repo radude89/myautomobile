@@ -29,7 +29,7 @@ final class ExpenseTrackingViewModel: ObservableObject {
     }
     
     var expenses: [Expense] {
-        vehicle?.expenses ?? []
+        vehicle?.expenses.sorted { $0.date > $1.date } ?? []
     }
     
     func deleteExpense(at indexSet: IndexSet) {
@@ -38,7 +38,9 @@ final class ExpenseTrackingViewModel: ObservableObject {
         }
         
         var copyVehicle = vehicle
-        copyVehicle.expenses.remove(atOffsets: indexSet)
+        var sortedExpenses = copyVehicle.expenses.sorted { $0.date > $1.date }
+        sortedExpenses.remove(atOffsets: indexSet)
+        copyVehicle.expenses = sortedExpenses
         updateVehicles(vehicle: copyVehicle)
     }
 }
