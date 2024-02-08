@@ -32,6 +32,12 @@ final class ExpenseTrackingViewModel: ObservableObject {
         vehicle?.expenses.sorted { $0.date > $1.date } ?? []
     }
     
+    var formattedTotalCost: String {
+        let formatter = NumberFormatterFactory.makeAmountFormatter()
+        let total = expenses.reduce(0.0) { $0 + $1.cost }
+        return formatter.string(from: NSNumber(value: total)) ?? "0"
+    }
+    
     func deleteExpense(at indexSet: IndexSet) {
         guard let vehicle else {
             return

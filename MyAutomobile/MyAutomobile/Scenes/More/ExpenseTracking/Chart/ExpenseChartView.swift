@@ -52,7 +52,7 @@ struct ExpenseChartView: View {
                             .font(.body)
                             .bold()
                             .foregroundStyle(selectedExpense.expenseType.color)
-                        Text("\(selectedExpense.cost)$")
+                        Text(formatCost(selectedExpense.cost))
                             .font(.caption)
                             .foregroundStyle(selectedExpense.expenseType.color)
                     }
@@ -87,5 +87,11 @@ struct ExpenseChartView: View {
             }
             return false
         }
+    }
+    
+    private func formatCost(_ cost: Double) -> String {
+        NumberFormatterFactory
+            .makeAmountFormatter()
+            .string(from: NSNumber(value: cost)) ?? "-"
     }
 }

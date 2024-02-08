@@ -9,14 +9,6 @@ import SwiftUI
 
 struct ExpenseRowViewModel {
     private let expense: Expense
-    
-    private let amountFormatter: NumberFormatter = {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .currency
-        formatter.currencyCode = "EUR"
-        return formatter
-    }()
-    
     private let odometerFormatter: NumberFormatter = {
         let formatter = NumberFormatter()
         formatter.numberStyle = .decimal
@@ -40,7 +32,9 @@ struct ExpenseRowViewModel {
     }
     
     var trailingTitle: String {
-        amountFormatter.string(from: NSNumber(value: expense.cost)) ?? "-"
+        NumberFormatterFactory
+            .makeAmountFormatter()
+            .string(from: NSNumber(value: expense.cost)) ?? "-"
     }
     
     var odometerReading: String? {

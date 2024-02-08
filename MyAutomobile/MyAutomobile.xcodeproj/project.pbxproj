@@ -16,6 +16,7 @@
 		F70537DA2B6C218B0005400B /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70537D92B6C218B0005400B /* Expense.swift */; };
 		F70A9D0B2B754B6B002E8C45 /* ExpenseChartDataMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70A9D0A2B754B6B002E8C45 /* ExpenseChartDataMapper.swift */; };
 		F70A9D0D2B754B7C002E8C45 /* ExpenseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70A9D0C2B754B7C002E8C45 /* ExpenseData.swift */; };
+		F70A9D0F2B7558E4002E8C45 /* NumberFormatterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70A9D0E2B7558E4002E8C45 /* NumberFormatterFactory.swift */; };
 		F713B75E2A8F9ADF00EBB0BF /* VehicleDetailsTopSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F713B75D2A8F9ADF00EBB0BF /* VehicleDetailsTopSection.swift */; };
 		F713B7602A8F9C1500EBB0BF /* VehicleDetailsMandatoryFieldsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F713B75F2A8F9C1500EBB0BF /* VehicleDetailsMandatoryFieldsSection.swift */; };
 		F713B7622A8F9D7D00EBB0BF /* VehicleDetailsCustomFieldsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F713B7612A8F9D7D00EBB0BF /* VehicleDetailsCustomFieldsSection.swift */; };
@@ -106,6 +107,7 @@
 		F70537D92B6C218B0005400B /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
 		F70A9D0A2B754B6B002E8C45 /* ExpenseChartDataMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseChartDataMapper.swift; sourceTree = "<group>"; };
 		F70A9D0C2B754B7C002E8C45 /* ExpenseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseData.swift; sourceTree = "<group>"; };
+		F70A9D0E2B7558E4002E8C45 /* NumberFormatterFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFormatterFactory.swift; sourceTree = "<group>"; };
 		F70D1F3F2898C453005FFC66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		F713B75D2A8F9ADF00EBB0BF /* VehicleDetailsTopSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleDetailsTopSection.swift; sourceTree = "<group>"; };
 		F713B75F2A8F9C1500EBB0BF /* VehicleDetailsMandatoryFieldsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleDetailsMandatoryFieldsSection.swift; sourceTree = "<group>"; };
@@ -450,6 +452,7 @@
 				F7CF21432A95B01A00C73429 /* Color+Codable.swift */,
 				F7202E052AA8F304009A17DC /* EventEditViewController.swift */,
 				F73028F32AA5FD93003AAEE8 /* FileManagerExtensions.swift */,
+				F70A9D0E2B7558E4002E8C45 /* NumberFormatterFactory.swift */,
 				F7202DF62AA8AF91009A17DC /* EventStoreManager */,
 			);
 			path = Helpers;
@@ -731,6 +734,7 @@
 				F759B9F82B60F68800D781FC /* ParkLocationToolbarViewModifier.swift in Sources */,
 				F713B7602A8F9C1500EBB0BF /* VehicleDetailsMandatoryFieldsSection.swift in Sources */,
 				F739B5E02AB4E05D0089D12F /* IAPButton.swift in Sources */,
+				F70A9D0F2B7558E4002E8C45 /* NumberFormatterFactory.swift in Sources */,
 				F7E8D2CF2B67FCAF000DC750 /* MoreView.swift in Sources */,
 				F7FC88ED280EA42E007BA063 /* Vehicle.swift in Sources */,
 				F7C5D7B7282019C100C4D213 /* MockModels.swift in Sources */,

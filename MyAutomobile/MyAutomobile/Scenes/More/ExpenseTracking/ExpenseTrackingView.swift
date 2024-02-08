@@ -63,6 +63,9 @@ private extension ExpenseTrackingView {
                 .pickerStyle(.segmented)
                 .padding()
                 
+                Text("Total: \(viewModel.formattedTotalCost)")
+                    .titleStyle
+                
                 if viewOption == .list {
                     listContentView
                 } else {
