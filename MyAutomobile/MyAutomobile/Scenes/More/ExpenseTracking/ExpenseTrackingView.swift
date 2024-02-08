@@ -10,7 +10,15 @@ import SwiftUI
 struct ExpenseTrackingView: View {
     @State private var showAddView = false
     @State private var showInfoAlert = false
+    @State private var viewOption: ViewOption = .list
+    
+    private enum ViewOption: String, CaseIterable {
+        case list = "List"
+        case chart = "Chart"
+    }
+    
     @StateObject private var viewModel: ExpenseTrackingViewModel
+    
     @Environment(\.presentationMode) private var presentationMode
     
     init(viewModel: ExpenseTrackingViewModel) {
@@ -46,9 +54,22 @@ private extension ExpenseTrackingView {
             emptyView
         } else {
             VStack {
-                Text("Hello")
-                    .frame(height: 200)
-                listContentView
+                Picker("View", selection: $viewOption) {
+                    ForEach(ViewOption.allCases, id: \.self) {
+                        Text($0.rawValue)
+                    }
+                }
+                .background(Color.clear)
+                .pickerStyle(.segmented)
+                .padding()
+                
+                if viewOption == .list {
+                    listContentView
+                } else {
+                    ExpenseChartView(
+                        expenseData: ExpenseChartDataMapper.map(expenses: viewModel.expenses)
+                    )
+                }
             }
         }
     }

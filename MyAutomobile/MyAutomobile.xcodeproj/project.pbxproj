@@ -14,6 +14,8 @@
 		F70537D02B6C10E80005400B /* VehiclesSelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70537CF2B6C10E80005400B /* VehiclesSelectionViewModel.swift */; };
 		F70537D82B6C1E8A0005400B /* ExpenseTrackingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70537D72B6C1E8A0005400B /* ExpenseTrackingViewModel.swift */; };
 		F70537DA2B6C218B0005400B /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70537D92B6C218B0005400B /* Expense.swift */; };
+		F70A9D0B2B754B6B002E8C45 /* ExpenseChartDataMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70A9D0A2B754B6B002E8C45 /* ExpenseChartDataMapper.swift */; };
+		F70A9D0D2B754B7C002E8C45 /* ExpenseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70A9D0C2B754B7C002E8C45 /* ExpenseData.swift */; };
 		F713B75E2A8F9ADF00EBB0BF /* VehicleDetailsTopSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F713B75D2A8F9ADF00EBB0BF /* VehicleDetailsTopSection.swift */; };
 		F713B7602A8F9C1500EBB0BF /* VehicleDetailsMandatoryFieldsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F713B75F2A8F9C1500EBB0BF /* VehicleDetailsMandatoryFieldsSection.swift */; };
 		F713B7622A8F9D7D00EBB0BF /* VehicleDetailsCustomFieldsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F713B7612A8F9D7D00EBB0BF /* VehicleDetailsCustomFieldsSection.swift */; };
@@ -44,6 +46,7 @@
 		F74F8B322AB807980014137C /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F74F8B312AB807980014137C /* StoreKit.framework */; };
 		F750EBFA2B723A6C008440D8 /* ExpenseRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F750EBF92B723A6C008440D8 /* ExpenseRowView.swift */; };
 		F750EBFD2B7266AB008440D8 /* ExpenseRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F750EBFC2B7266AB008440D8 /* ExpenseRowViewModel.swift */; };
+		F750EC032B72C039008440D8 /* ExpenseChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F750EC022B72C039008440D8 /* ExpenseChartView.swift */; };
 		F759B9F62B60F5B700D781FC /* ParkingMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F759B9F52B60F5B700D781FC /* ParkingMapView.swift */; };
 		F759B9F82B60F68800D781FC /* ParkLocationToolbarViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F759B9F72B60F68800D781FC /* ParkLocationToolbarViewModifier.swift */; };
 		F760D2E32B63896900DDA146 /* ParkingLocationCoordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F760D2E22B63896900DDA146 /* ParkingLocationCoordinate.swift */; };
@@ -101,6 +104,8 @@
 		F70537CF2B6C10E80005400B /* VehiclesSelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehiclesSelectionViewModel.swift; sourceTree = "<group>"; };
 		F70537D72B6C1E8A0005400B /* ExpenseTrackingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseTrackingViewModel.swift; sourceTree = "<group>"; };
 		F70537D92B6C218B0005400B /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
+		F70A9D0A2B754B6B002E8C45 /* ExpenseChartDataMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseChartDataMapper.swift; sourceTree = "<group>"; };
+		F70A9D0C2B754B7C002E8C45 /* ExpenseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseData.swift; sourceTree = "<group>"; };
 		F70D1F3F2898C453005FFC66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		F713B75D2A8F9ADF00EBB0BF /* VehicleDetailsTopSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleDetailsTopSection.swift; sourceTree = "<group>"; };
 		F713B75F2A8F9C1500EBB0BF /* VehicleDetailsMandatoryFieldsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleDetailsMandatoryFieldsSection.swift; sourceTree = "<group>"; };
@@ -136,6 +141,7 @@
 		F74F8B312AB807980014137C /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		F750EBF92B723A6C008440D8 /* ExpenseRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseRowView.swift; sourceTree = "<group>"; };
 		F750EBFC2B7266AB008440D8 /* ExpenseRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseRowViewModel.swift; sourceTree = "<group>"; };
+		F750EC022B72C039008440D8 /* ExpenseChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseChartView.swift; sourceTree = "<group>"; };
 		F759B9F52B60F5B700D781FC /* ParkingMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingMapView.swift; sourceTree = "<group>"; };
 		F759B9F72B60F68800D781FC /* ParkLocationToolbarViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkLocationToolbarViewModifier.swift; sourceTree = "<group>"; };
 		F760D2E22B63896900DDA146 /* ParkingLocationCoordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingLocationCoordinate.swift; sourceTree = "<group>"; };
@@ -365,10 +371,18 @@
 			children = (
 				F750EBF92B723A6C008440D8 /* ExpenseRowView.swift */,
 				F750EBFC2B7266AB008440D8 /* ExpenseRowViewModel.swift */,
-				F7E8D2D22B682D13000DC750 /* ExpenseTrackingView.swift */,
-				F70537D72B6C1E8A0005400B /* ExpenseTrackingViewModel.swift */,
 			);
 			path = List;
+			sourceTree = "<group>";
+		};
+		F750EC012B72BFD6008440D8 /* Chart */ = {
+			isa = PBXGroup;
+			children = (
+				F70A9D0A2B754B6B002E8C45 /* ExpenseChartDataMapper.swift */,
+				F750EC022B72C039008440D8 /* ExpenseChartView.swift */,
+				F70A9D0C2B754B7C002E8C45 /* ExpenseData.swift */,
+			);
+			path = Chart;
 			sourceTree = "<group>";
 		};
 		F760EF092A96FD9100C38F3B /* Add */ = {
@@ -507,7 +521,10 @@
 		F7E8D2CB2B67F7EE000DC750 /* ExpenseTracking */ = {
 			isa = PBXGroup;
 			children = (
+				F7E8D2D22B682D13000DC750 /* ExpenseTrackingView.swift */,
+				F70537D72B6C1E8A0005400B /* ExpenseTrackingViewModel.swift */,
 				F70537D22B6C10F50005400B /* Add */,
+				F750EC012B72BFD6008440D8 /* Chart */,
 				F750EBFB2B726422008440D8 /* List */,
 				F70537D62B6C12030005400B /* MoreItem */,
 				F70537D12B6C10EC0005400B /* VehicleSelection */,
@@ -682,16 +699,19 @@
 				F7202E032AA8AFFB009A17DC /* EventDataStore.swift in Sources */,
 				F721890127FABE5D00F80AC0 /* MainTabView.swift in Sources */,
 				F7202DFE2AA8AFB8009A17DC /* EventStoreError.swift in Sources */,
+				F70A9D0D2B754B7C002E8C45 /* ExpenseData.swift in Sources */,
 				F74C47A42ADC41F1006E131A /* ParkLocationView.swift in Sources */,
 				F713B7652A8FA6FE00EBB0BF /* VehicleDetailsViewModel.swift in Sources */,
 				F70537CE2B6C0F040005400B /* ExpenseTrackingMoreItemViewModel.swift in Sources */,
 				F70537D02B6C10E80005400B /* VehiclesSelectionViewModel.swift in Sources */,
 				F7FC88E9280EA29C007BA063 /* VehicleListView.swift in Sources */,
 				F7202E062AA8F304009A17DC /* EventEditViewController.swift in Sources */,
+				F750EC032B72C039008440D8 /* ExpenseChartView.swift in Sources */,
 				F73028F62AA61637003AAEE8 /* VehicleAddCustomFieldView.swift in Sources */,
 				F70537CA2B6BFDFB0005400B /* ExpenseAddFormView.swift in Sources */,
 				F7202DFD2AA8AFB8009A17DC /* EventStoreManager.swift in Sources */,
 				F760D2E72B63963400DDA146 /* CLLocationCoordinate2D+Equatable.swift in Sources */,
+				F70A9D0B2B754B6B002E8C45 /* ExpenseChartDataMapper.swift in Sources */,
 				F713B75E2A8F9ADF00EBB0BF /* VehicleDetailsTopSection.swift in Sources */,
 				F739B5DE2AB4DC000089D12F /* IAPView.swift in Sources */,
 				F799E2AA2AA35F27009F3C3D /* EventListRowView.swift in Sources */,

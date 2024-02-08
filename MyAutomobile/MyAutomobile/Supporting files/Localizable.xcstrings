@@ -75,6 +75,9 @@
         }
       }
     },
+    "%lf$" : {
+
+    },
     "Add Item" : {
 
     },
@@ -1321,9 +1324,6 @@
         }
       }
     },
-    "Hello" : {
-
-    },
     "iap.title" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -2290,6 +2290,9 @@
         }
       }
     },
+    "Tap on a segment" : {
+
+    },
     "The app doesn't have permission to Calendar in Settings." : {
       "extractionState" : "manual",
       "localizations" : {
@@ -2584,6 +2587,9 @@
           }
         }
       }
+    },
+    "View" : {
+
     },
     "Warning" : {
 
