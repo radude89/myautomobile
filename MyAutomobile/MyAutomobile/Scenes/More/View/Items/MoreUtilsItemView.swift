@@ -1,23 +1,25 @@
 //
-//  ExpenseTrackingMoreItem.swift
+//  MoreUtilsItemView.swift
 //  MyAutomobile
 //
-//  Created by Radu Dan on 29.01.2024.
+//  Created by Radu Dan on 12.02.2024.
 //
 
 import SwiftUI
 
-@MainActor
-struct ExpenseTrackingMoreItem: View {
-    @StateObject private var viewModel: ExpenseTrackingMoreItemViewModel
+struct MoreUtilsItemView<DetailsView: View>: View {
+    @StateObject private var viewModel: MoreUtilsItemViewModel
+    private let detailsView: (Vehicle) -> DetailsView
     
-    init(viewModel: ExpenseTrackingMoreItemViewModel) {
+    init(viewModel: MoreUtilsItemViewModel,
+         detailsView: @escaping (Vehicle) -> DetailsView) {
         _viewModel = StateObject(wrappedValue: viewModel)
+        self.detailsView = detailsView
     }
     
     var body: some View {
-        NavigationLink("Expense tracking") {
-            expenseTrackingForm
+        NavigationLink(viewModel.title) {
+            contentView
                 .navigationTitle("Vehicles")
                 .navigationBarTitleDisplayMode(.inline)
         }
@@ -25,24 +27,24 @@ struct ExpenseTrackingMoreItem: View {
 }
 
 // MARK: - Private
-private extension ExpenseTrackingMoreItem {
-    var expenseTrackingForm: some View {
+private extension MoreUtilsItemView {
+    var contentView: some View {
         guard !viewModel.items.isEmpty,
               let firstVehicle = viewModel.firstVehicle else {
             return AnyView(emptyView)
         }
         
-        return if viewModel.items.count > 1 {
+        return if viewModel.hasMoreThanOneVehicle {
             AnyView(selectionView)
         } else {
             AnyView(
-                makeExpenseTrackingView(vehicle: firstVehicle)
+                detailsView(firstVehicle)
             )
         }
     }
     
     var emptyView: some View {
-        Text("expenses_empty")
+        Text(viewModel.emptyViewTitle)
             .font(.body)
             .multilineTextAlignment(.center)
             .padding([.leading, .trailing])
@@ -54,20 +56,11 @@ private extension ExpenseTrackingMoreItem {
                 VehiclesSelectionView(
                     viewModel: .init(vehicles: viewModel.vehicles)
                 ) { vehicle in
-                    makeExpenseTrackingView(vehicle: vehicle)
+                    detailsView(vehicle)
                 }
             } header: {
                 Text("Select vehicle")
             }
         }
-    }
-    
-    func makeExpenseTrackingView(vehicle: Vehicle) -> some View {
-        ExpenseTrackingView(
-            viewModel: .init(
-                vehicles: viewModel.vehicles,
-                vehicleID: vehicle.id
-            )
-        )
     }
 }

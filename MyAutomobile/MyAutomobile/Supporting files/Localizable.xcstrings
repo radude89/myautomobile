@@ -1110,9 +1110,6 @@
         }
       }
     },
-    "Expense tracking" : {
-
-    },
     "Expense type" : {
 
     },
@@ -1436,6 +1433,9 @@
       }
     },
     "List of expenses" : {
+
+    },
+    "Maintenance" : {
 
     },
     "Make" : {
