@@ -528,6 +528,7 @@
 			isa = PBXGroup;
 			children = (
 				F7E8D2CB2B67F7EE000DC750 /* ExpenseTracking */,
+				F70537D12B6C10EC0005400B /* VehicleSelection */,
 				F7B8691E2B7AA25C009592ED /* View */,
 			);
 			path = More;
@@ -541,7 +542,6 @@
 				F70537D22B6C10F50005400B /* Add */,
 				F750EC012B72BFD6008440D8 /* Chart */,
 				F750EBFB2B726422008440D8 /* List */,
-				F70537D12B6C10EC0005400B /* VehicleSelection */,
 			);
 			path = ExpenseTracking;
 			sourceTree = "<group>";
