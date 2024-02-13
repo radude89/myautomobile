@@ -16,13 +16,11 @@ struct ExpenseRowView: View {
 
     var body: some View {
         HStack(spacing: 8) {
-            Image(systemName: viewModel.imageName)
-                .resizable()
-                .frame(width: 35, height: 35)
-                .clipShape(Circle())
-                .foregroundStyle(viewModel.color)
-                .overlay(Circle().stroke(Color.primary.opacity(0.2), lineWidth: 0.5))
-                .padding([.trailing], 4)
+            ExpenseItemView(
+                imageName: viewModel.imageName,
+                color: viewModel.color
+            )
+            .padding([.trailing], 4)
             VStack(alignment: .leading, spacing: 4) {
                 VStack(alignment: .leading, spacing: 4) {
                     Text(viewModel.leadingTitle)

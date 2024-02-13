@@ -42,12 +42,10 @@ struct ExpenseChartView: View {
             .chartBackground { _ in
                 if let selectedExpense {
                     VStack {
-                        Image(systemName: selectedExpense.expenseType.imageName)
-                            .resizable()
-                            .frame(width: 35, height: 35)
-                            .clipShape(Circle())
-                            .foregroundStyle(selectedExpense.expenseType.color)
-                            .overlay(Circle().stroke(Color.primary.opacity(0.2), lineWidth: 0.5))
+                        ExpenseItemView(
+                            imageName: selectedExpense.expenseType.imageName,
+                            color: selectedExpense.expenseType.color
+                        )
                         Text(selectedExpense.expenseType.name)
                             .font(.body)
                             .bold()
