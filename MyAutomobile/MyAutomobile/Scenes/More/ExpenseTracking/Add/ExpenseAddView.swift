@@ -33,6 +33,9 @@ struct ExpenseAddView: View {
                 )
                 .interactiveDismissDisabled(hasChanges)
                 .scrollDismissesKeyboard(.interactively)
+                .onAppear {
+                    expenseTypeIndex = viewModel.initialExpenseTypeIndex
+                }
         }
     }
 }
@@ -42,6 +45,7 @@ private extension ExpenseAddView {
     var contentView: some View {
         ExpenseAddFormView(
             expenseTypeIndex: $expenseTypeIndex,
+            showOnlyMaintenanceItems: viewModel.showOnlyMaintenanceItems,
             date: $date,
             odometerReading: $odometerReading,
             cost: $cost,

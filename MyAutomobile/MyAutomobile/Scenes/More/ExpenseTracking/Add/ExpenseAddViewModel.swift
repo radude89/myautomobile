@@ -11,12 +11,23 @@ final class ExpenseAddViewModel: ObservableObject {
     @ObservedObject var vehicles: Vehicles
     private let vehicleID: UUID
     private let numberFormatter = NumberFormatter()
+    private static let fallbackExpenseTypeIndex = 3
     
     let expenseTypes = ExpenseType.allCases
+    let showOnlyMaintenanceItems: Bool
     
-    init(vehicles: Vehicles, vehicleID: UUID) {
+    init(vehicles: Vehicles, 
+         vehicleID: UUID,
+         showOnlyMaintenanceItems: Bool) {
         self.vehicles = vehicles
         self.vehicleID = vehicleID
+        self.showOnlyMaintenanceItems = showOnlyMaintenanceItems
+    }
+    
+    var initialExpenseTypeIndex: Int {
+        expenseTypes.firstIndex(
+            of: showOnlyMaintenanceItems ? .maintenance : .fuel
+        ) ?? Self.fallbackExpenseTypeIndex
     }
     
     func saveExpense(

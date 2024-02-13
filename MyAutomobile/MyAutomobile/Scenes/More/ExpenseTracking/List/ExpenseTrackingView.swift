@@ -53,28 +53,38 @@ private extension ExpenseTrackingView {
         if viewModel.expenses.isEmpty {
             emptyView
         } else {
-            VStack {
-                Picker("View", selection: $viewOption) {
-                    ForEach(ViewOption.allCases, id: \.self) {
-                        Text($0.rawValue)
-                    }
-                }
-                .background(Color.clear)
-                .pickerStyle(.segmented)
-                .padding()
-                
-                Text("Total: \(viewModel.formattedTotalCost)")
-                    .titleStyle
-                
-                if viewOption == .list {
-                    listContentView
-                } else {
-                    ExpenseChartView(
-                        expenseData: ExpenseChartDataMapper.map(expenses: viewModel.expenses)
-                    )
-                }
+            mainView
+        }
+    }
+    
+    var mainView: some View {
+        VStack {
+            if !viewModel.showOnlyMaintenanceItems {
+                selectionView
+            }
+            
+            Text("Total: \(viewModel.formattedTotalCost)")
+                .titleStyle
+            
+            if viewOption == .list {
+                listContentView
+            } else {
+                ExpenseChartView(
+                    expenseData: ExpenseChartDataMapper.map(expenses: viewModel.expenses)
+                )
             }
         }
+    }
+    
+    var selectionView: some View {
+        Picker("View", selection: $viewOption) {
+            ForEach(ViewOption.allCases, id: \.self) {
+                Text($0.rawValue)
+            }
+        }
+        .background(Color.clear)
+        .pickerStyle(.segmented)
+        .padding()
     }
     
     var emptyView: some View {
@@ -103,7 +113,8 @@ private extension ExpenseTrackingView {
         ExpenseAddView(
             viewModel: .init(
                 vehicles: viewModel.vehicles,
-                vehicleID: viewModel.vehicleID
+                vehicleID: viewModel.vehicleID,
+                showOnlyMaintenanceItems: viewModel.showOnlyMaintenanceItems
             )
         )
     }

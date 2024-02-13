@@ -10,10 +10,14 @@ import SwiftUI
 final class ExpenseTrackingViewModel: ObservableObject {
     @ObservedObject var vehicles: Vehicles
     let vehicleID: UUID
+    let showOnlyMaintenanceItems: Bool
     
-    init(vehicles: Vehicles, vehicleID: UUID) {
+    init(vehicles: Vehicles, 
+         vehicleID: UUID,
+         showOnlyMaintenanceItems: Bool = false) {
         self.vehicles = vehicles
         self.vehicleID = vehicleID
+        self.showOnlyMaintenanceItems = showOnlyMaintenanceItems
     }
     
     var shouldDisplayEdit: Bool {
@@ -29,7 +33,13 @@ final class ExpenseTrackingViewModel: ObservableObject {
     }
     
     var expenses: [Expense] {
-        vehicle?.expenses.sorted { $0.date > $1.date } ?? []
+        if !showOnlyMaintenanceItems {
+            vehicle?.expenses.sorted { $0.date > $1.date } ?? []
+        } else {
+            vehicle?.expenses
+                .filter { $0.expenseType == .maintenance }
+                .sorted { $0.date > $1.date } ?? []
+        }
     }
     
     var formattedTotalCost: String {
@@ -45,6 +55,9 @@ final class ExpenseTrackingViewModel: ObservableObject {
         
         var copyVehicle = vehicle
         var sortedExpenses = copyVehicle.expenses.sorted { $0.date > $1.date }
+        if showOnlyMaintenanceItems {
+            sortedExpenses = sortedExpenses.filter { $0.expenseType == .maintenance }
+        }
         sortedExpenses.remove(atOffsets: indexSet)
         copyVehicle.expenses = sortedExpenses
         updateVehicles(vehicle: copyVehicle)

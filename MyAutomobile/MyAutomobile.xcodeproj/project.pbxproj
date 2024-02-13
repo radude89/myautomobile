@@ -368,6 +368,8 @@
 			children = (
 				F750EBF92B723A6C008440D8 /* ExpenseRowView.swift */,
 				F750EBFC2B7266AB008440D8 /* ExpenseRowViewModel.swift */,
+				F7E8D2D22B682D13000DC750 /* ExpenseTrackingView.swift */,
+				F70537D72B6C1E8A0005400B /* ExpenseTrackingViewModel.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -548,8 +550,6 @@
 		F7E8D2CB2B67F7EE000DC750 /* ExpenseTracking */ = {
 			isa = PBXGroup;
 			children = (
-				F7E8D2D22B682D13000DC750 /* ExpenseTrackingView.swift */,
-				F70537D72B6C1E8A0005400B /* ExpenseTrackingViewModel.swift */,
 				F70537D22B6C10F50005400B /* Add */,
 				F750EC012B72BFD6008440D8 /* Chart */,
 				F750EBFB2B726422008440D8 /* List */,

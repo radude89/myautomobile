@@ -15,8 +15,10 @@ struct ExpenseAddFormView: View {
     @Binding var comment: String
     
     private let expenseTypes: [ExpenseType]
+    private let showOnlyMaintenanceItems: Bool
     
     init(expenseTypeIndex: Binding<Int>,
+         showOnlyMaintenanceItems: Bool,
          date: Binding<Date>,
          odometerReading: Binding<String>,
          cost: Binding<String>,
@@ -28,6 +30,7 @@ struct ExpenseAddFormView: View {
         _cost = cost
         _comment = comment
         self.expenseTypes = expenseTypes
+        self.showOnlyMaintenanceItems = showOnlyMaintenanceItems
     }
     
     var body: some View {
@@ -57,9 +60,11 @@ private extension ExpenseAddFormView {
     
     var expenseSection: some View {
         Section {
-            Picker("Expense type", selection: $expenseTypeIndex) {
-                ForEach(0 ..< expenseTypes.count, id: \.self) { index in
-                    Text(expenseTypes[index].rawValue.capitalized)
+            if !showOnlyMaintenanceItems {
+                Picker("Expense type", selection: $expenseTypeIndex) {
+                    ForEach(0 ..< expenseTypes.count, id: \.self) { index in
+                        Text(expenseTypes[index].rawValue.capitalized)
+                    }
                 }
             }
             

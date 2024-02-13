@@ -66,7 +66,13 @@ private extension MoreView {
                 )
             )
         case .maintenance:
-            Text("Maintenance")
+            ExpenseTrackingView(
+                viewModel: .init(
+                    vehicles: viewModel.vehicles,
+                    vehicleID: vehicleID,
+                    showOnlyMaintenanceItems: true
+                )
+            )
         }
     }
 }
