@@ -11,13 +11,16 @@ final class MoreUtilsItemViewModel: ObservableObject {
     
     @ObservedObject var vehicles: Vehicles
     let title: String
+    let imageName: String
     let emptyViewTitle: String
     
     init(vehicles: Vehicles,
          title: String,
+         imageName: String,
          emptyViewTitle: String) {
         self.vehicles = vehicles
         self.title = title
+        self.imageName = imageName
         self.emptyViewTitle = emptyViewTitle
     }
     

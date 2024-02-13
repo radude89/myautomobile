@@ -33,18 +33,20 @@ private extension MoreView {
 
     var utilsSection: some View {
         Section {
-            makeItemView(for: .expenses)
-            makeItemView(for: .maintenance)
+            makeItemView(for: .expenses, imageName: "pencil.line")
+            makeItemView(for: .maintenance, imageName: "screwdriver.fill")
+            FuelConsumptionView()
         } header: {
             Text("Utils")
         }
     }
     
-    func makeItemView(for item: MoreItem) -> some View {
+    func makeItemView(for item: MoreItem, imageName: String) -> some View {
         MoreUtilsItemView(
             viewModel: .init(
                 vehicles: viewModel.vehicles,
                 title: viewModel.title(for: item),
+                imageName: imageName,
                 emptyViewTitle: viewModel.emptyViewTitle(for: item)
             )
         ) { vehicle in

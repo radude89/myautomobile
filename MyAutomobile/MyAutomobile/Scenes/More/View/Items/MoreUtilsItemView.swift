@@ -18,11 +18,14 @@ struct MoreUtilsItemView<DetailsView: View>: View {
     }
     
     var body: some View {
-        NavigationLink(viewModel.title) {
+        NavigationLink {
             contentView
                 .navigationTitle("Vehicles")
                 .navigationBarTitleDisplayMode(.inline)
+        } label: {
+            Label(viewModel.title, systemImage: viewModel.imageName)
         }
+        
     }
 }
 
