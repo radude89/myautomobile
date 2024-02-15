@@ -57,6 +57,7 @@
 		F760EF0F2A97066700C38F3B /* AddToolbarViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F760EF0E2A97066700C38F3B /* AddToolbarViewModifier.swift */; };
 		F76F49A12B5F9E3900A53799 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76F49A02B5F9E3900A53799 /* LocationManager.swift */; };
 		F77224772AAE52C80097E190 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F77224792AAE52C80097E190 /* InfoPlist.strings */; };
+		F78F93552B7E384100F8BF5C /* DistanceSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78F93542B7E384100F8BF5C /* DistanceSection.swift */; };
 		F799E2AA2AA35F27009F3C3D /* EventListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F799E2A92AA35F27009F3C3D /* EventListRowView.swift */; };
 		F79F09722B7B992900C37272 /* ExpenseItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79F09712B7B992900C37272 /* ExpenseItemView.swift */; };
 		F79F09792B7BA08900C37272 /* FuelConsumptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79F09782B7BA08900C37272 /* FuelConsumptionView.swift */; };
@@ -161,6 +162,7 @@
 		F772247C2AAE52CF0097E190 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F772247D2AAE52D00097E190 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F772247E2AAE53530097E190 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F78F93542B7E384100F8BF5C /* DistanceSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceSection.swift; sourceTree = "<group>"; };
 		F799E2A92AA35F27009F3C3D /* EventListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListRowView.swift; sourceTree = "<group>"; };
 		F79F09712B7B992900C37272 /* ExpenseItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseItemView.swift; sourceTree = "<group>"; };
 		F79F09782B7BA08900C37272 /* FuelConsumptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuelConsumptionView.swift; sourceTree = "<group>"; };
@@ -406,6 +408,7 @@
 		F79F09772B7BA07100C37272 /* FuelConsumption */ = {
 			isa = PBXGroup;
 			children = (
+				F78F93542B7E384100F8BF5C /* DistanceSection.swift */,
 				F79F09782B7BA08900C37272 /* FuelConsumptionView.swift */,
 			);
 			path = FuelConsumption;
@@ -789,6 +792,7 @@
 				F7E8D2D72B683925000DC750 /* MoreViewModel.swift in Sources */,
 				F760EF0D2A9701F300C38F3B /* VehicleAddViewModel.swift in Sources */,
 				F76F49A12B5F9E3900A53799 /* LocationManager.swift in Sources */,
+				F78F93552B7E384100F8BF5C /* DistanceSection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

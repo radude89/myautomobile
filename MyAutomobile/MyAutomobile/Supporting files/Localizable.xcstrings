@@ -894,6 +894,9 @@
     "Enter your expense" : {
 
     },
+    "Enter your travel distance in %@" : {
+
+    },
     "Event was saved" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1319,9 +1322,6 @@
       }
     },
     "Fuel Calculator" : {
-
-    },
-    "Hello, World!" : {
 
     },
     "iap.title" : {
@@ -2255,6 +2255,9 @@
         }
       }
     },
+    "Selected unit" : {
+
+    },
     "Sorting options" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -2364,6 +2367,9 @@
       }
     },
     "Total: %@" : {
+
+    },
+    "Travel distance" : {
 
     },
     "Utils" : {

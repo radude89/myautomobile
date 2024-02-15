@@ -8,11 +8,18 @@
 import SwiftUI
 
 struct FuelConsumptionView: View {
+    @State private var distanceDetails = DistanceDetails(
+        selectedDistanceIndex: 0,
+        enteredDistance: ""
+    )
+
     var body: some View {
         NavigationLink {
-            Text("Hello, World!")
-                .navigationTitle("Fuel Calculator")
-                .navigationBarTitleDisplayMode(.inline)
+            Form {
+                DistanceSection(distanceDetails: $distanceDetails)
+            }
+            .navigationTitle("Fuel Calculator")
+            .navigationBarTitleDisplayMode(.inline)
         } label: {
             Label("Fuel Calculator", systemImage: "fuelpump.fill")
             
