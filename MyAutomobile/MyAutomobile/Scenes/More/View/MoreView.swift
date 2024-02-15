@@ -30,12 +30,17 @@ private extension MoreView {
             utilsSection
         }
     }
+    
+    static let itemHeight: CGFloat = 40
 
     var utilsSection: some View {
         Section {
             makeItemView(for: .expenses, imageName: "pencil.line")
+                .frame(minHeight: Self.itemHeight)
             makeItemView(for: .maintenance, imageName: "screwdriver.fill")
+                .frame(minHeight: Self.itemHeight)
             FuelConsumptionView()
+                .frame(minHeight: Self.itemHeight)
         } header: {
             Text("Utils")
         }

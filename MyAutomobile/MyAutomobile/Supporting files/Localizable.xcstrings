@@ -894,9 +894,6 @@
     "Enter your expense" : {
 
     },
-    "Enter your travel distance in %@" : {
-
-    },
     "Event was saved" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -2255,9 +2252,6 @@
         }
       }
     },
-    "Selected unit" : {
-
-    },
     "Sorting options" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -2369,7 +2363,7 @@
     "Total: %@" : {
 
     },
-    "Travel distance" : {
+    "Unit" : {
 
     },
     "Utils" : {
