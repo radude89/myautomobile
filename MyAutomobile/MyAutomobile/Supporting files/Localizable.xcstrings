@@ -568,6 +568,9 @@
         }
       }
     },
+    "Calculate" : {
+
+    },
     "Cancel" : {
       "extractionState" : "manual",
       "localizations" : {

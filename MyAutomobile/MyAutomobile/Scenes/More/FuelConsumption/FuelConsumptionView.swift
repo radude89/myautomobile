@@ -8,9 +8,15 @@
 import SwiftUI
 
 struct FuelConsumptionView: View {
-    @State private var distanceDetails = FuelConsumptionDetails()
-    @State private var usageDetails = FuelConsumptionDetails(unitIndex: 2)
-    @State private var consumptionDetails = FuelConsumptionDetails()
+    @State private var distanceViewModel: FuelConsumptionSectionViewModel = .distance
+    @State private var usageViewModel: FuelConsumptionSectionViewModel = .usage
+    @State private var consumptionViewModel: FuelConsumptionSectionViewModel = .consumption
+    
+    private let numberFormatter: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.maximumFractionDigits = 2
+        return formatter
+    }()
 
     var body: some View {
         NavigationLink {
@@ -21,52 +27,113 @@ struct FuelConsumptionView: View {
             }
             .navigationTitle("Fuel Calculator")
             .navigationBarTitleDisplayMode(.inline)
+            .toolbar { toolbar }
         } label: {
             Label("Fuel Calculator", systemImage: "fuelpump.fill")
-            
         }
     }
 }
 
 // MARK: - Private
 private extension FuelConsumptionView {
+    typealias ViewModel = FuelConsumptionSectionViewModel
+    
     var distanceSection: some View {
-        FuelConsumptionSectionView(
-            units: [
-                "km": 1,
-                "miles": 0.621371
-            ],
-            fieldPlaceholder: "Enter your travel distance in",
-            sectionTitle: "Travel distance",
-            details: $distanceDetails
-        )
+        FuelConsumptionSectionView(viewModel: $distanceViewModel)
     }
     
     var fuelUsageSection: some View {
-        FuelConsumptionSectionView(
-            units: [
-                "liters": 1,
-                "US gallons": 0.26417,
-                "UK gallons": 0.21997
-            ],
-            fieldPlaceholder: "Enter your fuel usage in",
-            sectionTitle: "Fuel usage",
-            details: $usageDetails
-        )
+        FuelConsumptionSectionView(viewModel: $usageViewModel)
     }
     
     var fuelConsumptionSection: some View {
-        FuelConsumptionSectionView(
-            units: [
-                "L/km": 1,
-                "L/10 km": 10,
-                "L/100 km": 100,
-                "US gal/mi": 0.42514,
-                "UK gal/mi": 0.354
-            ],
-            fieldPlaceholder: "Enter your fuel consumption in",
-            sectionTitle: "Fuel consumption",
-            details: $consumptionDetails
-        )
+        FuelConsumptionSectionView(viewModel: $consumptionViewModel)
+    }
+    
+    @ToolbarContentBuilder
+    var toolbar: some ToolbarContent {
+        ToolbarItem(placement: .topBarTrailing) {
+            Button("Calculate", action: calculateValues)
+                .disabled(!canCalculate)
+        }
+    }
+    
+    func calculateValues() {
+        
+        if let distanceInKm = numberFormatter
+            .number(from: distanceViewModel.enteredAmount)?
+            .doubleValue
+            .toKm(from: distanceViewModel.currentUnit),
+            distanceInKm > 0 {
+            if let fuelUsageInLiters = numberFormatter
+                .number(from: usageViewModel.enteredAmount)?
+                .doubleValue
+                .toLiters(from: usageViewModel.currentUnit) {
+                let consumption = FieldCalculator.calculateConsumption(
+                    distanceInKm: distanceInKm,
+                    usageInLiters: fuelUsageInLiters,
+                    unit: consumptionViewModel.currentUnit
+                )
+                consumptionViewModel.enteredAmount = numberFormatter.string(
+                    from: NSNumber(value: consumption)
+                ) ?? ""
+            } else if let consumption = numberFormatter
+                .number(from: consumptionViewModel.enteredAmount)?
+                .doubleValue {
+                let consumptionInLitersPerKm = UnitConverter.convertToLitersPerKm(
+                    consumption,
+                    from: consumptionViewModel.currentUnit
+                )
+                let usage = FieldCalculator.calculateUsage(
+                    distanceInKm: distanceInKm,
+                    consumptionInLitersPerKm: consumptionInLitersPerKm,
+                    unit: usageViewModel.currentUnit
+                )
+                usageViewModel.enteredAmount = numberFormatter.string(
+                    from: NSNumber(value: usage)
+                ) ?? ""
+            }
+        } else if let fuelUsageInLiters = numberFormatter
+            .number(from: usageViewModel.enteredAmount)?
+            .doubleValue
+            .toLiters(from: usageViewModel.currentUnit) {
+            if let consumption = numberFormatter
+                .number(from: consumptionViewModel.enteredAmount)?
+                .doubleValue,
+               consumption > 0  {
+                let consumptionInLitersPerKm = UnitConverter.convertToLitersPerKm(
+                    consumption,
+                    from: consumptionViewModel.currentUnit
+                )
+                let distance = FieldCalculator.calculateDistance(
+                    usageInLiters: fuelUsageInLiters,
+                    consumptionInLitersPerKm: consumptionInLitersPerKm,
+                    unit: distanceViewModel.currentUnit
+                )
+                distanceViewModel.enteredAmount = numberFormatter.string(
+                    from: NSNumber(value: distance)
+                ) ?? ""
+            }
+        }
+    }
+    
+    var canCalculate: Bool {
+        let distance = numberFormatter.number(from: distanceViewModel.enteredAmount)?.doubleValue
+        let fuelUsage = numberFormatter.number(from: usageViewModel.enteredAmount)?.doubleValue
+        let consumption = numberFormatter.number(from: consumptionViewModel.enteredAmount)?.doubleValue
+        
+        if distance == nil {
+            return fuelUsage != nil && consumption != nil
+        }
+        
+        if fuelUsage == nil {
+            return distance != nil && consumption != nil
+        }
+        
+        if consumption == nil {
+            return distance != nil && fuelUsage != nil
+        }
+        
+        return true
     }
 }
