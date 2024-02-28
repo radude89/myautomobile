@@ -39,7 +39,7 @@ private extension MoreView {
                 .frame(minHeight: Self.itemHeight)
             makeItemView(for: .maintenance, imageName: "screwdriver.fill")
                 .frame(minHeight: Self.itemHeight)
-            FuelConsumptionView()
+            FuelConsumptionView(viewModel: .init())
                 .frame(minHeight: Self.itemHeight)
         } header: {
             Text("Utils")

@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct FuelConsumptionView: View {
-    @State private var distanceViewModel: FuelConsumptionSectionViewModel = .distance
-    @State private var usageViewModel: FuelConsumptionSectionViewModel = .usage
-    @State private var consumptionViewModel: FuelConsumptionSectionViewModel = .consumption
+    @StateObject private var viewModel: FuelConsumptionViewModel
+    
+    init(viewModel: FuelConsumptionViewModel) {
+        _viewModel = StateObject(wrappedValue: viewModel)
+    }
     
     private let numberFormatter: NumberFormatter = {
         let formatter = NumberFormatter()
@@ -39,101 +41,26 @@ private extension FuelConsumptionView {
     typealias ViewModel = FuelConsumptionSectionViewModel
     
     var distanceSection: some View {
-        FuelConsumptionSectionView(viewModel: $distanceViewModel)
+        FuelConsumptionSectionView(viewModel: $viewModel.distanceViewModel)
     }
     
     var fuelUsageSection: some View {
-        FuelConsumptionSectionView(viewModel: $usageViewModel)
+        FuelConsumptionSectionView(viewModel: $viewModel.usageViewModel)
     }
     
     var fuelConsumptionSection: some View {
-        FuelConsumptionSectionView(viewModel: $consumptionViewModel)
+        FuelConsumptionSectionView(viewModel: $viewModel.consumptionViewModel)
     }
     
     @ToolbarContentBuilder
     var toolbar: some ToolbarContent {
         ToolbarItem(placement: .topBarTrailing) {
             Button("Calculate", action: calculateValues)
-                .disabled(!canCalculate)
+                .disabled(!viewModel.canCalculate)
         }
     }
     
     func calculateValues() {
-        
-        if let distanceInKm = numberFormatter
-            .number(from: distanceViewModel.enteredAmount)?
-            .doubleValue
-            .toKm(from: distanceViewModel.currentUnit),
-            distanceInKm > 0 {
-            if let fuelUsageInLiters = numberFormatter
-                .number(from: usageViewModel.enteredAmount)?
-                .doubleValue
-                .toLiters(from: usageViewModel.currentUnit) {
-                let consumption = FieldCalculator.calculateConsumption(
-                    distanceInKm: distanceInKm,
-                    usageInLiters: fuelUsageInLiters,
-                    unit: consumptionViewModel.currentUnit
-                )
-                consumptionViewModel.enteredAmount = numberFormatter.string(
-                    from: NSNumber(value: consumption)
-                ) ?? ""
-            } else if let consumption = numberFormatter
-                .number(from: consumptionViewModel.enteredAmount)?
-                .doubleValue {
-                let consumptionInLitersPerKm = UnitConverter.convertToLitersPerKm(
-                    consumption,
-                    from: consumptionViewModel.currentUnit
-                )
-                let usage = FieldCalculator.calculateUsage(
-                    distanceInKm: distanceInKm,
-                    consumptionInLitersPerKm: consumptionInLitersPerKm,
-                    unit: usageViewModel.currentUnit
-                )
-                usageViewModel.enteredAmount = numberFormatter.string(
-                    from: NSNumber(value: usage)
-                ) ?? ""
-            }
-        } else if let fuelUsageInLiters = numberFormatter
-            .number(from: usageViewModel.enteredAmount)?
-            .doubleValue
-            .toLiters(from: usageViewModel.currentUnit) {
-            if let consumption = numberFormatter
-                .number(from: consumptionViewModel.enteredAmount)?
-                .doubleValue,
-               consumption > 0  {
-                let consumptionInLitersPerKm = UnitConverter.convertToLitersPerKm(
-                    consumption,
-                    from: consumptionViewModel.currentUnit
-                )
-                let distance = FieldCalculator.calculateDistance(
-                    usageInLiters: fuelUsageInLiters,
-                    consumptionInLitersPerKm: consumptionInLitersPerKm,
-                    unit: distanceViewModel.currentUnit
-                )
-                distanceViewModel.enteredAmount = numberFormatter.string(
-                    from: NSNumber(value: distance)
-                ) ?? ""
-            }
-        }
-    }
-    
-    var canCalculate: Bool {
-        let distance = numberFormatter.number(from: distanceViewModel.enteredAmount)?.doubleValue
-        let fuelUsage = numberFormatter.number(from: usageViewModel.enteredAmount)?.doubleValue
-        let consumption = numberFormatter.number(from: consumptionViewModel.enteredAmount)?.doubleValue
-        
-        if distance == nil {
-            return fuelUsage != nil && consumption != nil
-        }
-        
-        if fuelUsage == nil {
-            return distance != nil && consumption != nil
-        }
-        
-        if consumption == nil {
-            return distance != nil && fuelUsage != nil
-        }
-        
-        return true
+        viewModel.calculateValues()
     }
 }

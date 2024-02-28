@@ -66,6 +66,7 @@
 		F7B51FB92B8E44E600121246 /* FieldCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B51FB82B8E44E500121246 /* FieldCalculator.swift */; };
 		F7B51FBC2B8F01DF00121246 /* UnitConverter+ConversionFactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B51FBB2B8F01DF00121246 /* UnitConverter+ConversionFactor.swift */; };
 		F7B51FBE2B8F01FA00121246 /* Double+UnitConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B51FBD2B8F01FA00121246 /* Double+UnitConverter.swift */; };
+		F7B51FC02B8F031B00121246 /* FuelConsumptionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B51FBF2B8F031B00121246 /* FuelConsumptionViewModel.swift */; };
 		F7B869192B7A5D15009592ED /* MoreUtilsItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B869182B7A5D15009592ED /* MoreUtilsItemView.swift */; };
 		F7B8691B2B7AA0CE009592ED /* MoreItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B8691A2B7AA0CE009592ED /* MoreItem.swift */; };
 		F7B8691D2B7AA0E3009592ED /* MoreUtilsItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B8691C2B7AA0E3009592ED /* MoreUtilsItemViewModel.swift */; };
@@ -177,6 +178,7 @@
 		F7B51FB82B8E44E500121246 /* FieldCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldCalculator.swift; sourceTree = "<group>"; };
 		F7B51FBB2B8F01DF00121246 /* UnitConverter+ConversionFactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UnitConverter+ConversionFactor.swift"; sourceTree = "<group>"; };
 		F7B51FBD2B8F01FA00121246 /* Double+UnitConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+UnitConverter.swift"; sourceTree = "<group>"; };
+		F7B51FBF2B8F031B00121246 /* FuelConsumptionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuelConsumptionViewModel.swift; sourceTree = "<group>"; };
 		F7B869182B7A5D15009592ED /* MoreUtilsItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreUtilsItemView.swift; sourceTree = "<group>"; };
 		F7B8691A2B7AA0CE009592ED /* MoreItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreItem.swift; sourceTree = "<group>"; };
 		F7B8691C2B7AA0E3009592ED /* MoreUtilsItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreUtilsItemViewModel.swift; sourceTree = "<group>"; };
@@ -423,6 +425,7 @@
 				F78F935B2B7E3DFC00F8BF5C /* FuelConsumptionSectionView.swift */,
 				F78F935D2B7E4E8B00F8BF5C /* FuelConsumptionSectionViewModel.swift */,
 				F79F09782B7BA08900C37272 /* FuelConsumptionView.swift */,
+				F7B51FBF2B8F031B00121246 /* FuelConsumptionViewModel.swift */,
 				F7B51FBA2B8F00F600121246 /* Calculator */,
 			);
 			path = FuelConsumption;
@@ -788,6 +791,7 @@
 				F799E2AA2AA35F27009F3C3D /* EventListRowView.swift in Sources */,
 				F760D2E32B63896900DDA146 /* ParkingLocationCoordinate.swift in Sources */,
 				F750EBFD2B7266AB008440D8 /* ExpenseRowViewModel.swift in Sources */,
+				F7B51FC02B8F031B00121246 /* FuelConsumptionViewModel.swift in Sources */,
 				F7C5D7B32820198A00C4D213 /* VehicleImage.swift in Sources */,
 				F7EE6BFA2B70B0260075D64A /* ExpenseAddViewModel.swift in Sources */,
 				F760D2E52B63926700DDA146 /* ParkingLocation.swift in Sources */,
