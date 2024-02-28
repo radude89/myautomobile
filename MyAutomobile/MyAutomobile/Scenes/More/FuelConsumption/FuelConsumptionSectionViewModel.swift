@@ -18,6 +18,30 @@ struct FuelConsumptionSectionViewModel {
     var currentUnit: UnitMeasure {
         units[unitIndex]
     }
+    
+    private let numberFormatter: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.maximumFractionDigits = 2
+        return formatter
+    }()
+    
+    var amountInKm: Double? {
+        amountAsDouble?.toKm(from: currentUnit)
+    }
+    
+    var amountAsDouble: Double? {
+        numberFormatter.number(from: enteredAmount)?.doubleValue
+    }
+    
+    var amountInLiters: Double? {
+        amountAsDouble?.toLiters(from: currentUnit)
+    }
+    
+    mutating func setAmount(_ doubleValue: Double) {
+        enteredAmount = numberFormatter.string(
+            from: NSNumber(value: doubleValue)
+        ) ?? ""
+    }
 }
 
 extension FuelConsumptionSectionViewModel {

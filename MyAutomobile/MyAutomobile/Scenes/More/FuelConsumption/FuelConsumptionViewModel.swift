@@ -11,34 +11,17 @@ final class FuelConsumptionViewModel: ObservableObject {
     @Published var distanceViewModel: FuelConsumptionSectionViewModel = .distance
     @Published var usageViewModel: FuelConsumptionSectionViewModel = .usage
     @Published var consumptionViewModel: FuelConsumptionSectionViewModel = .consumption
-
-    private let numberFormatter: NumberFormatter = {
-        let formatter = NumberFormatter()
-        formatter.maximumFractionDigits = 2
-        return formatter
-    }()
     
     func calculateValues() {
-        if let distanceInKm = numberFormatter
-            .number(from: distanceViewModel.enteredAmount)?
-            .doubleValue
-            .toKm(from: distanceViewModel.currentUnit),
-            distanceInKm > 0 {
-            if let fuelUsageInLiters = numberFormatter
-                .number(from: usageViewModel.enteredAmount)?
-                .doubleValue
-                .toLiters(from: usageViewModel.currentUnit) {
+        if let distanceInKm = distanceViewModel.amountInKm, distanceInKm > 0 {
+            if let fuelUsageInLiters = usageViewModel.amountInLiters {
                 let consumption = FieldCalculator.calculateConsumption(
                     distanceInKm: distanceInKm,
                     usageInLiters: fuelUsageInLiters,
                     unit: consumptionViewModel.currentUnit
                 )
-                consumptionViewModel.enteredAmount = numberFormatter.string(
-                    from: NSNumber(value: consumption)
-                ) ?? ""
-            } else if let consumption = numberFormatter
-                .number(from: consumptionViewModel.enteredAmount)?
-                .doubleValue {
+                consumptionViewModel.setAmount(consumption)
+            } else if let consumption = consumptionViewModel.amountAsDouble {
                 let consumptionInLitersPerKm = UnitConverter.convertToLitersPerKm(
                     consumption,
                     from: consumptionViewModel.currentUnit
@@ -48,18 +31,10 @@ final class FuelConsumptionViewModel: ObservableObject {
                     consumptionInLitersPerKm: consumptionInLitersPerKm,
                     unit: usageViewModel.currentUnit
                 )
-                usageViewModel.enteredAmount = numberFormatter.string(
-                    from: NSNumber(value: usage)
-                ) ?? ""
+                usageViewModel.setAmount(usage)
             }
-        } else if let fuelUsageInLiters = numberFormatter
-            .number(from: usageViewModel.enteredAmount)?
-            .doubleValue
-            .toLiters(from: usageViewModel.currentUnit) {
-            if let consumption = numberFormatter
-                .number(from: consumptionViewModel.enteredAmount)?
-                .doubleValue,
-               consumption > 0  {
+        } else if let fuelUsageInLiters = usageViewModel.amountInLiters {
+            if let consumption = consumptionViewModel.amountAsDouble, consumption > 0  {
                 let consumptionInLitersPerKm = UnitConverter.convertToLitersPerKm(
                     consumption,
                     from: consumptionViewModel.currentUnit
@@ -69,17 +44,15 @@ final class FuelConsumptionViewModel: ObservableObject {
                     consumptionInLitersPerKm: consumptionInLitersPerKm,
                     unit: distanceViewModel.currentUnit
                 )
-                distanceViewModel.enteredAmount = numberFormatter.string(
-                    from: NSNumber(value: distance)
-                ) ?? ""
+                distanceViewModel.setAmount(distance)
             }
         }
     }
     
     var canCalculate: Bool {
-        let distance = numberFormatter.number(from: distanceViewModel.enteredAmount)?.doubleValue
-        let fuelUsage = numberFormatter.number(from: usageViewModel.enteredAmount)?.doubleValue
-        let consumption = numberFormatter.number(from: consumptionViewModel.enteredAmount)?.doubleValue
+        let distance = distanceViewModel.amountAsDouble
+        let fuelUsage = usageViewModel.amountAsDouble
+        let consumption = consumptionViewModel.amountAsDouble
         
         if distance == nil {
             return fuelUsage != nil && consumption != nil
