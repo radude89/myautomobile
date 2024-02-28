@@ -13,12 +13,6 @@ struct FuelConsumptionView: View {
     init(viewModel: FuelConsumptionViewModel) {
         _viewModel = StateObject(wrappedValue: viewModel)
     }
-    
-    private let numberFormatter: NumberFormatter = {
-        let formatter = NumberFormatter()
-        formatter.maximumFractionDigits = 2
-        return formatter
-    }()
 
     var body: some View {
         NavigationLink {

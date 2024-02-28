@@ -15,6 +15,10 @@ enum FieldCalculator {
         usageInLiters: Double,
         unit: UnitMeasure
     ) -> Double {
+        guard distanceInKm > 0 else {
+            return 0
+        }
+
         let litersPerKm = usageInLiters / distanceInKm
         return switch unit {
         case .litersPer10Km:
@@ -51,6 +55,10 @@ enum FieldCalculator {
         consumptionInLitersPerKm: Double,
         unit: UnitMeasure
     ) -> Double {
+        guard consumptionInLitersPerKm > 0 else {
+            return 0
+        }
+
         let distanceInKm = usageInLiters / consumptionInLitersPerKm
         return switch unit {
         case .miles:

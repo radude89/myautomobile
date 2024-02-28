@@ -37,12 +37,22 @@ struct FuelConsumptionSectionViewModel {
         amountAsDouble?.toLiters(from: currentUnit)
     }
     
+    var amountAsLitersPerKm: Double? {
+        guard let amountAsDouble else {
+            return nil
+        }
+
+        return UnitConverter.convertToLitersPerKm(amountAsDouble, from: currentUnit)
+    }
+
     mutating func setAmount(_ doubleValue: Double) {
         enteredAmount = numberFormatter.string(
             from: NSNumber(value: doubleValue)
         ) ?? ""
     }
 }
+
+// MARK: - Constants
 
 extension FuelConsumptionSectionViewModel {
     static let distanceUnits: [UnitMeasure] = [.kilometers, .miles]
