@@ -86,6 +86,7 @@
 		F7E8D2D72B683925000DC750 /* MoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E8D2D62B683925000DC750 /* MoreViewModel.swift */; };
 		F7EE6BFA2B70B0260075D64A /* ExpenseAddViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EE6BF92B70B0260075D64A /* ExpenseAddViewModel.swift */; };
 		F7EEF310280FE8AB0086AB03 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EEF30F280FE8AB0086AB03 /* Event.swift */; };
+		F7F71D582B930F2000F35971 /* SendEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F71D572B930F2000F35971 /* SendEmailView.swift */; };
 		F7FC88E9280EA29C007BA063 /* VehicleListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FC88E8280EA29C007BA063 /* VehicleListView.swift */; };
 		F7FC88EB280EA2AF007BA063 /* EventListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FC88EA280EA2AF007BA063 /* EventListView.swift */; };
 		F7FC88ED280EA42E007BA063 /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FC88EC280EA42E007BA063 /* Vehicle.swift */; };
@@ -198,6 +199,7 @@
 		F7E8D2D62B683925000DC750 /* MoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewModel.swift; sourceTree = "<group>"; };
 		F7EE6BF92B70B0260075D64A /* ExpenseAddViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseAddViewModel.swift; sourceTree = "<group>"; };
 		F7EEF30F280FE8AB0086AB03 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		F7F71D572B930F2000F35971 /* SendEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendEmailView.swift; sourceTree = "<group>"; };
 		F7FC88E8280EA29C007BA063 /* VehicleListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleListView.swift; sourceTree = "<group>"; };
 		F7FC88EA280EA2AF007BA063 /* EventListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListView.swift; sourceTree = "<group>"; };
 		F7FC88EC280EA42E007BA063 /* Vehicle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
@@ -584,6 +586,7 @@
 				F79F09702B7B991D00C37272 /* CustomUI */,
 				F7E8D2CB2B67F7EE000DC750 /* ExpenseTracking */,
 				F79F09772B7BA07100C37272 /* FuelConsumption */,
+				F7F71D562B930EE700F35971 /* Mail */,
 				F70537D12B6C10EC0005400B /* VehicleSelection */,
 				F7B8691E2B7AA25C009592ED /* View */,
 			);
@@ -616,6 +619,14 @@
 				F7202E072AAA4BE4009A17DC /* Localizable.xcstrings */,
 			);
 			path = "Supporting files";
+			sourceTree = "<group>";
+		};
+		F7F71D562B930EE700F35971 /* Mail */ = {
+			isa = PBXGroup;
+			children = (
+				F7F71D572B930F2000F35971 /* SendEmailView.swift */,
+			);
+			path = Mail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -792,6 +803,7 @@
 				F760D2E32B63896900DDA146 /* ParkingLocationCoordinate.swift in Sources */,
 				F750EBFD2B7266AB008440D8 /* ExpenseRowViewModel.swift in Sources */,
 				F7B51FC02B8F031B00121246 /* FuelConsumptionViewModel.swift in Sources */,
+				F7F71D582B930F2000F35971 /* SendEmailView.swift in Sources */,
 				F7C5D7B32820198A00C4D213 /* VehicleImage.swift in Sources */,
 				F7EE6BFA2B70B0260075D64A /* ExpenseAddViewModel.swift in Sources */,
 				F760D2E52B63926700DDA146 /* ParkingLocation.swift in Sources */,

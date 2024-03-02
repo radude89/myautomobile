@@ -6,10 +6,12 @@
 //
 
 import SwiftUI
+import MessageUI
 
 @MainActor
 struct MoreView: View {
     @StateObject private var viewModel: MoreViewModel
+    @State private var showSendEmailView = false
     
     init(viewModel: MoreViewModel) {
         _viewModel = StateObject(wrappedValue: viewModel)
@@ -37,6 +39,7 @@ private extension MoreView {
     var contentView: some View {
         Form {
             utilsSection
+            contactSection
         }
     }
     
@@ -53,6 +56,27 @@ private extension MoreView {
         } header: {
             Text("Utils")
         }
+    }
+    
+    var contactSection: some View {
+        Section {
+            if MFMailComposeViewController.canSendMail() {
+                sendEmailView
+            }
+        } header: {
+            Text("Contact")
+        }
+    }
+    
+    var sendEmailView: some View {
+        Label("Drop me (🥸) an email", systemImage: "mail.fill")
+            .frame(minHeight: Self.itemHeight)
+            .onTapGesture {
+                showSendEmailView.toggle()
+            }
+            .sheet(isPresented: $showSendEmailView) {
+                SendEmailView()
+            }
     }
     
     func makeItemView(for item: MoreItem, imageName: String) -> some View {
