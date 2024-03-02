@@ -7,46 +7,6 @@
     {
       "displayPrice" : "8.99",
       "familyShareable" : true,
-      "internalID" : "6465992411",
-      "localizations" : [
-        {
-          "description" : "Mașini infinite în aplicația ta",
-          "displayName" : "Pachet Fără Limită",
-          "locale" : "ro"
-        },
-        {
-          "description" : "Infinite vehicles",
-          "displayName" : "No Limit Pack",
-          "locale" : "en_US"
-        },
-        {
-          "description" : "Véhicules infinis pour votre application",
-          "displayName" : "Pack Illimité",
-          "locale" : "fr"
-        },
-        {
-          "description" : "Vehículos infinitos para tu aplicación",
-          "displayName" : "Pack Sin Límite",
-          "locale" : "es_ES"
-        },
-        {
-          "description" : "Unbegrenzte Fahrzeuge für Ihre App",
-          "displayName" : "Unbegrenztes Paket",
-          "locale" : "de"
-        },
-        {
-          "description" : "Veicoli infiniti per la tua app",
-          "displayName" : "Pacchetto Senza Limiti",
-          "locale" : "it"
-        }
-      ],
-      "productID" : "com.rdan.myautomobile.iap.unlimitedvehicles",
-      "referenceName" : "Infinite Vehicles",
-      "type" : "NonConsumable"
-    },
-    {
-      "displayPrice" : "8.99",
-      "familyShareable" : true,
       "internalID" : "6466779164",
       "localizations" : [
         {

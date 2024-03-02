@@ -11,7 +11,6 @@ import MessageUI
 @MainActor
 struct MoreView: View {
     @StateObject private var viewModel: MoreViewModel
-    @State private var showSendEmailView = false
     @State private var showEmailWasSentAlert = false
     
     init(viewModel: MoreViewModel) {
@@ -62,32 +61,20 @@ private extension MoreView {
     var contactSection: some View {
         Section {
             if MFMailComposeViewController.canSendMail() {
-                sendEmailView
+                EmailItemView(
+                    emailSubject: viewModel.emailSubject,
+                    itemHeight: Self.itemHeight,
+                    showEmailWasSentAlert: $showEmailWasSentAlert
+                )
+                .alert("Email was sent", isPresented: $showEmailWasSentAlert) {
+                    Button("OK", role: .cancel) {
+                        showEmailWasSentAlert = false
+                    }
+                }
             }
         } header: {
             Text("Contact")
         }
-    }
-    
-    var sendEmailView: some View {
-        Label("Drop me (🥸) an email", systemImage: "mail.fill")
-            .frame(minHeight: Self.itemHeight)
-            .onTapGesture {
-                showSendEmailView.toggle()
-            }
-            .sheet(isPresented: $showSendEmailView) {
-                SendEmailView(subject: viewModel.emailSubject) { emailWasSent in
-                    showSendEmailView = false
-                    if emailWasSent {
-                        showEmailWasSentAlert.toggle()
-                    }
-                }
-            }
-            .alert("Email was sent", isPresented: $showEmailWasSentAlert) {
-                Button("OK", role: .cancel) {
-                    showEmailWasSentAlert = false
-                }
-            }
     }
     
     func makeItemView(for item: MoreItem, imageName: String) -> some View {
