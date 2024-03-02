@@ -12,6 +12,7 @@ import MessageUI
 struct MoreView: View {
     @StateObject private var viewModel: MoreViewModel
     @State private var showEmailWasSentAlert = false
+    @Environment(\.requestReview) private var requestReview
     
     init(viewModel: MoreViewModel) {
         _viewModel = StateObject(wrappedValue: viewModel)
@@ -61,19 +62,28 @@ private extension MoreView {
     var contactSection: some View {
         Section {
             if MFMailComposeViewController.canSendMail() {
-                EmailItemView(
-                    emailSubject: viewModel.emailSubject,
-                    itemHeight: Self.itemHeight,
-                    showEmailWasSentAlert: $showEmailWasSentAlert
-                )
-                .alert("Email was sent", isPresented: $showEmailWasSentAlert) {
-                    Button("OK", role: .cancel) {
-                        showEmailWasSentAlert = false
-                    }
-                }
+                emailItemView
             }
+            Label("Review the app", systemImage: "steeringwheel.circle.fill")
+                .frame(minHeight: Self.itemHeight)
+                .onTapGesture {
+                    requestReview()
+                }
         } header: {
-            Text("Contact")
+            Text("Feedback")
+        }
+    }
+    
+    var emailItemView: some View {
+        EmailItemView(
+            emailSubject: viewModel.emailSubject,
+            itemHeight: Self.itemHeight,
+            showEmailWasSentAlert: $showEmailWasSentAlert
+        )
+        .alert("Email was sent", isPresented: $showEmailWasSentAlert) {
+            Button("OK", role: .cancel) {
+                showEmailWasSentAlert = false
+            }
         }
     }
     

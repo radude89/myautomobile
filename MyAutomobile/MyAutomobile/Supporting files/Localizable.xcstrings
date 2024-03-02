@@ -678,9 +678,6 @@
     "Comment (optional)" : {
 
     },
-    "Contact" : {
-
-    },
     "Cost" : {
 
     },
@@ -1129,6 +1126,9 @@
 
     },
     "expenses_empty" : {
+
+    },
+    "Feedback" : {
 
     },
     "Filter" : {
@@ -2190,6 +2190,9 @@
           }
         }
       }
+    },
+    "Review the app" : {
+
     },
     "Select date" : {
       "extractionState" : "manual",
