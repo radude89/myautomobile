@@ -9,9 +9,23 @@ import SwiftUI
 
 final class MoreViewModel: ObservableObject {
     @ObservedObject var vehicles: Vehicles
+    private static let appName = "CarChum"
     
     init(vehicles: Vehicles) {
         self.vehicles = vehicles
+    }
+    
+    var footnote: String {
+        guard let dictionary = Bundle.main.infoDictionary,
+              let version = dictionary["CFBundleShortVersionString"] as? String else {
+            return Self.appName
+        }
+        
+        guard let build = dictionary["CFBundleVersion"] as? String else {
+            return "\(Self.appName) v\(version)"
+        }
+        
+        return "\(Self.appName) v\(version) (\(build))"
     }
     
     func title(for item: MoreItem) -> String {

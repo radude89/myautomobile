@@ -19,6 +19,15 @@ struct MoreView: View {
         NavigationStack {
             contentView
                 .navigationTitle("More")
+                .toolbar {
+                    ToolbarItemGroup(placement: .bottomBar) {
+                        Text(viewModel.footnote)
+                            .font(.footnote)
+                            .foregroundColor(.secondary)
+                            .frame(maxWidth: .infinity)
+                            .textSelection(.enabled)
+                    }
+                }
         }
     }
 }
