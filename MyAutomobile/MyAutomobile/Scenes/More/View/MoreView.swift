@@ -12,6 +12,7 @@ import MessageUI
 struct MoreView: View {
     @StateObject private var viewModel: MoreViewModel
     @State private var showSendEmailView = false
+    @State private var showEmailWasSentAlert = false
     
     init(viewModel: MoreViewModel) {
         _viewModel = StateObject(wrappedValue: viewModel)
@@ -75,7 +76,17 @@ private extension MoreView {
                 showSendEmailView.toggle()
             }
             .sheet(isPresented: $showSendEmailView) {
-                SendEmailView()
+                SendEmailView(subject: viewModel.emailSubject) { emailWasSent in
+                    showSendEmailView = false
+                    if emailWasSent {
+                        showEmailWasSentAlert.toggle()
+                    }
+                }
+            }
+            .alert("Email was sent", isPresented: $showEmailWasSentAlert) {
+                Button("OK", role: .cancel) {
+                    showEmailWasSentAlert = false
+                }
             }
     }
     

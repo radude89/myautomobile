@@ -28,6 +28,10 @@ final class MoreViewModel: ObservableObject {
         return "\(Self.appName) v\(version) (\(build))"
     }
     
+    var emailSubject: String {
+        "Hello from \(footnote)!"
+    }
+    
     func title(for item: MoreItem) -> String {
         switch item {
         case .expenses:
