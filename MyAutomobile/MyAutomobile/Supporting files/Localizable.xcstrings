@@ -1450,6 +1450,9 @@
     "List of expenses" : {
 
     },
+    "Loading..." : {
+
+    },
     "Make" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -2303,6 +2306,9 @@
       }
     },
     "Tap on a segment" : {
+
+    },
+    "Terms" : {
 
     },
     "The app doesn't have permission to Calendar in Settings." : {

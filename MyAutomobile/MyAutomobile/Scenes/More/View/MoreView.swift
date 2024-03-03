@@ -22,15 +22,6 @@ struct MoreView: View {
         NavigationStack {
             contentView
                 .navigationTitle("More")
-                .toolbar {
-                    ToolbarItemGroup(placement: .bottomBar) {
-                        Text(viewModel.footnote)
-                            .font(.footnote)
-                            .foregroundColor(.secondary)
-                            .frame(maxWidth: .infinity)
-                            .textSelection(.enabled)
-                    }
-                }
         }
     }
 }
@@ -41,6 +32,8 @@ private extension MoreView {
         Form {
             utilsSection
             contactSection
+            termsSection
+            versionSection
         }
     }
     
@@ -72,6 +65,37 @@ private extension MoreView {
         } header: {
             Text("Feedback")
         }
+    }
+    
+    var termsSection: some View {
+        Section {
+            TermsView(viewModel: .init(
+                title: "Terms & Conditions",
+                imageName: "folder.fill",
+                isShowingTerms: true
+            ))
+            .frame(minHeight: Self.itemHeight)
+            
+            TermsView(viewModel: .init(
+                title: "Privacy Policy",
+                imageName: "newspaper.fill",
+                isShowingTerms: false
+            ))
+            .frame(minHeight: Self.itemHeight)
+        } header: {
+            Text("Terms")
+        }
+    }
+    
+    var versionSection: some View {
+        Section {
+            Text(viewModel.footnote)
+                .textSelection(.enabled)
+                .font(.footnote)
+                .foregroundColor(.secondary)
+                .frame(maxWidth: .infinity, alignment: .center)
+        }
+        .listRowBackground(Color.clear)
     }
     
     var emailItemView: some View {
