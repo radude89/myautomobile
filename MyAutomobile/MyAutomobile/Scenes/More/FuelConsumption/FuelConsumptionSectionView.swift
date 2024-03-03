@@ -17,19 +17,25 @@ struct FuelConsumptionSectionView: View {
     var body: some View {
         Section {
             TextField(
-                "\(viewModel.fieldPlaceholder) \(viewModel.currentUnit.description)",
+                textFieldLocalizedText,
                 text: $viewModel.enteredAmount
             )
             .keyboardType(.decimalPad)
             
             Picker("Unit", selection: $viewModel.unitIndex) {
                 ForEach(0 ..< viewModel.units.count, id: \.self) {
-                    Text("\(viewModel.units[$0].description)")
+                    Text(String(localized: "\(viewModel.units[$0].description)"))
                 }
             }
         } header: {
             Text(viewModel.sectionTitle)
         }
+    }
+    
+    private var textFieldLocalizedText: String {
+        let localizedPlaceholder = String(localized: .init(viewModel.fieldPlaceholder))
+        let localizedUnit = String(localized: .init(viewModel.currentUnit.description))
+        return "\(localizedPlaceholder) \(localizedUnit)"
     }
 }
 

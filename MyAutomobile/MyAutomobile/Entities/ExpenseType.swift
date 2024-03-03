@@ -21,7 +21,7 @@ extension ExpenseType: Codable {}
 
 extension ExpenseType {
     var name: String {
-        rawValue.capitalized
+        String(localized: .init(rawValue))
     }
     
     var imageName: String {

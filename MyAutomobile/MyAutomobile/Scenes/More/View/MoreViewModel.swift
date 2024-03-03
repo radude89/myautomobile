@@ -29,24 +29,26 @@ final class MoreViewModel: ObservableObject {
     }
     
     var emailSubject: String {
-        "Hello from \(footnote)!"
+        String(
+            format: NSLocalizedString("Hello from", comment: "Subject"), footnote
+        )
     }
     
     func title(for item: MoreItem) -> String {
-        switch item {
+        return switch item {
         case .expenses:
-            return "Expense tracking"
+            String(localized: .init("Expense tracking"))
         case .maintenance:
-            return "Maintenance"
+            String(localized: .init("Maintenance"))
         }
     }
     
     func emptyViewTitle(for item: MoreItem) -> String {
-        switch item {
+        return switch item {
         case .expenses:
-            return "expenses_empty"
+            String(localized: .init("expenses_empty"))
         case .maintenance:
-            return "maintenance_empty"
+            String(localized: .init("maintenance_empty"))
         }
     }
 }

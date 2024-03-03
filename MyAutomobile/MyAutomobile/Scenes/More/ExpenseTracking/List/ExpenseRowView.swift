@@ -43,21 +43,3 @@ struct ExpenseRowView: View {
         }
     }
 }
-
-// MARK: - Private
-private extension ExpenseRowView {
-}
-
-// MARK: - Preview
-#Preview {
-    ExpenseRowView(
-        viewModel: .init(
-            expense: .init(
-                date: .now,
-                odometerReading: 123,
-                expenseType: .insurance,
-                cost: 100.5
-            )
-        )
-    )
-}

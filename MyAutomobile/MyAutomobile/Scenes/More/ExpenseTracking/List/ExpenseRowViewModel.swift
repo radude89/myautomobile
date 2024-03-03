@@ -43,7 +43,9 @@ struct ExpenseRowViewModel {
             return nil
         }
         
-        return "Odometer: \(reading)"
+        return String(
+            format: NSLocalizedString("Odometer reading", comment: "Odometer reading"), reading
+        )
     }
     
     var imageName: String {

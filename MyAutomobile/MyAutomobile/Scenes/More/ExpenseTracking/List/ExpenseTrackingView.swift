@@ -15,6 +15,10 @@ struct ExpenseTrackingView: View {
     private enum ViewOption: String, CaseIterable {
         case list = "List"
         case chart = "Chart"
+        
+        var localizedName: String {
+            String(localized: .init(rawValue))
+        }
     }
     
     @StateObject private var viewModel: ExpenseTrackingViewModel
@@ -79,7 +83,7 @@ private extension ExpenseTrackingView {
     var selectionView: some View {
         Picker("View", selection: $viewOption) {
             ForEach(ViewOption.allCases, id: \.self) {
-                Text($0.rawValue)
+                Text($0.localizedName)
             }
         }
         .background(Color.clear)

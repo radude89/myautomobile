@@ -20,14 +20,17 @@ struct TermsView: View {
     var body: some View {
         NavigationLink {
             contentView
-                .navigationTitle(viewModel.title)
+                .navigationTitle(String(localized: .init(viewModel.title)))
                 .onAppear {
                     DispatchQueue.main.asyncAfter(deadline: .now() + Self.delay) {
                         showLoadingView = false
                     }
                 }
         } label: {
-            Label(viewModel.title, systemImage: viewModel.imageName)
+            Label(
+                String(localized: .init(viewModel.title)),
+                systemImage: viewModel.imageName
+            )
         }
     }
 }

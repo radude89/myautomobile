@@ -33,7 +33,7 @@ struct TermsViewModel {
 }
 
 private extension TermsViewModel {
-    static let languageCodeDictionary: [Locale.LanguageCode: String] = [
+    static let appLanguageCodeDictionary: [Locale.LanguageCode: String] = [
         .english: "en",
         .french: "fr",
         .spanish: "es",
@@ -46,7 +46,7 @@ private extension TermsViewModel {
         for languageCode: Locale.LanguageCode,
         isTerms: Bool
     ) -> String {
-        let languageCode = Self.languageCodeDictionary[languageCode] ?? "en"
+        let languageCode = Self.appLanguageCodeDictionary[languageCode] ?? "en"
         let urlSuffix = isTerms ? Constants.termsSuffix : Constants.privacySuffix
         return "\(Constants.urlBase)\(languageCode)\(urlSuffix)"
     }
