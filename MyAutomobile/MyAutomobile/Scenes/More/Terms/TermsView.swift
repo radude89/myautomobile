@@ -21,6 +21,7 @@ struct TermsView: View {
         NavigationLink {
             contentView
                 .navigationTitle(String(localized: .init(viewModel.title)))
+                .navigationBarTitleDisplayMode(.inline)
                 .onAppear {
                     DispatchQueue.main.asyncAfter(deadline: .now() + Self.delay) {
                         showLoadingView = false
