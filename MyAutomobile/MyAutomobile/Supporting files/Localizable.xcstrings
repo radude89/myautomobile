@@ -88,6 +88,12 @@
             "state" : "translated",
             "value" : "Ajouter un élément"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aggiungi elemento"
+          }
         }
       }
     },
@@ -150,7 +156,7 @@
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Aggiungi campo veicolo"
+            "value" : "Nuovo campo"
           }
         },
         "ro" : {
@@ -185,7 +191,7 @@
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Aggiungi il tuo campo personalizzato"
+            "value" : "Nuovo campo"
           }
         },
         "ro" : {
@@ -220,7 +226,7 @@
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Aggiungi il tuo evento"
+            "value" : "Nuovo evento"
           }
         },
         "ro" : {
@@ -243,6 +249,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ajouter vos dépenses"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nuova spesa"
           }
         }
       }
@@ -271,7 +283,7 @@
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Aggiungi il tuo nuovo veicolo"
+            "value" : "Nuovo veicolo"
           }
         },
         "ro" : {
@@ -417,6 +429,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Êtes-vous sûr de vouloir abandonner cette nouvelle dépense ?"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sei sicuro di voler eliminare questa nuova spesa?"
           }
         }
       }
@@ -626,6 +644,12 @@
             "state" : "translated",
             "value" : "Calculer"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Calcola"
+          }
         }
       }
     },
@@ -677,6 +701,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Graphique"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Grafico"
           }
         }
       }
@@ -763,6 +793,12 @@
             "state" : "translated",
             "value" : "Commentaire (optionnel)"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Commento (opzionale)"
+          }
         }
       }
     },
@@ -778,6 +814,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Coût"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Costo"
           }
         }
       }
@@ -970,6 +1012,12 @@
             "state" : "translated",
             "value" : "Envoyez-moi un email"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mandami  (🥸) una email"
+          }
         }
       }
     },
@@ -985,6 +1033,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "L'e-mail a été envoyé"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Email inviata"
           }
         }
       }
@@ -1037,6 +1091,12 @@
             "state" : "translated",
             "value" : "Entrez la lecture approximative"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inserisci la lettura approssimativa"
+          }
         }
       }
     },
@@ -1052,6 +1112,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Entrez vos dépenses"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inserisci la tua spesa"
           }
         }
       }
@@ -1076,6 +1142,12 @@
             "state" : "translated",
             "value" : "Consommation"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Consumo di carburante"
+          }
         }
       }
     },
@@ -1099,6 +1171,12 @@
             "state" : "translated",
             "value" : "Utilisation"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Utilizzo del carburante"
+          }
         }
       }
     },
@@ -1121,6 +1199,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Distance"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Distanza"
           }
         }
       }
@@ -1355,6 +1439,12 @@
             "state" : "translated",
             "value" : "Suivi des dépenses"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Monitoraggio delle spese"
+          }
         }
       }
     },
@@ -1371,6 +1461,12 @@
             "state" : "translated",
             "value" : "Type de dépense"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tipo di spesa"
+          }
         }
       }
     },
@@ -1386,6 +1482,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dépenses"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spese"
           }
         }
       }
@@ -1409,6 +1511,12 @@
             "state" : "translated",
             "value" : "Vous n'avez encore ajouté aucune dépense. Vous devez ajouter au moins un véhicule pour pouvoir ajouter des dépenses."
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Non hai ancora aggiunto spese. Devi aggiungere almeno un veicolo per poter aggiungere spese."
+          }
         }
       }
     },
@@ -1424,6 +1532,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Commentaires"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Feedback"
           }
         }
       }
@@ -1647,6 +1761,12 @@
             "state" : "translated",
             "value" : "Carburant"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carburante"
+          }
         }
       }
     },
@@ -1662,6 +1782,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Calculateur de carburant"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Calcolatore di carburante"
           }
         }
       }
@@ -1680,6 +1806,12 @@
             "state" : "translated",
             "value" : "Consommation de carburant"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Consumo di carburante"
+          }
         }
       }
     },
@@ -1696,6 +1828,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Utilisation de carburant"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Utilizzo del carburante"
           }
         }
       }
@@ -1719,6 +1857,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bonjour depuis l'app CarChum %@ !"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ciao da %@!"
           }
         }
       }
@@ -1819,6 +1963,12 @@
             "state" : "translated",
             "value" : "Assurance"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Assicurazione"
+          }
         }
       }
     },
@@ -1834,6 +1984,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Il semble que ce véhicule ait été supprimé"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sembra che questo veicolo sia stato eliminato"
           }
         }
       }
@@ -1887,6 +2043,12 @@
             "state" : "translated",
             "value" : "km"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "km"
+          }
         }
       }
     },
@@ -1900,6 +2062,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "L/10 km"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "L/10 km"
@@ -1921,6 +2089,12 @@
             "state" : "translated",
             "value" : "L/100 km"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "L/100 km"
+          }
         }
       }
     },
@@ -1934,6 +2108,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "L/km"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "L/km"
@@ -1955,6 +2135,12 @@
             "state" : "translated",
             "value" : "Liste"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lista"
+          }
         }
       }
     },
@@ -1970,6 +2156,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : " Liste des dépenses"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elenco delle spese"
           }
         }
       }
@@ -1988,6 +2180,12 @@
             "state" : "translated",
             "value" : "litres"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "litri"
+          }
         }
       }
     },
@@ -2003,6 +2201,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Chargement..."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Caricamento..."
           }
         }
       }
@@ -2027,6 +2231,12 @@
             "state" : "translated",
             "value" : "entretien"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Manutenzione"
+          }
         }
       }
     },
@@ -2043,6 +2253,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Entretien"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Manutenzione"
           }
         }
       }
@@ -2065,6 +2281,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Vous n'avez encore ajouté aucune entrée d'entretien. Vous devez ajouter au moins un véhicule pour pouvoir ajouter des éléments d'entretien."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Non hai ancora aggiunto voci di manutenzione. Devi aggiungere almeno un veicolo per poter aggiungere voci di manutenzione."
           }
         }
       }
@@ -2192,6 +2414,12 @@
             "state" : "translated",
             "value" : "miles"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "miglia"
+          }
         }
       }
     },
@@ -2277,6 +2505,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Plus"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Più"
           }
         }
       }
@@ -2406,6 +2640,12 @@
             "state" : "translated",
             "value" : "Compteur : %@"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Contachilometri: %@"
+          }
         }
       }
     },
@@ -2421,6 +2661,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Compteur kilométrique (optionnel)"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Contachilometri (optional)"
           }
         }
       }
@@ -2549,6 +2795,12 @@
             "state" : "translated",
             "value" : "Autre"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Altro"
+          }
         }
       }
     },
@@ -2571,6 +2823,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Stationnement"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Parcheggio"
           }
         }
       }
@@ -2656,6 +2914,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Politique de confidentialité"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Politica sulla privacy"
           }
         }
       }
@@ -2925,6 +3189,12 @@
             "state" : "translated",
             "value" : "Réparation"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Riparazione"
+          }
         }
       }
     },
@@ -2974,6 +3244,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Donnez votre avis sur l'application"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recensisci l'app"
           }
         }
       }
@@ -3025,6 +3301,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sélectionner un véhicule"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seleziona veicolo"
           }
         }
       }
@@ -3112,6 +3394,12 @@
             "state" : "translated",
             "value" : "Appuyez sur un segment"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tocca un segmento"
+          }
         }
       }
     },
@@ -3127,6 +3415,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Termes"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Termini"
           }
         }
       }
@@ -3144,6 +3438,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Termes & Conditions"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Termini e condizioni"
           }
         }
       }
@@ -3238,6 +3538,12 @@
             "state" : "translated",
             "value" : "Péage"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pedaggio"
+          }
         }
       }
     },
@@ -3253,6 +3559,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Total : %@"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Totale: %@"
           }
         }
       }
@@ -3271,6 +3583,12 @@
             "state" : "translated",
             "value" : "Distance de voyage"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Distanza di viaggio"
+          }
         }
       }
     },
@@ -3287,6 +3605,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Gallons britanniques"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Galloni britannici"
           }
         }
       }
@@ -3305,6 +3629,12 @@
             "state" : "translated",
             "value" : "mpg UK"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Miglia / gallone britannico"
+          }
         }
       }
     },
@@ -3320,6 +3650,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Unit"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unità"
           }
         }
       }
@@ -3338,6 +3674,12 @@
             "state" : "translated",
             "value" : "Gallons américains"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Galloni statunitensi"
+          }
         }
       }
     },
@@ -3355,6 +3697,12 @@
             "state" : "translated",
             "value" : "mpg US"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Miglia / galloni statunitensi"
+          }
         }
       }
     },
@@ -3370,6 +3718,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Outils"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Utilità"
           }
         }
       }
@@ -3609,6 +3963,12 @@
             "state" : "translated",
             "value" : "Vuew"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Visualizza"
+          }
         }
       }
     },
@@ -3624,6 +3984,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Avertissement"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Avvertimento"
           }
         }
       }
