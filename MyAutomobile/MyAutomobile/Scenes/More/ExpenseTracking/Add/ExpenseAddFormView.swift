@@ -63,7 +63,9 @@ private extension ExpenseAddFormView {
             if !showOnlyMaintenanceItems {
                 Picker("Expense type", selection: $expenseTypeIndex) {
                     ForEach(0 ..< expenseTypes.count, id: \.self) { index in
-                        Text(expenseTypes[index].rawValue.capitalized)
+                        Text(
+                            String(localized: .init(expenseTypes[index].rawValue.capitalized))
+                        )
                     }
                 }
             }

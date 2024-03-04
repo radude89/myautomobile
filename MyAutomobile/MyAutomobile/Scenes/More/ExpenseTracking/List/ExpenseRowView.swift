@@ -34,7 +34,7 @@ struct ExpenseRowView: View {
                 }
                 if let odometerReading = viewModel.odometerReading {
                     Text(odometerReading)
-                        .font(.body)
+                        .font(.caption2)
                 }
             }
             Spacer()

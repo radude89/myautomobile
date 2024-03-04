@@ -95,7 +95,7 @@ private extension ExpenseTrackingView {
         Text("expenses_empty")
             .font(.body)
             .multilineTextAlignment(.center)
-            .padding([.leading, .trailing])
+            .padding([.leading, .trailing], 32)
     }
     
     var listContentView: some View {

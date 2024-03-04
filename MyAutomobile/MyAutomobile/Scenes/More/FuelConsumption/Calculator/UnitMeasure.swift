@@ -19,7 +19,7 @@ enum UnitMeasure {
     case usMilesPerGallon
     case ukMilesPerGallon
     
-    var description: String {
+    var measure: String {
         return switch self {
         case .kilometers: "km"
         case .miles: "miles"

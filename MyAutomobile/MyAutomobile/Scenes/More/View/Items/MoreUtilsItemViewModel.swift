@@ -12,12 +12,12 @@ final class MoreUtilsItemViewModel: ObservableObject {
     @ObservedObject var vehicles: Vehicles
     let title: String
     let imageName: String
-    let emptyViewTitle: String
+    let emptyViewTitle: String.LocalizationValue
     
     init(vehicles: Vehicles,
          title: String,
          imageName: String,
-         emptyViewTitle: String) {
+         emptyViewTitle: String.LocalizationValue) {
         self.vehicles = vehicles
         self.title = title
         self.imageName = imageName

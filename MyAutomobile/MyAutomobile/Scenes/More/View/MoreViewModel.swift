@@ -43,12 +43,12 @@ final class MoreViewModel: ObservableObject {
         }
     }
     
-    func emptyViewTitle(for item: MoreItem) -> String {
+    func emptyViewTitle(for item: MoreItem) -> String.LocalizationValue {
         return switch item {
         case .expenses:
-            String(localized: .init("expenses_empty"))
+            "expenses_empty"
         case .maintenance:
-            String(localized: .init("maintenance_empty"))
+            "maintenance_empty"
         }
     }
 }

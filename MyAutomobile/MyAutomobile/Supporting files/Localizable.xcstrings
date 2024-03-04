@@ -76,7 +76,14 @@
       }
     },
     "Add Item" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajouter un élément"
+          }
+        }
+      }
     },
     "Add to your local calendar" : {
       "extractionState" : "manual",
@@ -166,7 +173,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ajouter votre champ personnalisé"
+            "value" : "Nouveau champ"
           }
         },
         "it" : {
@@ -219,7 +226,14 @@
       }
     },
     "Add your expense" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajouter vos dépenses"
+          }
+        }
+      }
     },
     "Add your new vehicle" : {
       "extractionState" : "manual",
@@ -239,7 +253,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ajouter votre nouveau véhicule"
+            "value" : "Nouveau véhicule"
           }
         },
         "it" : {
@@ -379,6 +393,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Are you sure you want to discard this new expense?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Êtes-vous sûr de vouloir abandonner cette nouvelle dépense ?"
           }
         }
       }
@@ -576,7 +596,14 @@
       }
     },
     "Calculate" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Calculer"
+          }
+        }
+      }
     },
     "Cancel" : {
       "extractionState" : "manual",
@@ -614,7 +641,15 @@
       }
     },
     "Chart" : {
-      "extractionState" : "manual"
+      "extractionState" : "manual",
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Graphique"
+          }
+        }
+      }
     },
     "Clear" : {
       "localizations" : {
@@ -686,10 +721,24 @@
       }
     },
     "Comment (optional)" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Commentaire (optionnel)"
+          }
+        }
+      }
     },
     "Cost" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Coût"
+          }
+        }
+      }
     },
     "Date" : {
       "extractionState" : "manual",
@@ -867,10 +916,24 @@
       }
     },
     "Drop me (🥸) an email" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Envoyez-moi un email"
+          }
+        }
+      }
     },
     "Email was sent" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "L'e-mail a été envoyé"
+          }
+        }
+      }
     },
     "Enter description" : {
       "extractionState" : "manual",
@@ -908,19 +971,75 @@
       }
     },
     "Enter the approximate reading" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Entrez la lecture approximative"
+          }
+        }
+      }
     },
     "Enter your expense" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Entrez vos dépenses"
+          }
+        }
+      }
     },
     "Enter your fuel consumption in" : {
-      "extractionState" : "manual"
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enter your fuel consumption"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Consommation"
+          }
+        }
+      }
     },
     "Enter your fuel usage in" : {
-      "extractionState" : "manual"
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enter your fuel usage"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Utilisation"
+          }
+        }
+      }
     },
     "Enter your travel distance in" : {
-      "extractionState" : "manual"
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enter your travel distance"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Distance"
+          }
+        }
+      }
     },
     "Event was saved" : {
       "extractionState" : "manual",
@@ -1139,13 +1258,35 @@
       }
     },
     "Expense tracking" : {
-      "extractionState" : "manual"
+      "extractionState" : "manual",
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suivi des dépenses"
+          }
+        }
+      }
     },
     "Expense type" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Type de dépense"
+          }
+        }
+      }
     },
     "Expenses" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dépenses"
+          }
+        }
+      }
     },
     "expenses_empty" : {
       "localizations" : {
@@ -1154,11 +1295,24 @@
             "state" : "translated",
             "value" : "You haven't added any expenses yet. You need to add at least one vehicle to be able to add expenses."
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vous n'avez encore ajouté aucune dépense. Vous devez ajouter au moins un véhicule pour pouvoir ajouter des dépenses."
+          }
         }
       }
     },
     "Feedback" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Commentaires"
+          }
+        }
+      }
     },
     "Filter" : {
       "extractionState" : "manual",
@@ -1359,7 +1513,7 @@
         }
       }
     },
-    "fuel" : {
+    "Fuel" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -1367,17 +1521,46 @@
             "state" : "translated",
             "value" : "Fuel"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carburant"
+          }
         }
       }
     },
     "Fuel Calculator" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Calculateur de carburant"
+          }
+        }
+      }
     },
     "Fuel consumption" : {
-      "extractionState" : "manual"
+      "extractionState" : "manual",
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Consommation de carburant"
+          }
+        }
+      }
     },
     "Fuel usage" : {
-      "extractionState" : "manual"
+      "extractionState" : "manual",
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Utilisation de carburant"
+          }
+        }
+      }
     },
     "Hello from" : {
       "extractionState" : "manual",
@@ -1386,6 +1569,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Hello from %@ !"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bonjour depuis l'app CarChum %@ !"
           }
         }
       }
@@ -1466,7 +1655,7 @@
         }
       }
     },
-    "insurance" : {
+    "Insurance" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -1474,11 +1663,24 @@
             "state" : "translated",
             "value" : "Insurance"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Assurance"
+          }
         }
       }
     },
     "It looks like this vehicle has been deleted" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Il semble que ce véhicule ait été supprimé"
+          }
+        }
+      }
     },
     "Keep editing" : {
       "extractionState" : "manual",
@@ -1516,28 +1718,90 @@
       }
     },
     "km" : {
-      "extractionState" : "manual"
+      "extractionState" : "manual",
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "km"
+          }
+        }
+      }
     },
     "L/10 km" : {
-      "extractionState" : "manual"
+      "extractionState" : "manual",
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "L/10 km"
+          }
+        }
+      }
     },
     "L/100 km" : {
-      "extractionState" : "manual"
+      "extractionState" : "manual",
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "L/100 km"
+          }
+        }
+      }
     },
     "L/km" : {
-      "extractionState" : "manual"
+      "extractionState" : "manual",
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "L/km"
+          }
+        }
+      }
     },
     "List" : {
-      "extractionState" : "manual"
+      "extractionState" : "manual",
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Liste"
+          }
+        }
+      }
     },
     "List of expenses" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : " Liste des dépenses"
+          }
+        }
+      }
     },
     "liters" : {
-      "extractionState" : "manual"
+      "extractionState" : "manual",
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "litres"
+          }
+        }
+      }
     },
     "Loading..." : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chargement..."
+          }
+        }
+      }
     },
     "maintenance" : {
       "extractionState" : "manual",
@@ -1547,19 +1811,38 @@
             "state" : "translated",
             "value" : "Maintenance"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "entretien"
+          }
         }
       }
     },
     "Maintenance" : {
-      "extractionState" : "manual"
+      "extractionState" : "manual",
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Entretien"
+          }
+        }
+      }
     },
     "maintenance_empty" : {
-      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "You haven't added any maintenance entries yet. You need to add at least one vehicle to be able to add maintenance items."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vous n'avez encore ajouté aucune entrée d'entretien. Vous devez ajouter au moins un véhicule pour pouvoir ajouter des éléments d'entretien."
           }
         }
       }
@@ -1674,7 +1957,15 @@
       }
     },
     "miles" : {
-      "extractionState" : "manual"
+      "extractionState" : "manual",
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "miles"
+          }
+        }
+      }
     },
     "Model" : {
       "extractionState" : "manual",
@@ -1747,7 +2038,14 @@
       }
     },
     "More" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Plus"
+          }
+        }
+      }
     },
     "Name" : {
       "extractionState" : "manual",
@@ -1862,11 +2160,24 @@
             "state" : "translated",
             "value" : "Odometer: %@"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Compteur : %@"
+          }
         }
       }
     },
     "Odometer reading (optional)" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Compteur kilométrique (optionnel)"
+          }
+        }
+      }
     },
     "OK" : {
       "extractionState" : "manual",
@@ -1972,13 +2283,19 @@
         }
       }
     },
-    "other" : {
+    "Other" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Other"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Autre"
           }
         }
       }
@@ -1990,6 +2307,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Parking"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stationnement"
           }
         }
       }
@@ -2063,7 +2386,15 @@
       }
     },
     "Privacy Policy" : {
-      "extractionState" : "manual"
+      "extractionState" : "manual",
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Politique de confidentialité"
+          }
+        }
+      }
     },
     "Recurrence" : {
       "extractionState" : "manual",
@@ -2310,13 +2641,19 @@
         }
       }
     },
-    "repair" : {
+    "Repair" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Repair"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Réparation"
           }
         }
       }
@@ -2356,7 +2693,14 @@
       }
     },
     "Review the app" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Donnez votre avis sur l'application"
+          }
+        }
+      }
     },
     "Select date" : {
       "extractionState" : "manual",
@@ -2394,7 +2738,14 @@
       }
     },
     "Select vehicle" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sélectionner un véhicule"
+          }
+        }
+      }
     },
     "Select your vehicle" : {
       "extractionState" : "manual",
@@ -2467,13 +2818,35 @@
       }
     },
     "Tap on a segment" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Appuyez sur un segment"
+          }
+        }
+      }
     },
     "Terms" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Termes"
+          }
+        }
+      }
     },
     "Terms & Conditions" : {
-      "extractionState" : "manual"
+      "extractionState" : "manual",
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Termes & Conditions"
+          }
+        }
+      }
     },
     "The app doesn't have permission to Calendar in Settings." : {
       "extractionState" : "manual",
@@ -2545,7 +2918,7 @@
         }
       }
     },
-    "toll" : {
+    "Toll" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -2553,32 +2926,99 @@
             "state" : "translated",
             "value" : "Toll"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Péage"
+          }
         }
       }
     },
     "Total: %@" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Total : %@"
+          }
+        }
+      }
     },
     "Travel distance" : {
-      "extractionState" : "manual"
+      "extractionState" : "manual",
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Distance de voyage"
+          }
+        }
+      }
     },
     "UK gallons" : {
-      "extractionState" : "manual"
+      "extractionState" : "manual",
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gallons britanniques"
+          }
+        }
+      }
     },
     "UK mpg" : {
-      "extractionState" : "manual"
+      "extractionState" : "manual",
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "mpg UK"
+          }
+        }
+      }
     },
     "Unit" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unit"
+          }
+        }
+      }
     },
     "US gallons" : {
-      "extractionState" : "manual"
+      "extractionState" : "manual",
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gallons américains"
+          }
+        }
+      }
     },
     "US mpg" : {
-      "extractionState" : "manual"
+      "extractionState" : "manual",
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "mpg US"
+          }
+        }
+      }
     },
     "Utils" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Outils"
+          }
+        }
+      }
     },
     "Value" : {
       "extractionState" : "manual",
@@ -2803,10 +3243,24 @@
       }
     },
     "View" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vuew"
+          }
+        }
+      }
     },
     "Warning" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Avertissement"
+          }
+        }
+      }
     },
     "Weekly" : {
       "extractionState" : "manual",

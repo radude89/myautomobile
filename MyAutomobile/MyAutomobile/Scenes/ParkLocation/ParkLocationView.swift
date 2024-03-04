@@ -66,7 +66,7 @@ private extension ParkLocationView {
             Text("map_empty")
                 .font(.body)
                 .multilineTextAlignment(.center)
-                .padding([.leading, .trailing])
+                .padding([.leading, .trailing], 32)
             Button("Open Settings") {
                 openURLSettings()
             }

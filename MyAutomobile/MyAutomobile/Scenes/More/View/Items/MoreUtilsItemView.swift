@@ -47,7 +47,7 @@ private extension MoreUtilsItemView {
     }
     
     var emptyView: some View {
-        Text(viewModel.emptyViewTitle)
+        Text(String(localized: viewModel.emptyViewTitle))
             .font(.body)
             .multilineTextAlignment(.center)
             .padding([.leading, .trailing])
