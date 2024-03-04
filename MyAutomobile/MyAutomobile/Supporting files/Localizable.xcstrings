@@ -94,6 +94,12 @@
             "state" : "translated",
             "value" : "Aggiungi elemento"
           }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Adăugați element"
+          }
         }
       }
     },
@@ -197,7 +203,7 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Adaugă câmpul tău personalizat"
+            "value" : "Adaugă câmp"
           }
         }
       }
@@ -255,6 +261,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nuova spesa"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cheltuială nouă"
           }
         }
       }
@@ -435,6 +447,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sei sicuro di voler eliminare questa nuova spesa?"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sunteți sigur că doriți să renunțați la această cheltuială nouă?"
           }
         }
       }
@@ -650,6 +668,12 @@
             "state" : "translated",
             "value" : "Calcola"
           }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Calculați"
+          }
         }
       }
     },
@@ -707,6 +731,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Grafico"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Grafic"
           }
         }
       }
@@ -799,6 +829,12 @@
             "state" : "translated",
             "value" : "Commento (opzionale)"
           }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Comentariu (opțional)"
+          }
         }
       }
     },
@@ -820,6 +856,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Costo"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cost"
           }
         }
       }
@@ -1018,6 +1060,12 @@
             "state" : "translated",
             "value" : "Mandami  (🥸) una email"
           }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trimiteți-mi (🥸) un email"
+          }
         }
       }
     },
@@ -1039,6 +1087,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Email inviata"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Emailul a fost trimis"
           }
         }
       }
@@ -1097,6 +1151,12 @@
             "state" : "translated",
             "value" : "Inserisci la lettura approssimativa"
           }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Introduceți citirea aproximativă"
+          }
         }
       }
     },
@@ -1118,6 +1178,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Inserisci la tua spesa"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Introduceți cheltuiala dvs."
           }
         }
       }
@@ -1148,6 +1214,12 @@
             "state" : "translated",
             "value" : "Consumo di carburante"
           }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Consum de combustibil"
+          }
         }
       }
     },
@@ -1177,6 +1249,12 @@
             "state" : "translated",
             "value" : "Utilizzo del carburante"
           }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Utilizare combustibil"
+          }
         }
       }
     },
@@ -1205,6 +1283,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Distanza"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Distanță"
           }
         }
       }
@@ -1445,6 +1529,12 @@
             "state" : "translated",
             "value" : "Monitoraggio delle spese"
           }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cheltuieli"
+          }
         }
       }
     },
@@ -1467,6 +1557,12 @@
             "state" : "translated",
             "value" : "Tipo di spesa"
           }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tipul cheltuielii"
+          }
         }
       }
     },
@@ -1488,6 +1584,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Spese"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cheltuieli"
           }
         }
       }
@@ -1517,6 +1619,12 @@
             "state" : "translated",
             "value" : "Non hai ancora aggiunto spese. Devi aggiungere almeno un veicolo per poter aggiungere spese."
           }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nu ați adăugat încă nicio cheltuială. Trebuie să adăugați cel puțin un vehicul pentru a putea adăuga cheltuieli."
+          }
         }
       }
     },
@@ -1535,6 +1643,12 @@
           }
         },
         "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Feedback"
+          }
+        },
+        "ro" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Feedback"
@@ -1767,6 +1881,12 @@
             "state" : "translated",
             "value" : "Carburante"
           }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Combustibil"
+          }
         }
       }
     },
@@ -1788,6 +1908,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Calcolatore di carburante"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Calculator"
           }
         }
       }
@@ -1812,6 +1938,12 @@
             "state" : "translated",
             "value" : "Consumo di carburante"
           }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Consum de combustibil"
+          }
         }
       }
     },
@@ -1834,6 +1966,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Utilizzo del carburante"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Utilizare combustibil"
           }
         }
       }
@@ -1863,6 +2001,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ciao da %@!"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Salut din %@!"
           }
         }
       }
@@ -1969,6 +2113,12 @@
             "state" : "translated",
             "value" : "Assicurazione"
           }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Asigurare"
+          }
         }
       }
     },
@@ -1990,6 +2140,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sembra che questo veicolo sia stato eliminato"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se pare că acest vehicul a fost șters"
           }
         }
       }
@@ -2049,6 +2205,12 @@
             "state" : "translated",
             "value" : "km"
           }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "km"
+          }
         }
       }
     },
@@ -2072,6 +2234,12 @@
             "state" : "translated",
             "value" : "L/10 km"
           }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "L/10 lm"
+          }
         }
       }
     },
@@ -2091,6 +2259,12 @@
           }
         },
         "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "L/100 km"
+          }
+        },
+        "ro" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "L/100 km"
@@ -2118,6 +2292,12 @@
             "state" : "translated",
             "value" : "L/km"
           }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "L/km"
+          }
         }
       }
     },
@@ -2141,6 +2321,12 @@
             "state" : "translated",
             "value" : "Lista"
           }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Listă"
+          }
         }
       }
     },
@@ -2163,6 +2349,12 @@
             "state" : "translated",
             "value" : "Elenco delle spese"
           }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Listă de cheltuieli"
+          }
         }
       }
     },
@@ -2182,6 +2374,12 @@
           }
         },
         "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "litri"
+          }
+        },
+        "ro" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "litri"
@@ -2207,6 +2405,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Caricamento..."
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se încarcă...\n"
           }
         }
       }
@@ -2237,6 +2441,12 @@
             "state" : "translated",
             "value" : "Manutenzione"
           }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Întreținere"
+          }
         }
       }
     },
@@ -2259,6 +2469,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Manutenzione"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Întreținere"
           }
         }
       }
@@ -2287,6 +2503,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Non hai ancora aggiunto voci di manutenzione. Devi aggiungere almeno un veicolo per poter aggiungere voci di manutenzione."
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nu ați adăugat încă nicio intrare de întreținere. Trebuie să adăugați cel puțin un vehicul pentru a putea adăuga elemente de întreținere."
           }
         }
       }
@@ -2420,6 +2642,12 @@
             "state" : "translated",
             "value" : "miglia"
           }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "mile"
+          }
         }
       }
     },
@@ -2511,6 +2739,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Più"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mai mult"
           }
         }
       }
@@ -2646,6 +2880,12 @@
             "state" : "translated",
             "value" : "Contachilometri: %@"
           }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Contor"
+          }
         }
       }
     },
@@ -2667,6 +2907,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Contachilometri (optional)"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Citire contor (opțional):"
           }
         }
       }
@@ -2801,6 +3047,12 @@
             "state" : "translated",
             "value" : "Altro"
           }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Altele"
+          }
         }
       }
     },
@@ -2829,6 +3081,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Parcheggio"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Parcare"
           }
         }
       }
@@ -2920,6 +3178,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Politica sulla privacy"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Politica de confidențialitate"
           }
         }
       }
@@ -3195,6 +3459,12 @@
             "state" : "translated",
             "value" : "Riparazione"
           }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reparație"
+          }
         }
       }
     },
@@ -3250,6 +3520,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Recensisci l'app"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Revizuiți aplicația"
           }
         }
       }
@@ -3307,6 +3583,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Seleziona veicolo"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selectați vehiculul"
           }
         }
       }
@@ -3400,6 +3682,12 @@
             "state" : "translated",
             "value" : "Tocca un segmento"
           }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selectați segmentul"
+          }
         }
       }
     },
@@ -3421,6 +3709,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Termini"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Termeni"
           }
         }
       }
@@ -3444,6 +3738,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Termini e condizioni"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Termeni și condiții"
           }
         }
       }
@@ -3544,6 +3844,12 @@
             "state" : "translated",
             "value" : "Pedaggio"
           }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Taxă de trecere"
+          }
         }
       }
     },
@@ -3565,6 +3871,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Totale: %@"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Total: %@"
           }
         }
       }
@@ -3589,6 +3901,12 @@
             "state" : "translated",
             "value" : "Distanza di viaggio"
           }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Distanța"
+          }
         }
       }
     },
@@ -3611,6 +3929,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Galloni britannici"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Galoane UK"
           }
         }
       }
@@ -3635,6 +3959,12 @@
             "state" : "translated",
             "value" : "Miglia / gallone britannico"
           }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "UK mpg"
+          }
         }
       }
     },
@@ -3656,6 +3986,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Unità"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unitate"
           }
         }
       }
@@ -3680,6 +4016,12 @@
             "state" : "translated",
             "value" : "Galloni statunitensi"
           }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Galoane US"
+          }
         }
       }
     },
@@ -3703,6 +4045,12 @@
             "state" : "translated",
             "value" : "Miglia / galloni statunitensi"
           }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "US mpg"
+          }
         }
       }
     },
@@ -3724,6 +4072,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Utilità"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Utilități"
           }
         }
       }
@@ -3969,6 +4323,12 @@
             "state" : "translated",
             "value" : "Visualizza"
           }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vizualizare"
+          }
         }
       }
     },
@@ -3990,6 +4350,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Avvertimento"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Avertisment"
           }
         }
       }
