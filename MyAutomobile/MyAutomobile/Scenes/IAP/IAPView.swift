@@ -49,11 +49,11 @@ private extension IAPView {
                 .bold()
         })
         .padding()
-        .foregroundStyle(Color("app_green"))
-        .backgroundStyle(Color("app_green"))
+        .foregroundStyle(Color("app_color"))
+        .backgroundStyle(Color("app_color"))
         .overlay(
             RoundedRectangle(cornerRadius: 6.0)
-                .stroke(Color("app_green"), lineWidth: 1.0)
+                .stroke(Color("app_color"), lineWidth: 1.0)
         )
     }
 

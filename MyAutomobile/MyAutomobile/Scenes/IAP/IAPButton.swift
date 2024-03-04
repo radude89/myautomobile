@@ -28,7 +28,7 @@ struct IAPButton: View {
             .frame(maxWidth: .infinity)
         })
         .buttonStyle(.borderedProminent)
-        .tint(Color("app_green"))
+        .tint(Color("app_color"))
     }
 }
 
