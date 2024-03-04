@@ -77,6 +77,12 @@
     },
     "Add Item" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Artikel hinzufügen"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -161,7 +167,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Füge dein individuelles Feld hinzu"
+            "value" : "Neues Feld"
           }
         },
         "es" : {
@@ -196,7 +202,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Füge dein Ereignis hinzu"
+            "value" : "Neue Veranstaltung"
           }
         },
         "es" : {
@@ -227,6 +233,12 @@
     },
     "Add your expense" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Neue Ausgabe"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -241,7 +253,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Füge dein neues Fahrzeug hinzu"
+            "value" : "Neues Fahrzeug"
           }
         },
         "es" : {
@@ -389,6 +401,12 @@
     },
     "alert_confirmation_expense_discard_title" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sind Sie sicher, dass Sie diese neue Ausgabe verwerfen möchten?"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -597,6 +615,12 @@
     },
     "Calculate" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Berechnen"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -643,6 +667,12 @@
     "Chart" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Diagramm"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -722,6 +752,12 @@
     },
     "Comment (optional)" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kommentar (optional)"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -732,6 +768,12 @@
     },
     "Cost" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kosten"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -917,6 +959,12 @@
     },
     "Drop me (🥸) an email" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Schick mir eine (🥸) E-Mail"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -927,6 +975,12 @@
     },
     "Email was sent" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "E-Mail wurde gesendet"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -972,6 +1026,12 @@
     },
     "Enter the approximate reading" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geben Sie die ungefähre Ablesung ein"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -982,6 +1042,12 @@
     },
     "Enter your expense" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geben Sie Ihre Ausgabe ein"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -993,6 +1059,12 @@
     "Enter your fuel consumption in" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kraftstoffverbrauch"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1010,6 +1082,12 @@
     "Enter your fuel usage in" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kraftstoffverwendung"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1027,6 +1105,12 @@
     "Enter your travel distance in" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Entfernung"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1260,6 +1344,12 @@
     "Expense tracking" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ausgabenverfolgung"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1270,6 +1360,12 @@
     },
     "Expense type" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ausgabentyp"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1280,6 +1376,12 @@
     },
     "Expenses" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ausgaben"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1290,6 +1392,12 @@
     },
     "expenses_empty" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sie haben noch keine Ausgaben hinzugefügt. Sie müssen mindestens ein Fahrzeug hinzufügen, um Ausgaben hinzufügen zu können."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1306,6 +1414,12 @@
     },
     "Feedback" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Feedback"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1516,6 +1630,12 @@
     "Fuel" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kraftstoff"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1532,6 +1652,12 @@
     },
     "Fuel Calculator" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kraftstoffrechner"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1543,6 +1669,12 @@
     "Fuel consumption" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kraftstoffverbrauch"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1554,6 +1686,12 @@
     "Fuel usage" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kraftstoffverwendung"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1565,6 +1703,12 @@
     "Hello from" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hallo von %@!"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1658,6 +1802,12 @@
     "Insurance" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Versicherung"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1674,6 +1824,12 @@
     },
     "It looks like this vehicle has been deleted" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Es sieht so aus, als ob dieses Fahrzeug gelöscht wurde"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1720,6 +1876,12 @@
     "km" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "km"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1731,6 +1893,12 @@
     "L/10 km" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "l/10 km"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1742,6 +1910,12 @@
     "L/100 km" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "l/100 km"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1753,6 +1927,12 @@
     "L/km" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "l/km"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1764,6 +1944,12 @@
     "List" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Liste"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1774,6 +1960,12 @@
     },
     "List of expenses" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Liste der Ausgaben"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1785,6 +1977,12 @@
     "liters" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Liter"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1795,6 +1993,12 @@
     },
     "Loading..." : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Laden..."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1806,6 +2010,12 @@
     "maintenance" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wartung"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1823,6 +2033,12 @@
     "Maintenance" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wartung"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1833,6 +2049,12 @@
     },
     "maintenance_empty" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sie haben noch keine Wartungseinträge hinzugefügt. Sie müssen mindestens ein Fahrzeug hinzufügen, um Wartungsposten hinzufügen zu können."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1959,6 +2181,12 @@
     "miles" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Meilen"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2039,6 +2267,12 @@
     },
     "More" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mehr"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2088,7 +2322,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Feldname"
+            "value" : "Name des Feldes"
           }
         },
         "es" : {
@@ -2155,6 +2389,12 @@
     "Odometer reading" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tachometer: %@"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2171,6 +2411,12 @@
     },
     "Odometer reading (optional)" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tachometerstand (optional)"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2286,6 +2532,12 @@
     "Other" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Andere"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2303,6 +2555,12 @@
     "parking" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Parken"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2388,6 +2646,12 @@
     "Privacy Policy" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Datenschutzrichtlinie"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2644,6 +2908,12 @@
     "Repair" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reparatur"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2694,6 +2964,12 @@
     },
     "Review the app" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "App überprüfen"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2739,6 +3015,12 @@
     },
     "Select vehicle" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fahrzeug auswählen"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2819,6 +3101,12 @@
     },
     "Tap on a segment" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tippen Sie \nauf ein Segment"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2829,6 +3117,12 @@
     },
     "Terms" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bedingungen"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2840,6 +3134,12 @@
     "Terms & Conditions" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geschäftsbedingungen"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2921,6 +3221,12 @@
     "Toll" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maut"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2937,6 +3243,12 @@
     },
     "Total: %@" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gesamt: %@"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2948,6 +3260,12 @@
     "Travel distance" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reisestrecke"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2959,6 +3277,12 @@
     "UK gallons" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "UK Gallonen"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2970,6 +3294,12 @@
     "UK mpg" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "UK mpg"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2980,6 +3310,12 @@
     },
     "Unit" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Einheit"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2991,6 +3327,12 @@
     "US gallons" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "US Gallonen"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3002,6 +3344,12 @@
     "US mpg" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "US mpg"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3012,6 +3360,12 @@
     },
     "Utils" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dienstprogramme"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3244,6 +3598,12 @@
     },
     "View" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ansicht"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3254,6 +3614,12 @@
     },
     "Warning" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Warnung"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",

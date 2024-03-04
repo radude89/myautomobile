@@ -57,6 +57,7 @@ struct ExpenseChartView: View {
                 } else {
                     Text("Tap on a segment")
                         .font(.caption2)
+                        .multilineTextAlignment(.center)
                 }
             }
         }
