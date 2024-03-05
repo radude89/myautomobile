@@ -50,7 +50,7 @@ private extension MoreUtilsItemView {
         Text(String(localized: viewModel.emptyViewTitle))
             .font(.body)
             .multilineTextAlignment(.center)
-            .padding([.leading, .trailing])
+            .padding([.leading, .trailing], 32)
     }
     
     var selectionView: some View {

@@ -50,7 +50,7 @@ extension ExpenseType {
         case .repair:
             .pink
         case .maintenance:
-            .mint
+            .blue
         case .fuel:
             .orange
         case .toll:
