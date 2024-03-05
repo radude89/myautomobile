@@ -54,10 +54,10 @@ struct ParkLocationView: View {
 private extension ParkLocationView {
     @ViewBuilder
     var contentView: some View {
-        if locationHandler.state == .authorized {
-            ParkingMapView(parkingCoordinate: $parkingCoordinate)
-        } else {
+        if locationHandler.state == .disabled {
             emptyView
+        } else {
+            ParkingMapView(parkingCoordinate: $parkingCoordinate)
         }
     }
     
