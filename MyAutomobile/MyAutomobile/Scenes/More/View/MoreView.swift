@@ -59,6 +59,7 @@ private extension MoreView {
                 IAPView(
                     availableSlots: viewModel.availableSlots,
                     numberOfAddedVehicles: viewModel.numberOfAddedVehicles,
+                    hasBoughtUnlimitedVehicles: viewModel.hasBoughtUnlimitedVehicles,
                     showCancelButton: false
                 )
             } label: {

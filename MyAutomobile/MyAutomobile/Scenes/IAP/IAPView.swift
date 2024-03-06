@@ -16,47 +16,30 @@ struct IAPView: View {
     let availableSlots: Int
     let numberOfAddedVehicles: Int
     let showCancelButton: Bool
+    let hasBoughtUnlimitedVehicles: Bool
     
     init(availableSlots: Int,
          numberOfAddedVehicles: Int,
+         hasBoughtUnlimitedVehicles: Bool,
          showCancelButton: Bool = true) {
         self.availableSlots = availableSlots
         self.numberOfAddedVehicles = numberOfAddedVehicles
+        self.hasBoughtUnlimitedVehicles = hasBoughtUnlimitedVehicles
         self.showCancelButton = showCancelButton
     }
     
     var body: some View {
         NavigationStack {
-            VStack {
-                VStack(spacing: 32) {
-                    Text(currentPackDescription)
-                        .font(.title3)
-                        .bold()
-                    Text("iap.title")
-                }
-                .padding(12)
-                
-                VStack(spacing: 20) {
-                    ForEach(Array(purchaseManager.products.enumerated()), id: \.element.id) { index, product in
-                        IAPButton(title: titles[index], subtitle: subtitle(for: product)) {
-                            Task { await buyProduct(product) }
+            contentView
+                .task { await loadProducts() }
+                .navigationTitle("Vehicle Packs")
+                .toolbar {
+                    if showCancelButton {
+                        ToolbarItem(placement: .topBarTrailing) {
+                            Button("Cancel") { dismiss() }
                         }
                     }
-                    restoreButton
                 }
-                .fixedSize(horizontal: true, vertical: false)
-                
-                Spacer()
-            }
-            .task { await loadProducts() }
-            .navigationTitle("Vehicle Packs")
-            .toolbar {
-                if showCancelButton {
-                    ToolbarItem(placement: .topBarTrailing) {
-                        Button("Cancel") { dismiss() }
-                    }
-                }
-            }
         }
     }
 }
@@ -64,6 +47,42 @@ struct IAPView: View {
 // MARK: - Private
 
 private extension IAPView {
+    @ViewBuilder
+    var contentView: some View {
+        if hasBoughtUnlimitedVehicles {
+            Text("iap.infinite")
+                .multilineTextAlignment(.center)
+                .font(.title3)
+                .bold()
+        } else {
+            productsView
+        }
+    }
+    
+    var productsView: some View {
+        VStack {
+            VStack(spacing: 32) {
+                Text(currentPackDescription)
+                    .font(.title3)
+                    .bold()
+                Text("iap.title")
+            }
+            .padding(12)
+            
+            VStack(spacing: 20) {
+                ForEach(Array(purchaseManager.products.enumerated()), id: \.element.id) { index, product in
+                    IAPButton(title: titles[index], subtitle: subtitle(for: product)) {
+                        Task { await buyProduct(product) }
+                    }
+                }
+                restoreButton
+            }
+            .fixedSize(horizontal: true, vertical: false)
+            
+            Spacer()
+        }
+    }
+    
     var currentPackDescription: String {
         return String(
             format: NSLocalizedString("You own vehicles", comment: ""),

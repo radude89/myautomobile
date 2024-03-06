@@ -33,7 +33,8 @@ struct VehicleListView: View {
                     } else {
                         IAPView(
                             availableSlots: viewModel.availableSlots,
-                            numberOfAddedVehicles: viewModel.numberOfAddedVehicles
+                            numberOfAddedVehicles: viewModel.numberOfAddedVehicles,
+                            hasBoughtUnlimitedVehicles: viewModel.hasBoughtUnlimitedVehicles
                         )
                     }
                 }

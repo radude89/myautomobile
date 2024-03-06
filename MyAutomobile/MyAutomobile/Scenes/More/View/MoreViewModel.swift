@@ -44,6 +44,10 @@ final class MoreViewModel: ObservableObject {
         purchaseManager.purchasedVehicleSlots
     }
     
+    var hasBoughtUnlimitedVehicles: Bool {
+        purchaseManager.hasBoughtUnlimitedVehicles
+    }
+    
     func title(for item: MoreItem) -> String {
         return switch item {
         case .expenses:

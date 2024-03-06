@@ -2189,6 +2189,46 @@
         }
       }
     },
+    "iap.infinite" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Herzlichen Glückwunsch! Sie haben unbegrenzte Fahrzeugslots."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Congrats! You have unlimited vehicle slots."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¡Felicidades! Tienes espacios de vehículos ilimitados."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Félicitations ! Vous avez des emplacements de véhicules illimités."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Congratulazioni! Hai slot per veicoli illimitate."
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Felicitări! Ai sloturi pentru vehicule nelimitate."
+          }
+        }
+      }
+    },
     "iap.title" : {
       "extractionState" : "manual",
       "localizations" : {

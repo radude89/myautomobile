@@ -25,7 +25,7 @@ final class VehicleListViewModel: ObservableObject {
     }
     
     var canPresentAddView: Bool {
-        if purchaseManager.hasBoughtUnlimitedVehicles {
+        if hasBoughtUnlimitedVehicles {
             print("Has bought unlimited vehicles.")
             return true
         }
@@ -39,6 +39,10 @@ final class VehicleListViewModel: ObservableObject {
     
     var availableSlots: Int {
         purchaseManager.purchasedVehicleSlots
+    }
+    
+    var hasBoughtUnlimitedVehicles: Bool {
+        purchaseManager.hasBoughtUnlimitedVehicles
     }
     
     func delete(atOffsets offsets: IndexSet) async {
