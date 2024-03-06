@@ -632,6 +632,9 @@
         }
       }
     },
+    "Buy vehicle packs" : {
+
+    },
     "By Vehicle" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -2161,37 +2164,37 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sie haben das Limit Ihrer Fahrzeuge erreicht.\nSie können eines der untenstehenden Pakete kaufen."
+            "value" : "Wenn Sie weitere Fahrzeugslots erwerben möchten, sehen Sie sich bitte die unten aufgeführten Pakete an:"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "You've reached the limit of your vehicles.\nYou can purchase one of the packs below."
+            "value" : "If you wish to buy additional vehicle slots, please take a look at the packs listed below:"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Has alcanzado el límite de tus vehículos.\nPuedes comprar uno de los paquetes de abajo."
+            "value" : "Si desea comprar más espacios para vehículos, por favor vea los paquetes a continuación:"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Vous avez atteint la limite de vos véhicules.\nVous pouvez acheter l'un des packs ci-dessous."
+            "value" : "Si vous souhaitez acheter plus d'emplacements pour véhicules, veuillez consulter les packs ci-dessous :"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hai raggiunto il limite dei tuoi veicoli.\nPuoi acquistare uno dei pacchetti qui sotto."
+            "value" : "Se desideri acquistare ulteriori slot per veicoli, consulta i pacchetti qui sotto:"
           }
         },
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ați atins limita vehiculelor dumneavoastră.\nPuteți achiziționa unul dintre pachetele de mai jos."
+            "value" : "Dacă doriți să achiziționați mai multe sloturi pentru vehicule, vă rugăm să consultați pachetele de mai jos:"
           }
         }
       }
@@ -4541,6 +4544,40 @@
         }
       }
     },
+    "Vehicle Packs" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fahrzeug-Pakete"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Paquetes de vehículos"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Packs de véhicules"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pacchetti veicolo"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pachete de vehicule"
+          }
+        }
+      }
+    },
     "vehicle_color" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -4757,6 +4794,46 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Săptămânal"
+          }
+        }
+      }
+    },
+    "You own vehicles" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sie haben %d von %d Fahrzeugslots belegt."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You have filled %d out of %d vehicle slots."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ha llenado %d de %d espacios de vehículos."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vous avez rempli %d sur %d emplacements de véhicule."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hai riempito %d su %d slot veicoli."
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ați ocupat %d din cele %d sloturi de vehicule."
           }
         }
       }

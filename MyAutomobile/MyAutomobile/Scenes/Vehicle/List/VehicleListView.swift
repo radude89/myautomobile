@@ -31,7 +31,10 @@ struct VehicleListView: View {
                     if viewModel.canPresentAddView {
                         VehicleAddView(viewModel: .init(vehicles: viewModel.vehicles))
                     } else {
-                        IAPView()
+                        IAPView(
+                            availableSlots: viewModel.availableSlots,
+                            numberOfAddedVehicles: viewModel.numberOfAddedVehicles
+                        )
                     }
                 }
                 .onReceive(viewModel.vehicles.objectWillChange) {

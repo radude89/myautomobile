@@ -10,31 +10,68 @@ import StoreKit
 
 struct IAPView: View {
     @EnvironmentObject private var purchaseManager: PurchaseManager
+    @Environment(\.dismiss) var dismiss
     private let titles: [String] = ["1x", "∞ x"]
     
+    let availableSlots: Int
+    let numberOfAddedVehicles: Int
+    let showCancelButton: Bool
+    
+    init(availableSlots: Int,
+         numberOfAddedVehicles: Int,
+         showCancelButton: Bool = true) {
+        self.availableSlots = availableSlots
+        self.numberOfAddedVehicles = numberOfAddedVehicles
+        self.showCancelButton = showCancelButton
+    }
+    
     var body: some View {
-        VStack(alignment: .center) {
-            Text("iap.title")
-                .padding([.leading, .trailing, .bottom])
-            
-            VStack(spacing: 20) {
-                ForEach(Array(purchaseManager.products.enumerated()), id: \.element.id) { index, product in
-                    IAPButton(title: titles[index], subtitle: subtitle(for: product)) {
-                        Task { await buyProduct(product) }
+        NavigationStack {
+            VStack {
+                VStack(spacing: 32) {
+                    Text(currentPackDescription)
+                        .font(.title3)
+                        .bold()
+                    Text("iap.title")
+                }
+                .padding(12)
+                
+                VStack(spacing: 20) {
+                    ForEach(Array(purchaseManager.products.enumerated()), id: \.element.id) { index, product in
+                        IAPButton(title: titles[index], subtitle: subtitle(for: product)) {
+                            Task { await buyProduct(product) }
+                        }
+                    }
+                    restoreButton
+                }
+                .fixedSize(horizontal: true, vertical: false)
+                
+                Spacer()
+            }
+            .task { await loadProducts() }
+            .navigationTitle("Vehicle Packs")
+            .toolbar {
+                if showCancelButton {
+                    ToolbarItem(placement: .topBarTrailing) {
+                        Button("Cancel") { dismiss() }
                     }
                 }
-                restoreButton
-                
             }
-            .fixedSize(horizontal: true, vertical: false)
         }
-        .task { await loadProducts() }
     }
 }
 
 // MARK: - Private
 
 private extension IAPView {
+    var currentPackDescription: String {
+        return String(
+            format: NSLocalizedString("You own vehicles", comment: ""),
+            numberOfAddedVehicles,
+            availableSlots
+        )
+    }
+
     var restoreButton: some View {
         Button(action: {
             Task {
@@ -76,10 +113,4 @@ private extension IAPView {
     func subtitle(for product: Product) -> String {
         "\(product.displayName) - \(product.displayPrice)"
     }
-}
-
-// MARK: - Preview
-
-#Preview {
-    IAPView()
 }

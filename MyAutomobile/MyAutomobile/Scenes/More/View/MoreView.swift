@@ -31,6 +31,7 @@ private extension MoreView {
     var contentView: some View {
         Form {
             utilsSection
+            vehiclePacksSection
             contactSection
             termsSection
             versionSection
@@ -49,6 +50,23 @@ private extension MoreView {
                 .frame(minHeight: Self.itemHeight)
         } header: {
             Text("Utils")
+        }
+    }
+    
+    var vehiclePacksSection: some View {
+        Section {
+            NavigationLink {
+                IAPView(
+                    availableSlots: viewModel.availableSlots,
+                    numberOfAddedVehicles: viewModel.numberOfAddedVehicles,
+                    showCancelButton: false
+                )
+            } label: {
+                Label("Buy vehicle packs", systemImage: "basket.fill")
+                    .frame(minHeight: Self.itemHeight)
+            }
+        } header: {
+            Text("Vehicle Packs")
         }
     }
     

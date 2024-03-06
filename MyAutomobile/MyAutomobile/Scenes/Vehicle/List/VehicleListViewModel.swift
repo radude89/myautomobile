@@ -33,6 +33,14 @@ final class VehicleListViewModel: ObservableObject {
         return purchaseManager.purchasedVehicleSlots > vehicles.items.count
     }
     
+    var numberOfAddedVehicles: Int {
+        vehicles.items.count
+    }
+    
+    var availableSlots: Int {
+        purchaseManager.purchasedVehicleSlots
+    }
+    
     func delete(atOffsets offsets: IndexSet) async {
         if let firstIndex = offsets.first {
             let vehicle = vehicles.items[firstIndex]

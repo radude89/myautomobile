@@ -10,9 +10,11 @@ import SwiftUI
 final class MoreViewModel: ObservableObject {
     @ObservedObject var vehicles: Vehicles
     private static let appName = "CarChum"
+    private let purchaseManager: PurchaseManager
     
-    init(vehicles: Vehicles) {
+    init(vehicles: Vehicles, purchaseManager: PurchaseManager) {
         self.vehicles = vehicles
+        self.purchaseManager = purchaseManager
     }
     
     var footnote: String {
@@ -32,6 +34,14 @@ final class MoreViewModel: ObservableObject {
         String(
             format: NSLocalizedString("Hello from", comment: "Subject"), footnote
         )
+    }
+    
+    var numberOfAddedVehicles: Int {
+        vehicles.items.count
+    }
+    
+    var availableSlots: Int {
+        purchaseManager.purchasedVehicleSlots
     }
     
     func title(for item: MoreItem) -> String {

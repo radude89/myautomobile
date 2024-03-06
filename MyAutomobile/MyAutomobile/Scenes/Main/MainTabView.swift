@@ -63,10 +63,11 @@ private extension MainTabView {
                 .tag(2)
             
             MoreView(
-                viewModel: .init(vehicles: vehicles)
+                viewModel: .init(vehicles: vehicles, purchaseManager: purchaseManager)
             )
             .tabItem { Label("More", systemImage: "gear") }
             .tag(3)
+            .environmentObject(purchaseManager)
         }
     }
     
