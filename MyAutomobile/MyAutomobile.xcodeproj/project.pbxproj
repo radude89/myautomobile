@@ -41,7 +41,6 @@
 		F73028F42AA5FD93003AAEE8 /* FileManagerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73028F32AA5FD93003AAEE8 /* FileManagerExtensions.swift */; };
 		F73028F62AA61637003AAEE8 /* VehicleAddCustomFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73028F52AA61637003AAEE8 /* VehicleAddCustomFieldView.swift */; };
 		F739B5DE2AB4DC000089D12F /* IAPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F739B5DD2AB4DC000089D12F /* IAPView.swift */; };
-		F739B5E02AB4E05D0089D12F /* IAPButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F739B5DF2AB4E05D0089D12F /* IAPButton.swift */; };
 		F74C47A42ADC41F1006E131A /* ParkLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74C47A32ADC41F1006E131A /* ParkLocationView.swift */; };
 		F74F8B322AB807980014137C /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F74F8B312AB807980014137C /* StoreKit.framework */; };
 		F750EBFA2B723A6C008440D8 /* ExpenseRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F750EBF92B723A6C008440D8 /* ExpenseRowView.swift */; };
@@ -152,7 +151,6 @@
 		F73028F32AA5FD93003AAEE8 /* FileManagerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileManagerExtensions.swift; sourceTree = "<group>"; };
 		F73028F52AA61637003AAEE8 /* VehicleAddCustomFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleAddCustomFieldView.swift; sourceTree = "<group>"; };
 		F739B5DD2AB4DC000089D12F /* IAPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPView.swift; sourceTree = "<group>"; };
-		F739B5DF2AB4E05D0089D12F /* IAPButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPButton.swift; sourceTree = "<group>"; };
 		F74C47A32ADC41F1006E131A /* ParkLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkLocationView.swift; sourceTree = "<group>"; };
 		F74F8B2F2AB806450014137C /* MainStoreKitConfig.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = MainStoreKitConfig.storekit; sourceTree = "<group>"; };
 		F74F8B312AB807980014137C /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
@@ -365,7 +363,6 @@
 		F739B5DC2AB4DBDA0089D12F /* IAP */ = {
 			isa = PBXGroup;
 			children = (
-				F739B5DF2AB4E05D0089D12F /* IAPButton.swift */,
 				F739B5DD2AB4DC000089D12F /* IAPView.swift */,
 				F7B3DA3A2AB5D1B10045359B /* PurchaseManager.swift */,
 			);
@@ -841,7 +838,6 @@
 				F759B9F82B60F68800D781FC /* ParkLocationToolbarViewModifier.swift in Sources */,
 				F7E9872A2B94B8FE008EA865 /* TermsViewModel.swift in Sources */,
 				F713B7602A8F9C1500EBB0BF /* VehicleDetailsMandatoryFieldsSection.swift in Sources */,
-				F739B5E02AB4E05D0089D12F /* IAPButton.swift in Sources */,
 				F70A9D0F2B7558E4002E8C45 /* NumberFormatterFactory.swift in Sources */,
 				F7E8D2CF2B67FCAF000DC750 /* MoreView.swift in Sources */,
 				F79F09792B7BA08900C37272 /* FuelConsumptionView.swift in Sources */,
@@ -1043,7 +1039,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_ASSET_PATHS = "\"MyAutomobile/Preview Content\"";
 				DEVELOPMENT_TEAM = 42L6GB6DU6;
 				ENABLE_PREVIEWS = YES;
@@ -1076,7 +1072,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_ASSET_PATHS = "\"MyAutomobile/Preview Content\"";
 				DEVELOPMENT_TEAM = 42L6GB6DU6;
 				ENABLE_PREVIEWS = YES;

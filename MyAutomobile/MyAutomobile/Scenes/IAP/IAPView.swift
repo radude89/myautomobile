@@ -11,6 +11,8 @@ import StoreKit
 struct IAPView: View {
     @EnvironmentObject private var purchaseManager: PurchaseManager
     @Environment(\.dismiss) var dismiss
+    @State private var showInfoAlert = false
+
     private let titles: [String] = ["1x", "∞ x"]
     
     let availableSlots: Int
@@ -31,7 +33,6 @@ struct IAPView: View {
     var body: some View {
         NavigationStack {
             contentView
-                .task { await loadProducts() }
                 .navigationTitle("Vehicle Packs")
                 .toolbar {
                     if showCancelButton {
@@ -56,6 +57,13 @@ private extension IAPView {
                 .bold()
         } else {
             productsView
+                .alert("Warning", isPresented: $showInfoAlert) {
+                    Button("OK", role: .cancel) {
+                        showInfoAlert = false
+                    }
+                } message: {
+                    Text("Something went wrong")
+                }
         }
     }
     
@@ -69,67 +77,46 @@ private extension IAPView {
             }
             .padding(12)
             
-            VStack(spacing: 20) {
-                ForEach(Array(purchaseManager.products.enumerated()), id: \.element.id) { index, product in
-                    IAPButton(title: titles[index], subtitle: subtitle(for: product)) {
-                        Task { await buyProduct(product) }
+            VStack(spacing: 16) {
+                StoreView(ids: PurchaseManager.productIDs)
+                    .productViewStyle(.compact)
+                    .storeButton(.visible, for: .restorePurchases)
+                    .storeButton(.hidden, for: .cancellation)
+                    .onInAppPurchaseCompletion { _, result in
+                        handleAppStoreCompletion(result: result)
                     }
-                }
-                restoreButton
+                    .padding([.leading, .trailing], 12)
             }
-            .fixedSize(horizontal: true, vertical: false)
-            
-            Spacer()
+            .padding()
         }
     }
     
     var currentPackDescription: String {
-        return String(
+        String(
             format: NSLocalizedString("You own vehicles", comment: ""),
             numberOfAddedVehicles,
             availableSlots
         )
     }
-
-    var restoreButton: some View {
-        Button(action: {
-            Task {
-                do {
-                    try await AppStore.sync()
-                } catch {
-                    print(error)
-                }
-            }
-        }, label: {
-            Text("Restore purchases")
-                .bold()
-        })
-        .padding()
-        .foregroundStyle(Color("app_color"))
-        .backgroundStyle(Color("app_color"))
-        .overlay(
-            RoundedRectangle(cornerRadius: 6.0)
-                .stroke(Color("app_color"), lineWidth: 1.0)
-        )
-    }
-
-    func loadProducts() async {
-        do {
-            try await purchaseManager.loadProducts()
-        } catch {
+    
+    func handleAppStoreCompletion(
+        result: Result<Product.PurchaseResult, any Error>
+    ) {
+        switch result {
+        case let .success(purchaseResult):
+            handlePurchaseResult(purchaseResult)
+        case let .failure(error):
             print(error)
+            showInfoAlert = true
         }
     }
     
-    func buyProduct(_ product: Product) async {
-        do {
-            try await purchaseManager.purchase(product)
-        } catch {
-            print(error)
+    func handlePurchaseResult(_ result: Product.PurchaseResult) {
+        switch result {
+        case let .success(transactionResult):
+            purchaseManager.handle(transactionResult: transactionResult)
+        default:
+            break
         }
-    }
-    
-    func subtitle(for product: Product) -> String {
-        "\(product.displayName) - \(product.displayPrice)"
     }
 }
