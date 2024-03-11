@@ -68,27 +68,26 @@ private extension IAPView {
     }
     
     var productsView: some View {
-        VStack {
-            VStack(spacing: 32) {
-                Text(currentPackDescription)
-                    .font(.title3)
-                    .bold()
-                Text("iap.title")
-            }
-            .padding(12)
+        VStack(spacing: 16) {
+            Text(currentPackDescription)
+                .font(.title3)
+                .bold()
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding([.leading, .trailing], 12)
+            Text("iap.title")
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding([.leading, .trailing], 12)
             
-            VStack(spacing: 16) {
-                StoreView(ids: PurchaseManager.productIDs)
-                    .productViewStyle(.compact)
-                    .storeButton(.visible, for: .restorePurchases)
-                    .storeButton(.hidden, for: .cancellation)
-                    .onInAppPurchaseCompletion { _, result in
-                        handleAppStoreCompletion(result: result)
-                    }
-                    .padding([.leading, .trailing], 12)
-            }
-            .padding()
+            
+            StoreView(ids: PurchaseManager.productIDs)
+                .productViewStyle(.compact)
+                .storeButton(.visible, for: .restorePurchases)
+                .storeButton(.hidden, for: .cancellation)
+                .onInAppPurchaseCompletion { _, result in
+                    handleAppStoreCompletion(result: result)
+                }
         }
+        .padding(16)
     }
     
     var currentPackDescription: String {
