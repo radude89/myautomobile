@@ -1,6 +1,6 @@
 import EventKit
 
-final class EventDataStore {
+final class EventDataStore: @unchecked Sendable {
     let eventStore: EKEventStore
     
     init(eventStore: EKEventStore = .init()) {
