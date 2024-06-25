@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+@MainActor
 final class VehicleAddViewModel: ObservableObject {
     
     @ObservedObject var vehicles: Vehicles

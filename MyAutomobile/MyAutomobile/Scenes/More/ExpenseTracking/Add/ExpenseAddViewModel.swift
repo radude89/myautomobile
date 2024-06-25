@@ -7,8 +7,11 @@
 
 import SwiftUI
 
+@MainActor
 final class ExpenseAddViewModel: ObservableObject {
+    
     @ObservedObject var vehicles: Vehicles
+    
     private let vehicleID: UUID
     private let numberFormatter = NumberFormatter()
     private static let fallbackExpenseTypeIndex = 3

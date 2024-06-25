@@ -12,7 +12,7 @@ struct MoreView: View {
     @StateObject private var viewModel: MoreViewModel
     @State private var showEmailWasSentAlert = false
     // Issue: https://github.com/swiftlang/swift/issues/72181
-    @Environment(\.requestReview) private var requestReview
+//    @Environment(\.requestReview) private var requestReview
     
     init(viewModel: MoreViewModel) {
         _viewModel = StateObject(wrappedValue: viewModel)
@@ -79,7 +79,8 @@ private extension MoreView {
             Label("Review the app", systemImage: "steeringwheel.circle.fill")
                 .frame(minHeight: Self.itemHeight)
                 .onTapGesture {
-                    requestReview()
+                    // TODO: Radu Dan - uncomment line when migrating Swift 6 completely
+//                    requestReview()
                 }
         } header: {
             Text("Feedback")

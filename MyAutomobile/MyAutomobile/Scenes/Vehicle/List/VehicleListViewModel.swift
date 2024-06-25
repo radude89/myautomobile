@@ -8,9 +8,11 @@
 import SwiftUI
 import EventKit
 
+@MainActor
 final class VehicleListViewModel: ObservableObject {
     
     @ObservedObject var vehicles: Vehicles
+
     private let eventStoreManager: EventStoreManager
     private let purchaseManager: PurchaseManager
     

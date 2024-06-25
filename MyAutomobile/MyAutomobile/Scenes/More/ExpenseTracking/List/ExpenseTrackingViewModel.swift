@@ -7,8 +7,11 @@
 
 import SwiftUI
 
+@MainActor
 final class ExpenseTrackingViewModel: ObservableObject {
+    
     @ObservedObject var vehicles: Vehicles
+    
     let vehicleID: UUID
     let showOnlyMaintenanceItems: Bool
     

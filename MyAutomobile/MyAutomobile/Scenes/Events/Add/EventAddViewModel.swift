@@ -8,6 +8,7 @@
 import SwiftUI
 import EventKitUI
 
+@MainActor
 final class EventAddViewModel: ObservableObject {
     
     @ObservedObject var vehicles: Vehicles

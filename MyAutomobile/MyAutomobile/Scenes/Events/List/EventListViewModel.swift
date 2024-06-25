@@ -7,6 +7,7 @@
 import SwiftUI
 import EventKit
 
+@MainActor
 final class EventListViewModel: ObservableObject {
     
     @ObservedObject var vehicles: Vehicles
