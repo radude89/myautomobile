@@ -42,7 +42,7 @@ final class EventListViewModel: ObservableObject {
         }
         
         deleteEvent(forVehicle: vehicle, at: indexSet)
-        await deleteEKEvents(vehicle: vehicle, at: indexSet)
+        deleteEKEvents(vehicle: vehicle, at: indexSet)
     }
     
     func deleteEvent(forVehicle vehicle: Vehicle, at indexSet: IndexSet) {
@@ -58,10 +58,10 @@ final class EventListViewModel: ObservableObject {
         vehicles.items = items.sorted { $0.dateCreated < $1.dateCreated }
     }
     
-    private func deleteEKEvents(vehicle: Vehicle, at indexSet: IndexSet) async {
+    private func deleteEKEvents(vehicle: Vehicle, at indexSet: IndexSet) {
         let eventIDs = indexSet.compactMap { vehicle.events[$0].localCalendarID }
         do {
-            try await eventStoreManager.removeEvents(withIDs: eventIDs)
+            try eventStoreManager.removeEvents(withIDs: eventIDs)
         } catch {
             print(error)
         }

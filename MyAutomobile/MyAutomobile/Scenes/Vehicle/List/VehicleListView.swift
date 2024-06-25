@@ -54,9 +54,7 @@ struct VehicleListView: View {
                     }
                 }
                 .onDelete { indexSet in
-                    Task {
-                        await viewModel.delete(atOffsets: indexSet)
-                    }
+                    viewModel.delete(atOffsets: indexSet)
                 }
             }
         } else {

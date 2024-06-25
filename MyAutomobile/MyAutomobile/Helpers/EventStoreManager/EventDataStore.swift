@@ -1,6 +1,6 @@
 import EventKit
 
-actor EventDataStore {
+final class EventDataStore {
     let eventStore: EKEventStore
     
     init(eventStore: EKEventStore = .init()) {

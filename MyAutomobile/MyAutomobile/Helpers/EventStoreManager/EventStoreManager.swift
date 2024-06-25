@@ -17,8 +17,8 @@ final class EventStoreManager: ObservableObject {
         authorizationStatus = EKEventStore.authorizationStatus(for: .event)
     }
     
-    func removeEvents(withIDs ids: [String]) async throws {
-        try await dataStore.removeEvents(withIDs: ids)
+    func removeEvents(withIDs ids: [String]) throws {
+        try dataStore.removeEvents(withIDs: ids)
     }
     
     func makeEKEvent(for event: Event?) -> EKEvent {

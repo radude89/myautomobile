@@ -8,7 +8,6 @@
 import SwiftUI
 import MessageUI
 
-@MainActor
 struct MoreView: View {
     @StateObject private var viewModel: MoreViewModel
     @State private var showEmailWasSentAlert = false
