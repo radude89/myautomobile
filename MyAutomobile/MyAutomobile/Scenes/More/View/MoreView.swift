@@ -11,6 +11,7 @@ import MessageUI
 struct MoreView: View {
     @StateObject private var viewModel: MoreViewModel
     @State private var showEmailWasSentAlert = false
+    // Issue: https://github.com/swiftlang/swift/issues/72181
     @Environment(\.requestReview) private var requestReview
     
     init(viewModel: MoreViewModel) {
