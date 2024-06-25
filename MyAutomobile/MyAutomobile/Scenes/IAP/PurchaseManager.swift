@@ -8,7 +8,7 @@
 import Foundation
 import StoreKit
 
-final class PurchaseManager: ObservableObject {
+final class PurchaseManager: ObservableObject, @unchecked Sendable {
     private let storageKey = "vehicle-slots"
     private let userDefaults = UserDefaults.standard
     private var updates: Task<Void, Never>? = nil
@@ -54,8 +54,9 @@ final class PurchaseManager: ObservableObject {
 private extension PurchaseManager {
     func observeTransactionUpdates() -> Task<Void, Never> {
         Task(priority: .background) { [weak self] in
+            guard let self else { return }
             for await result in Transaction.updates {
-                self?.handle(transactionResult: result)
+                self.handle(transactionResult: result)
             }
         }
     }
