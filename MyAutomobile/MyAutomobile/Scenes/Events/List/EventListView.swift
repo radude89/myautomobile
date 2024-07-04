@@ -16,6 +16,7 @@ struct EventListView: View {
     
     @State private var showAddView = false
     @State private var sortOption = 0
+    @State private var isEditing = false
     
     init(viewModel: EventListViewModel) {
         _viewModel = StateObject(wrappedValue: viewModel)
@@ -25,12 +26,19 @@ struct EventListView: View {
         NavigationStack {
             contentView
                 .navigationTitle("Events")
-                .eventListToolbar(hasVehicles: viewModel.hasVehicles, hasEvents: viewModel.hasEvents, sort: $sortOption) {
+                .eventListToolbar(
+                    hasVehicles: viewModel.hasVehicles,
+                    hasEvents: viewModel.hasEvents,
+                    sort: $sortOption,
+                    isEditing: $isEditing
+                ) {
                     showAddView.toggle()
                 }
+                .environment(\.editMode, .constant(isEditing ? .active : .inactive))
                 .sheet(isPresented: $showAddView) {
                     EventAddView(viewModel: .init(
-                        vehicles: viewModel.vehicles, eventStoreManager: viewModel.eventStoreManager
+                        vehicles: viewModel.vehicles,
+                        eventStoreManager: viewModel.eventStoreManager
                     ))
                 }
         }
@@ -70,8 +78,11 @@ private extension EventListView {
                 EventListRowView(event: event)
             }
             .onDelete { indexSet in
-                Task {
-                    await viewModel.deleteEvent(at: indexSet)
+                viewModel.deleteEvent(at: indexSet)
+                Task { @MainActor in
+                    if !viewModel.hasEvents {
+                        isEditing = false
+                    }
                 }
             }
         }

@@ -13,6 +13,7 @@ struct EventListToolbarViewModifier: ViewModifier {
     let onAdd: () -> Void
     
     @Binding var sort: Int
+    @Binding var isEditing: Bool
     
     func body(content: Content) -> some View {
         content
@@ -42,7 +43,14 @@ struct EventListToolbarViewModifier: ViewModifier {
                 Label("Filter", systemImage: "line.3.horizontal.decrease.circle")
             }
 
-            EditButton()
+            Button {
+                withAnimation {
+                    isEditing.toggle()
+                }
+            } label: {
+                Text(isEditing ? "Done" : "Edit")
+            }
+            .disabled(!hasEvents)
         }
     }
 }
@@ -52,6 +60,7 @@ extension View {
         hasVehicles: Bool,
         hasEvents: Bool,
         sort: Binding<Int>,
+        isEditing: Binding<Bool>,
         onAdd: @escaping () -> Void
     ) -> some View {
         modifier(
@@ -59,7 +68,8 @@ extension View {
                 hasVehicles: hasVehicles,
                 hasEvents: hasEvents,
                 onAdd: onAdd,
-                sort: sort
+                sort: sort,
+                isEditing: isEditing
             )
         )
     }

@@ -37,7 +37,7 @@ final class EventListViewModel: ObservableObject {
         !vehicles.items.isEmpty
     }
     
-    func deleteEvent(at indexSet: IndexSet) async {
+    func deleteEvent(at indexSet: IndexSet) {
         guard let vehicle = vehicles.items.first else {
             return
         }
