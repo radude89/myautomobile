@@ -9,6 +9,7 @@ import SwiftUI
 
 struct VehicleListToolbarViewModifier: ViewModifier {
     let hasVehicles: Bool
+    @Binding var isEditing: Bool
     let onAdd: () -> Void
     
     func body(content: Content) -> some View {
@@ -20,19 +21,29 @@ struct VehicleListToolbarViewModifier: ViewModifier {
                     }
                 }
                 ToolbarItem(placement: .topBarTrailing) {
-                    if hasVehicles {
-                        EditButton()
+                    Button {
+                        withAnimation {
+                            isEditing.toggle()
+                        }
+                    } label: {
+                        Text(isEditing ? "Done" : "Edit")
                     }
+                    .disabled(!hasVehicles)
                 }
             }
     }
 }
 
 extension View {
-    func vehicleListToolbar(hasVehicles: Bool, onAdd: @escaping () -> Void) -> some View {
+    func vehicleListToolbar(
+        hasVehicles: Bool,
+        isEditing: Binding<Bool>,
+        onAdd: @escaping () -> Void
+    ) -> some View {
         modifier(
             VehicleListToolbarViewModifier(
                 hasVehicles: hasVehicles,
+                isEditing: isEditing,
                 onAdd: onAdd
             )
         )

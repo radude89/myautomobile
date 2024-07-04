@@ -12,6 +12,7 @@ struct VehicleListView: View {
     @Environment(\.editMode) private var editMode
     @StateObject private var viewModel: VehicleListViewModel
     @State private var showAddView = false
+    @State private var isEditing = false
     
     init(viewModel: VehicleListViewModel) {
         _viewModel = StateObject(wrappedValue: viewModel)
@@ -22,14 +23,25 @@ struct VehicleListView: View {
             contentView
                 .navigationTitle("Vehicles")
                 .navigationDestination(for: Vehicle.self) { vehicle in
-                    VehicleDetailsView(viewModel: .init(vehicle: vehicle, vehicles: viewModel.vehicles))
+                    VehicleDetailsView(
+                        viewModel: .init(
+                            vehicle: vehicle,
+                            vehicles: viewModel.vehicles
+                        )
+                    )
                 }
-                .vehicleListToolbar(hasVehicles: viewModel.hasVehicles) {
+                .vehicleListToolbar(
+                    hasVehicles: viewModel.hasVehicles,
+                    isEditing: $isEditing
+                ) {
                     showAddView.toggle()
                 }
+                .environment(\.editMode, .constant(isEditing ? .active : .inactive))
                 .sheet(isPresented: $showAddView) {
                     if viewModel.canPresentAddView {
-                        VehicleAddView(viewModel: .init(vehicles: viewModel.vehicles))
+                        VehicleAddView(
+                            viewModel: .init(vehicles: viewModel.vehicles)
+                        )
                     } else {
                         IAPView(
                             availableSlots: viewModel.availableSlots,
@@ -37,9 +49,6 @@ struct VehicleListView: View {
                             hasBoughtUnlimitedVehicles: viewModel.hasBoughtUnlimitedVehicles
                         )
                     }
-                }
-                .onReceive(viewModel.vehicles.objectWillChange) {
-                    viewModel.objectWillChange.send()
                 }
         }
     }
@@ -55,6 +64,11 @@ struct VehicleListView: View {
                 }
                 .onDelete { indexSet in
                     viewModel.delete(atOffsets: indexSet)
+                    Task { @MainActor in
+                        if !viewModel.hasVehicles {
+                            isEditing = false
+                        }
+                    }
                 }
             }
         } else {
