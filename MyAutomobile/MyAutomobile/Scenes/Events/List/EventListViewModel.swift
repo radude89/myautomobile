@@ -37,19 +37,55 @@ final class EventListViewModel: ObservableObject {
         !vehicles.items.isEmpty
     }
     
-    func deleteEvent(at indexSet: IndexSet) {
-        guard let vehicle = vehicles.items.first else {
+    func deleteEvent(
+        at indexSet: IndexSet,
+        sortOption: Int,
+        section: Int = 0
+    ) {
+        guard let tappedIndex = indexSet.first,
+              let sortOptionEnum = EventListSortOption(rawValue: sortOption) else {
             return
         }
         
-        deleteEvent(forVehicle: vehicle, at: indexSet)
-        deleteEKEvents(vehicle: vehicle, at: indexSet)
+        switch sortOptionEnum {
+        case .all:
+            deleteEventWhenAllAreShown(tappedIndex: tappedIndex)
+        case .byVehicle:
+            deleteEventWhenOptionIsByVehicle(
+                section: section,
+                tappedIndex: tappedIndex
+            )
+        }
     }
     
-    func deleteEvent(forVehicle vehicle: Vehicle, at indexSet: IndexSet) {
-        var copyVehicle = vehicle
-        copyVehicle.events.remove(atOffsets: indexSet)
-        updateVehicles(vehicle: copyVehicle)
+    private func deleteEventWhenAllAreShown(tappedIndex: Int) {
+        let eventToDelete = allEvents[tappedIndex]
+        guard var vehicle = vehicles.items.first(where: { aVehicle in
+            aVehicle.events.contains { $0.id == eventToDelete.id }
+        }) else {
+            return
+        }
+        deleteEvent(eventToDelete, vehicle: &vehicle)
+    }
+    
+    private func deleteEventWhenOptionIsByVehicle(
+        section: Int,
+        tappedIndex: Int
+    ) {
+        var vehicle = vehicles.items[section]
+        let eventToDelete = events(for: vehicle)[tappedIndex]
+        deleteEvent(eventToDelete, vehicle: &vehicle)
+    }
+    
+    private func deleteEvent(
+        _ event: Event,
+        vehicle: inout Vehicle
+    ) {
+        vehicle.events.removeAll { $0.id == event.id }
+        updateVehicles(vehicle: vehicle)
+        if let localCalendarID = event.localCalendarID {
+            deleteCalendarEvent(id: localCalendarID)
+        }
     }
     
     private func updateVehicles(vehicle: Vehicle) {
@@ -59,10 +95,9 @@ final class EventListViewModel: ObservableObject {
         vehicles.items = items.sorted { $0.dateCreated < $1.dateCreated }
     }
     
-    private func deleteEKEvents(vehicle: Vehicle, at indexSet: IndexSet) {
-        let eventIDs = indexSet.compactMap { vehicle.events[$0].localCalendarID }
+    private func deleteCalendarEvent(id: String) {
         do {
-            try eventStoreManager.removeEvents(withIDs: eventIDs)
+            try eventStoreManager.removeEvents(withIDs: [id])
         } catch {
             print(error)
         }

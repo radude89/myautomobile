@@ -25,6 +25,7 @@
 		F7202E032AA8AFFB009A17DC /* EventDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7202E002AA8AFFB009A17DC /* EventDataStore.swift */; };
 		F7202E062AA8F304009A17DC /* EventEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7202E052AA8F304009A17DC /* EventEditViewController.swift */; };
 		F7202E082AAA4BE4009A17DC /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F7202E072AAA4BE4009A17DC /* Localizable.xcstrings */; };
+		F72130DF2C383287006EA23C /* EventListSortOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72130DE2C383283006EA23C /* EventListSortOption.swift */; };
 		F72188FF27FABE5D00F80AC0 /* MyAutomobileApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72188FE27FABE5D00F80AC0 /* MyAutomobileApp.swift */; };
 		F721890127FABE5D00F80AC0 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F721890027FABE5D00F80AC0 /* MainTabView.swift */; };
 		F721890327FABE5F00F80AC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F721890227FABE5F00F80AC0 /* Assets.xcassets */; };
@@ -132,6 +133,7 @@
 		F7202E002AA8AFFB009A17DC /* EventDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDataStore.swift; sourceTree = "<group>"; };
 		F7202E052AA8F304009A17DC /* EventEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventEditViewController.swift; sourceTree = "<group>"; };
 		F7202E072AAA4BE4009A17DC /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		F72130DE2C383283006EA23C /* EventListSortOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListSortOption.swift; sourceTree = "<group>"; };
 		F72188FB27FABE5D00F80AC0 /* MyAutomobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyAutomobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F72188FE27FABE5D00F80AC0 /* MyAutomobileApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAutomobileApp.swift; sourceTree = "<group>"; };
 		F721890027FABE5D00F80AC0 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
@@ -346,6 +348,7 @@
 				F73028E72AA36A9B003AAEE8 /* EventListToolbarViewModifier.swift */,
 				F7FC88EA280EA2AF007BA063 /* EventListView.swift */,
 				F7C5F1992885004800375D91 /* EventListViewModel.swift */,
+				F72130DE2C383283006EA23C /* EventListSortOption.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -815,6 +818,7 @@
 				F7F71D5A2B932B2E00F35971 /* EmailItemView.swift in Sources */,
 				F760D2E72B63963400DDA146 /* CLLocationCoordinate2D+Equatable.swift in Sources */,
 				F70A9D0B2B754B6B002E8C45 /* ExpenseChartDataMapper.swift in Sources */,
+				F72130DF2C383287006EA23C /* EventListSortOption.swift in Sources */,
 				F7BC235E2B88670800C94D59 /* UnitConverter.swift in Sources */,
 				F713B75E2A8F9ADF00EBB0BF /* VehicleDetailsTopSection.swift in Sources */,
 				F739B5DE2AB4DC000089D12F /* IAPView.swift in Sources */,

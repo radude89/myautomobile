@@ -12,7 +12,7 @@ struct EventListToolbarViewModifier: ViewModifier {
     let hasEvents: Bool
     let onAdd: () -> Void
     
-    @Binding var sort: Int
+    @Binding var sortOption: Int
     @Binding var isEditing: Bool
     
     func body(content: Content) -> some View {
@@ -35,7 +35,7 @@ struct EventListToolbarViewModifier: ViewModifier {
     private var editView: some View {
         HStack {
             Menu {
-                Picker(selection: $sort, label: Text("Sorting options")) {
+                Picker(selection: $sortOption, label: Text("Sorting options")) {
                     Text("All").tag(0)
                     Text("By Vehicle").tag(1)
                 }
@@ -59,7 +59,7 @@ extension View {
     func eventListToolbar(
         hasVehicles: Bool,
         hasEvents: Bool,
-        sort: Binding<Int>,
+        sortOption: Binding<Int>,
         isEditing: Binding<Bool>,
         onAdd: @escaping () -> Void
     ) -> some View {
@@ -68,7 +68,7 @@ extension View {
                 hasVehicles: hasVehicles,
                 hasEvents: hasEvents,
                 onAdd: onAdd,
-                sort: sort,
+                sortOption: sortOption,
                 isEditing: isEditing
             )
         )

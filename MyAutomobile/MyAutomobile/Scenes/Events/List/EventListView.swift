@@ -29,7 +29,7 @@ struct EventListView: View {
                 .eventListToolbar(
                     hasVehicles: viewModel.hasVehicles,
                     hasEvents: viewModel.hasEvents,
-                    sort: $sortOption,
+                    sortOption: $sortOption,
                     isEditing: $isEditing
                 ) {
                     showAddView.toggle()
@@ -64,11 +64,13 @@ private extension EventListView {
     }
     
     var listContentView: some View {
-        if sortOption == 1 {
-            return AnyView(byVehiclesContentView)
-        }
-        else {
-            return AnyView(allVehiclesContentView)
+        switch EventListSortOption(rawValue: sortOption) {
+        case .all:
+            AnyView(allVehiclesContentView)
+        case .byVehicle:
+            AnyView(byVehiclesContentView)
+        default:
+            AnyView(emptyView)
         }
     }
     
@@ -78,7 +80,10 @@ private extension EventListView {
                 EventListRowView(event: event)
             }
             .onDelete { indexSet in
-                viewModel.deleteEvent(at: indexSet)
+                viewModel.deleteEvent(
+                    at: indexSet,
+                    sortOption: sortOption
+                )
                 Task { @MainActor in
                     if !viewModel.hasEvents {
                         isEditing = false
@@ -97,7 +102,11 @@ private extension EventListView {
                         EventListRowView(event: event)
                     }
                     .onDelete { indexSet in
-                        viewModel.deleteEvent(forVehicle: vehicle, at: indexSet)
+                        viewModel.deleteEvent(
+                            at: indexSet,
+                            sortOption: sortOption,
+                            section: section
+                        )
                         Task { @MainActor in
                             if !viewModel.hasEvents {
                                 isEditing = false
