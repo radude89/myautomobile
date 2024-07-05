@@ -98,6 +98,11 @@ private extension EventListView {
                     }
                     .onDelete { indexSet in
                         viewModel.deleteEvent(forVehicle: vehicle, at: indexSet)
+                        Task { @MainActor in
+                            if !viewModel.hasEvents {
+                                isEditing = false
+                            }
+                        }
                     }
                 } header: {
                     Text("\(vehicle.numberPlate)")

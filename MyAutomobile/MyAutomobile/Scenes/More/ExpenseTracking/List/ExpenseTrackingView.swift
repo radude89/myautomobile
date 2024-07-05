@@ -11,6 +11,7 @@ struct ExpenseTrackingView: View {
     @State private var showAddView = false
     @State private var showInfoAlert = false
     @State private var viewOption: ViewOption = .list
+    @State private var isEditing = false
     
     private enum ViewOption: String, CaseIterable {
         case list = "List"
@@ -24,6 +25,7 @@ struct ExpenseTrackingView: View {
     @StateObject private var viewModel: ExpenseTrackingViewModel
     
     @Environment(\.presentationMode) private var presentationMode
+    @Environment(\.editMode) private var editMode
     
     init(viewModel: ExpenseTrackingViewModel) {
         _viewModel = StateObject(wrappedValue: viewModel)
@@ -34,6 +36,7 @@ struct ExpenseTrackingView: View {
             .sheet(isPresented: $showAddView) { addView }
             .navigationTitle("Expenses")
             .toolbar { toolbar }
+            .environment(\.editMode, .constant(isEditing ? .active : .inactive))
             .alert("Warning", isPresented: $showInfoAlert) {
                 Button("OK", role: .cancel) {
                     showInfoAlert = false
@@ -106,6 +109,11 @@ private extension ExpenseTrackingView {
                 }
                 .onDelete { indexSet in
                     viewModel.deleteExpense(at: indexSet)
+                    Task { @MainActor in
+                        if viewModel.expenses.isEmpty {
+                            isEditing = false
+                        }
+                    }
                 }
             } header: {
                 Text("List of expenses")
@@ -120,15 +128,25 @@ private extension ExpenseTrackingView {
                 vehicleID: viewModel.vehicleID,
                 showOnlyMaintenanceItems: viewModel.showOnlyMaintenanceItems
             )
-        )
+        ) {
+            Task { @MainActor in
+                viewModel.reloadExpenses()
+                isEditing = false
+            }
+        }
     }
 
     @ToolbarContentBuilder
     var toolbar: some ToolbarContent {
         ToolbarItem(placement: .navigationBarTrailing) {
-            if viewModel.shouldDisplayEdit {
-                EditButton()
+            Button {
+                withAnimation {
+                    isEditing.toggle()
+                }
+            } label: {
+                Text(isEditing ? "Done" : "Edit")
             }
+            .disabled(viewModel.expenses.isEmpty)
         }
         ToolbarItem {
             Button(action: onAdd) {
