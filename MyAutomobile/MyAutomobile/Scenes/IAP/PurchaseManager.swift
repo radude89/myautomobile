@@ -74,8 +74,10 @@ private extension PurchaseManager {
         guard transaction.productID == Self.productIDs[0] else {
             return
         }
-
-        purchasedVehicleSlots += 1
+        
+        Task { @MainActor in
+            purchasedVehicleSlots += 1
+        }
         increaseVehicleStorageSlot()
     }
     
