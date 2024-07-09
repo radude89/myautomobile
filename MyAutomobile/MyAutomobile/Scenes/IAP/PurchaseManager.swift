@@ -30,6 +30,7 @@ final class PurchaseManager: ObservableObject, @unchecked Sendable {
         purchasedNonConsumableProductIDs.contains(Self.productIDs[1])
     }
 
+    @MainActor
     func updatePurchasedProducts() async {
         for await result in Transaction.currentEntitlements {
             handle(transactionResult: result)

@@ -7,15 +7,17 @@
 
 import SwiftUI
 import MessageUI
+import StoreKit
 
 struct MoreView: View {
     @StateObject private var viewModel: MoreViewModel
     @State private var showEmailWasSentAlert = false
     // Issue: https://github.com/swiftlang/swift/issues/72181
-//    @Environment(\.requestReview) private var requestReview
+    @Environment private var requestReview: RequestReviewAction
     
     init(viewModel: MoreViewModel) {
         _viewModel = StateObject(wrappedValue: viewModel)
+        _requestReview = Environment(\.requestReview)
     }
 
     var body: some View {
@@ -79,8 +81,7 @@ private extension MoreView {
             Label("Review the app", systemImage: "steeringwheel.circle.fill")
                 .frame(minHeight: Self.itemHeight)
                 .onTapGesture {
-                    // TODO: Radu Dan - uncomment line when migrating Swift 6 completely
-//                    requestReview()
+                    requestReview()
                 }
         } header: {
             Text("Feedback")
