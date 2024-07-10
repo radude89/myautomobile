@@ -35,6 +35,7 @@
 		F721891C27FABE5F00F80AC0 /* MyAutomobileUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F721891B27FABE5F00F80AC0 /* MyAutomobileUITestsLaunchTests.swift */; };
 		F726335E2A95A99000F7305D /* VehicleListToolbarViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F726335D2A95A99000F7305D /* VehicleListToolbarViewModifier.swift */; };
 		F72633602A95AE7700F7305D /* Vehicles.swift in Sources */ = {isa = PBXBuildFile; fileRef = F726335F2A95AE7700F7305D /* Vehicles.swift */; };
+		F72A3BAD2C3E4655008CB357 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = F72A3BAC2C3E4655008CB357 /* PrivacyInfo.xcprivacy */; };
 		F73028E82AA36A9B003AAEE8 /* EventListToolbarViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73028E72AA36A9B003AAEE8 /* EventListToolbarViewModifier.swift */; };
 		F73028EE2AA36D75003AAEE8 /* EventAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73028ED2AA36D75003AAEE8 /* EventAddView.swift */; };
 		F73028F02AA36D9B003AAEE8 /* EventAddViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73028EF2AA36D9B003AAEE8 /* EventAddViewModel.swift */; };
@@ -146,6 +147,7 @@
 		F721891B27FABE5F00F80AC0 /* MyAutomobileUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAutomobileUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		F726335D2A95A99000F7305D /* VehicleListToolbarViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleListToolbarViewModifier.swift; sourceTree = "<group>"; };
 		F726335F2A95AE7700F7305D /* Vehicles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehicles.swift; sourceTree = "<group>"; };
+		F72A3BAC2C3E4655008CB357 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		F73028E72AA36A9B003AAEE8 /* EventListToolbarViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListToolbarViewModifier.swift; sourceTree = "<group>"; };
 		F73028ED2AA36D75003AAEE8 /* EventAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventAddView.swift; sourceTree = "<group>"; };
 		F73028EF2AA36D9B003AAEE8 /* EventAddViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventAddViewModel.swift; sourceTree = "<group>"; };
@@ -625,6 +627,7 @@
 			children = (
 				F721890227FABE5F00F80AC0 /* Assets.xcassets */,
 				F74F8B2F2AB806450014137C /* MainStoreKitConfig.storekit */,
+				F72A3BAC2C3E4655008CB357 /* PrivacyInfo.xcprivacy */,
 				F7202E072AAA4BE4009A17DC /* Localizable.xcstrings */,
 			);
 			path = "Supporting files";
@@ -761,6 +764,7 @@
 				F721890627FABE5F00F80AC0 /* Preview Assets.xcassets in Resources */,
 				F77224772AAE52C80097E190 /* InfoPlist.strings in Resources */,
 				F721890327FABE5F00F80AC0 /* Assets.xcassets in Resources */,
+				F72A3BAD2C3E4655008CB357 /* PrivacyInfo.xcprivacy in Resources */,
 				F7202E082AAA4BE4009A17DC /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
