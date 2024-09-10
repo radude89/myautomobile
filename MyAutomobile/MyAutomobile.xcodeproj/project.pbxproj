@@ -25,6 +25,7 @@
 		F7202E032AA8AFFB009A17DC /* EventDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7202E002AA8AFFB009A17DC /* EventDataStore.swift */; };
 		F7202E062AA8F304009A17DC /* EventEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7202E052AA8F304009A17DC /* EventEditViewController.swift */; };
 		F7202E082AAA4BE4009A17DC /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F7202E072AAA4BE4009A17DC /* Localizable.xcstrings */; };
+		F72130DF2C383287006EA23C /* EventListSortOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72130DE2C383283006EA23C /* EventListSortOption.swift */; };
 		F72188FF27FABE5D00F80AC0 /* MyAutomobileApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72188FE27FABE5D00F80AC0 /* MyAutomobileApp.swift */; };
 		F721890127FABE5D00F80AC0 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F721890027FABE5D00F80AC0 /* MainTabView.swift */; };
 		F721890327FABE5F00F80AC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F721890227FABE5F00F80AC0 /* Assets.xcassets */; };
@@ -34,6 +35,7 @@
 		F721891C27FABE5F00F80AC0 /* MyAutomobileUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F721891B27FABE5F00F80AC0 /* MyAutomobileUITestsLaunchTests.swift */; };
 		F726335E2A95A99000F7305D /* VehicleListToolbarViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F726335D2A95A99000F7305D /* VehicleListToolbarViewModifier.swift */; };
 		F72633602A95AE7700F7305D /* Vehicles.swift in Sources */ = {isa = PBXBuildFile; fileRef = F726335F2A95AE7700F7305D /* Vehicles.swift */; };
+		F72A3BAD2C3E4655008CB357 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = F72A3BAC2C3E4655008CB357 /* PrivacyInfo.xcprivacy */; };
 		F73028E82AA36A9B003AAEE8 /* EventListToolbarViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73028E72AA36A9B003AAEE8 /* EventListToolbarViewModifier.swift */; };
 		F73028EE2AA36D75003AAEE8 /* EventAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73028ED2AA36D75003AAEE8 /* EventAddView.swift */; };
 		F73028F02AA36D9B003AAEE8 /* EventAddViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73028EF2AA36D9B003AAEE8 /* EventAddViewModel.swift */; };
@@ -132,6 +134,7 @@
 		F7202E002AA8AFFB009A17DC /* EventDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDataStore.swift; sourceTree = "<group>"; };
 		F7202E052AA8F304009A17DC /* EventEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventEditViewController.swift; sourceTree = "<group>"; };
 		F7202E072AAA4BE4009A17DC /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		F72130DE2C383283006EA23C /* EventListSortOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListSortOption.swift; sourceTree = "<group>"; };
 		F72188FB27FABE5D00F80AC0 /* MyAutomobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyAutomobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F72188FE27FABE5D00F80AC0 /* MyAutomobileApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAutomobileApp.swift; sourceTree = "<group>"; };
 		F721890027FABE5D00F80AC0 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
@@ -144,6 +147,7 @@
 		F721891B27FABE5F00F80AC0 /* MyAutomobileUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAutomobileUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		F726335D2A95A99000F7305D /* VehicleListToolbarViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleListToolbarViewModifier.swift; sourceTree = "<group>"; };
 		F726335F2A95AE7700F7305D /* Vehicles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehicles.swift; sourceTree = "<group>"; };
+		F72A3BAC2C3E4655008CB357 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		F73028E72AA36A9B003AAEE8 /* EventListToolbarViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListToolbarViewModifier.swift; sourceTree = "<group>"; };
 		F73028ED2AA36D75003AAEE8 /* EventAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventAddView.swift; sourceTree = "<group>"; };
 		F73028EF2AA36D9B003AAEE8 /* EventAddViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventAddViewModel.swift; sourceTree = "<group>"; };
@@ -346,6 +350,7 @@
 				F73028E72AA36A9B003AAEE8 /* EventListToolbarViewModifier.swift */,
 				F7FC88EA280EA2AF007BA063 /* EventListView.swift */,
 				F7C5F1992885004800375D91 /* EventListViewModel.swift */,
+				F72130DE2C383283006EA23C /* EventListSortOption.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -622,6 +627,7 @@
 			children = (
 				F721890227FABE5F00F80AC0 /* Assets.xcassets */,
 				F74F8B2F2AB806450014137C /* MainStoreKitConfig.storekit */,
+				F72A3BAC2C3E4655008CB357 /* PrivacyInfo.xcprivacy */,
 				F7202E072AAA4BE4009A17DC /* Localizable.xcstrings */,
 			);
 			path = "Supporting files";
@@ -710,7 +716,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1330;
-				LastUpgradeCheck = 1520;
+				LastUpgradeCheck = 1600;
 				TargetAttributes = {
 					F72188FA27FABE5D00F80AC0 = {
 						CreatedOnToolsVersion = 13.3;
@@ -758,6 +764,7 @@
 				F721890627FABE5F00F80AC0 /* Preview Assets.xcassets in Resources */,
 				F77224772AAE52C80097E190 /* InfoPlist.strings in Resources */,
 				F721890327FABE5F00F80AC0 /* Assets.xcassets in Resources */,
+				F72A3BAD2C3E4655008CB357 /* PrivacyInfo.xcprivacy in Resources */,
 				F7202E082AAA4BE4009A17DC /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -815,6 +822,7 @@
 				F7F71D5A2B932B2E00F35971 /* EmailItemView.swift in Sources */,
 				F760D2E72B63963400DDA146 /* CLLocationCoordinate2D+Equatable.swift in Sources */,
 				F70A9D0B2B754B6B002E8C45 /* ExpenseChartDataMapper.swift in Sources */,
+				F72130DF2C383287006EA23C /* EventListSortOption.swift in Sources */,
 				F7BC235E2B88670800C94D59 /* UnitConverter.swift in Sources */,
 				F713B75E2A8F9ADF00EBB0BF /* VehicleDetailsTopSection.swift in Sources */,
 				F739B5DE2AB4DC000089D12F /* IAPView.swift in Sources */,
@@ -973,6 +981,8 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
 			};
 			name = Debug;
 		};
@@ -1029,6 +1039,8 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -1061,7 +1073,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.rdan.MyAutomobile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1094,7 +1107,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.rdan.MyAutomobile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -1102,7 +1116,6 @@
 		F721892327FABE5F00F80AC0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1113,7 +1126,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.rdan.MyAutomobileTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyAutomobile.app/MyAutomobile";
 			};
@@ -1122,7 +1135,6 @@
 		F721892427FABE5F00F80AC0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1133,7 +1145,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.rdan.MyAutomobileTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyAutomobile.app/MyAutomobile";
 			};
@@ -1142,7 +1154,6 @@
 		F721892627FABE5F00F80AC0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 42L6GB6DU6;
@@ -1151,7 +1162,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.rdan.MyAutomobileUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = MyAutomobile;
 			};
@@ -1160,7 +1171,6 @@
 		F721892727FABE5F00F80AC0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 42L6GB6DU6;
@@ -1169,7 +1179,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.rdan.MyAutomobileUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = MyAutomobile;
 			};

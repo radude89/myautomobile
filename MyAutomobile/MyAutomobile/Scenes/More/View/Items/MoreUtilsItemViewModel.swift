@@ -7,9 +7,11 @@
 
 import SwiftUI
 
+@MainActor
 final class MoreUtilsItemViewModel: ObservableObject {
     
     @ObservedObject var vehicles: Vehicles
+
     let title: String
     let imageName: String
     let emptyViewTitle: String.LocalizationValue

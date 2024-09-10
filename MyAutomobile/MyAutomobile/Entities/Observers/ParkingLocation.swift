@@ -9,8 +9,6 @@ import SwiftUI
 import Observation
 import CoreLocation
 
-@Observable
-@MainActor
 final class ParkingLocation {
     private static let storageKey = "saved-location"
     

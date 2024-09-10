@@ -7,15 +7,17 @@
 
 import SwiftUI
 import MessageUI
+import StoreKit
 
-@MainActor
 struct MoreView: View {
     @StateObject private var viewModel: MoreViewModel
     @State private var showEmailWasSentAlert = false
-    @Environment(\.requestReview) private var requestReview
+    // Issue: https://github.com/swiftlang/swift/issues/72181
+    @Environment private var requestReview: RequestReviewAction
     
     init(viewModel: MoreViewModel) {
         _viewModel = StateObject(wrappedValue: viewModel)
+        _requestReview = Environment(\.requestReview)
     }
 
     var body: some View {

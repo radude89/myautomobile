@@ -7,10 +7,13 @@
 
 import SwiftUI
 
+@MainActor
 final class VehiclesSelectionViewModel: ObservableObject {
+
     @ObservedObject var vehicles: Vehicles
     
     init(vehicles: Vehicles) {
         self.vehicles = vehicles
     }
+
 }

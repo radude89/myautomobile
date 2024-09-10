@@ -8,13 +8,19 @@
 import SwiftUI
 import EventKit
 
+@MainActor
 final class VehicleListViewModel: ObservableObject {
     
     @ObservedObject var vehicles: Vehicles
+
     private let eventStoreManager: EventStoreManager
     private let purchaseManager: PurchaseManager
     
-    init(vehicles: Vehicles, eventStoreManager: EventStoreManager, purchaseManager: PurchaseManager) {
+    init(
+        vehicles: Vehicles,
+        eventStoreManager: EventStoreManager,
+        purchaseManager: PurchaseManager
+    ) {
         self.vehicles = vehicles
         self.eventStoreManager = eventStoreManager
         self.purchaseManager = purchaseManager
@@ -45,19 +51,18 @@ final class VehicleListViewModel: ObservableObject {
         purchaseManager.hasBoughtUnlimitedVehicles
     }
     
-    func delete(atOffsets offsets: IndexSet) async {
+    func delete(atOffsets offsets: IndexSet) {
         if let firstIndex = offsets.first {
             let vehicle = vehicles.items[firstIndex]
-            await deleteEKEvents(for: vehicle)
+            deleteEKEvents(for: vehicle)
         }
         vehicles.items.remove(atOffsets: offsets)
-        objectWillChange.send()
     }
     
-    private func deleteEKEvents(for vehicle: Vehicle) async {
+    private func deleteEKEvents(for vehicle: Vehicle) {
         let eventIDs = vehicle.events.compactMap { $0.localCalendarID }
         do {
-            try await eventStoreManager.removeEvents(withIDs: eventIDs)
+            try eventStoreManager.removeEvents(withIDs: eventIDs)
         } catch {
             print(error)
         }

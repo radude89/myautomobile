@@ -31,16 +31,22 @@ struct EventEditViewController: UIViewControllerRepresentable {
         return Coordinator(self)
     }
     
-    class Coordinator: NSObject, EKEventEditViewDelegate {
-        var parent: EventEditViewController
+    func dismissViewController(_ controller: EKEventEditViewController) {
+        presentationMode.wrappedValue.dismiss()
+        onComplete(controller.event?.eventIdentifier)
+    }
+    
+    final class Coordinator: NSObject, EKEventEditViewDelegate, Sendable {
+        private let parent: EventEditViewController
         
         init(_ controller: EventEditViewController) {
             self.parent = controller
         }
         
         func eventEditViewController(_ controller: EKEventEditViewController, didCompleteWith action: EKEventEditViewAction) {
-            parent.presentationMode.wrappedValue.dismiss()
-            parent.onComplete(controller.event?.eventIdentifier)
+            Task { @MainActor [weak self] in
+                self?.parent.dismissViewController(controller)
+            }
         }
     }
 }

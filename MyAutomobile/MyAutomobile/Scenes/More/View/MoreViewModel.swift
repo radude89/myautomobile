@@ -7,8 +7,11 @@
 
 import SwiftUI
 
+@MainActor
 final class MoreViewModel: ObservableObject {
+
     @ObservedObject var vehicles: Vehicles
+
     private static let appName = "CarChum"
     private let purchaseManager: PurchaseManager
     

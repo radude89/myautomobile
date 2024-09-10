@@ -16,6 +16,7 @@ struct EventListView: View {
     
     @State private var showAddView = false
     @State private var sortOption = 0
+    @State private var isEditing = false
     
     init(viewModel: EventListViewModel) {
         _viewModel = StateObject(wrappedValue: viewModel)
@@ -25,12 +26,19 @@ struct EventListView: View {
         NavigationStack {
             contentView
                 .navigationTitle("Events")
-                .eventListToolbar(hasVehicles: viewModel.hasVehicles, hasEvents: viewModel.hasEvents, sort: $sortOption) {
+                .eventListToolbar(
+                    hasVehicles: viewModel.hasVehicles,
+                    hasEvents: viewModel.hasEvents,
+                    sortOption: $sortOption,
+                    isEditing: $isEditing
+                ) {
                     showAddView.toggle()
                 }
+                .environment(\.editMode, .constant(isEditing ? .active : .inactive))
                 .sheet(isPresented: $showAddView) {
                     EventAddView(viewModel: .init(
-                        vehicles: viewModel.vehicles, eventStoreManager: viewModel.eventStoreManager
+                        vehicles: viewModel.vehicles,
+                        eventStoreManager: viewModel.eventStoreManager
                     ))
                 }
         }
@@ -56,11 +64,13 @@ private extension EventListView {
     }
     
     var listContentView: some View {
-        if sortOption == 1 {
-            return AnyView(byVehiclesContentView)
-        }
-        else {
-            return AnyView(allVehiclesContentView)
+        switch EventListSortOption(rawValue: sortOption) {
+        case .all:
+            AnyView(allVehiclesContentView)
+        case .byVehicle:
+            AnyView(byVehiclesContentView)
+        default:
+            AnyView(emptyView)
         }
     }
     
@@ -70,8 +80,14 @@ private extension EventListView {
                 EventListRowView(event: event)
             }
             .onDelete { indexSet in
-                Task {
-                    await viewModel.deleteEvent(at: indexSet)
+                viewModel.deleteEvent(
+                    at: indexSet,
+                    sortOption: sortOption
+                )
+                Task { @MainActor in
+                    if !viewModel.hasEvents {
+                        isEditing = false
+                    }
                 }
             }
         }
@@ -86,7 +102,16 @@ private extension EventListView {
                         EventListRowView(event: event)
                     }
                     .onDelete { indexSet in
-                        viewModel.deleteEvent(forVehicle: vehicle, at: indexSet)
+                        viewModel.deleteEvent(
+                            at: indexSet,
+                            sortOption: sortOption,
+                            section: section
+                        )
+                        Task { @MainActor in
+                            if !viewModel.hasEvents {
+                                isEditing = false
+                            }
+                        }
                     }
                 } header: {
                     Text("\(vehicle.numberPlate)")

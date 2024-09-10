@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-@MainActor
 final class Vehicles: ObservableObject {
     
     @Published var items: [Vehicle]

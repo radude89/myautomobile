@@ -17,8 +17,14 @@ struct ExpenseAddView: View {
     @StateObject private var viewModel: ExpenseAddViewModel
     @Environment(\.presentationMode) private var presentationMode
     
-    init(viewModel: ExpenseAddViewModel) {
+    private let onSave: () -> Void
+    
+    init(
+        viewModel: ExpenseAddViewModel,
+        onSave: @escaping () -> Void
+    ) {
         _viewModel = StateObject(wrappedValue: viewModel)
+        self.onSave = onSave
     }
     
     var body: some View {
@@ -70,6 +76,7 @@ private extension ExpenseAddView {
             costDescription: cost,
             commentDescription: comment
         )
+        onSave()
         presentationMode.wrappedValue.dismiss()
     }
 }
