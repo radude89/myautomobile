@@ -13,9 +13,8 @@ struct TermsViewModel {
     let isShowingTerms: Bool
     
     private enum Constants {
-        static let urlBase = "https://radude89.com/my-automobile/"
-        static let termsSuffix = "_terms_and_conditions.html"
-        static let privacySuffix = "_policy.html"
+        static let privacyPolicyURL = "https://carchum.app/policies/privacy-policy/"
+        static let termsURL = "https://carchum.app/policies/terms/"
     }
     
     init(title: String, imageName: String, isShowingTerms: Bool) {
@@ -47,7 +46,7 @@ private extension TermsViewModel {
         isTerms: Bool
     ) -> String {
         let languageCode = Self.appLanguageCodeDictionary[languageCode] ?? "en"
-        let urlSuffix = isTerms ? Constants.termsSuffix : Constants.privacySuffix
-        return "\(Constants.urlBase)\(languageCode)\(urlSuffix)"
+        let url = isTerms ? Constants.termsURL : Constants.privacyPolicyURL
+        return "\(url)mobile-\(languageCode).html"
     }
 }
