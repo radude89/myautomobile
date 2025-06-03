@@ -8,20 +8,20 @@
 import SwiftUI
 
 struct EventListView: View {
-    
+
     @Environment(\.editMode) private var editMode
     @EnvironmentObject private var storeManager: EventStoreManager
 
     @StateObject private var viewModel: EventListViewModel
-    
+
     @State private var showAddView = false
     @State private var sortOption = 0
     @State private var isEditing = false
-    
+
     init(viewModel: EventListViewModel) {
         _viewModel = StateObject(wrappedValue: viewModel)
     }
-    
+
     var body: some View {
         NavigationStack {
             contentView
@@ -43,7 +43,7 @@ struct EventListView: View {
                 }
         }
     }
-    
+
 }
 
 private extension EventListView {
@@ -55,14 +55,14 @@ private extension EventListView {
             emptyView
         }
     }
-    
+
     var emptyView: some View {
         Text("events_empty")
             .font(.body)
             .multilineTextAlignment(.center)
             .padding([.leading, .trailing], 32)
     }
-    
+
     var listContentView: some View {
         switch EventListSortOption(rawValue: sortOption) {
         case .all:
@@ -73,11 +73,12 @@ private extension EventListView {
             AnyView(emptyView)
         }
     }
-    
+
     var allVehiclesContentView: some View {
         List {
             ForEach(viewModel.allEvents) { event in
                 EventListRowView(event: event)
+                    .listRowBackground(Color.clear)
             }
             .onDelete { indexSet in
                 viewModel.deleteEvent(
@@ -92,7 +93,7 @@ private extension EventListView {
             }
         }
     }
-    
+
     var byVehiclesContentView: some View {
         List {
             ForEach(0..<viewModel.vehicles.items.count, id: \.self) { section in
@@ -100,6 +101,7 @@ private extension EventListView {
                 Section {
                     ForEach(viewModel.events(for: vehicle)) { event in
                         EventListRowView(event: event)
+                            .listRowBackground(Color.clear)
                     }
                     .onDelete { indexSet in
                         viewModel.deleteEvent(
