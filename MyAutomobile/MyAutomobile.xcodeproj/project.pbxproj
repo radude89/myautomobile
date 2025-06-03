@@ -79,7 +79,7 @@
 		F7C5D7B7282019C100C4D213 /* MockModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C5D7B6282019C100C4D213 /* MockModels.swift */; };
 		F7C5F19A2885004800375D91 /* EventListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C5F1992885004800375D91 /* EventListViewModel.swift */; };
 		F7C5F19D288659EC00375D91 /* AppTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C5F19C288659EC00375D91 /* AppTitle.swift */; };
-		F7CF21442A95B01A00C73429 /* Color+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CF21432A95B01A00C73429 /* Color+Codable.swift */; };
+		F7CF21442A95B01A00C73429 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CF21432A95B01A00C73429 /* ColorExtensions.swift */; };
 		F7D931AA287D300200289230 /* VehicleDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D931A9287D300200289230 /* VehicleDetailsView.swift */; };
 		F7E8D2CF2B67FCAF000DC750 /* MoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E8D2CE2B67FCAF000DC750 /* MoreView.swift */; };
 		F7E8D2D12B682CD7000DC750 /* VehiclesSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E8D2D02B682CD7000DC750 /* VehiclesSelectionView.swift */; };
@@ -197,7 +197,7 @@
 		F7C5D7B6282019C100C4D213 /* MockModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockModels.swift; sourceTree = "<group>"; };
 		F7C5F1992885004800375D91 /* EventListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListViewModel.swift; sourceTree = "<group>"; };
 		F7C5F19C288659EC00375D91 /* AppTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTitle.swift; sourceTree = "<group>"; };
-		F7CF21432A95B01A00C73429 /* Color+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Codable.swift"; sourceTree = "<group>"; };
+		F7CF21432A95B01A00C73429 /* ColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
 		F7D931A9287D300200289230 /* VehicleDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleDetailsView.swift; sourceTree = "<group>"; };
 		F7E8D2CE2B67FCAF000DC750 /* MoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreView.swift; sourceTree = "<group>"; };
 		F7E8D2D02B682CD7000DC750 /* VehiclesSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehiclesSelectionView.swift; sourceTree = "<group>"; };
@@ -528,7 +528,7 @@
 			isa = PBXGroup;
 			children = (
 				F760D2E62B63963400DDA146 /* CLLocationCoordinate2D+Equatable.swift */,
-				F7CF21432A95B01A00C73429 /* Color+Codable.swift */,
+				F7CF21432A95B01A00C73429 /* ColorExtensions.swift */,
 				F7202E052AA8F304009A17DC /* EventEditViewController.swift */,
 				F73028F32AA5FD93003AAEE8 /* FileManagerExtensions.swift */,
 				F70A9D0E2B7558E4002E8C45 /* NumberFormatterFactory.swift */,
@@ -862,7 +862,7 @@
 				F73028F22AA378E2003AAEE8 /* EventAddFormView.swift in Sources */,
 				F73028E82AA36A9B003AAEE8 /* EventListToolbarViewModifier.swift in Sources */,
 				F70537CC2B6BFE790005400B /* ExpenseType.swift in Sources */,
-				F7CF21442A95B01A00C73429 /* Color+Codable.swift in Sources */,
+				F7CF21442A95B01A00C73429 /* ColorExtensions.swift in Sources */,
 				F713B7622A8F9D7D00EBB0BF /* VehicleDetailsCustomFieldsSection.swift in Sources */,
 				F7B51FB92B8E44E600121246 /* FieldCalculator.swift in Sources */,
 				F7E8D2D72B683925000DC750 /* MoreViewModel.swift in Sources */,
