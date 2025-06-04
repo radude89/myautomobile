@@ -17,11 +17,9 @@ struct ParkingMapView: View {
             Map(position: $cameraPosition) {
                 UserAnnotation()
                 if let parkingCoordinate {
-                    Marker(
-                        "Parking Spot",
-                        systemImage: "car.front.waves.up",
-                        coordinate: parkingCoordinate
-                    )
+                    Annotation("Parking Spot", coordinate: parkingCoordinate) {
+                        CustomParkingMarker()
+                    }
                 }
             }
             .mapControls {
@@ -40,7 +38,7 @@ private extension ParkingMapView {
             .sequenced(before: DragGesture(minimumDistance: 0))
             .onEnded { findCoordinate(from: $0, mapProxy: mapProxy) }
     }
-    
+
     func findCoordinate(
         from value: SequenceGesture<LongPressGesture, DragGesture>.Value,
         mapProxy: MapProxy

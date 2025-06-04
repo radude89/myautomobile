@@ -3491,40 +3491,6 @@
         }
       }
     },
-    "Parking Spot" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Parkplatz"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Aparcamiento"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Place de stationnement"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Posto auto"
-          }
-        },
-        "ro" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Loc de parcare"
-          }
-        }
-      }
-    },
     "Privacy Policy" : {
       "extractionState" : "manual",
       "localizations" : {
