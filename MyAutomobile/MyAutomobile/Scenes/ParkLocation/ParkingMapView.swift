@@ -17,7 +17,10 @@ struct ParkingMapView: View {
             Map(position: $cameraPosition) {
                 UserAnnotation()
                 if let parkingCoordinate {
-                    Annotation("Parking Spot", coordinate: parkingCoordinate) {
+                    Annotation(
+                        String(localized: "Parking Spot"),
+                        coordinate: parkingCoordinate
+                    ) {
                         CustomParkingMarker()
                     }
                 }
