@@ -13,6 +13,10 @@ struct MainTabView: View {
     @StateObject private var purchaseManager = PurchaseManager()
     @State private var selection = 0
 
+    init() {
+        setupUITestsEnvironmentIfNeeded()
+    }
+
     var body: some View {
         tabView
             .onReceive(
@@ -21,7 +25,7 @@ struct MainTabView: View {
                 saveData()
             }
     }
-    
+
     var handler: Binding<Int> { Binding(
         get: { self.selection },
         set: {
@@ -51,7 +55,7 @@ private extension MainTabView {
             .task {
                 await purchaseManager.updatePurchasedProducts()
             }
-            
+
             EventListView(
                 viewModel: .init(vehicles: vehicles, eventStoreManager: storeManager)
             )
@@ -70,13 +74,27 @@ private extension MainTabView {
             .environmentObject(purchaseManager)
         }
     }
-    
+
     func saveData() {
         do {
             let data = try JSONEncoder().encode(vehicles.items)
             try FileManager.write(data: data, fileName: Vehicles.storageKey)
         } catch {
             print("Unable to save data, error: \(error.localizedDescription)")
+        }
+    }
+}
+
+// MARK: - Tests
+
+private extension MainTabView {
+    func setupUITestsEnvironmentIfNeeded() {
+        let isRunningUITests = CommandLine.arguments.contains("--uitesting")
+        guard isRunningUITests else { return }
+
+        UIView.setAnimationsEnabled(false)
+        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
+            windowScene.keyWindow?.layer.speed = 100
         }
     }
 }

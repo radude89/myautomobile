@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AccessibilityIdentifiers
 
 struct VehicleListToolbarViewModifier: ViewModifier {
     let hasVehicles: Bool
@@ -19,6 +20,9 @@ struct VehicleListToolbarViewModifier: ViewModifier {
                     Button(action: onAdd) {
                         Image(systemName: "plus")
                     }
+                    .accessibilityIdentifier(
+                        VehicleListViewElements.AddButton.id
+                    )
                 }
                 ToolbarItem(placement: .topBarTrailing) {
                     Button {
