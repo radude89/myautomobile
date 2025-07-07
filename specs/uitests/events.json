@@ -1,0 +1,32 @@
+[
+  {
+    "description": "Brake Inspection",
+    "vehicle": "first",
+    "recurrence": "quarterly",
+    "date": "yesterday"
+  },
+  {
+    "description": "Oil Change",
+    "vehicle": "first",
+    "recurrence": "monthly",
+    "date": "today"
+  },
+  {
+    "description": "Wash Car",
+    "vehicle": "first",
+    "recurrence": "weekly",
+    "date": "tomorrow"
+  },
+  {
+    "description": "Change Tires",
+    "vehicle": "first",
+    "recurrence": "one time",
+    "date": "one week from today"
+  },
+  {
+    "description": "Replace Windshield Wipers",
+    "vehicle": "second",
+    "recurrence": "every year",
+    "date": "two weeks from today"
+  }
+]

@@ -12,8 +12,11 @@ open MyAutomobile/MyAutomobile.xcodeproj
 # Build for iOS Simulator
 xcodebuild -project MyAutomobile/MyAutomobile.xcodeproj -scheme MyAutomobile -destination 'platform=iOS Simulator,name=iPhone 15'
 
-# Run tests
+# Run unit tests
 xcodebuild test -project MyAutomobile/MyAutomobile.xcodeproj -scheme MyAutomobile -destination 'platform=iOS Simulator,name=iPhone 15'
+
+# Run UI tests only
+xcodebuild test -project MyAutomobile/MyAutomobile.xcodeproj -scheme MyAutomobileUITests -destination 'platform=iOS Simulator,name=iPhone 15'
 
 # Build for device (requires signing)
 xcodebuild -project MyAutomobile/MyAutomobile.xcodeproj -scheme MyAutomobile -destination 'generic/platform=iOS'
@@ -69,3 +72,15 @@ MyAutomobile/
 - One Vehicle Pack ($2.99): 2 vehicles total
 - No Limit Pack ($8.99): Unlimited vehicles
 - Purchase state managed via UserDefaults and PurchaseManager
+
+### Testing Architecture
+- **Unit Tests**: Basic XCTest framework with placeholder tests in MyAutomobileTests
+- **UI Tests**: XCTest with custom AccessibilityIdentifiers package for element identification
+- **UI Testing**: Uses `--uitesting` launch argument and AccessibilityIdentifiable protocol
+- **Mock Data**: UI tests use VehicleLoader with mock JSON data for consistent testing
+
+### Key Implementation Details
+- **Data Persistence**: JSON files saved to Documents directory with automatic app backgrounding
+- **Custom Fields**: Unlimited vehicle customization through dynamic field system
+- **Accessibility**: Custom AccessibilityIdentifiers package for reliable UI testing
+- **Localization**: 6 languages supported through Localizable.xcstrings with snake_case keys
