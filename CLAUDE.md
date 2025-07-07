@@ -53,7 +53,11 @@ MyAutomobile/
 ├── Helpers/            # Utilities, extensions, EventStoreManager
 ├── Scenes/             # Feature modules (Vehicle, Events, ParkLocation, More)
 │   └── [Feature]/     # Each contains View, ViewModel, and supporting files
-└── Supporting files/   # Assets, localization, StoreKit config
+├── Supporting files/   # Assets, localization, StoreKit config
+├── AccessibilityIdentifiers/ # Swift Package for UI element identification
+└── MyAutomobileUITests/ # UI test suite with localized screenshot generation
+    ├── MockData/       # Test vehicle data and configurations
+    └── MyAutomobileUITests.swift # Main UI test implementation
 ```
 
 ### Important Integration Points
@@ -75,12 +79,25 @@ MyAutomobile/
 
 ### Testing Architecture
 - **Unit Tests**: Basic XCTest framework with placeholder tests in MyAutomobileTests
-- **UI Tests**: XCTest with custom AccessibilityIdentifiers package for element identification
-- **UI Testing**: Uses `--uitesting` launch argument and AccessibilityIdentifiable protocol
-- **Mock Data**: UI tests use VehicleLoader with mock JSON data for consistent testing
+- **UI Tests**: Comprehensive XCUITest suite for multi-locale screenshot generation
+- **IAP Testing**: UI tests bypass purchase screens by setting `UITesting=true` environment variable
+- **Mock Data**: UI tests use real vehicle data from `/specs/uitests/vehicles.json` loaded through UI interactions
+- **AccessibilityIdentifiers**: Custom Swift package for type-safe UI element identification
+- **Test Environments**: Launch environments control locale (`AppLocale`) and testing mode (`UITesting`)
 
 ### Key Implementation Details
 - **Data Persistence**: JSON files saved to Documents directory with automatic app backgrounding
 - **Custom Fields**: Unlimited vehicle customization through dynamic field system
 - **Accessibility**: Custom AccessibilityIdentifiers package for reliable UI testing
 - **Localization**: 6 languages supported through Localizable.xcstrings with snake_case keys
+- **UI Testing Integration**: 
+  - `Vehicles.swift:17-22` automatically sets 999 vehicle slots during UI testing
+  - `PurchaseManager.swift:24-28` bypasses IAP by granting unlimited pack during UI testing
+  - Test data organized by locale in `MyAutomobileUITests/MockData/vehicles.json`
+
+### UI Test Implementation Notes
+- **Test Organization**: 5 main test flows covering vehicle management, events, parking, and multi-locale scenarios
+- **Screenshot Generation**: Automated capture with locale-specific naming (e.g., `01_EmptyVehicleList_FR`)
+- **IAP Bypass**: Environment variable `UITesting=true` grants unlimited vehicle access
+- **Real Data Testing**: Uses actual vehicle data from specs rather than mock objects
+- **Multi-Locale Support**: Tests run in English, French, German with localized vehicle data

@@ -9,12 +9,12 @@ import Foundation
 import StoreKit
 
 final class PurchaseManager: ObservableObject, @unchecked Sendable {
-    private let storageKey = "vehicle-slots"
-    private let userDefaults = UserDefaults.standard
+    private(set) var storageKey = "vehicle-slots"
+    private(set) var userDefaults = UserDefaults.standard
     private var updates: Task<Void, Never>? = nil
     
     @Published private(set) var purchasedVehicleSlots = 0
-    @Published private(set) var purchasedNonConsumableProductIDs = Set<String>()
+    @Published var purchasedNonConsumableProductIDs = Set<String>()
     
     static let productIDs = [
         "com.rdan.myautomobile.iap.onec",
@@ -22,6 +22,7 @@ final class PurchaseManager: ObservableObject, @unchecked Sendable {
     ]
     
     init() {
+        setupMockEnvironmentIfNeeded()
         loadSlots()
         updates = observeTransactionUpdates()
     }

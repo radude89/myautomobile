@@ -14,7 +14,12 @@ final class Vehicles: ObservableObject {
     static let storageKey = "saved-vehicles"
 
     init() {
-        items = Self.loadData()
+        if ProcessInfo.processInfo.environment["UITesting"] == "true" {
+            UserDefaults.standard.set(999, forKey: "vehicle-slots")
+            items = Self.loadMockData()
+        } else {
+            items = Self.loadData()
+        }
     }
 
 }

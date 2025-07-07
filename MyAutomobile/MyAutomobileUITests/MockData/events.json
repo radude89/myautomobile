@@ -1,0 +1,38 @@
+[
+  {
+    "description_key": "event_brake_inspection",
+    "vehicle": "first",
+    "recurrence_key": "recurrence_quarterly",
+    "date": "1_week_from_now"
+  },
+  {
+    "description_key": "event_oil_change",
+    "vehicle": "first",
+    "recurrence_key": "recurrence_onetime",
+    "date": "today"
+  },
+  {
+    "description_key": "event_tire_rotation",
+    "vehicle": "first",
+    "recurrence_key": "recurrence_monthly",
+    "date": "2_weeks_from_now"
+  },
+  {
+    "description_key": "event_change_tires",
+    "vehicle": "second",
+    "recurrence_key": "recurrence_yearly",
+    "date": "3_months_from_now"
+  },
+  {
+    "description_key": "event_insurance_renewal",
+    "vehicle": "second",
+    "recurrence_key": "recurrence_yearly",
+    "date": "6_months_from_now"
+  },
+  {
+    "description_key": "event_registration_renewal",
+    "vehicle": "second",
+    "recurrence_key": "recurrence_yearly",
+    "date": "1_month_from_now"
+  }
+]
