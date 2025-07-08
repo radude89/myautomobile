@@ -27,7 +27,7 @@ enum VehicleLoader {
 
 private extension VehicleLoader {
     static func loadVehiclesJSON(line: UInt) -> VehiclesJSON? {
-        guard let url = Bundle(for: MyAutomobileUITests.self)
+        guard let url = Bundle(for: VehicleUITests.self)
             .url(forResource: "vehicles", withExtension: "json") else {
             XCTFail("Failed to find vehicles.json file", line: line)
             return nil

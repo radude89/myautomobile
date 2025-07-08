@@ -1,15 +1,8 @@
-//
-//  MyAutomobileUITests.swift
-//  MyAutomobileUITests
-//
-//  Created by Radu Dan on 04.04.2022.
-//
-
 import XCTest
 import AccessibilityIdentifiers
 
 @MainActor
-final class MyAutomobileUITests: XCTestCase, Sendable {
+final class VehicleUITests: XCTestCase, Sendable {
     // MARK: - Properties
     
     private var app: XCUIApplication!
@@ -58,7 +51,7 @@ final class MyAutomobileUITests: XCTestCase, Sendable {
 
 // MARK: - Helpers
 
-private extension MyAutomobileUITests {
+private extension VehicleUITests {
     func launchApp(locale: String = "en") {
         app.launchEnvironment["AppLocale"] = locale
         app.launch()
