@@ -39,13 +39,20 @@ final class MyAutomobileUITests: XCTestCase, Sendable {
             tapAddButton()
             fillVehicleForm(vehicle: vehicle)
             setVehicleColor(color: vehicle.colorWithoutHash)
-            takeVehicleScreenshotIfNeeded(index: index, name: "us-03")
+//            takeVehicleScreenshotIfNeeded(index: index, name: "us-03")
             tapCloseButton()
-            takeVehicleScreenshotIfNeeded(index: index, name: "us-02")
+//            takeVehicleScreenshotIfNeeded(index: index, name: "us-02")
             tapDoneButton()
         }
         
-        takeScreenshot(name: "us-01")
+//        takeScreenshot(name: "us-01")
+        
+        tapFirstRow()
+        tapAddFieldButton()
+        addCustomVehicleField()
+        tapOnDoneFromAddCustomFieldNavigationBar()
+        
+//        takeScreenshot(name: "us-04")
     }
 }
 
@@ -136,5 +143,31 @@ private extension MyAutomobileUITests {
         let navBar = addView.navigationBars.element(boundBy: 0)
         let doneButton = navBar.buttons.element(boundBy: 1)
         doneButton.tap()
+    }
+    
+    func tapFirstRow() {
+        app.cells.element(boundBy: 0).tap()
+    }
+    
+    func tapAddFieldButton() {
+        app.buttons[
+            AccessibilityIdentifiers.VehicleDetailViewElements.AddFieldButton.id
+        ].tap()
+    }
+    
+    func addCustomVehicleField() {
+        let nameField = app.textFields[
+            AccessibilityIdentifiers.VehicleDetailViewElements.CustomFieldName.id
+        ].firstMatch
+        enterText(in: nameField, text: String(localized: "Fuel"))
+        
+        let valueField = app.textFields[
+            AccessibilityIdentifiers.VehicleDetailViewElements.CustomFieldValue.id
+        ].firstMatch
+        enterText(in: valueField, text: String(localized: "Gas"))
+    }
+    
+    func tapOnDoneFromAddCustomFieldNavigationBar() {
+        app.navigationBars.element(boundBy: 0).buttons.element(boundBy: 1).tap()
     }
 }

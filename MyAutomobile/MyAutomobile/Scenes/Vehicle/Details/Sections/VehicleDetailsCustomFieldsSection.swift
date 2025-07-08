@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AccessibilityIdentifiers
 
 struct VehicleDetailsCustomFieldsSection: View {
 
@@ -33,6 +34,9 @@ struct VehicleDetailsCustomFieldsSection: View {
             Button("Add vehicle field") {
                 alertIsPresented.toggle()
             }
+            .accessibilityIdentifier(
+                AccessibilityIdentifiers.VehicleDetailViewElements.AddFieldButton.id
+            )
             .sheet(isPresented: $alertIsPresented) {
                 NavigationStack {
                     VehicleAddCustomFieldView(onDone: onSave)
