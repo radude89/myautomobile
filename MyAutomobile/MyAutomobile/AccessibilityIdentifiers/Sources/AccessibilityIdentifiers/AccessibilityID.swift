@@ -16,6 +16,7 @@ public enum VehicleListViewElements: AccessibilityIdentifiable {
 
 // MARK: - Vehicle Add View
 public enum VehicleAddViewElements: AccessibilityIdentifiable {
+    public enum View: AccessibilityIdentifiable {}
     public enum PlateTextField: AccessibilityIdentifiable {}
     public enum StateTextField: AccessibilityIdentifiable {}
     public enum MakeTextField: AccessibilityIdentifiable {}
