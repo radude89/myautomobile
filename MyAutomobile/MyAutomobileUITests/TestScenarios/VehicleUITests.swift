@@ -6,6 +6,7 @@ final class VehicleUITests: XCTestCase, Sendable {
     // MARK: - Properties
     
     private var app: XCUIApplication!
+    private var supportedLocale: SupportedLocale!
     private let numberOfVehicles = 3
     
     // MARK: - Setup
@@ -13,74 +14,52 @@ final class VehicleUITests: XCTestCase, Sendable {
     override func setUp() async throws {
         try await super.setUp()
         continueAfterFailure = false
+        supportedLocale = SupportedLocale(systemLocale: .current)
         app = XCUIApplication()
         app.launchEnvironment["UITesting"] = "true"
+        app.launch()
     }
     
     override func tearDown() async throws {
+        supportedLocale = nil
         app.terminate()
         try await super.tearDown()
     }
     
     // MARK: - Tests
     
-    func testAddVehiclesAndShowDetailsFlow() {
-        performVehiclesFlow()
-    }
-    
-    func testAddVehiclesAndShowDetailsFlowFrench() {
-        performVehiclesFlow(locale: .french)
-    }
-    
-    func testAddVehiclesAndShowDetailsFlowGerman() {
-        performVehiclesFlow(locale: .german)
-    }
-    
-    func testAddVehiclesAndShowDetailsFlowItalian() {
-        performVehiclesFlow(locale: .italian)
-    }
-    
-    func testAddVehiclesAndShowDetailsFlowRomanian() {
-        performVehiclesFlow(locale: .romanian)
-    }
-    
-    func testAddVehiclesAndShowDetailsFlowSpanish() {
-        performVehiclesFlow(locale: .spanish)
+    func testAddVehiclesAndShowDetailsFlowMultiLanguage() {
+        performVehiclesFlow(shouldTakeScreenshot: false)
     }
 }
 
 // MARK: - Helpers
 
 private extension VehicleUITests {
-    func performVehiclesFlow(
-        shouldTakeScreenshot: Bool = false,
-        locale: SupportedLocale = .english
-    ) {
-        launchApp(locale: locale)
+    func performVehiclesFlow(shouldTakeScreenshot: Bool = false) {
         checkTabBarExists()
         navigateToFirstTab()
-        addVehicles(locale: locale, shouldTakeScreenshots: shouldTakeScreenshot)
+        addVehicles(shouldTakeScreenshots: shouldTakeScreenshot)
         takeScreenshotIfNeeded(
-            name: "\(locale.rawValue)-01",
+            name: "\(supportedLocale.rawValue)-01",
             shouldTakeScreenshot: shouldTakeScreenshot
         )
         tapFirstRow()
         tapAddFieldButton()
-        addCustomVehicleField(locale: locale)
+        addCustomVehicleField(locale: supportedLocale)
         tapOnDoneFromAddCustomFieldNavigationBar()
         takeScreenshotIfNeeded(
-            name: "\(locale.rawValue)-04",
+            name: "\(supportedLocale.rawValue)-04",
             shouldTakeScreenshot: shouldTakeScreenshot
         )
     }
     
-    func addVehicles(locale: SupportedLocale, shouldTakeScreenshots: Bool) {
-        let vehicles = VehicleLoader.load(supportedLocale: locale)
+    func addVehicles(shouldTakeScreenshots: Bool) {
+        let vehicles = VehicleLoader.load(supportedLocale: supportedLocale)
         for (index, vehicle) in vehicles.enumerated() {
             addVehicle(
                 vehicle,
                 index: index,
-                locale: locale,
                 shouldTakeScreenshot: shouldTakeScreenshots
             )
         }
@@ -89,7 +68,6 @@ private extension VehicleUITests {
     func addVehicle(
         _ vehicle: VehicleTestData,
         index: Int,
-        locale: SupportedLocale = .english,
         shouldTakeScreenshot: Bool
     ) {
         tapAddButton()
@@ -97,22 +75,16 @@ private extension VehicleUITests {
         setVehicleColor(color: vehicle.colorWithoutHash)
         takeVehicleScreenshotIfNeeded(
             index: index,
-            name: "\(locale.rawValue)-03",
+            name: "\(supportedLocale.rawValue)-03",
             shouldTakeScreenshot: shouldTakeScreenshot
         )
         tapCloseButton()
         takeVehicleScreenshotIfNeeded(
             index: index,
-            name: "\(locale.rawValue)-02",
+            name: "\(supportedLocale.rawValue)-02",
             shouldTakeScreenshot: shouldTakeScreenshot
         )
         tapDoneButton()
-    }
-
-    func launchApp(locale: SupportedLocale = .english) {
-        app.launchArguments += ["-AppleLanguages", "(\(locale.rawValue))"]
-        app.launchArguments += ["-AppleLocale", locale.rawValue]
-        app.launch()
     }
     
     func takeScreenshotIfNeeded(name: String, shouldTakeScreenshot: Bool) {

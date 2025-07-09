@@ -23,6 +23,7 @@
 		F713B7602A8F9C1500EBB0BF /* VehicleDetailsMandatoryFieldsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F713B75F2A8F9C1500EBB0BF /* VehicleDetailsMandatoryFieldsSection.swift */; };
 		F713B7622A8F9D7D00EBB0BF /* VehicleDetailsCustomFieldsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F713B7612A8F9D7D00EBB0BF /* VehicleDetailsCustomFieldsSection.swift */; };
 		F713B7652A8FA6FE00EBB0BF /* VehicleDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F713B7642A8FA6FE00EBB0BF /* VehicleDetailsViewModel.swift */; };
+		F71C524B2E1E908A00418F38 /* VehiclesTestPlan.xctestplan in Resources */ = {isa = PBXBuildFile; fileRef = F71C524A2E1E908A00418F38 /* VehiclesTestPlan.xctestplan */; };
 		F7202DFD2AA8AFB8009A17DC /* EventStoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7202DF92AA8AFB8009A17DC /* EventStoreManager.swift */; };
 		F7202DFE2AA8AFB8009A17DC /* EventStoreError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7202DFA2AA8AFB8009A17DC /* EventStoreError.swift */; };
 		F7202E032AA8AFFB009A17DC /* EventDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7202E002AA8AFFB009A17DC /* EventDataStore.swift */; };
@@ -144,6 +145,7 @@
 		F713B75F2A8F9C1500EBB0BF /* VehicleDetailsMandatoryFieldsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleDetailsMandatoryFieldsSection.swift; sourceTree = "<group>"; };
 		F713B7612A8F9D7D00EBB0BF /* VehicleDetailsCustomFieldsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleDetailsCustomFieldsSection.swift; sourceTree = "<group>"; };
 		F713B7642A8FA6FE00EBB0BF /* VehicleDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleDetailsViewModel.swift; sourceTree = "<group>"; };
+		F71C524A2E1E908A00418F38 /* VehiclesTestPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = VehiclesTestPlan.xctestplan; sourceTree = "<group>"; };
 		F7202DF92AA8AFB8009A17DC /* EventStoreManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventStoreManager.swift; sourceTree = "<group>"; };
 		F7202DFA2AA8AFB8009A17DC /* EventStoreError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventStoreError.swift; sourceTree = "<group>"; };
 		F7202E002AA8AFFB009A17DC /* EventDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDataStore.swift; sourceTree = "<group>"; };
@@ -370,6 +372,7 @@
 				F75842272DF6AC8400EED414 /* Mocks */,
 				F7C94FDF2E1CF6D00053E293 /* TestScenarios */,
 				F7C94FDE2E1CF6B80053E293 /* Entities */,
+				F71C524A2E1E908A00418F38 /* VehiclesTestPlan.xctestplan */,
 			);
 			path = MyAutomobileUITests;
 			sourceTree = "<group>";
@@ -850,6 +853,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F71C524B2E1E908A00418F38 /* VehiclesTestPlan.xctestplan in Resources */,
 				F7047FBE2E1E37A7002B957C /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

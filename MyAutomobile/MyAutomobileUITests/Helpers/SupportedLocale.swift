@@ -25,12 +25,18 @@ enum SupportedLocale: String, CaseIterable {
         case .german: \.de
         }
     }
-    
-    init?(locale: Locale) {
-        guard let languageCode = locale.language.languageCode?.identifier else {
-            return nil
+}
+
+extension SupportedLocale {
+    init(systemLocale: Locale) {
+        switch systemLocale.language.languageCode {
+        case .english: self = .english
+        case .german: self = .german
+        case .spanish: self = .spanish
+        case .romanian: self = .romanian
+        case .french: self = .french
+        case .italian: self = .italian
+        default: self = .english
         }
-        
-        self.init(rawValue: languageCode)
     }
 }
