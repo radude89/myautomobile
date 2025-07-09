@@ -36,29 +36,60 @@ final class VehicleUITests: XCTestCase, Sendable {
 // MARK: - Helpers
 
 private extension VehicleUITests {
-    func performVehiclesFlow(locale: SupportedLocale = .english) {
+    func performVehiclesFlow(
+        shouldTakeScreenshot: Bool = false,
+        locale: SupportedLocale = .english
+    ) {
         launchApp(locale: locale)
         checkTabBarExists()
         navigateToFirstTab()
         
         for (index, vehicle) in VehicleLoader.load().enumerated() {
-            tapAddButton()
-            fillVehicleForm(vehicle: vehicle)
-            setVehicleColor(color: vehicle.colorWithoutHash)
-            takeVehicleScreenshotIfNeeded(index: index, name: "\(locale.rawValue)-03")
-            tapCloseButton()
-            takeVehicleScreenshotIfNeeded(index: index, name: "\(locale.rawValue)-02")
-            tapDoneButton()
+            addVehicle(
+                vehicle,
+                index: index,
+                locale: locale,
+                shouldTakeScreenshot: shouldTakeScreenshot
+            )
         }
         
-        takeScreenshot(name: "\(locale.rawValue)-01")
+        takeScreenshotIfNeeded(
+            name: "\(locale.rawValue)-01",
+            shouldTakeScreenshot: shouldTakeScreenshot
+        )
         
         tapFirstRow()
         tapAddFieldButton()
         addCustomVehicleField()
         tapOnDoneFromAddCustomFieldNavigationBar()
         
-        takeScreenshot(name: "\(locale.rawValue)-04")
+        takeScreenshotIfNeeded(
+            name: "\(locale.rawValue)-04",
+            shouldTakeScreenshot: shouldTakeScreenshot
+        )
+    }
+    
+    func addVehicle(
+        _ vehicle: VehicleTestData,
+        index: Int,
+        locale: SupportedLocale = .english,
+        shouldTakeScreenshot: Bool
+    ) {
+        tapAddButton()
+        fillVehicleForm(vehicle: vehicle)
+        setVehicleColor(color: vehicle.colorWithoutHash)
+        takeVehicleScreenshotIfNeeded(
+            index: index,
+            name: "\(locale.rawValue)-03",
+            shouldTakeScreenshot: shouldTakeScreenshot
+        )
+        tapCloseButton()
+        takeVehicleScreenshotIfNeeded(
+            index: index,
+            name: "\(locale.rawValue)-02",
+            shouldTakeScreenshot: shouldTakeScreenshot
+        )
+        tapDoneButton()
     }
 
     func launchApp(locale: SupportedLocale = .english) {
@@ -66,18 +97,27 @@ private extension VehicleUITests {
         app.launchArguments += ["-AppleLocale", locale.rawValue]
         app.launch()
     }
-
+    
+    func takeScreenshotIfNeeded(name: String, shouldTakeScreenshot: Bool) {
+        guard shouldTakeScreenshot else { return }
+        takeScreenshot(name: name)
+    }
+    
+    func takeVehicleScreenshotIfNeeded(
+        index: Int,
+        name: String,
+        shouldTakeScreenshot: Bool
+    ) {
+        guard index == 0 else { return }
+        takeScreenshotIfNeeded(name: name, shouldTakeScreenshot: shouldTakeScreenshot)
+    }
+    
     func takeScreenshot(name: String) {
         let screenshot = XCUIScreen.main.screenshot()
         let attachment = XCTAttachment(screenshot: screenshot)
         attachment.name = name
         attachment.lifetime = .keepAlways
         add(attachment)
-    }
-    
-    func takeVehicleScreenshotIfNeeded(index: Int, name: String) {
-        guard index == 0 else { return }
-        takeScreenshot(name: name)
     }
     
     func checkTabBarExists(line: UInt = #line) {
