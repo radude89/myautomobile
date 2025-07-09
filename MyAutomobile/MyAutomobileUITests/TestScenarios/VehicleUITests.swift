@@ -24,11 +24,11 @@ final class VehicleUITests: XCTestCase, Sendable {
     
     // MARK: - Tests
     
-    func testAddVehiclesAndShowDetailsFlow() throws {
+    func testAddVehiclesAndShowDetailsFlow() {
         performVehiclesFlow()
     }
     
-    func testAddVehiclesAndShowDetailsFlowFrench() throws {
+    func testAddVehiclesAndShowDetailsFlowFrench() {
         performVehiclesFlow(locale: .french)
     }
 }
@@ -43,30 +43,31 @@ private extension VehicleUITests {
         launchApp(locale: locale)
         checkTabBarExists()
         navigateToFirstTab()
-        
-        for (index, vehicle) in VehicleLoader.load().enumerated() {
-            addVehicle(
-                vehicle,
-                index: index,
-                locale: locale,
-                shouldTakeScreenshot: shouldTakeScreenshot
-            )
-        }
-        
+        addVehicles(locale: locale, shouldTakeScreenshots: shouldTakeScreenshot)
         takeScreenshotIfNeeded(
             name: "\(locale.rawValue)-01",
             shouldTakeScreenshot: shouldTakeScreenshot
         )
-        
         tapFirstRow()
         tapAddFieldButton()
         addCustomVehicleField()
         tapOnDoneFromAddCustomFieldNavigationBar()
-        
         takeScreenshotIfNeeded(
             name: "\(locale.rawValue)-04",
             shouldTakeScreenshot: shouldTakeScreenshot
         )
+    }
+    
+    func addVehicles(locale: SupportedLocale, shouldTakeScreenshots: Bool) {
+        let vehicles = VehicleLoader.load(supportedLocale: locale)
+        for (index, vehicle) in vehicles.enumerated() {
+            addVehicle(
+                vehicle,
+                index: index,
+                locale: locale,
+                shouldTakeScreenshot: shouldTakeScreenshots
+            )
+        }
     }
     
     func addVehicle(

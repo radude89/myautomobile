@@ -10,10 +10,9 @@ import Foundation
 
 enum VehicleLoader {
     static func load(
-        locale: Locale = .current,
+        supportedLocale: SupportedLocale = .english,
         line: UInt = #line
     ) -> [VehicleTestData] {
-        let supportedLocale = SupportedLocale.from(locale: locale)
         guard let vehiclesJSON = loadVehiclesJSON(line: line) else {
             return []
         }

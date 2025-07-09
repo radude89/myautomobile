@@ -33,8 +33,4 @@ enum SupportedLocale: String, CaseIterable {
         
         self.init(rawValue: languageCode)
     }
-    
-    static func from(locale: Locale) -> SupportedLocale {
-        return SupportedLocale(locale: locale) ?? .english
-    }
 }
