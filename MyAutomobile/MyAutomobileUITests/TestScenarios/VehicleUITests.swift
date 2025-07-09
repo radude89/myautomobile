@@ -6,6 +6,7 @@ final class VehicleUITests: XCTestCase, Sendable {
     // MARK: - Properties
     
     private var app: XCUIApplication!
+    private let numberOfVehicles = 3
     
     // MARK: - Setup
     
@@ -17,14 +18,26 @@ final class VehicleUITests: XCTestCase, Sendable {
     }
     
     override func tearDown() async throws {
-        app?.terminate()
+        app.terminate()
         try await super.tearDown()
     }
     
     // MARK: - Tests
     
     func testAddVehiclesAndShowDetailsFlow() throws {
-        launchApp()
+        performVehiclesFlow()
+    }
+    
+    func testAddVehiclesAndShowDetailsFlowFrench() throws {
+        performVehiclesFlow(locale: .french)
+    }
+}
+
+// MARK: - Helpers
+
+private extension VehicleUITests {
+    func performVehiclesFlow(locale: SupportedLocale = .english) {
+        launchApp(locale: locale)
         checkTabBarExists()
         navigateToFirstTab()
         
@@ -32,28 +45,25 @@ final class VehicleUITests: XCTestCase, Sendable {
             tapAddButton()
             fillVehicleForm(vehicle: vehicle)
             setVehicleColor(color: vehicle.colorWithoutHash)
-//            takeVehicleScreenshotIfNeeded(index: index, name: "us-03")
+            takeVehicleScreenshotIfNeeded(index: index, name: "\(locale.rawValue)-03")
             tapCloseButton()
-//            takeVehicleScreenshotIfNeeded(index: index, name: "us-02")
+            takeVehicleScreenshotIfNeeded(index: index, name: "\(locale.rawValue)-02")
             tapDoneButton()
         }
         
-//        takeScreenshot(name: "us-01")
+        takeScreenshot(name: "\(locale.rawValue)-01")
         
         tapFirstRow()
         tapAddFieldButton()
         addCustomVehicleField()
         tapOnDoneFromAddCustomFieldNavigationBar()
         
-//        takeScreenshot(name: "us-04")
+        takeScreenshot(name: "\(locale.rawValue)-04")
     }
-}
 
-// MARK: - Helpers
-
-private extension VehicleUITests {
-    func launchApp(locale: String = "en") {
-        app.launchEnvironment["AppLocale"] = locale
+    func launchApp(locale: SupportedLocale = .english) {
+        app.launchArguments += ["-AppleLanguages", "(\(locale.rawValue))"]
+        app.launchArguments += ["-AppleLocale", locale.rawValue]
         app.launch()
     }
 
@@ -99,8 +109,11 @@ private extension VehicleUITests {
 
     func fillVehicleForm(vehicle: VehicleTestData, line: UInt = #line) {
         let textFields = app.textFields
-        guard textFields.count >= 3 else {
-            XCTFail("We expected at least 3 text fields, but found \(textFields.count) instead.", line: line)
+        guard textFields.count >= numberOfVehicles else {
+            XCTFail(
+                "We expected at least \(numberOfVehicles) text fields, but found \(textFields.count) instead.",
+                line: line
+            )
             return
         }
         
