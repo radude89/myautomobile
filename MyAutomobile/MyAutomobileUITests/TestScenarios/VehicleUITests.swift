@@ -31,6 +31,22 @@ final class VehicleUITests: XCTestCase, Sendable {
     func testAddVehiclesAndShowDetailsFlowFrench() {
         performVehiclesFlow(locale: .french)
     }
+    
+    func testAddVehiclesAndShowDetailsFlowGerman() {
+        performVehiclesFlow(locale: .german)
+    }
+    
+    func testAddVehiclesAndShowDetailsFlowItalian() {
+        performVehiclesFlow(locale: .italian)
+    }
+    
+    func testAddVehiclesAndShowDetailsFlowRomanian() {
+        performVehiclesFlow(locale: .romanian)
+    }
+    
+    func testAddVehiclesAndShowDetailsFlowSpanish() {
+        performVehiclesFlow(locale: .spanish)
+    }
 }
 
 // MARK: - Helpers
@@ -50,7 +66,7 @@ private extension VehicleUITests {
         )
         tapFirstRow()
         tapAddFieldButton()
-        addCustomVehicleField()
+        addCustomVehicleField(locale: locale)
         tapOnDoneFromAddCustomFieldNavigationBar()
         takeScreenshotIfNeeded(
             name: "\(locale.rawValue)-04",
@@ -202,16 +218,18 @@ private extension VehicleUITests {
         ].tap()
     }
     
-    func addCustomVehicleField() {
+    func addCustomVehicleField(locale: SupportedLocale = .english) {
         let nameField = app.textFields[
             AccessibilityIdentifiers.VehicleDetailViewElements.CustomFieldName.id
         ].firstMatch
-        enterText(in: nameField, text: String(localized: "Fuel"))
+        let nameText = LocalizedStringHelper.loadString(StringKey.fuel.rawValue, locale: locale)
+        enterText(in: nameField, text: nameText)
         
         let valueField = app.textFields[
             AccessibilityIdentifiers.VehicleDetailViewElements.CustomFieldValue.id
         ].firstMatch
-        enterText(in: valueField, text: String(localized: "Gas"))
+        let valueText = LocalizedStringHelper.loadString(StringKey.gas.rawValue, locale: locale)
+        enterText(in: valueField, text: valueText)
     }
     
     func tapOnDoneFromAddCustomFieldNavigationBar() {
