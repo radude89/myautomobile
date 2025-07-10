@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AccessibilityIdentifiers
 
 struct VehicleAddCustomFieldView: View {
 
@@ -38,6 +39,9 @@ private extension VehicleAddCustomFieldView {
         Form {
             Section {
                 TextField("Name of field", text: $labelText)
+                    .accessibilityIdentifier(
+                        AccessibilityIdentifiers.VehicleDetailViewElements.CustomFieldName.id
+                    )
             } header: {
                 Text("Name")
             } footer: {
@@ -46,6 +50,9 @@ private extension VehicleAddCustomFieldView {
             
             Section {
                 TextField("Value", text: $valueText)
+                    .accessibilityIdentifier(
+                        AccessibilityIdentifiers.VehicleDetailViewElements.CustomFieldValue.id
+                    )
             } header: {
                 Text("Value")
             }  footer: {

@@ -1,0 +1,70 @@
+{
+  "configurations" : [
+    {
+      "id" : "7261563E-EB3E-4FA1-8580-3670BE07AF9A",
+      "name" : "English",
+      "options" : {
+        "language" : "en",
+        "locationScenario" : null,
+        "region" : "US"
+      }
+    },
+    {
+      "id" : "604ADC13-2218-4984-9706-786A0DE9D877",
+      "name" : "French",
+      "options" : {
+        "language" : "fr",
+        "region" : "FR"
+      }
+    },
+    {
+      "id" : "9C9FFABE-0AC8-43D4-894B-E1FFFDA0922C",
+      "name" : "Romanian",
+      "options" : {
+        "language" : "ro",
+        "region" : "RO"
+      }
+    },
+    {
+      "id" : "5DB0D4B9-B553-41DD-8121-3F8517EA8E3A",
+      "name" : "German",
+      "options" : {
+        "language" : "de",
+        "region" : "DE"
+      }
+    },
+    {
+      "id" : "FF9BFF6E-41D2-4097-8D65-BA902E020408",
+      "name" : "Italian",
+      "options" : {
+        "language" : "it",
+        "region" : "IT"
+      }
+    },
+    {
+      "id" : "CEBCB171-C1BE-4F49-ADE4-8148314AC4E7",
+      "name" : "Spanish",
+      "options" : {
+        "language" : "es",
+        "region" : "ES"
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "testTimeoutsEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "selectedTests" : [
+        "VehicleUITests\/testAddVehiclesAndShowDetailsFlowMultiLanguage()"
+      ],
+      "target" : {
+        "containerPath" : "container:MyAutomobile.xcodeproj",
+        "identifier" : "F721891427FABE5F00F80AC0",
+        "name" : "MyAutomobileUITests"
+      }
+    }
+  ],
+  "version" : 1
+}

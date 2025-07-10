@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AccessibilityIdentifiers
 
 struct VehicleAddView: View {
     
@@ -34,6 +35,7 @@ struct VehicleAddView: View {
                 )
                 .interactiveDismissDisabled(hasChanges)
         }
+        .accessibilityIdentifier(VehicleAddViewElements.View.id)
     }
 }
 

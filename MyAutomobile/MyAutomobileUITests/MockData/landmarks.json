@@ -1,0 +1,32 @@
+{
+  "en": {
+    "latitude": 51.5072,
+    "longitude": -0.1276,
+    "zoom": 15.0,
+    "locationName": "London, UK"
+  },
+  "fr": {
+    "latitude": 48.8584,
+    "longitude": 2.2945,
+    "zoom": 16.0,
+    "locationName": "Paris, France"
+  },
+  "de": {
+    "latitude": 52.5163,
+    "longitude": 13.3777,
+    "zoom": 16.0,
+    "locationName": "Berlin, Germany"
+  },
+  "es": {
+    "latitude": 41.4036,
+    "longitude": 2.1744,
+    "zoom": 16.0,
+    "locationName": "Barcelona, Spain"
+  },
+  "ro": {
+    "latitude": 44.4268,
+    "longitude": 26.1025,
+    "zoom": 15.0,
+    "locationName": "București, Romania"
+  }
+}
