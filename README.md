@@ -14,12 +14,6 @@ CarChum is an all-in-one vehicle management solution that helps you organize you
 - **Parking Spot Marking**: Easily mark and find your parking spot on the map
 - **Fuel Calculator**: Calculate travel distances, fuel usage, and consumption for every journey
 
-## Requirements
-
-- **iPhone/iPad**: iOS/iPadOS 17.0 or later
-- **Mac**: macOS 14.0 or later (requires Apple M1 chip or later)
-- **Apple Vision**: visionOS 1.0 or later
-
 ## Languages
 
 English, French, German, Italian, Romanian, Spanish
@@ -39,12 +33,51 @@ CarChum does not collect any data from the app.
 
 This repository contains the source code for the iOS app "CarChum" (formerly "My Automobile").
 
+### Requirements
+
+- **iPhone/iPad**: iOS/iPadOS 17.0 or later
+- **Mac**: macOS 14.0 or later (requires Apple M1 chip or later)
+- **Apple Vision**: visionOS 1.0 or later
+
+### Architecture
+
+- **SwiftUI** with MVVM architecture
+- **EventKit** integration for calendar synchronization
+- **StoreKit** for in-app purchases
+- **MapKit** for parking location features
+- **Swift Charts** for expense visualization
+
+### Getting Started
+
+1. Clone the repository
+2. Open `MyAutomobile/MyAutomobile.xcodeproj` in Xcode
+3. Build and run the project
+
+For detailed development information, see [CLAUDE.md](CLAUDE.md).
+
+### Building
+
+```bash
+# Open project in Xcode
+open MyAutomobile/MyAutomobile.xcodeproj
+
+# Build for iOS Simulator
+xcodebuild -project MyAutomobile/MyAutomobile.xcodeproj -scheme MyAutomobile -destination 'platform=iOS Simulator,name=iPhone 15'
+
+# Run tests
+xcodebuild test -project MyAutomobile/MyAutomobile.xcodeproj -scheme MyAutomobile -destination 'platform=iOS Simulator,name=iPhone 15'
+```
+
 ## Links
 
 - [App Store](https://apps.apple.com/us/app/carchum/id6465991938)
 - [Privacy Policy](https://apps.apple.com/us/app/carchum/id6465991938)
 - [Support](https://apps.apple.com/us/app/carchum/id6465991938)
 
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
 ## Copyright
 
-© Radu Dan - All Rights Reserved
+© Radu Dan
