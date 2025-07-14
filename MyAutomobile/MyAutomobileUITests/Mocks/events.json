@@ -1,0 +1,194 @@
+{
+  "en": [
+    {
+      "title": "Brake Inspection",
+      "recurrence": "Every quarter",
+      "vehicle_id": "1",
+      "date": "yesterday"
+    },
+    {
+      "title": "Oil Change",
+      "recurrence": "One time",
+      "vehicle_id": "1",
+      "date": "today"
+    },
+    {
+      "title": "Wash Car",
+      "recurrence": "Weekly",
+      "vehicle_id": "1",
+      "date": "tomorrow"
+    },
+    {
+      "title": "Change Tires",
+      "recurrence": "Weekly",
+      "vehicle_id": "1",
+      "date": "next week"
+    },
+    {
+      "title": "Replace Windshield Wipers",
+      "recurrence": "Every year",
+      "vehicle_id": "2",
+      "date": "two weeks from today"
+    }
+  ],
+  "fr": [
+    {
+      "title": "Inspection des freins",
+      "recurrence": "Every quarter",
+      "vehicle_id": "1",
+      "date": "yesterday"
+    },
+    {
+      "title": "Vidange d'huile",
+      "recurrence": "One time",
+      "vehicle_id": "1",
+      "date": "today"
+    },
+    {
+      "title": "Laver la voiture",
+      "recurrence": "Weekly",
+      "vehicle_id": "1",
+      "date": "tomorrow"
+    },
+    {
+      "title": "Changer les pneus",
+      "recurrence": "Weekly",
+      "vehicle_id": "1",
+      "date": "next week"
+    },
+    {
+      "title": "Remplacer les essuie-glaces",
+      "recurrence": "Every year",
+      "vehicle_id": "5",
+      "date": "two weeks from today"
+    }
+  ],
+  "it": [
+    {
+      "title": "Ispezione freni",
+      "recurrence": "Every quarter",
+      "vehicle_id": "1",
+      "date": "yesterday"
+    },
+    {
+      "title": "Cambio olio",
+      "recurrence": "One time",
+      "vehicle_id": "1",
+      "date": "today"
+    },
+    {
+      "title": "Lavare l'auto",
+      "recurrence": "Weekly",
+      "vehicle_id": "1",
+      "date": "tomorrow"
+    },
+    {
+      "title": "Cambiare pneumatici",
+      "recurrence": "Weekly",
+      "vehicle_id": "1",
+      "date": "next week"
+    },
+    {
+      "title": "Sostituire tergicristalli",
+      "recurrence": "Every year",
+      "vehicle_id": "8",
+      "date": "two weeks from today"
+    }
+  ],
+  "es": [
+    {
+      "title": "Inspección de frenos",
+      "recurrence": "Every quarter",
+      "vehicle_id": "1",
+      "date": "yesterday"
+    },
+    {
+      "title": "Cambio de aceite",
+      "recurrence": "One time",
+      "vehicle_id": "1",
+      "date": "today"
+    },
+    {
+      "title": "Lavar el coche",
+      "recurrence": "Weekly",
+      "vehicle_id": "1",
+      "date": "tomorrow"
+    },
+    {
+      "title": "Cambiar neumáticos",
+      "recurrence": "Weekly",
+      "vehicle_id": "1",
+      "date": "next week"
+    },
+    {
+      "title": "Reemplazar limpiaparabrisas",
+      "recurrence": "Every year",
+      "vehicle_id": "11",
+      "date": "two weeks from today"
+    }
+  ],
+  "ro": [
+    {
+      "title": "Inspecția frânelor",
+      "recurrence": "Every quarter",
+      "vehicle_id": "1",
+      "date": "yesterday"
+    },
+    {
+      "title": "Schimbarea uleiului",
+      "recurrence": "One time",
+      "vehicle_id": "1",
+      "date": "today"
+    },
+    {
+      "title": "Spălarea mașinii",
+      "recurrence": "Weekly",
+      "vehicle_id": "1",
+      "date": "tomorrow"
+    },
+    {
+      "title": "Schimbarea anvelopelor",
+      "recurrence": "Weekly",
+      "vehicle_id": "1",
+      "date": "next week"
+    },
+    {
+      "title": "Înlocuirea ștergătoarelor de parbriz",
+      "recurrence": "Every year",
+      "vehicle_id": "14",
+      "date": "two weeks from today"
+    }
+  ],
+  "de": [
+    {
+      "title": "Bremseninspektion",
+      "recurrence": "Every quarter",
+      "vehicle_id": "1",
+      "date": "yesterday"
+    },
+    {
+      "title": "Ölwechsel",
+      "recurrence": "One time",
+      "vehicle_id": "1",
+      "date": "today"
+    },
+    {
+      "title": "Auto waschen",
+      "recurrence": "Weekly",
+      "vehicle_id": "1",
+      "date": "tomorrow"
+    },
+    {
+      "title": "Reifen wechseln",
+      "recurrence": "Weekly",
+      "vehicle_id": "1",
+      "date": "next week"
+    },
+    {
+      "title": "Scheibenwischer ersetzen",
+      "recurrence": "Every year",
+      "vehicle_id": "17",
+      "date": "two weeks from today"
+    }
+  ]
+}

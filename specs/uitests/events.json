@@ -1,32 +1,194 @@
-[
-  {
-    "description": "Brake Inspection",
-    "vehicle": "first",
-    "recurrence": "quarterly",
-    "date": "yesterday"
-  },
-  {
-    "description": "Oil Change",
-    "vehicle": "first",
-    "recurrence": "monthly",
-    "date": "today"
-  },
-  {
-    "description": "Wash Car",
-    "vehicle": "first",
-    "recurrence": "weekly",
-    "date": "tomorrow"
-  },
-  {
-    "description": "Change Tires",
-    "vehicle": "first",
-    "recurrence": "one time",
-    "date": "one week from today"
-  },
-  {
-    "description": "Replace Windshield Wipers",
-    "vehicle": "second",
-    "recurrence": "every year",
-    "date": "two weeks from today"
-  }
-]
+{
+  "en": [
+    {
+      "description": "Brake Inspection",
+      "vehicle": "first",
+      "recurrence": "quarterly",
+      "date": "yesterday"
+    },
+    {
+      "description": "Oil Change",
+      "vehicle": "first",
+      "recurrence": "monthly",
+      "date": "today"
+    },
+    {
+      "description": "Wash Car",
+      "vehicle": "first",
+      "recurrence": "weekly",
+      "date": "tomorrow"
+    },
+    {
+      "description": "Change Tires",
+      "vehicle": "first",
+      "recurrence": "one time",
+      "date": "one week from today"
+    },
+    {
+      "description": "Replace Windshield Wipers",
+      "vehicle": "second",
+      "recurrence": "every year",
+      "date": "two weeks from today"
+    }
+  ],
+  "fr": [
+    {
+      "description": "Inspection des freins",
+      "vehicle": "first",
+      "recurrence": "quarterly",
+      "date": "yesterday"
+    },
+    {
+      "description": "Vidange d'huile",
+      "vehicle": "first",
+      "recurrence": "monthly",
+      "date": "today"
+    },
+    {
+      "description": "Laver la voiture",
+      "vehicle": "first",
+      "recurrence": "weekly",
+      "date": "tomorrow"
+    },
+    {
+      "description": "Changer les pneus",
+      "vehicle": "first",
+      "recurrence": "one time",
+      "date": "one week from today"
+    },
+    {
+      "description": "Remplacer les essuie-glaces",
+      "vehicle": "second",
+      "recurrence": "every year",
+      "date": "two weeks from today"
+    }
+  ],
+  "de": [
+    {
+      "description": "Bremseninspektion",
+      "vehicle": "first",
+      "recurrence": "quarterly",
+      "date": "yesterday"
+    },
+    {
+      "description": "Ölwechsel",
+      "vehicle": "first",
+      "recurrence": "monthly",
+      "date": "today"
+    },
+    {
+      "description": "Auto waschen",
+      "vehicle": "first",
+      "recurrence": "weekly",
+      "date": "tomorrow"
+    },
+    {
+      "description": "Reifen wechseln",
+      "vehicle": "first",
+      "recurrence": "one time",
+      "date": "one week from today"
+    },
+    {
+      "description": "Scheibenwischer ersetzen",
+      "vehicle": "second",
+      "recurrence": "every year",
+      "date": "two weeks from today"
+    }
+  ],
+  "es": [
+    {
+      "description": "Inspección de frenos",
+      "vehicle": "first",
+      "recurrence": "quarterly",
+      "date": "yesterday"
+    },
+    {
+      "description": "Cambio de aceite",
+      "vehicle": "first",
+      "recurrence": "monthly",
+      "date": "today"
+    },
+    {
+      "description": "Lavar el coche",
+      "vehicle": "first",
+      "recurrence": "weekly",
+      "date": "tomorrow"
+    },
+    {
+      "description": "Cambiar neumáticos",
+      "vehicle": "first",
+      "recurrence": "one time",
+      "date": "one week from today"
+    },
+    {
+      "description": "Reemplazar limpiaparabrisas",
+      "vehicle": "second",
+      "recurrence": "every year",
+      "date": "two weeks from today"
+    }
+  ],
+  "it": [
+    {
+      "description": "Ispezione freni",
+      "vehicle": "first",
+      "recurrence": "quarterly",
+      "date": "yesterday"
+    },
+    {
+      "description": "Cambio olio",
+      "vehicle": "first",
+      "recurrence": "monthly",
+      "date": "today"
+    },
+    {
+      "description": "Lavare l'auto",
+      "vehicle": "first",
+      "recurrence": "weekly",
+      "date": "tomorrow"
+    },
+    {
+      "description": "Cambiare pneumatici",
+      "vehicle": "first",
+      "recurrence": "one time",
+      "date": "one week from today"
+    },
+    {
+      "description": "Sostituire tergicristalli",
+      "vehicle": "second",
+      "recurrence": "every year",
+      "date": "two weeks from today"
+    }
+  ],
+  "pt": [
+    {
+      "description": "Inspeção de freios",
+      "vehicle": "first",
+      "recurrence": "quarterly",
+      "date": "yesterday"
+    },
+    {
+      "description": "Troca de óleo",
+      "vehicle": "first",
+      "recurrence": "monthly",
+      "date": "today"
+    },
+    {
+      "description": "Lavar o carro",
+      "vehicle": "first",
+      "recurrence": "weekly",
+      "date": "tomorrow"
+    },
+    {
+      "description": "Trocar pneus",
+      "vehicle": "first",
+      "recurrence": "one time",
+      "date": "one week from today"
+    },
+    {
+      "description": "Substituir limpadores de para-brisa",
+      "vehicle": "second",
+      "recurrence": "every year",
+      "date": "two weeks from today"
+    }
+  ]
+}

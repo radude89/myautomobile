@@ -1,6 +1,7 @@
 {
   "en": [
     {
+      "id": "1",
       "plate": "7GRL293",
       "state": "California",
       "make": "Ford",
@@ -8,6 +9,7 @@
       "color": "#D80000"
     },
     {
+      "id": "2",
       "plate": "FLK 38L",
       "state": "Florida",
       "make": "Dodge",
@@ -15,6 +17,7 @@
       "color": "#F96F29"
     },
     {
+      "id": "3",
       "plate": "OH-8232Z",
       "state": "Ohio",
       "make": "Jeep",
@@ -24,6 +27,7 @@
   ],
   "fr": [
     {
+      "id": "4",
       "plate": "FR-215-JK",
       "region": "Île-de-France",
       "make": "Renault",
@@ -31,6 +35,7 @@
       "color": "#2A5CAA"
     },
     {
+      "id": "5",
       "plate": "DB-742-LH",
       "region": "Provence-Alpes-Côte d’Azur",
       "make": "Peugeot",
@@ -38,6 +43,7 @@
       "color": "#4A7056"
     },
     {
+      "id": "6",
       "plate": "EA-309-QT",
       "region": "Nouvelle-Aquitaine",
       "make": "Citroën",
@@ -47,6 +53,7 @@
   ],
   "it": [
     {
+      "id": "7",
       "plate": "FP 392 LD",
       "region": "Roma",
       "make": "Ferrari",
@@ -54,6 +61,7 @@
       "color": "#D40000"
     },
     {
+      "id": "8",
       "plate": "GE 614 YT",
       "region": "Genova",
       "make": "Fiat",
@@ -61,6 +69,7 @@
       "color": "#4FC1E9"
     },
     {
+      "id": "9",
       "plate": "MI 781 ZJ",
       "region": "Milano",
       "make": "Lamborghini",
@@ -70,6 +79,7 @@
   ],
   "es": [
     {
+      "id": "10",
       "plate": "1234 LBC",
       "region": "Madrid",
       "make": "SEAT",
@@ -77,6 +87,7 @@
       "color": "#C8102E"
     },
     {
+      "id": "11",
       "plate": "5678 KDT",
       "region": "Barcelona",
       "make": "Peugeot",
@@ -84,6 +95,7 @@
       "color": "#1E4EAA"
     },
     {
+      "id": "12",
       "plate": "9012 MZN",
       "region": "Valencia",
       "make": "Volkswagen",
@@ -93,6 +105,7 @@
   ],
   "ro": [
     {
+      "id": "13",
       "plate": "B 123 ABC",
       "region": "București",
       "make": "Dacia",
@@ -100,6 +113,7 @@
       "color": "#243C5A"
     },
     {
+      "id": "14",
       "plate": "CJ 456 DEF",
       "region": "Cluj",
       "make": "Renault",
@@ -107,6 +121,7 @@
       "color": "#7F8287"
     },
     {
+      "id": "15",
       "plate": "TM 789 GHI",
       "region": "Timișoara",
       "make": "Skoda",
@@ -116,6 +131,7 @@
   ],
   "de": [
     {
+      "id": "16",
       "plate": "B MW 1234",
       "region": "Berlin",
       "make": "BMW",
@@ -123,6 +139,7 @@
       "color": "#FFFFFF"
     },
     {
+      "id": "17",
       "plate": "M AU 4567",
       "region": "Munich",
       "make": "Audi",
@@ -130,6 +147,7 @@
       "color": "#4A4A4A"
     },
     {
+      "id": "18",
       "plate": "S VW 8901",
       "region": "Stuttgart",
       "make": "Volkswagen",

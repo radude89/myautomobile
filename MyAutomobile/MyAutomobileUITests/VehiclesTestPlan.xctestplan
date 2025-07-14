@@ -10,6 +10,7 @@
       }
     },
     {
+      "enabled" : false,
       "id" : "604ADC13-2218-4984-9706-786A0DE9D877",
       "name" : "French",
       "options" : {
@@ -18,6 +19,7 @@
       }
     },
     {
+      "enabled" : false,
       "id" : "9C9FFABE-0AC8-43D4-894B-E1FFFDA0922C",
       "name" : "Romanian",
       "options" : {
@@ -26,6 +28,7 @@
       }
     },
     {
+      "enabled" : false,
       "id" : "5DB0D4B9-B553-41DD-8121-3F8517EA8E3A",
       "name" : "German",
       "options" : {
@@ -34,6 +37,7 @@
       }
     },
     {
+      "enabled" : false,
       "id" : "FF9BFF6E-41D2-4097-8D65-BA902E020408",
       "name" : "Italian",
       "options" : {
@@ -42,6 +46,7 @@
       }
     },
     {
+      "enabled" : false,
       "id" : "CEBCB171-C1BE-4F49-ADE4-8148314AC4E7",
       "name" : "Spanish",
       "options" : {

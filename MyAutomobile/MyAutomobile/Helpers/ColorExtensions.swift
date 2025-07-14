@@ -37,7 +37,7 @@ extension Color {
     }
 }
 
-extension Color: Codable {
+extension Color: @unchecked Sendable, Codable {
     enum CodingKeys: String, CodingKey {
         case red, green, blue
     }
