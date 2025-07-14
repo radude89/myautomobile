@@ -1,10 +1,3 @@
-//
-//  VehicleTestData.swift
-//  MyAutomobile
-//
-//  Created by Radu Dan on 08.07.2025.
-//
-
 import Foundation
 
 struct VehicleTestData {

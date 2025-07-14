@@ -39,6 +39,11 @@
 		F726335E2A95A99000F7305D /* VehicleListToolbarViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F726335D2A95A99000F7305D /* VehicleListToolbarViewModifier.swift */; };
 		F72633602A95AE7700F7305D /* Vehicles.swift in Sources */ = {isa = PBXBuildFile; fileRef = F726335F2A95AE7700F7305D /* Vehicles.swift */; };
 		F727EB5D2E256A8500F91578 /* EventsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F727EB5C2E256A7F00F91578 /* EventsUITests.swift */; };
+		F727EB662E25702A00F91578 /* EventsJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = F727EB652E25702800F91578 /* EventsJSON.swift */; };
+		F727EB682E2571BE00F91578 /* EventData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F727EB672E2571BE00F91578 /* EventData.swift */; };
+		F727EB6A2E2571C700F91578 /* EventTestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F727EB692E2571C700F91578 /* EventTestData.swift */; };
+		F727EB6D2E2572DA00F91578 /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F727EB6C2E2572D700F91578 /* DataLoader.swift */; };
+		F727EB712E25774000F91578 /* EventsLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F727EB702E25773C00F91578 /* EventsLoader.swift */; };
 		F72A3BAD2C3E4655008CB357 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = F72A3BAC2C3E4655008CB357 /* PrivacyInfo.xcprivacy */; };
 		F73028E82AA36A9B003AAEE8 /* EventListToolbarViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73028E72AA36A9B003AAEE8 /* EventListToolbarViewModifier.swift */; };
 		F73028EE2AA36D75003AAEE8 /* EventAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73028ED2AA36D75003AAEE8 /* EventAddView.swift */; };
@@ -90,7 +95,7 @@
 		F7C5F19A2885004800375D91 /* EventListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C5F1992885004800375D91 /* EventListViewModel.swift */; };
 		F7C5F19D288659EC00375D91 /* AppTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C5F19C288659EC00375D91 /* AppTitle.swift */; };
 		F7C94FD52E1CEFDC0053E293 /* VehiclesJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C94FD22E1CEFDC0053E293 /* VehiclesJSON.swift */; };
-		F7C94FD82E1CF6260053E293 /* VehicleLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C94FD72E1CF6260053E293 /* VehicleLoader.swift */; };
+		F7C94FD82E1CF6260053E293 /* VehiclesLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C94FD72E1CF6260053E293 /* VehiclesLoader.swift */; };
 		F7C94FDA2E1CF6810053E293 /* VehicleTestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C94FD92E1CF6810053E293 /* VehicleTestData.swift */; };
 		F7C94FDD2E1CF6AC0053E293 /* VehicleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C94FDC2E1CF6AC0053E293 /* VehicleData.swift */; };
 		F7C94FE12E1CFBF70053E293 /* SupportedLocale.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C94FE02E1CFBF70053E293 /* SupportedLocale.swift */; };
@@ -165,6 +170,11 @@
 		F726335D2A95A99000F7305D /* VehicleListToolbarViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleListToolbarViewModifier.swift; sourceTree = "<group>"; };
 		F726335F2A95AE7700F7305D /* Vehicles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehicles.swift; sourceTree = "<group>"; };
 		F727EB5C2E256A7F00F91578 /* EventsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsUITests.swift; sourceTree = "<group>"; };
+		F727EB652E25702800F91578 /* EventsJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsJSON.swift; sourceTree = "<group>"; };
+		F727EB672E2571BE00F91578 /* EventData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventData.swift; sourceTree = "<group>"; };
+		F727EB692E2571C700F91578 /* EventTestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTestData.swift; sourceTree = "<group>"; };
+		F727EB6C2E2572D700F91578 /* DataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
+		F727EB702E25773C00F91578 /* EventsLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsLoader.swift; sourceTree = "<group>"; };
 		F72A3BAC2C3E4655008CB357 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		F73028E72AA36A9B003AAEE8 /* EventListToolbarViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListToolbarViewModifier.swift; sourceTree = "<group>"; };
 		F73028ED2AA36D75003AAEE8 /* EventAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventAddView.swift; sourceTree = "<group>"; };
@@ -220,7 +230,7 @@
 		F7C5F1992885004800375D91 /* EventListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListViewModel.swift; sourceTree = "<group>"; };
 		F7C5F19C288659EC00375D91 /* AppTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTitle.swift; sourceTree = "<group>"; };
 		F7C94FD22E1CEFDC0053E293 /* VehiclesJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehiclesJSON.swift; sourceTree = "<group>"; };
-		F7C94FD72E1CF6260053E293 /* VehicleLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleLoader.swift; sourceTree = "<group>"; };
+		F7C94FD72E1CF6260053E293 /* VehiclesLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehiclesLoader.swift; sourceTree = "<group>"; };
 		F7C94FD92E1CF6810053E293 /* VehicleTestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleTestData.swift; sourceTree = "<group>"; };
 		F7C94FDC2E1CF6AC0053E293 /* VehicleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleData.swift; sourceTree = "<group>"; };
 		F7C94FE02E1CFBF70053E293 /* SupportedLocale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportedLocale.swift; sourceTree = "<group>"; };
@@ -370,6 +380,7 @@
 		F721891827FABE5F00F80AC0 /* MyAutomobileUITests */ = {
 			isa = PBXGroup;
 			children = (
+				F727EB6B2E2572CA00F91578 /* DataLoaders */,
 				F7C94FDB2E1CF68A0053E293 /* Helpers */,
 				F75842272DF6AC8400EED414 /* Mocks */,
 				F7C94FDF2E1CF6D00053E293 /* TestScenarios */,
@@ -377,6 +388,52 @@
 				F71C524A2E1E908A00418F38 /* VehiclesTestPlan.xctestplan */,
 			);
 			path = MyAutomobileUITests;
+			sourceTree = "<group>";
+		};
+		F727EB612E25700900F91578 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				F7C94FDC2E1CF6AC0053E293 /* VehicleData.swift */,
+				F7C94FD22E1CEFDC0053E293 /* VehiclesJSON.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		F727EB622E25701100F91578 /* Vehicles */ = {
+			isa = PBXGroup;
+			children = (
+				F7C94FD92E1CF6810053E293 /* VehicleTestData.swift */,
+				F727EB612E25700900F91578 /* API */,
+			);
+			path = Vehicles;
+			sourceTree = "<group>";
+		};
+		F727EB632E25701700F91578 /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				F727EB692E2571C700F91578 /* EventTestData.swift */,
+				F727EB642E25702000F91578 /* API */,
+			);
+			path = Events;
+			sourceTree = "<group>";
+		};
+		F727EB642E25702000F91578 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				F727EB672E2571BE00F91578 /* EventData.swift */,
+				F727EB652E25702800F91578 /* EventsJSON.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		F727EB6B2E2572CA00F91578 /* DataLoaders */ = {
+			isa = PBXGroup;
+			children = (
+				F727EB6C2E2572D700F91578 /* DataLoader.swift */,
+				F7C94FD72E1CF6260053E293 /* VehiclesLoader.swift */,
+				F727EB702E25773C00F91578 /* EventsLoader.swift */,
+			);
+			path = DataLoaders;
 			sourceTree = "<group>";
 		};
 		F73028E92AA36D2E003AAEE8 /* List */ = {
@@ -537,11 +594,10 @@
 		F7C94FDB2E1CF68A0053E293 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				F758422E2DF6B33900EED414 /* XCTest+Extensions.swift */,
-				F7047FC12E1E4DDB002B957C /* StringKey.swift */,
-				F7C94FD72E1CF6260053E293 /* VehicleLoader.swift */,
-				F7C94FE02E1CFBF70053E293 /* SupportedLocale.swift */,
 				F7047FBF2E1E4C92002B957C /* LocalizedStringHelper.swift */,
+				F7047FC12E1E4DDB002B957C /* StringKey.swift */,
+				F7C94FE02E1CFBF70053E293 /* SupportedLocale.swift */,
+				F758422E2DF6B33900EED414 /* XCTest+Extensions.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -549,9 +605,8 @@
 		F7C94FDE2E1CF6B80053E293 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				F7C94FD92E1CF6810053E293 /* VehicleTestData.swift */,
-				F7C94FDC2E1CF6AC0053E293 /* VehicleData.swift */,
-				F7C94FD22E1CEFDC0053E293 /* VehiclesJSON.swift */,
+				F727EB632E25701700F91578 /* Events */,
+				F727EB622E25701100F91578 /* Vehicles */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -965,12 +1020,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F7C94FD82E1CF6260053E293 /* VehicleLoader.swift in Sources */,
+				F7C94FD82E1CF6260053E293 /* VehiclesLoader.swift in Sources */,
 				F721891A27FABE5F00F80AC0 /* VehicleUITests.swift in Sources */,
+				F727EB6D2E2572DA00F91578 /* DataLoader.swift in Sources */,
+				F727EB6A2E2571C700F91578 /* EventTestData.swift in Sources */,
+				F727EB682E2571BE00F91578 /* EventData.swift in Sources */,
 				F727EB5D2E256A8500F91578 /* EventsUITests.swift in Sources */,
 				F7C94FDD2E1CF6AC0053E293 /* VehicleData.swift in Sources */,
+				F727EB662E25702A00F91578 /* EventsJSON.swift in Sources */,
 				F7C94FE12E1CFBF70053E293 /* SupportedLocale.swift in Sources */,
 				F7047FC02E1E4C98002B957C /* LocalizedStringHelper.swift in Sources */,
+				F727EB712E25774000F91578 /* EventsLoader.swift in Sources */,
 				F758422F2DF6B33900EED414 /* XCTest+Extensions.swift in Sources */,
 				F7C94FDA2E1CF6810053E293 /* VehicleTestData.swift in Sources */,
 				F7047FC22E1E4DE5002B957C /* StringKey.swift in Sources */,
