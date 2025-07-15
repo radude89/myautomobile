@@ -5,7 +5,7 @@ enum VehiclesLoader: DataLoader {
     static func load(supportedLocale: SupportedLocale = .english) -> [VehicleTestData] {
         guard let vehiclesJSON: VehiclesJSON = loadJSON(resource: "vehicles") else { return [] }
         
-        let vehicleData = vehiclesJSON[keyPath: supportedLocale.keyPath]
+        let vehicleData = vehiclesJSON[keyPath: supportedLocale.vehiclesKeyPath]
         return vehicleData.map(VehicleTestData.init(vehicleData:))
     }
 }

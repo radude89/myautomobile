@@ -15,7 +15,18 @@ enum SupportedLocale: String, CaseIterable {
     case romanian = "ro"
     case german = "de"
     
-    var keyPath: KeyPath<VehiclesJSON, [VehicleData]> {
+    var vehiclesKeyPath: KeyPath<VehiclesJSON, [VehicleData]> {
+        switch self {
+        case .english: \.en
+        case .french: \.fr
+        case .italian: \.it
+        case .spanish: \.es
+        case .romanian: \.ro
+        case .german: \.de
+        }
+    }
+    
+    var eventsKeyPath: KeyPath<EventsJSON, [EventData]> {
         switch self {
         case .english: \.en
         case .french: \.fr
