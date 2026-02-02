@@ -9,8 +9,8 @@ import XCTest
 
 @MainActor
 class UITestCase: XCTestCase {
-    var app: XCUIApplication!
-    var supportedLocale: SupportedLocale!
+    private(set) var app: XCUIApplication!
+    private(set) var supportedLocale: SupportedLocale!
     
     override func setUp() async throws {
         try await super.setUp()

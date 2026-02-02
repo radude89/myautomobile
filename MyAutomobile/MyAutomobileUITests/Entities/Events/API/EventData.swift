@@ -3,7 +3,7 @@ import Foundation
 struct EventData: Decodable {
     let title: String
     let recurrence: String
-    let vehicleId: String
+    let vehicleId: Int
     let date: String
     
     enum CodingKeys: String, CodingKey {

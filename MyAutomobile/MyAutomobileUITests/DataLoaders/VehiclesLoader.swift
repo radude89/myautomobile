@@ -10,8 +10,6 @@ enum VehiclesLoader: DataLoader {
     }
 }
 
-// MARK: - VehicleTestData
-
 private extension VehicleTestData {
     init(vehicleData: VehicleData) {
         plate = vehicleData.plate
