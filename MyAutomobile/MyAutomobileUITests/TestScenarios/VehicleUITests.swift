@@ -1,32 +1,8 @@
 import XCTest
 import AccessibilityIdentifiers
 
-@MainActor
-final class VehicleUITests: XCTestCase, Sendable {
-    // MARK: - Properties
-    
-    private var app: XCUIApplication!
-    private var supportedLocale: SupportedLocale!
+final class VehicleUITests: UITestCase {
     private let numberOfVehicles = 3
-    
-    // MARK: - Setup
-    
-    override func setUp() async throws {
-        try await super.setUp()
-        continueAfterFailure = false
-        supportedLocale = SupportedLocale(systemLocale: .current)
-        app = XCUIApplication()
-        app.launchEnvironment["UITesting"] = "true"
-        app.launch()
-    }
-    
-    override func tearDown() async throws {
-        supportedLocale = nil
-        app.terminate()
-        try await super.tearDown()
-    }
-    
-    // MARK: - Tests
     
     func testAddVehiclesAndShowDetailsFlowMultiLanguage() {
         performVehiclesFlow(shouldTakeScreenshot: false)
@@ -99,14 +75,6 @@ private extension VehicleUITests {
     ) {
         guard index == 0 else { return }
         takeScreenshotIfNeeded(name: name, shouldTakeScreenshot: shouldTakeScreenshot)
-    }
-    
-    func takeScreenshot(name: String) {
-        let screenshot = XCUIScreen.main.screenshot()
-        let attachment = XCTAttachment(screenshot: screenshot)
-        attachment.name = name
-        attachment.lifetime = .keepAlways
-        add(attachment)
     }
     
     func checkTabBarExists(line: UInt = #line) {
