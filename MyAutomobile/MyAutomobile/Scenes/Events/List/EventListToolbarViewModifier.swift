@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AccessibilityIdentifiers
 
 struct EventListToolbarViewModifier: ViewModifier {
     let hasVehicles: Bool
@@ -22,6 +23,7 @@ struct EventListToolbarViewModifier: ViewModifier {
                     Button(action: onAdd) {
                         Image(systemName: "plus")
                     }
+                    .accessibilityIdentifier(EventListViewElements.AddButton.id)
                     .disabled(!hasVehicles)
                 }
                 ToolbarItem(placement: .topBarTrailing) {

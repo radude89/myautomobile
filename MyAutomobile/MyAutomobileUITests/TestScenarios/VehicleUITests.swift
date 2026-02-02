@@ -5,6 +5,7 @@ final class VehicleUITests: UITestCase {
     private let numberOfVehicles = 3
     
     func testAddVehiclesAndShowDetailsFlowMultiLanguage() {
+        app.launch()
         performVehiclesFlow(shouldTakeScreenshot: false)
     }
 }
@@ -14,7 +15,7 @@ final class VehicleUITests: UITestCase {
 private extension VehicleUITests {
     func performVehiclesFlow(shouldTakeScreenshot: Bool = false) {
         checkTabBarExists()
-        navigateToFirstTab()
+        navigateTo(tab: 0)
         addVehicles(shouldTakeScreenshots: shouldTakeScreenshot)
         takeScreenshotIfNeeded(
             name: "\(supportedLocale.rawValue)-01",
@@ -46,7 +47,7 @@ private extension VehicleUITests {
         index: Int,
         shouldTakeScreenshot: Bool
     ) {
-        tapAddButton()
+        tapButton(VehicleListViewElements.AddButton.id)
         fillVehicleForm(vehicle: vehicle)
         setVehicleColor(color: vehicle.colorWithoutHash)
         takeVehicleScreenshotIfNeeded(
@@ -77,31 +78,8 @@ private extension VehicleUITests {
         takeScreenshotIfNeeded(name: name, shouldTakeScreenshot: shouldTakeScreenshot)
     }
     
-    func checkTabBarExists(line: UInt = #line) {
-        let tabBar = app.tabBars.firstMatch
-        XCTAssertTrue(tabBar.exists, "Tab bar should exist", line: line)
-    }
-    
-    func navigateToFirstTab(line: UInt = #line) {
-        let firstTab = app.tabBars.buttons.element(boundBy: 0)
-        if firstTab.exists {
-            firstTab.tap()
-        } else {
-            XCTFail("First tab does not exist", line: line)
-        }
-    }
-    
-    func tapAddButton(line: UInt = #line) {
-        let addButton = app.buttons[VehicleListViewElements.AddButton.id]
-        if addButton.exists {
-            addButton.tap()
-        } else {
-            XCTFail("Add button does not exist", line: line)
-        }
-    }
-    
     func tapCloseButton() {
-        app.buttons["close"].tap()
+        tapButton("close")
     }
 
     func fillVehicleForm(vehicle: VehicleTestData, line: UInt = #line) {
@@ -122,13 +100,8 @@ private extension VehicleUITests {
         modelField.dismissKeyboard()
     }
     
-    func enterText(in textField: XCUIElement, text: String) {
-        textField.tap()
-        textField.typeText(text)
-    }
-    
     func setVehicleColor(color: String) {
-        app.buttons[VehicleAddViewElements.View.ColorPicker.id].tap()
+        tapButton(VehicleAddViewElements.View.ColorPicker.id)
         let segmentedControl = app.segmentedControls.element(boundBy: 0)
         segmentedControl.buttons.element(boundBy: 2).tap()
         
@@ -153,9 +126,7 @@ private extension VehicleUITests {
     }
     
     func tapAddFieldButton() {
-        app.buttons[
-            AccessibilityIdentifiers.VehicleDetailViewElements.AddFieldButton.id
-        ].tap()
+        tapButton(AccessibilityIdentifiers.VehicleDetailViewElements.AddFieldButton.id)
     }
     
     func addCustomVehicleField(locale: SupportedLocale = .english) {

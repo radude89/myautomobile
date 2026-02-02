@@ -89,7 +89,7 @@ private extension MainTabView {
 
 private extension MainTabView {
     func setupUITestsEnvironmentIfNeeded() {
-        let isRunningUITests = CommandLine.arguments.contains("--uitesting")
+        let isRunningUITests = ProcessInfo.processInfo.environment["UITesting"] == "true"
         guard isRunningUITests else { return }
 
         UIView.setAnimationsEnabled(false)

@@ -25,3 +25,7 @@ public enum VehicleDetailViewElements: AccessibilityIdentifiable {
     public enum CustomFieldName: AccessibilityIdentifiable {}
     public enum CustomFieldValue: AccessibilityIdentifiable {}
 }
+
+public enum EventListViewElements: AccessibilityIdentifiable {
+    public enum AddButton: AccessibilityIdentifiable {}
+}
