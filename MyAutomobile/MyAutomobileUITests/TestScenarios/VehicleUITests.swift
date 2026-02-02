@@ -160,7 +160,7 @@ private extension VehicleUITests {
     }
     
     func setVehicleColor(color: String) {
-        app.colorWells.element(boundBy: 0).tap()
+        app.buttons[VehicleAddViewElements.View.ColorPicker.id].tap()
         let segmentedControl = app.segmentedControls.element(boundBy: 0)
         segmentedControl.buttons.element(boundBy: 2).tap()
         

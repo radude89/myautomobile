@@ -56,6 +56,7 @@ private extension VehicleAddView {
                 HStack {
                     ColorPicker("vehicle_color", selection: $color)
                         .frame(maxWidth: .infinity)
+                        .accessibilityIdentifier(VehicleAddViewElements.View.ColorPicker.id)
                 }
             } header: {
                 Text("Color")

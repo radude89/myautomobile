@@ -14,7 +14,9 @@ public enum VehicleListViewElements: AccessibilityIdentifiable {
 
 // MARK: - Vehicle Add View
 public enum VehicleAddViewElements: AccessibilityIdentifiable {
-    public enum View: AccessibilityIdentifiable {}
+    public enum View: AccessibilityIdentifiable {
+        public enum ColorPicker: AccessibilityIdentifiable {}
+    }
 }
 
 // MARK: - Vehicle Detail View
