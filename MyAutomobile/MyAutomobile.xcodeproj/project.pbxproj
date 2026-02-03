@@ -76,6 +76,7 @@
 		F799E2AA2AA35F27009F3C3D /* EventListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F799E2A92AA35F27009F3C3D /* EventListRowView.swift */; };
 		F79A1A392F304E5C008F8622 /* XCTestCase+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79A1A382F304E57008F8622 /* XCTestCase+Helpers.swift */; };
 		F79A1A3B2F304EBA008F8622 /* UITestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79A1A3A2F304EAE008F8622 /* UITestCase.swift */; };
+		F79A1A422F31A62E008F8622 /* XCUIElement+DatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79A1A412F31A629008F8622 /* XCUIElement+DatePicker.swift */; };
 		F79F09722B7B992900C37272 /* ExpenseItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79F09712B7B992900C37272 /* ExpenseItemView.swift */; };
 		F79F09792B7BA08900C37272 /* FuelConsumptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79F09782B7BA08900C37272 /* FuelConsumptionView.swift */; };
 		F7A128792E1C2CA300C011B5 /* PurchaseManager+Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A128782E1C2C9C00C011B5 /* PurchaseManager+Mocks.swift */; };
@@ -213,6 +214,7 @@
 		F799E2A92AA35F27009F3C3D /* EventListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListRowView.swift; sourceTree = "<group>"; };
 		F79A1A382F304E57008F8622 /* XCTestCase+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Helpers.swift"; sourceTree = "<group>"; };
 		F79A1A3A2F304EAE008F8622 /* UITestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITestCase.swift; sourceTree = "<group>"; };
+		F79A1A412F31A629008F8622 /* XCUIElement+DatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCUIElement+DatePicker.swift"; sourceTree = "<group>"; };
 		F79F09712B7B992900C37272 /* ExpenseItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseItemView.swift; sourceTree = "<group>"; };
 		F79F09782B7BA08900C37272 /* FuelConsumptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuelConsumptionView.swift; sourceTree = "<group>"; };
 		F7A128782E1C2C9C00C011B5 /* PurchaseManager+Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PurchaseManager+Mocks.swift"; sourceTree = "<group>"; };
@@ -522,6 +524,26 @@
 			path = Add;
 			sourceTree = "<group>";
 		};
+		F79A1A3C2F31A513008F8622 /* Locale */ = {
+			isa = PBXGroup;
+			children = (
+				F7047FBF2E1E4C92002B957C /* LocalizedStringHelper.swift */,
+				F7047FC12E1E4DDB002B957C /* StringKey.swift */,
+				F7C94FE02E1CFBF70053E293 /* SupportedLocale.swift */,
+			);
+			path = Locale;
+			sourceTree = "<group>";
+		};
+		F79A1A3D2F31A521008F8622 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F79A1A382F304E57008F8622 /* XCTestCase+Helpers.swift */,
+				F79A1A412F31A629008F8622 /* XCUIElement+DatePicker.swift */,
+				F758422E2DF6B33900EED414 /* XCUIElement+Helpers.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		F79F09702B7B991D00C37272 /* CustomUI */ = {
 			isa = PBXGroup;
 			children = (
@@ -598,12 +620,9 @@
 		F7C94FDB2E1CF68A0053E293 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				F7047FBF2E1E4C92002B957C /* LocalizedStringHelper.swift */,
-				F7047FC12E1E4DDB002B957C /* StringKey.swift */,
-				F7C94FE02E1CFBF70053E293 /* SupportedLocale.swift */,
+				F79A1A3D2F31A521008F8622 /* Extensions */,
+				F79A1A3C2F31A513008F8622 /* Locale */,
 				F79A1A3A2F304EAE008F8622 /* UITestCase.swift */,
-				F79A1A382F304E57008F8622 /* XCTestCase+Helpers.swift */,
-				F758422E2DF6B33900EED414 /* XCUIElement+Helpers.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -1030,6 +1049,7 @@
 				F721891A27FABE5F00F80AC0 /* VehicleUITests.swift in Sources */,
 				F727EB6D2E2572DA00F91578 /* DataLoader.swift in Sources */,
 				F727EB6A2E2571C700F91578 /* EventTestData.swift in Sources */,
+				F79A1A422F31A62E008F8622 /* XCUIElement+DatePicker.swift in Sources */,
 				F727EB682E2571BE00F91578 /* EventData.swift in Sources */,
 				F79A1A3B2F304EBA008F8622 /* UITestCase.swift in Sources */,
 				F727EB5D2E256A8500F91578 /* EventsUITests.swift in Sources */,

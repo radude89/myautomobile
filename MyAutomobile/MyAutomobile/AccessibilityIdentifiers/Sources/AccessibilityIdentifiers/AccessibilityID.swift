@@ -26,6 +26,13 @@ public enum VehicleDetailViewElements: AccessibilityIdentifiable {
     public enum CustomFieldValue: AccessibilityIdentifiable {}
 }
 
+// MARK: - Events
 public enum EventListViewElements: AccessibilityIdentifiable {
     public enum AddButton: AccessibilityIdentifiable {}
+    public enum AddView: AccessibilityIdentifiable {
+        public enum VehiclePicker: AccessibilityIdentifiable {}
+        public enum DatePicker: AccessibilityIdentifiable {}
+        public enum LocalCalendarToggle: AccessibilityIdentifiable {}
+        public enum RecurrencePicker: AccessibilityIdentifiable {}
+    }
 }

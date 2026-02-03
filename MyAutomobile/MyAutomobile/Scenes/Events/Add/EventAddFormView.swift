@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AccessibilityIdentifiers
 
 struct EventAddFormView: View {
     @Binding var selectedVehicleIndex: Int
@@ -48,6 +49,7 @@ private extension EventAddFormView {
                     Text(vehicles[index].numberPlate)
                 }
             }
+            .accessibilityIdentifier(EventListViewElements.AddView.VehiclePicker.id)
         } header: {
             Text("Select your vehicle")
         }
@@ -61,12 +63,14 @@ private extension EventAddFormView {
             ) {
                 Text("Date")
             }
+            .accessibilityIdentifier(EventListViewElements.AddView.DatePicker.id)
             
             Picker("Recurrence", selection: $recurrenceIndex) {
                 ForEach(0..<recurrences.count, id: \.self) { index in
                     Text(recurrences[index].localizedKey)
                 }
             }
+            .accessibilityIdentifier(EventListViewElements.AddView.RecurrencePicker.id)
         } header: {
             Text("Select date")
         }
@@ -77,6 +81,7 @@ private extension EventAddFormView {
             Toggle(isOn: $addEventToLocalCalendar) {
                 Text("Add to your local calendar")
             }
+            .accessibilityIdentifier(EventListViewElements.AddView.LocalCalendarToggle.id)
         }
     }
 }
