@@ -11,10 +11,13 @@ protocol DataLoader {
     static func loadJSON<T: Decodable>(resource: String) -> T?
 }
 
+private final class DataLoaderBundleToken {}
+
 extension DataLoader {
+    static var resourceBundle: Bundle { Bundle(for: DataLoaderBundleToken.self) }
+
     static func loadJSON<T: Decodable>(resource: String) -> T? {
-        guard let url = Bundle(for: VehicleUITests.self)
-            .url(forResource: resource, withExtension: "json") else {
+        guard let url = resourceBundle.url(forResource: resource, withExtension: "json") else {
             return nil
         }
         

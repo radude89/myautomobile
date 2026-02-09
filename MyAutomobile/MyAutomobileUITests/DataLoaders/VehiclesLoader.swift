@@ -1,6 +1,8 @@
 import XCTest
 import Foundation
 
+private final class VehiclesLoaderBundleToken {}
+
 enum VehiclesLoader: DataLoader {
     static func load(supportedLocale: SupportedLocale = .english) -> [VehicleTestData] {
         guard let vehiclesJSON: VehiclesJSON = loadJSON(resource: "vehicles") else { return [] }
@@ -10,8 +12,7 @@ enum VehiclesLoader: DataLoader {
     }
     
     static func json(supportedLocale: SupportedLocale = .english) -> String? {
-        guard let url = Bundle(for: VehicleUITests.self)
-            .url(forResource: "vehicles", withExtension: "json"),
+        guard let url = resourceBundle.url(forResource: "vehicles", withExtension: "json"),
               let data = try? Data(contentsOf: url),
               let jsonDict = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
               let localeArray = jsonDict[supportedLocale.rawValue] else {
@@ -36,3 +37,4 @@ private extension VehicleTestData {
         colorWithoutHash = vehicleData.color.replacingOccurrences(of: "#", with: "")
     }
 }
+
