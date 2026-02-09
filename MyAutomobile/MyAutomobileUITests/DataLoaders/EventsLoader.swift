@@ -3,11 +3,13 @@ import Foundation
 
 enum EventsLoader: DataLoader {
     static func load(supportedLocale: SupportedLocale = .english) -> [EventTestData] {
-        guard let eventsJSON: EventsJSON = loadJSON(resource: "events") else { return [] }
-        guard let vehiclesJSON: VehiclesJSON = loadJSON(resource: "vehicles") else { return [] }
+        guard let eventsJSON: ModelJSON<EventData> = loadJSON(resource: "events"),
+              let vehiclesJSON: ModelJSON<VehicleData> = loadJSON(resource: "vehicles") else {
+            return []
+        }
         
-        let events = eventsJSON[keyPath: supportedLocale.eventsKeyPath]
-        let vehicles = vehiclesJSON[keyPath: supportedLocale.vehiclesKeyPath]
+        let events = eventsJSON[keyPath: supportedLocale.objectsKeyPath()]
+        let vehicles = vehiclesJSON[keyPath: supportedLocale.objectsKeyPath()]
         return events.map { event in
             EventTestData(eventsData: event, vehicles: vehicles)
         }

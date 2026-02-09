@@ -14,28 +14,6 @@ enum SupportedLocale: String, CaseIterable {
     case spanish = "es"
     case romanian = "ro"
     case german = "de"
-    
-    var vehiclesKeyPath: KeyPath<VehiclesJSON, [VehicleData]> {
-        switch self {
-        case .english: \.en
-        case .french: \.fr
-        case .italian: \.it
-        case .spanish: \.es
-        case .romanian: \.ro
-        case .german: \.de
-        }
-    }
-    
-    var eventsKeyPath: KeyPath<EventsJSON, [EventData]> {
-        switch self {
-        case .english: \.en
-        case .french: \.fr
-        case .italian: \.it
-        case .spanish: \.es
-        case .romanian: \.ro
-        case .german: \.de
-        }
-    }
 }
 
 extension SupportedLocale {
@@ -51,3 +29,17 @@ extension SupportedLocale {
         }
     }
 }
+
+extension SupportedLocale {
+    func objectsKeyPath<T: Decodable>() -> KeyPath<ModelJSON<T>, [T]> {
+        switch self {
+        case .english: return \.en
+        case .french: return \.fr
+        case .italian: return \.it
+        case .spanish: return \.es
+        case .romanian: return \.ro
+        case .german: return \.de
+        }
+    }
+}
+

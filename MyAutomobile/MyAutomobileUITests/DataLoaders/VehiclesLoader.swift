@@ -5,9 +5,11 @@ private final class VehiclesLoaderBundleToken {}
 
 enum VehiclesLoader: DataLoader {
     static func load(supportedLocale: SupportedLocale = .english) -> [VehicleTestData] {
-        guard let vehiclesJSON: VehiclesJSON = loadJSON(resource: "vehicles") else { return [] }
+        guard let vehiclesJSON: ModelJSON<VehicleData> = loadJSON(resource: "vehicles") else {
+            return []
+        }
         
-        let vehicleData = vehiclesJSON[keyPath: supportedLocale.vehiclesKeyPath]
+        let vehicleData = vehiclesJSON[keyPath: supportedLocale.objectsKeyPath()]
         return vehicleData.map(VehicleTestData.init(vehicleData:))
     }
     
