@@ -15,6 +15,8 @@ class UITestCase: XCTestCase {
     enum Tab: Int {
         case vehicles
         case events
+        case parking
+        case more
     }
     
     override func setUp() async throws {
@@ -36,21 +38,21 @@ class UITestCase: XCTestCase {
         XCTAssertTrue(tabBar.exists, "Tab bar should exist", line: line)
     }
     
-    func navigateTo(tab: Tab, line: UInt = #line) {
+    func navigateTo(tab: Tab, file: StaticString = #filePath, line: UInt = #line) {
         let firstTab = app.tabBars.buttons.element(boundBy: tab.rawValue)
         if firstTab.exists {
             firstTab.tap()
         } else {
-            XCTFail("Tab at index \(tab) does not exist", line: line)
+            XCTFail("Tab at index \(tab) does not exist", file: file, line: line)
         }
     }
     
-    func tapButton(_ accessibilityID: String, line: UInt = #line) {
+    func tapButton(_ accessibilityID: String, file: StaticString = #filePath, line: UInt = #line) {
         let button = app.buttons[accessibilityID]
         if button.exists {
             button.tap()
         } else {
-            XCTFail("Button with id \(accessibilityID) does not exist", line: line)
+            XCTFail("Button with id \(accessibilityID) does not exist", file: file, line: line)
         }
     }
 
