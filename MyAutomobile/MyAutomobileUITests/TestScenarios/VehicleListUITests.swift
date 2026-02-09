@@ -1,21 +1,22 @@
 import XCTest
 import AccessibilityIdentifiers
 
-final class VehicleUITests: UITestCase {
+final class VehicleListUITests: UITestCase {
     private let numberOfVehicles = 3
+    private let shouldTakeScreenshot = false
     
     func testAddVehiclesAndShowDetailsFlowMultiLanguage() {
         app.launch()
-        performVehiclesFlow(shouldTakeScreenshot: false)
+        performVehiclesFlow()
     }
 }
 
 // MARK: - Helpers
 
-private extension VehicleUITests {
-    func performVehiclesFlow(shouldTakeScreenshot: Bool = false) {
+private extension VehicleListUITests {
+    func performVehiclesFlow() {
         checkTabBarExists()
-        navigateTo(tab: 0)
+        navigateTo(tab: .vehicles)
         addVehicles(shouldTakeScreenshots: shouldTakeScreenshot)
         takeScreenshotIfNeeded(
             name: "\(supportedLocale.rawValue)-01",
@@ -62,11 +63,6 @@ private extension VehicleUITests {
             shouldTakeScreenshot: shouldTakeScreenshot
         )
         tapDoneButton()
-    }
-    
-    func takeScreenshotIfNeeded(name: String, shouldTakeScreenshot: Bool) {
-        guard shouldTakeScreenshot else { return }
-        takeScreenshot(name: name)
     }
     
     func takeVehicleScreenshotIfNeeded(

@@ -9,6 +9,11 @@ import XCTest
 
 @MainActor
 extension XCTestCase {
+    func takeScreenshotIfNeeded(name: String, shouldTakeScreenshot: Bool) {
+        guard shouldTakeScreenshot else { return }
+        takeScreenshot(name: name)
+    }
+    
     func takeScreenshot(name: String) {
         let screenshot = XCUIScreen.main.screenshot()
         let attachment = XCTAttachment(screenshot: screenshot)

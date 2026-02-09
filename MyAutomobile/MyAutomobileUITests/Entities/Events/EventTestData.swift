@@ -8,7 +8,7 @@ struct EventTestData {
 }
 
 extension EventTestData {
-    enum Recurrence {
+    enum Recurrence: Int {
         case oneTime
         case weekly
         case monthly
@@ -23,5 +23,17 @@ extension EventTestData {
         case tomorrow
         case nextWeek
         case twoWeeksFromNow
+    }
+}
+
+extension EventTestData.Ocurrence {
+    var inDays: Int {
+        switch self {
+        case .yesterday: -1
+        case .today: 0
+        case .tomorrow: 1
+        case .nextWeek: 7
+        case .twoWeeksFromNow: 14
+        }
     }
 }

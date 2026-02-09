@@ -232,7 +232,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ajouter votre événement"
+            "value" : "Nouvel événement"
           }
         },
         "it" : {
@@ -2095,7 +2095,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Calculateur de carburant"
+            "value" : "Calculateur"
           }
         },
         "it" : {

@@ -12,6 +12,11 @@ class UITestCase: XCTestCase {
     private(set) var app: XCUIApplication!
     private(set) var supportedLocale: SupportedLocale!
     
+    enum Tab: Int {
+        case vehicles
+        case events
+    }
+    
     override func setUp() async throws {
         try await super.setUp()
         continueAfterFailure = false
@@ -31,8 +36,8 @@ class UITestCase: XCTestCase {
         XCTAssertTrue(tabBar.exists, "Tab bar should exist", line: line)
     }
     
-    func navigateTo(tab: Int, line: UInt = #line) {
-        let firstTab = app.tabBars.buttons.element(boundBy: tab)
+    func navigateTo(tab: Tab, line: UInt = #line) {
+        let firstTab = app.tabBars.buttons.element(boundBy: tab.rawValue)
         if firstTab.exists {
             firstTab.tap()
         } else {
