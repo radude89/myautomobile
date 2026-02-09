@@ -1,0 +1,284 @@
+{
+  "en": [
+    {
+      "title": "Insurance",
+      "type": "insurance",
+      "vehicle_id": 1,
+      "date": "yesterday",
+      "cost": 150.55,
+      "odometer": 15000
+    },
+    {
+      "title": "Parking",
+      "type": "parking",
+      "vehicle_id": 1,
+      "date": "one week ago",
+      "cost": 25
+    },
+    {
+      "title": "Maintenance",
+      "type": "maintenance",
+      "vehicle_id": 1,
+      "date": "two weeks ago",
+      "cost": 100
+    },
+    {
+      "title": "Toll",
+      "type": "toll",
+      "vehicle_id": 1,
+      "date": "three weeks ago",
+      "cost": 10
+    },
+    {
+      "title": "Repair",
+      "type": "repair",
+      "vehicle_id": 1,
+      "date": "one month ago",
+      "cost": 230,
+      "odometer": 14500
+    },
+    {
+      "title": "Other",
+      "type": "other",
+      "vehicle_id": 1,
+      "date": "one month ago",
+      "cost": 75,
+      "comment": "Other costs"
+    }
+  ],
+  "fr": [
+    {
+      "title": "Assurance",
+      "type": "insurance",
+      "vehicle_id": 1,
+      "date": "yesterday",
+      "cost": 150.55,
+      "odometer": 15000
+    },
+    {
+      "title": "Stationnement",
+      "type": "parking",
+      "vehicle_id": 1,
+      "date": "one week ago",
+      "cost": 25
+    },
+    {
+      "title": "Entretien",
+      "type": "maintenance",
+      "vehicle_id": 1,
+      "date": "two weeks ago",
+      "cost": 100
+    },
+    {
+      "title": "Péage",
+      "type": "toll",
+      "vehicle_id": 1,
+      "date": "three weeks ago",
+      "cost": 10
+    },
+    {
+      "title": "Réparation",
+      "type": "repair",
+      "vehicle_id": 1,
+      "date": "one month ago",
+      "cost": 230,
+      "odometer": 14500
+    },
+    {
+      "title": "Autre",
+      "type": "other",
+      "vehicle_id": 1,
+      "date": "one month ago",
+      "cost": 75,
+      "comment": "Autres frais"
+    }
+  ],
+  "it": [
+    {
+      "title": "Assicurazione",
+      "type": "insurance",
+      "vehicle_id": 1,
+      "date": "yesterday",
+      "cost": 150.55,
+      "odometer": 15000
+    },
+    {
+      "title": "Parcheggio",
+      "type": "parking",
+      "vehicle_id": 1,
+      "date": "one week ago",
+      "cost": 25
+    },
+    {
+      "title": "Manutenzione",
+      "type": "maintenance",
+      "vehicle_id": 1,
+      "date": "two weeks ago",
+      "cost": 100
+    },
+    {
+      "title": "Pedaggio",
+      "type": "toll",
+      "vehicle_id": 1,
+      "date": "three weeks ago",
+      "cost": 10
+    },
+    {
+      "title": "Riparazione",
+      "type": "repair",
+      "vehicle_id": 1,
+      "date": "one month ago",
+      "cost": 230,
+      "odometer": 14500
+    },
+    {
+      "title": "Altro",
+      "type": "other",
+      "vehicle_id": 1,
+      "date": "one month ago",
+      "cost": 75,
+      "comment": "Altri costi"
+    }
+  ],
+  "es": [
+    {
+      "title": "Seguro",
+      "type": "insurance",
+      "vehicle_id": 1,
+      "date": "yesterday",
+      "cost": 150.55,
+      "odometer": 15000
+    },
+    {
+      "title": "Estacionamiento",
+      "type": "parking",
+      "vehicle_id": 1,
+      "date": "one week ago",
+      "cost": 25
+    },
+    {
+      "title": "Mantenimiento",
+      "type": "maintenance",
+      "vehicle_id": 1,
+      "date": "two weeks ago",
+      "cost": 100
+    },
+    {
+      "title": "Peaje",
+      "type": "toll",
+      "vehicle_id": 1,
+      "date": "three weeks ago",
+      "cost": 10
+    },
+    {
+      "title": "Reparación",
+      "type": "repair",
+      "vehicle_id": 1,
+      "date": "one month ago",
+      "cost": 230,
+      "odometer": 14500
+    },
+    {
+      "title": "Otro",
+      "type": "other",
+      "vehicle_id": 1,
+      "date": "one month ago",
+      "cost": 75,
+      "comment": "Otros costos"
+    }
+  ],
+  "ro": [
+    {
+      "title": "Asigurare",
+      "type": "insurance",
+      "vehicle_id": 1,
+      "date": "yesterday",
+      "cost": 150.55,
+      "odometer": 15000
+    },
+    {
+      "title": "Parcare",
+      "type": "parking",
+      "vehicle_id": 1,
+      "date": "one week ago",
+      "cost": 25
+    },
+    {
+      "title": "Întreținere",
+      "type": "maintenance",
+      "vehicle_id": 1,
+      "date": "two weeks ago",
+      "cost": 100
+    },
+    {
+      "title": "Taxă de drum",
+      "type": "toll",
+      "vehicle_id": 1,
+      "date": "three weeks ago",
+      "cost": 10
+    },
+    {
+      "title": "Reparație",
+      "type": "repair",
+      "vehicle_id": 1,
+      "date": "one month ago",
+      "cost": 230,
+      "odometer": 14500
+    },
+    {
+      "title": "Altele",
+      "type": "other",
+      "vehicle_id": 1,
+      "date": "one month ago",
+      "cost": 75,
+      "comment": "Alte costuri"
+    }
+  ],
+  "de": [
+    {
+      "title": "Versicherung",
+      "type": "insurance",
+      "vehicle_id": 1,
+      "date": "yesterday",
+      "cost": 150.55,
+      "odometer": 15000
+    },
+    {
+      "title": "Parken",
+      "type": "parking",
+      "vehicle_id": 1,
+      "date": "one week ago",
+      "cost": 25
+    },
+    {
+      "title": "Wartung",
+      "type": "maintenance",
+      "vehicle_id": 1,
+      "date": "two weeks ago",
+      "cost": 100
+    },
+    {
+      "title": "Maut",
+      "type": "toll",
+      "vehicle_id": 1,
+      "date": "three weeks ago",
+      "cost": 10
+    },
+    {
+      "title": "Reparatur",
+      "type": "repair",
+      "vehicle_id": 1,
+      "date": "one month ago",
+      "cost": 230,
+      "odometer": 14500
+    },
+    {
+      "title": "Sonstiges",
+      "type": "other",
+      "vehicle_id": 1,
+      "date": "one month ago",
+      "cost": 75,
+      "comment": "Sonstige Kosten"
+    }
+  ]
+}
