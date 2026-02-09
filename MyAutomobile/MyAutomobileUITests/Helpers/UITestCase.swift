@@ -55,9 +55,4 @@ class UITestCase: XCTestCase {
             XCTFail("Button with id \(accessibilityID) does not exist", file: file, line: line)
         }
     }
-
-    func enterText(in textField: XCUIElement, text: String) {
-        textField.tap()
-        textField.typeText(text)
-    }
 }

@@ -54,7 +54,7 @@ private extension EventListUITests {
     
     func enterEventDetails(_ event: EventTestData) {
         let descriptionTextField = app.textFields.element(boundBy: 0)
-        enterText(in: descriptionTextField, text: event.title)
+        descriptionTextField.enterText(event.title)
         descriptionTextField.dismissKeyboard()
     }
     

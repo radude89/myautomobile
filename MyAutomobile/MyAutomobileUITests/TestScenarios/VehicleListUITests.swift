@@ -88,11 +88,11 @@ private extension VehicleListUITests {
             return
         }
         
-        enterText(in: textFields.element(boundBy: 0), text: vehicle.plate)
-        enterText(in: textFields.element(boundBy: 1), text: vehicle.make)
+        textFields.element(boundBy: 0).enterText(vehicle.plate)
+        textFields.element(boundBy: 1).enterText(vehicle.make)
         
         let modelField = textFields.element(boundBy: 2)
-        enterText(in: modelField, text: vehicle.model)
+        modelField.enterText(vehicle.model)
         modelField.dismissKeyboard()
     }
     
@@ -130,13 +130,13 @@ private extension VehicleListUITests {
             AccessibilityIdentifiers.VehicleDetailViewElements.CustomFieldName.id
         ].firstMatch
         let nameText = LocalizedStringHelper.loadString(StringKey.fuel.rawValue, locale: locale)
-        enterText(in: nameField, text: nameText)
+        nameField.enterText(nameText)
         
         let valueField = app.textFields[
             AccessibilityIdentifiers.VehicleDetailViewElements.CustomFieldValue.id
         ].firstMatch
         let valueText = LocalizedStringHelper.loadString(StringKey.gas.rawValue, locale: locale)
-        enterText(in: valueField, text: valueText)
+        valueField.enterText(valueText)
     }
     
     func tapOnDoneFromAddCustomFieldNavigationBar() {
