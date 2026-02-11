@@ -8,5 +8,21 @@
 import Foundation
 
 struct ExpenseData: Decodable {
-    // TODO: Radu - add fields
+    let title: String
+    let type: String
+    let vehicleId: Int
+    let date: String
+    let cost: Double
+    let comment: String?
+    let odometer: Int?
+    
+    enum CodingKeys: String, CodingKey {
+        case title
+        case type
+        case vehicleId = "vehicle_id"
+        case date
+        case cost
+        case comment
+        case odometer
+    }
 }

@@ -45,6 +45,8 @@ private extension ExpenseListUITests {
     func performExpensesFlow() {
         checkTabBarExists()
         navigateTo(tab: .more)
+        let expenses = ExpensesLoader.load(supportedLocale: supportedLocale)
+        print(expenses)
         
     }
 }
