@@ -6,18 +6,22 @@
 //
 
 import XCTest
+import AccessibilityIdentifiers
 
 final class ExpenseListUITests: UITestCase {
     private let shouldTakeScreenshot = false
 
     override func setUp() async throws {
         try await super.setUp()
-        app.launchEnvironment["VehicleData"] = VehiclesLoader.json(supportedLocale: supportedLocale)
+        app.launchEnvironment[UITestEnvironment.Key.vehicles] = ResourceLoader.json(
+            supportedLocale: supportedLocale,
+            resource: .vehicles
+        )
         app.launch()
     }
 
-    func testExpensesFlowMultiLanguage() {
-        performExpensesFlow()
+    func testExpensesFlowMultiLanguage() throws {
+        try performExpensesFlow()
 //
 //        let app = XCUIApplication()
 //        app.activate()
@@ -42,11 +46,16 @@ final class ExpenseListUITests: UITestCase {
 // MARK: - Private
 
 private extension ExpenseListUITests {
-    func performExpensesFlow() {
+    func performExpensesFlow() throws {
         checkTabBarExists()
         navigateTo(tab: .more)
-        let expenses = ExpensesLoader.load(supportedLocale: supportedLocale)
-        print(expenses)
+        tapButton(MenuViewElements.ExpenseTrackingItem.id)
+        try tapOnFirstVehicle()
         
+    }
+    
+    func tapOnFirstVehicle() throws {
+        let firstVehiclePlate = try XCTUnwrap(expenses.first?.vehiclePlate)
+        tapButton(firstVehiclePlate)
     }
 }

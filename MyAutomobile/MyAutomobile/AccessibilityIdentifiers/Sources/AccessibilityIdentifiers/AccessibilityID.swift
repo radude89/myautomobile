@@ -36,3 +36,8 @@ public enum EventListViewElements: AccessibilityIdentifiable {
         public enum RecurrencePicker: AccessibilityIdentifiable {}
     }
 }
+
+// MARK: - Menu
+public enum MenuViewElements: AccessibilityIdentifiable {
+    public enum ExpenseTrackingItem: AccessibilityIdentifiable {}
+}

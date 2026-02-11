@@ -12,6 +12,10 @@ class UITestCase: XCTestCase {
     private(set) var app: XCUIApplication!
     private(set) var supportedLocale: SupportedLocale!
     
+    private(set) lazy var vehicles = VehiclesLoader.load(supportedLocale: supportedLocale)
+    private(set) lazy var events = EventsLoader.load(supportedLocale: supportedLocale)
+    private(set) lazy var expenses = ExpensesLoader.load(supportedLocale: supportedLocale)
+    
     enum Tab: Int {
         case vehicles
         case events
@@ -24,7 +28,7 @@ class UITestCase: XCTestCase {
         continueAfterFailure = false
         supportedLocale = SupportedLocale(systemLocale: .current)
         app = XCUIApplication()
-        app.launchEnvironment["UITesting"] = "true"
+        app.launchEnvironment[UITestEnvironment.Key.testing] = "true"
     }
     
     override func tearDown() async throws {

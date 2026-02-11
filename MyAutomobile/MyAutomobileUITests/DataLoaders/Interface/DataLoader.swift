@@ -8,16 +8,14 @@
 import XCTest
 
 protocol DataLoader {
-    static func loadJSON<T: Decodable>(resource: String) -> T?
+    static func loadJSON<T: Decodable>(resource: ResourceEntity) -> T?
 }
-
-private final class DataLoaderBundleToken {}
 
 extension DataLoader {
     static var resourceBundle: Bundle { Bundle(for: DataLoaderBundleToken.self) }
 
-    static func loadJSON<T: Decodable>(resource: String) -> T? {
-        guard let url = resourceBundle.url(forResource: resource, withExtension: "json") else {
+    static func loadJSON<T: Decodable>(resource: ResourceEntity) -> T? {
+        guard let url = resourceBundle.url(forResource: resource.rawValue, withExtension: "json") else {
             return nil
         }
         

@@ -33,7 +33,6 @@ private extension VehicleListUITests {
     }
     
     func addVehicles(shouldTakeScreenshots: Bool) {
-        let vehicles = VehiclesLoader.load(supportedLocale: supportedLocale)
         for (index, vehicle) in vehicles.enumerated() {
             addVehicle(
                 vehicle,

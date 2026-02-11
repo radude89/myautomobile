@@ -6,7 +6,10 @@ final class EventListUITests: UITestCase {
 
     override func setUp() async throws {
         try await super.setUp()
-        app.launchEnvironment["VehicleData"] = VehiclesLoader.json(supportedLocale: supportedLocale)
+        app.launchEnvironment[UITestEnvironment.Key.vehicles] = ResourceLoader.json(
+            supportedLocale: supportedLocale,
+            resource: .vehicles
+        )
         app.launch()
     }
 
@@ -21,8 +24,7 @@ private extension EventListUITests {
     func performEventsFlow() {
         checkTabBarExists()
         navigateTo(tab: .events)
-        
-        let events = EventsLoader.load(supportedLocale: supportedLocale)
+
         events.enumerated().forEach { index, event in
             tapButton(EventListViewElements.AddButton.id)
             takeFirstScreenshot(index: index)

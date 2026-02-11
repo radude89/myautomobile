@@ -8,6 +8,7 @@
 import SwiftUI
 import MessageUI
 import StoreKit
+import AccessibilityIdentifiers
 
 struct MoreView: View {
     @StateObject private var viewModel: MoreViewModel
@@ -44,8 +45,9 @@ private extension MoreView {
 
     var utilsSection: some View {
         Section {
-            makeItemView(for: .expenses, imageName: "pencil.line")
+            makeItemView(for: .expenses, imageName: "book.and.wrench.fill")
                 .frame(minHeight: Self.itemHeight)
+                .accessibilityIdentifier(MenuViewElements.ExpenseTrackingItem.id)
             makeItemView(for: .maintenance, imageName: "screwdriver.fill")
                 .frame(minHeight: Self.itemHeight)
             FuelConsumptionView(viewModel: .init())

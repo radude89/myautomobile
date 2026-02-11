@@ -5,28 +5,12 @@ private final class VehiclesLoaderBundleToken {}
 
 enum VehiclesLoader: DataLoader {
     static func load(supportedLocale: SupportedLocale = .english) -> [VehicleTestData] {
-        guard let vehiclesJSON: ModelJSON<VehicleData> = loadJSON(resource: "vehicles") else {
+        guard let vehiclesJSON: ModelJSON<VehicleData> = loadJSON(resource: .vehicles) else {
             return []
         }
         
         let vehicleData = vehiclesJSON[keyPath: supportedLocale.objectsKeyPath()]
         return vehicleData.map(VehicleTestData.init(vehicleData:))
-    }
-    
-    static func json(supportedLocale: SupportedLocale = .english) -> String? {
-        guard let url = resourceBundle.url(forResource: "vehicles", withExtension: "json"),
-              let data = try? Data(contentsOf: url),
-              let jsonDict = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
-              let localeArray = jsonDict[supportedLocale.rawValue] else {
-            return nil
-        }
-
-        guard let localeData = try? JSONSerialization.data(withJSONObject: localeArray),
-              let jsonString = String(data: localeData, encoding: .utf8) else {
-            return nil
-        }
-
-        return jsonString
     }
 }
 

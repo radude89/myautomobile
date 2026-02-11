@@ -10,8 +10,8 @@ import Foundation
 
 enum ExpensesLoader: DataLoader {
     static func load(supportedLocale: SupportedLocale = .english) -> [ExpenseTestData] {
-        guard let expensesJSON: ModelJSON<ExpenseData> = loadJSON(resource: "expenses"),
-              let vehiclesJSON: ModelJSON<VehicleData> = loadJSON(resource: "vehicles") else {
+        guard let expensesJSON: ModelJSON<ExpenseData> = loadJSON(resource: .expenses),
+              let vehiclesJSON: ModelJSON<VehicleData> = loadJSON(resource: .vehicles) else {
             return []
         }
         
