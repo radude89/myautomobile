@@ -7,6 +7,7 @@
 
 import Foundation
 import XCTest
+import UITestEnvironment
 
 struct TestDataLoader {
     
@@ -16,27 +17,27 @@ struct TestDataLoader {
         
         // Load vehicles data
         if let vehiclesData = loadVehiclesData(for: locale) {
-            mockData["VehicleData"] = vehiclesData
+            mockData[UITestEnvironment.Key.vehicles] = vehiclesData
         }
-        
+
         // Load events data
         if let eventsData = loadEventsData() {
-            mockData["EventData"] = eventsData
+            mockData[UITestEnvironment.Key.events] = eventsData
         }
-        
+
         // Load expenses data
         if let expensesData = loadExpensesData() {
-            mockData["ExpenseData"] = expensesData
+            mockData[UITestEnvironment.Key.expenses] = expensesData
         }
-        
+
         // Load landmarks data
         if let landmarksData = loadLandmarksData(for: locale) {
-            mockData["LandmarkData"] = landmarksData
+            mockData[UITestEnvironment.Key.landmark] = landmarksData
         }
-        
+
         // Load localized strings
         if let localizedStringsData = loadLocalizedStringsData(for: locale) {
-            mockData["LocalizedStringData"] = localizedStringsData
+            mockData[UITestEnvironment.Key.localizedStrings] = localizedStringsData
         }
         
         return mockData
@@ -213,8 +214,8 @@ extension TestDataLoader {
         let app = XCUIApplication()
         
         // Set test mode
-        app.launchEnvironment["UITesting"] = "true"
-        app.launchEnvironment["AppLocale"] = locale
+        app.launchEnvironment[UITestEnvironment.Key.testing] = "true"
+        app.launchEnvironment[UITestEnvironment.Key.appLocale] = locale
         
         // Load and set mock data
         let mockData = loadAllMockData(for: locale)
@@ -224,11 +225,11 @@ extension TestDataLoader {
         
         // Set processed data with calculated dates
         if let processedEvents = processEventsData() {
-            app.launchEnvironment["EventData"] = processedEvents
+            app.launchEnvironment[UITestEnvironment.Key.events] = processedEvents
         }
         
         if let processedExpenses = processExpensesData() {
-            app.launchEnvironment["ExpenseData"] = processedExpenses
+            app.launchEnvironment[UITestEnvironment.Key.expenses] = processedExpenses
         }
         
         return app

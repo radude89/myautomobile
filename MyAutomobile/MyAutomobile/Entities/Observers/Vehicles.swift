@@ -6,15 +6,16 @@
 //
 
 import SwiftUI
+import UITestEnvironment
 
 final class Vehicles: ObservableObject {
-    
+
     @Published var items: [Vehicle]
-    
+
     static let storageKey = "saved-vehicles"
 
     init() {
-        if ProcessInfo.processInfo.environment["UITesting"] == "true" {
+        if ProcessInfo.processInfo.environment[UITestEnvironment.Key.testing] == "true" {
             UserDefaults.standard.set(999, forKey: "vehicle-slots")
             items = Self.loadMockData()
         } else {

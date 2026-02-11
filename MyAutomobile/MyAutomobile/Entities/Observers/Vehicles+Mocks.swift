@@ -6,10 +6,11 @@
 //
 
 import SwiftUI
+import UITestEnvironment
 
 extension Vehicles {
     static func loadMockData() -> [Vehicle] {
-        guard let vehicleDataString = ProcessInfo.processInfo.environment["VehicleData"],
+        guard let vehicleDataString = ProcessInfo.processInfo.environment[UITestEnvironment.Key.vehicles],
               let data = vehicleDataString.data(using: .utf8),
               let vehicleDataArray = try? JSONSerialization.jsonObject(with: data) as? [[String: Any]] else {
             print("Failed to load mock vehicle data")

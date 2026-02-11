@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import UITestEnvironment
 
 class UITestingConfiguration: ObservableObject {
     static let shared = UITestingConfiguration()
@@ -27,7 +28,7 @@ class UITestingConfiguration: ObservableObject {
         let environment = ProcessInfo.processInfo.environment
         
         // Check if we're in UI testing mode
-        if environment["UITesting"] == "true" {
+        if environment[UITestEnvironment.Key.testing] == "true" {
             isUITesting = true
             loadMockData(from: environment)
         }
@@ -35,32 +36,32 @@ class UITestingConfiguration: ObservableObject {
     
     private func loadMockData(from environment: [String: String]) {
         // Set locale
-        if let locale = environment["AppLocale"] {
+        if let locale = environment[UITestEnvironment.Key.appLocale] {
             currentLocale = locale
         }
         
         // Load mock vehicles
-        if let vehicleData = environment["VehicleData"] {
+        if let vehicleData = environment[UITestEnvironment.Key.vehicles] {
             mockVehicles = parseVehicles(from: vehicleData)
         }
         
         // Load mock events
-        if let eventData = environment["EventData"] {
+        if let eventData = environment[UITestEnvironment.Key.events] {
             mockEvents = parseEvents(from: eventData)
         }
         
         // Load mock expenses
-        if let expenseData = environment["ExpenseData"] {
+        if let expenseData = environment[UITestEnvironment.Key.expenses] {
             mockExpenses = parseExpenses(from: expenseData)
         }
         
         // Load landmark data
-        if let landmarkData = environment["LandmarkData"] {
+        if let landmarkData = environment[UITestEnvironment.Key.landmark] {
             mockLandmark = parseLandmark(from: landmarkData)
         }
         
         // Load localized strings
-        if let stringsData = environment["LocalizedStringData"] {
+        if let stringsData = environment[UITestEnvironment.Key.localizedStrings] {
             localizedStrings = parseLocalizedStrings(from: stringsData)
         }
     }

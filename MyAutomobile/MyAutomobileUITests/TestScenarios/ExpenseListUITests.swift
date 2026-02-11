@@ -7,6 +7,7 @@
 
 import XCTest
 import AccessibilityIdentifiers
+import UITestEnvironment
 
 final class ExpenseListUITests: UITestCase {
     private let shouldTakeScreenshot = false

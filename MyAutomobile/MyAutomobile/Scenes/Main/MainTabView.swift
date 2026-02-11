@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UITestEnvironment
 
 struct MainTabView: View {
     @StateObject private var vehicles = Vehicles()
@@ -89,7 +90,7 @@ private extension MainTabView {
 
 private extension MainTabView {
     func setupUITestsEnvironmentIfNeeded() {
-        let isRunningUITests = ProcessInfo.processInfo.environment["UITesting"] == "true"
+        let isRunningUITests = ProcessInfo.processInfo.environment[UITestEnvironment.Key.testing] == "true"
         guard isRunningUITests else { return }
 
         UIView.setAnimationsEnabled(false)

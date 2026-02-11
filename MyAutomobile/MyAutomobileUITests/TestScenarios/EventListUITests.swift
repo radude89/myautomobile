@@ -1,5 +1,6 @@
 import XCTest
 import AccessibilityIdentifiers
+import UITestEnvironment
 
 final class EventListUITests: UITestCase {
     private let shouldTakeScreenshot = false

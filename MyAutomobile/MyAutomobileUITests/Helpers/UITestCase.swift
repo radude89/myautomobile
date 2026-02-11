@@ -6,6 +6,7 @@
 //
 
 import XCTest
+import UITestEnvironment
 
 @MainActor
 class UITestCase: XCTestCase {

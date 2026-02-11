@@ -6,10 +6,11 @@
 //
 
 import Foundation
+import UITestEnvironment
 
 extension PurchaseManager {
     func setupMockEnvironmentIfNeeded() {
-        if ProcessInfo.processInfo.environment["UITesting"] == "true" {
+        if ProcessInfo.processInfo.environment[UITestEnvironment.Key.testing] == "true" {
             userDefaults.set(999, forKey: storageKey)
             purchasedNonConsumableProductIDs.insert(Self.productIDs[1])
         }
