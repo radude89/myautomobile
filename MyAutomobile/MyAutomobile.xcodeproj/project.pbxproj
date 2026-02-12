@@ -109,6 +109,7 @@
 		F7D339E12F3C30370021DE38 /* DataLoaderBundleToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D339E02F3C30370021DE38 /* DataLoaderBundleToken.swift */; };
 		F7D339E32F3C30490021DE38 /* ResourceLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D339E22F3C30490021DE38 /* ResourceLoader.swift */; };
 		F7D339EB2F3D76D00021DE38 /* Expenses+Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D339EA2F3D76CE0021DE38 /* Expenses+Mocks.swift */; };
+		F7D339EE2F3D84C20021DE38 /* FuelCalculatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D339ED2F3D84BE0021DE38 /* FuelCalculatorUITests.swift */; };
 		F7D339F02F3C40000021DE38 /* UITestEnvironment in Frameworks */ = {isa = PBXBuildFile; productRef = F7D339EF2F3C40000021DE38 /* UITestEnvironment */; };
 		F7D339F22F3C40100021DE38 /* UITestEnvironment in Frameworks */ = {isa = PBXBuildFile; productRef = F7D339F12F3C40100021DE38 /* UITestEnvironment */; };
 		F7D931AA287D300200289230 /* VehicleDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D931A9287D300200289230 /* VehicleDetailsView.swift */; };
@@ -255,6 +256,7 @@
 		F7D339E02F3C30370021DE38 /* DataLoaderBundleToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoaderBundleToken.swift; sourceTree = "<group>"; };
 		F7D339E22F3C30490021DE38 /* ResourceLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceLoader.swift; sourceTree = "<group>"; };
 		F7D339EA2F3D76CE0021DE38 /* Expenses+Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Expenses+Mocks.swift"; sourceTree = "<group>"; };
+		F7D339ED2F3D84BE0021DE38 /* FuelCalculatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuelCalculatorUITests.swift; sourceTree = "<group>"; };
 		F7D931A9287D300200289230 /* VehicleDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleDetailsView.swift; sourceTree = "<group>"; };
 		F7E8D2CE2B67FCAF000DC750 /* MoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreView.swift; sourceTree = "<group>"; };
 		F7E8D2D02B682CD7000DC750 /* VehiclesSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehiclesSelectionView.swift; sourceTree = "<group>"; };
@@ -672,8 +674,9 @@
 			isa = PBXGroup;
 			children = (
 				F727EB5C2E256A7F00F91578 /* EventListUITests.swift */,
-				F721891927FABE5F00F80AC0 /* VehicleListUITests.swift */,
 				F78D21492F398B9F0035A53E /* ExpenseListUITests.swift */,
+				F7D339ED2F3D84BE0021DE38 /* FuelCalculatorUITests.swift */,
+				F721891927FABE5F00F80AC0 /* VehicleListUITests.swift */,
 			);
 			path = TestScenarios;
 			sourceTree = "<group>";
@@ -1114,6 +1117,7 @@
 				F727EB682E2571BE00F91578 /* EventData.swift in Sources */,
 				F79A1A3B2F304EBA008F8622 /* UITestCase.swift in Sources */,
 				F78D21582F3994960035A53E /* ExpenseData.swift in Sources */,
+				F7D339EE2F3D84C20021DE38 /* FuelCalculatorUITests.swift in Sources */,
 				F78D21532F3994830035A53E /* ExpenseTestData.swift in Sources */,
 				F727EB5D2E256A8500F91578 /* EventListUITests.swift in Sources */,
 				F7C94FDD2E1CF6AC0053E293 /* VehicleData.swift in Sources */,

@@ -6,9 +6,11 @@
 //
 
 import SwiftUI
+import AccessibilityIdentifiers
 
 struct FuelConsumptionView: View {
     @StateObject private var viewModel: FuelConsumptionViewModel
+    @FocusState private var isInputActive: Bool
     
     init(viewModel: FuelConsumptionViewModel) {
         _viewModel = StateObject(wrappedValue: viewModel)
@@ -21,6 +23,7 @@ struct FuelConsumptionView: View {
                 fuelUsageSection
                 fuelConsumptionSection
             }
+            .scrollDismissesKeyboard(.interactively)
             .navigationTitle("Fuel Calculator")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar { toolbar }
@@ -35,15 +38,24 @@ private extension FuelConsumptionView {
     typealias ViewModel = FuelConsumptionSectionViewModel
     
     var distanceSection: some View {
-        FuelConsumptionSectionView(viewModel: $viewModel.distanceViewModel)
+        FuelConsumptionSectionView(
+            viewModel: $viewModel.distanceViewModel,
+            isInputActive: _isInputActive
+        )
     }
     
     var fuelUsageSection: some View {
-        FuelConsumptionSectionView(viewModel: $viewModel.usageViewModel)
+        FuelConsumptionSectionView(
+            viewModel: $viewModel.usageViewModel,
+            isInputActive: _isInputActive
+        )
     }
     
     var fuelConsumptionSection: some View {
-        FuelConsumptionSectionView(viewModel: $viewModel.consumptionViewModel)
+        FuelConsumptionSectionView(
+            viewModel: $viewModel.consumptionViewModel,
+            isInputActive: _isInputActive
+        )
     }
     
     @ToolbarContentBuilder
@@ -51,10 +63,12 @@ private extension FuelConsumptionView {
         ToolbarItem(placement: .topBarTrailing) {
             Button("Calculate", action: calculateValues)
                 .disabled(!viewModel.canCalculate)
+                .accessibilityIdentifier(FuelCalculatorViewElements.CalculateButton.id)
         }
     }
     
     func calculateValues() {
+        isInputActive = false
         viewModel.calculateValues()
     }
 }

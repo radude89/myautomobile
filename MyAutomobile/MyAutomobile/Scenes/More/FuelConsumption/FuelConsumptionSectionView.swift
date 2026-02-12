@@ -9,9 +9,11 @@ import SwiftUI
 
 struct FuelConsumptionSectionView: View {
     @Binding var viewModel: FuelConsumptionSectionViewModel
+    @FocusState private var isInputActive: Bool
     
-    init(viewModel: Binding<FuelConsumptionSectionViewModel>) {
+    init(viewModel: Binding<FuelConsumptionSectionViewModel>, isInputActive: FocusState<Bool>) {
         _viewModel = viewModel
+        _isInputActive = isInputActive
     }
     
     var body: some View {
@@ -21,6 +23,7 @@ struct FuelConsumptionSectionView: View {
                 text: $viewModel.enteredAmount
             )
             .keyboardType(.decimalPad)
+            .focused($isInputActive)
             
             Picker("Unit", selection: $viewModel.unitIndex) {
                 ForEach(0 ..< viewModel.units.count, id: \.self) { unitIndex in

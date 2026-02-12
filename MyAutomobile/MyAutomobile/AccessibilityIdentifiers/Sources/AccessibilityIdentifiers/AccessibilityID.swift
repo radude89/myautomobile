@@ -40,6 +40,7 @@ public enum EventListViewElements: AccessibilityIdentifiable {
 // MARK: - Menu
 public enum MenuViewElements: AccessibilityIdentifiable {
     public enum ExpenseTrackingItem: AccessibilityIdentifiable {}
+    public enum FuelCalculatorItem: AccessibilityIdentifiable {}
 }
 
 // MARK: - Expenses
@@ -51,4 +52,9 @@ public enum ExpensesViewElements: AccessibilityIdentifiable {
     public enum ChartView: AccessibilityIdentifiable {
         public enum Segment: AccessibilityIdentifiable {}
     }
+}
+
+// MARK: - Fuel calculator
+public enum FuelCalculatorViewElements: AccessibilityIdentifiable {
+    public enum CalculateButton: AccessibilityIdentifiable {}
 }

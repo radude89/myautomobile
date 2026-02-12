@@ -52,6 +52,7 @@ private extension MoreView {
                 .frame(minHeight: Self.itemHeight)
             FuelConsumptionView(viewModel: .init())
                 .frame(minHeight: Self.itemHeight)
+                .accessibilityIdentifier(MenuViewElements.FuelCalculatorItem.id)
         } header: {
             Text("Utils")
         }
