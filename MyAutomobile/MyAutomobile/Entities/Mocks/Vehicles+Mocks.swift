@@ -24,11 +24,9 @@ extension Vehicles {
                   let colorHex = vehicleData["color"] as? String else {
                 return nil
             }
-            
-            // Parse color from hex string
+
             let color = Color(hex: colorHex) ?? Color.blue
-            
-            // Parse custom fields
+
             var customFieldsDict: [String: Vehicle.FieldDetails] = [:]
             if let customFields = vehicleData["customFields"] as? [String: String] {
                 for (key, value) in customFields {
@@ -41,15 +39,15 @@ extension Vehicles {
             }
             
             return Vehicle(
-                id: UUID(),
+                id: .init(),
                 make: make,
                 model: model,
                 numberPlate: plate,
                 color: color,
                 customFields: customFieldsDict,
-                dateCreated: Date(),
+                dateCreated: .now,
                 events: [],
-                expenses: []
+                expenses: Expense.loadMockData()
             )
         }
     }

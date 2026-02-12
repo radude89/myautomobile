@@ -18,6 +18,10 @@ final class ExpenseListUITests: UITestCase {
             supportedLocale: supportedLocale,
             resource: .vehicles
         )
+        app.launchEnvironment[UITestEnvironment.Key.expenses] = ResourceLoader.json(
+            supportedLocale: supportedLocale,
+            resource: .expenses
+        )
         app.launch()
     }
 
