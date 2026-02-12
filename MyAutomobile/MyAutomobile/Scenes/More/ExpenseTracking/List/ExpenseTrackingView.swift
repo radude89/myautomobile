@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AccessibilityIdentifiers
 
 struct ExpenseTrackingView: View {
     @State private var showAddView = false
@@ -19,6 +20,13 @@ struct ExpenseTrackingView: View {
         
         var localizedName: String {
             String(localized: .init(rawValue))
+        }
+
+        var accessibilityID: String {
+            switch self {
+            case .list: ExpensesViewElements.Selector.List.id
+            case .chart: ExpensesViewElements.Selector.Chart.id
+            }
         }
     }
     
@@ -85,8 +93,10 @@ private extension ExpenseTrackingView {
     
     var selectionView: some View {
         Picker("View", selection: $viewOption) {
-            ForEach(ViewOption.allCases, id: \.self) {
-                Text($0.localizedName)
+            ForEach(ViewOption.allCases, id: \.self) { option in
+                Text(option.localizedName)
+                    .tag(option)
+                    .accessibilityIdentifier(option.accessibilityID)
             }
         }
         .background(Color.clear)

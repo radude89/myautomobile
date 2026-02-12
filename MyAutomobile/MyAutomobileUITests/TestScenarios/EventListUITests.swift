@@ -12,15 +12,7 @@ final class EventListUITests: UITestCase {
         app.launch()
     }
 
-    func testEventsFlowMultiLanguage() {
-        performEventsFlow()
-    }
-}
-
-// MARK: - Private
-
-private extension EventListUITests {
-    func performEventsFlow() {
+    func testEventsFlow() {
         checkTabBarExists()
         navigateTo(tab: .events)
 
@@ -37,7 +29,11 @@ private extension EventListUITests {
             takeLastScreenshot(index: index, eventsCount: events.count)
         }
     }
-    
+}
+
+// MARK: - Private
+
+private extension EventListUITests {
     func takeFirstScreenshot(index: Int) {
         guard index == 0 else { return }
         takeScreenshot("05")

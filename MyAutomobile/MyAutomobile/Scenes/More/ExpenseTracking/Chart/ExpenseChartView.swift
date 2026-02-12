@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Charts
+import AccessibilityIdentifiers
 
 struct ExpenseChartView: View {
     @State private var selectedCount: Double?
@@ -27,6 +28,7 @@ struct ExpenseChartView: View {
                     outerRadius: expense == selectedExpense ? 160 : 140,
                     angularInset: 4
                 )
+                .accessibilityIdentifier("\(ExpensesViewElements.ChartView.Segment.id)-\(expense.expenseType.rawValue)")
                 .foregroundStyle(
                     expense.expenseType.color
                 )

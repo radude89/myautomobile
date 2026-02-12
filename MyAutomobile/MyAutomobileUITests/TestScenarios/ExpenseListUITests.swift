@@ -24,42 +24,29 @@ final class ExpenseListUITests: UITestCase {
     }
 
     func testExpensesFlowMultiLanguage() throws {
-        try performExpensesFlow()
-//
-//        let app = XCUIApplication()
-//        app.activate()
-//        app/*@START_MENU_TOKEN@*/.images["gear"]/*[[".buttons[\"More\"].images",".buttons",".images[\"settings\"]",".images[\"gear\"]"],[[[-1,3],[-1,2],[-1,1,1],[-1,0]],[[-1,3],[-1,2]]],[0]]@END_MENU_TOKEN@*/.firstMatch.tap()
-//        app/*@START_MENU_TOKEN@*/.buttons["Expense tracking"]/*[[".buttons",".containing(.staticText, identifier: \"Expense tracking\")",".containing(.image, identifier: \"pencil.line\")",".otherElements.buttons[\"Expense tracking\"]",".buttons[\"Expense tracking\"]"],[[[-1,4],[-1,3],[-1,0,1]],[[-1,2],[-1,1]]],[0]]@END_MENU_TOKEN@*/.firstMatch.tap()
-//        app/*@START_MENU_TOKEN@*/.buttons["A"]/*[[".buttons.containing(.staticText, identifier: \"A\")",".otherElements.buttons[\"A\"]",".buttons[\"A\"]"],[[[-1,2],[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.firstMatch.tap()
-//        app/*@START_MENU_TOKEN@*/.buttons["Chart"]/*[[".segmentedControls.buttons[\"Chart\"]",".buttons[\"Chart\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.firstMatch.tap()
-//        app/*@START_MENU_TOKEN@*/.buttons["List"]/*[[".segmentedControls.buttons[\"List\"]",".buttons[\"List\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.firstMatch.tap()
-//        app/*@START_MENU_TOKEN@*/.buttons["Add Item"]/*[[".navigationBars.buttons[\"Add Item\"]",".buttons[\"Add Item\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.firstMatch.tap()
-//        app/*@START_MENU_TOKEN@*/.textFields["Odometer reading (optional)"]/*[[".otherElements.textFields[\"Odometer reading (optional)\"]",".textFields[\"Odometer reading (optional)\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.firstMatch.tap()
-//        app/*@START_MENU_TOKEN@*/.textFields["Odometer reading (optional)"]/*[[".otherElements",".textFields[\"15000\"]",".textFields[\"Odometer reading (optional)\"]"],[[[-1,2],[-1,1],[-1,0,1]],[[-1,2],[-1,1]]],[0]]@END_MENU_TOKEN@*/.firstMatch.typeText("15000")
-//        
-//        let element = app/*@START_MENU_TOKEN@*/.buttons["Date Picker"]/*[[".datePickers",".buttons",".buttons[\"Date Picker\"]"],[[[-1,2],[-1,0,1]],[[-1,2],[-1,1]]],[0]]@END_MENU_TOKEN@*/.firstMatch
-//        element.tap()
-//        app.windows.element(boundBy: 1).tap()
-//        element.tap()
-//        app/*@START_MENU_TOKEN@*/.buttons["Wednesday, February 4"]/*[[".buttons.containing(.staticText, identifier: \"4\")",".collectionViews.buttons[\"Wednesday, February 4\"]",".buttons[\"Wednesday, February 4\"]"],[[[-1,2],[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.firstMatch.tap()
-        
+        checkTabBarExists()
+        navigateTo(tab: .more)
+        tapButton(MenuViewElements.ExpenseTrackingItem.id)
+        try tapOnFirstVehicle()
+        takeScreenshot("07")
+        tapButton(ExpensesViewElements.Selector.Chart.id)
+        tapRepairSegment()
+        Thread.sleep(forTimeInterval: 1.0) // to finish-up the animation
+        takeScreenshot("08")
     }
 }
 
 // MARK: - Private
 
 private extension ExpenseListUITests {
-    func performExpensesFlow() throws {
-        checkTabBarExists()
-        navigateTo(tab: .more)
-        tapButton(MenuViewElements.ExpenseTrackingItem.id)
-        try tapOnFirstVehicle()
-        
-    }
-    
     func tapOnFirstVehicle() throws {
         let firstVehiclePlate = try XCTUnwrap(expenses.first?.vehiclePlate)
         tapButton(firstVehiclePlate)
-        takeScreenshot("07")
+    }
+    
+    func tapRepairSegment() {
+        let segmentID = AccessibilityIdentifiers.ExpensesViewElements.ChartView.Segment.id
+        let expenseTypeID = ExpenseType.repair.rawValue
+        app.otherElements["\(segmentID)-\(expenseTypeID)"].tap()
     }
 }

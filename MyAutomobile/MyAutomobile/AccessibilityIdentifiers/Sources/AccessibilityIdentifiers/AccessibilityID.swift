@@ -41,3 +41,14 @@ public enum EventListViewElements: AccessibilityIdentifiable {
 public enum MenuViewElements: AccessibilityIdentifiable {
     public enum ExpenseTrackingItem: AccessibilityIdentifiable {}
 }
+
+// MARK: - Expenses
+public enum ExpensesViewElements: AccessibilityIdentifiable {
+    public enum Selector: AccessibilityIdentifiable {
+        public enum List: AccessibilityIdentifiable {}
+        public enum Chart: AccessibilityIdentifiable {}
+    }
+    public enum ChartView: AccessibilityIdentifiable {
+        public enum Segment: AccessibilityIdentifiable {}
+    }
+}

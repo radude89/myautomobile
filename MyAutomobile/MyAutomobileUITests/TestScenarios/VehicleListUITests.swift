@@ -33,13 +33,13 @@ private extension VehicleListUITests {
         tapButton(VehicleListViewElements.AddButton.id)
         fillVehicleForm(vehicle: vehicle)
         setVehicleColor(color: vehicle.colorWithoutHash)
-        takeVehicleScreenshotIfNeeded(index: index, name: "03")
+        takeVehicleScreenshotIfNeeded("03", index: index)
         tapCloseButton()
-        takeVehicleScreenshotIfNeeded(index: index, name: "02")
+        takeVehicleScreenshotIfNeeded("02", index: index)
         tapDoneButton()
     }
     
-    func takeVehicleScreenshotIfNeeded(index: Int,name: String) {
+    func takeVehicleScreenshotIfNeeded(_ name: String, index: Int) {
         guard index == 0 else { return }
         takeScreenshot(name)
     }
