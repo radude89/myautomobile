@@ -78,7 +78,6 @@
 		F78F935C2B7E3DFC00F8BF5C /* FuelConsumptionSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78F935B2B7E3DFC00F8BF5C /* FuelConsumptionSectionView.swift */; };
 		F78F935E2B7E4E8B00F8BF5C /* FuelConsumptionSectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78F935D2B7E4E8B00F8BF5C /* FuelConsumptionSectionViewModel.swift */; };
 		F799E2AA2AA35F27009F3C3D /* EventListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F799E2A92AA35F27009F3C3D /* EventListRowView.swift */; };
-		F79A1A392F304E5C008F8622 /* XCTestCase+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79A1A382F304E57008F8622 /* XCTestCase+Helpers.swift */; };
 		F79A1A3B2F304EBA008F8622 /* UITestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79A1A3A2F304EAE008F8622 /* UITestCase.swift */; };
 		F79A1A422F31A62E008F8622 /* XCUIElement+DatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79A1A412F31A629008F8622 /* XCUIElement+DatePicker.swift */; };
 		F79F09722B7B992900C37272 /* ExpenseItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79F09712B7B992900C37272 /* ExpenseItemView.swift */; };
@@ -225,7 +224,6 @@
 		F78F935B2B7E3DFC00F8BF5C /* FuelConsumptionSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuelConsumptionSectionView.swift; sourceTree = "<group>"; };
 		F78F935D2B7E4E8B00F8BF5C /* FuelConsumptionSectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuelConsumptionSectionViewModel.swift; sourceTree = "<group>"; };
 		F799E2A92AA35F27009F3C3D /* EventListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListRowView.swift; sourceTree = "<group>"; };
-		F79A1A382F304E57008F8622 /* XCTestCase+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Helpers.swift"; sourceTree = "<group>"; };
 		F79A1A3A2F304EAE008F8622 /* UITestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITestCase.swift; sourceTree = "<group>"; };
 		F79A1A412F31A629008F8622 /* XCUIElement+DatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCUIElement+DatePicker.swift"; sourceTree = "<group>"; };
 		F79F09712B7B992900C37272 /* ExpenseItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseItemView.swift; sourceTree = "<group>"; };
@@ -571,7 +569,6 @@
 		F79A1A3D2F31A521008F8622 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				F79A1A382F304E57008F8622 /* XCTestCase+Helpers.swift */,
 				F79A1A412F31A629008F8622 /* XCUIElement+DatePicker.swift */,
 				F758422E2DF6B33900EED414 /* XCUIElement+Helpers.swift */,
 			);
@@ -1120,7 +1117,6 @@
 				F78D21532F3994830035A53E /* ExpenseTestData.swift in Sources */,
 				F727EB5D2E256A8500F91578 /* EventListUITests.swift in Sources */,
 				F7C94FDD2E1CF6AC0053E293 /* VehicleData.swift in Sources */,
-				F79A1A392F304E5C008F8622 /* XCTestCase+Helpers.swift in Sources */,
 				F7C94FE12E1CFBF70053E293 /* SupportedLocale.swift in Sources */,
 				F7047FC02E1E4C98002B957C /* LocalizedStringHelper.swift in Sources */,
 				F78D214A2F398BAE0035A53E /* ExpenseListUITests.swift in Sources */,

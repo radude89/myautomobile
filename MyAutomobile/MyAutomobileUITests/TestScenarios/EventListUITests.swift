@@ -3,8 +3,6 @@ import AccessibilityIdentifiers
 import UITestEnvironment
 
 final class EventListUITests: UITestCase {
-    private let shouldTakeScreenshot = false
-
     override func setUp() async throws {
         try await super.setUp()
         app.launchEnvironment[UITestEnvironment.Key.vehicles] = ResourceLoader.json(
@@ -41,13 +39,13 @@ private extension EventListUITests {
     }
     
     func takeFirstScreenshot(index: Int) {
-        guard shouldTakeScreenshot else { return }
-        takeScreenshotIfNeeded(name: "\(supportedLocale.rawValue)-05", shouldTakeScreenshot: index == 0)
+        guard index == 0 else { return }
+        takeScreenshot("05")
     }
     
     func takeLastScreenshot(index: Int, eventsCount: Int) {
-        guard shouldTakeScreenshot else { return }
-        takeScreenshotIfNeeded(name: "\(supportedLocale.rawValue)-06", shouldTakeScreenshot: index == eventsCount - 1)
+        guard index == eventsCount - 1 else { return }
+        takeScreenshot("06")
     }
     
     func turnOffSyncWithLocalCalendar() {

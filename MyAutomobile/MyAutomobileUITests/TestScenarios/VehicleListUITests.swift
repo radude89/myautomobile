@@ -2,9 +2,6 @@ import XCTest
 import AccessibilityIdentifiers
 
 final class VehicleListUITests: UITestCase {
-    private let numberOfVehicles = 3
-    private let shouldTakeScreenshot = false
-    
     func testAddVehiclesAndShowDetailsFlowMultiLanguage() {
         app.launch()
         performVehiclesFlow()
@@ -17,60 +14,34 @@ private extension VehicleListUITests {
     func performVehiclesFlow() {
         checkTabBarExists()
         navigateTo(tab: .vehicles)
-        addVehicles(shouldTakeScreenshots: shouldTakeScreenshot)
-        takeScreenshotIfNeeded(
-            name: "\(supportedLocale.rawValue)-01",
-            shouldTakeScreenshot: shouldTakeScreenshot
-        )
+        addVehicles()
+        takeScreenshot("01")
         tapFirstRow()
         tapAddFieldButton()
         addCustomVehicleField(locale: supportedLocale)
         tapOnDoneFromAddCustomFieldNavigationBar()
-        takeScreenshotIfNeeded(
-            name: "\(supportedLocale.rawValue)-04",
-            shouldTakeScreenshot: shouldTakeScreenshot
-        )
+        takeScreenshot("04")
     }
-    
-    func addVehicles(shouldTakeScreenshots: Bool) {
+
+    func addVehicles() {
         for (index, vehicle) in vehicles.enumerated() {
-            addVehicle(
-                vehicle,
-                index: index,
-                shouldTakeScreenshot: shouldTakeScreenshots
-            )
+            addVehicle(vehicle, index: index)
         }
     }
     
-    func addVehicle(
-        _ vehicle: VehicleTestData,
-        index: Int,
-        shouldTakeScreenshot: Bool
-    ) {
+    func addVehicle(_ vehicle: VehicleTestData, index: Int) {
         tapButton(VehicleListViewElements.AddButton.id)
         fillVehicleForm(vehicle: vehicle)
         setVehicleColor(color: vehicle.colorWithoutHash)
-        takeVehicleScreenshotIfNeeded(
-            index: index,
-            name: "\(supportedLocale.rawValue)-03",
-            shouldTakeScreenshot: shouldTakeScreenshot
-        )
+        takeVehicleScreenshotIfNeeded(index: index, name: "03")
         tapCloseButton()
-        takeVehicleScreenshotIfNeeded(
-            index: index,
-            name: "\(supportedLocale.rawValue)-02",
-            shouldTakeScreenshot: shouldTakeScreenshot
-        )
+        takeVehicleScreenshotIfNeeded(index: index, name: "02")
         tapDoneButton()
     }
     
-    func takeVehicleScreenshotIfNeeded(
-        index: Int,
-        name: String,
-        shouldTakeScreenshot: Bool
-    ) {
+    func takeVehicleScreenshotIfNeeded(index: Int,name: String) {
         guard index == 0 else { return }
-        takeScreenshotIfNeeded(name: name, shouldTakeScreenshot: shouldTakeScreenshot)
+        takeScreenshot(name)
     }
     
     func tapCloseButton() {
@@ -79,14 +50,7 @@ private extension VehicleListUITests {
 
     func fillVehicleForm(vehicle: VehicleTestData, line: UInt = #line) {
         let textFields = app.textFields
-        guard textFields.count >= numberOfVehicles else {
-            XCTFail(
-                "We expected at least \(numberOfVehicles) text fields, but found \(textFields.count) instead.",
-                line: line
-            )
-            return
-        }
-        
+
         textFields.element(boundBy: 0).enterText(vehicle.plate)
         textFields.element(boundBy: 1).enterText(vehicle.make)
         

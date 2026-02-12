@@ -10,8 +10,6 @@ import AccessibilityIdentifiers
 import UITestEnvironment
 
 final class ExpenseListUITests: UITestCase {
-    private let shouldTakeScreenshot = false
-
     override func setUp() async throws {
         try await super.setUp()
         app.launchEnvironment[UITestEnvironment.Key.vehicles] = ResourceLoader.json(
@@ -62,5 +60,6 @@ private extension ExpenseListUITests {
     func tapOnFirstVehicle() throws {
         let firstVehiclePlate = try XCTUnwrap(expenses.first?.vehiclePlate)
         tapButton(firstVehiclePlate)
+        takeScreenshot("07")
     }
 }

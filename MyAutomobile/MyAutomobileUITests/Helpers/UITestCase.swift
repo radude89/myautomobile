@@ -17,6 +17,8 @@ class UITestCase: XCTestCase {
     private(set) lazy var events = EventsLoader.load(supportedLocale: supportedLocale)
     private(set) lazy var expenses = ExpensesLoader.load(supportedLocale: supportedLocale)
     
+    private static let shouldTakeScreenshot = false
+
     enum Tab: Int {
         case vehicles
         case events
@@ -59,5 +61,14 @@ class UITestCase: XCTestCase {
         } else {
             XCTFail("Button with id \(accessibilityID) does not exist", file: file, line: line)
         }
+    }
+    
+    func takeScreenshot(_ label: String) {
+        guard Self.shouldTakeScreenshot else { return }
+        let screenshot = XCUIScreen.main.screenshot()
+        let attachment = XCTAttachment(screenshot: screenshot)
+        attachment.name = "\(supportedLocale.rawValue)-\(label)"
+        attachment.lifetime = .keepAlways
+        add(attachment)
     }
 }
