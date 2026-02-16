@@ -45,6 +45,7 @@ private extension EventListUITests {
     }
     
     func turnOffSyncWithLocalCalendar() {
+        guard app.switches.count > 0 else { return }
         let toggle = app.switches.element(boundBy: app.switches.count - 1)
         toggle.tap()
     }
