@@ -142,12 +142,58 @@ async function waitForCanvasRender(page) {
 }
 
 /**
+ * Dismiss duplicate screenshot modal if present
+ * The live YUZU demo shows this modal when uploading the same screenshot multiple times
+ */
+async function dismissDuplicateModal(page) {
+  try {
+    // Wait a bit for modal to appear
+    await page.waitForTimeout(1000);
+    
+    const modal = page.locator('#duplicate-screenshot-modal');
+    const isVisible = await modal.isVisible({ timeout: 1000 }).catch(() => false);
+    
+    if (isVisible) {
+      console.log('    ℹ Duplicate screenshot modal detected, dismissing...');
+      
+      // Strategy 1: Try clicking any button in the modal
+      const buttons = await page.locator('#duplicate-screenshot-modal button').all();
+      if (buttons.length > 0) {
+        // Click the first button (usually "Replace" or "Add")
+        await buttons[0].click();
+        await page.waitForTimeout(500);
+        console.log('    ✓ Dismissed duplicate screenshot modal');
+        return;
+      }
+      
+      // Strategy 2: Try pressing Escape
+      await page.keyboard.press('Escape');
+      await page.waitForTimeout(500);
+      console.log('    ✓ Dismissed modal with Escape key');
+      return;
+    }
+  } catch (error) {
+    // Modal dismiss failed or not present - continue anyway
+    console.warn('    ⚠ Could not dismiss duplicate modal:', error.message);
+  }
+}
+      }
+    }
+  } catch (err) {
+    // Modal not present or already dismissed - this is fine
+  }
+}
+
+/**
  * Upload a screenshot to YUZU
  */
 async function uploadScreenshot(page, screenshotPath) {
   const fileInput = await page.locator('#file-input');
   await fileInput.setInputFiles(screenshotPath);
   await page.waitForTimeout(500); // Wait for upload to process
+  
+  // Dismiss duplicate modal if it appears (live demo has persistent state)
+  await dismissDuplicateModal(page);
   
   // Wait for canvas to show the uploaded image
   await waitForCanvasRender(page);
@@ -207,15 +253,28 @@ async function configureBackground(page, design) {
 async function configureDevice(page, design) {
   // Switch to Device tab (labeled "Screenshot" in YUZU)
   await page.click('button.tab[data-tab="screenshot"]');
-  await page.waitForTimeout(300);
+  await page.waitForTimeout(500);
+  
+  // Wait for tab content to be visible
+  await page.waitForSelector('#device-type-selector', { state: 'visible', timeout: 5000 });
   
   // Select 2D device type
   await page.click('#device-type-selector button[data-type="2d"]');
-  await page.waitForTimeout(300);
+  await page.waitForTimeout(500);
   
-  // Click "Bleed Bottom" preset
-  await page.click(`button.position-preset[data-preset="bleed-bottom"]`);
-  await page.waitForTimeout(300);
+  // Try to click "Bleed Bottom" preset (optional - may not be available in live demo)
+  try {
+    const presetBtn = page.locator('button.position-preset[data-preset="bleed-bottom"]');
+    const isVisible = await presetBtn.isVisible({ timeout: 2000 }).catch(() => false);
+    if (isVisible) {
+      await presetBtn.click();
+      await page.waitForTimeout(300);
+    } else {
+      console.log('    ⚠ Position preset not available (using default)');
+    }
+  } catch (err) {
+    console.log('    ⚠ Position preset not available (using default)');
+  }
   
   await waitForCanvasRender(page);
 }
@@ -319,6 +378,14 @@ async function processScreenshot(page, screenshot, locale, size, design, rawDir,
     }
     
     console.log(`${logPrefix} - Processing... (attempt ${attempt}/${MAX_RETRIES})`);
+    
+    // Reload page to clear any modal state (live demo persists state)
+    if (attempt === 1) {
+      await page.reload({ waitUntil: 'networkidle' });
+      await page.waitForTimeout(1000);
+      // Re-select output size after reload
+      await selectOutputSize(page, size);
+    }
     
     // Upload screenshot
     await uploadScreenshot(page, rawPath);
