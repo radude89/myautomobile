@@ -34,6 +34,7 @@ PROJECT_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
 
 CONFIG_FILE="$SCRIPT_DIR/config.json"
 DOCKER_RUNNING=false
+DOCKER_AVAILABLE=false
 START_TIME=$(date +%s)
 
 SKIP_EXTRACT=false
@@ -125,15 +126,15 @@ check_prereqs() {
     local missing_tools=()
     
     if ! command -v docker &> /dev/null; then
-        missing_tools+=("docker")
+        print_info "Docker not found - will use live YUZU demo"
+        DOCKER_AVAILABLE=false
+    elif ! docker compose version &> /dev/null; then
+        print_info "Docker Compose not found - will use live YUZU demo"
+        DOCKER_AVAILABLE=false
     else
         print_success "Docker found: $(docker --version | head -n1)"
-    fi
-    
-    if ! docker compose version &> /dev/null; then
-        missing_tools+=("docker-compose")
-    else
         print_success "Docker Compose found: $(docker compose version | head -n1)"
+        DOCKER_AVAILABLE=true
     fi
     
     if ! command -v node &> /dev/null; then
@@ -173,6 +174,12 @@ check_prereqs() {
 }
 
 start_yuzu() {
+    if [[ "$DOCKER_AVAILABLE" == false ]]; then
+        print_step "Step 2: Start YUZU [SKIPPED - Using Live Demo]"
+        print_info "Will use live YUZU demo at https://yuzu-hub.github.io/appscreen/"
+        return
+    fi
+    
     print_step "Step 2: Start YUZU Docker Container"
     
     cd "$SCRIPT_DIR"
