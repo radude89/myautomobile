@@ -18,6 +18,9 @@ class UITestCase: XCTestCase {
     private(set) lazy var expenses = ExpensesLoader.load(supportedLocale: supportedLocale)
     
     private static let shouldTakeScreenshot = false
+    
+    // On iPad, use the system image identifiers - tap the first match to avoid duplicate button issues
+    private let tabIdentifiers = ["car.2.fill", "calendar", "parkingsign", "gear"]
 
     enum Tab: Int {
         case vehicles
@@ -40,12 +43,38 @@ class UITestCase: XCTestCase {
         try await super.tearDown()
     }
     
-    func checkTabBarExists(line: UInt = #line) {
-        let tabBar = app.tabBars.firstMatch
-        XCTAssertTrue(tabBar.exists, "Tab bar should exist", line: line)
+    let isIPad = UIDevice.current.userInterfaceIdiom == .pad
+    
+    func checkTabBarExists(file: StaticString = #filePath, line: UInt = #line) {
+        if isIPad {
+            let navigationExists = tabIdentifiers.contains { identifier in
+                app.buttons.matching(identifier: identifier).count > 0
+            }
+            XCTAssertTrue(navigationExists, "Navigation should exist", file: file, line: line)
+        } else {
+            let tabBar = app.tabBars.firstMatch
+            XCTAssertTrue(tabBar.exists, "Tab bar should exist", file: file, line: line)
+        }
     }
     
     func navigateTo(tab: Tab, file: StaticString = #filePath, line: UInt = #line) {
+        if isIPad {
+            handleIPadNavigation(tab: tab, file: file, line: line)
+        } else {
+            handlePhoneNavigation(tab: tab, file: file, line: line)
+        }
+    }
+    
+    private func handleIPadNavigation(tab: Tab, file: StaticString = #filePath, line: UInt = #line) {
+        let buttons = app.buttons.matching(identifier: tabIdentifiers[tab.rawValue])
+        if buttons.count > 0 {
+            buttons.firstMatch.tap()
+        } else {
+            XCTFail("Navigation button with identifier '\(tabIdentifiers[tab.rawValue])' does not exist", file: file, line: line)
+        }
+    }
+    
+    private func handlePhoneNavigation(tab: Tab, file: StaticString = #filePath, line: UInt = #line) {
         let firstTab = app.tabBars.buttons.element(boundBy: tab.rawValue)
         if firstTab.exists {
             firstTab.tap()

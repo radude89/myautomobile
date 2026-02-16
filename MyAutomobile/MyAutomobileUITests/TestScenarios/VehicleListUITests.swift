@@ -45,7 +45,11 @@ private extension VehicleListUITests {
     }
     
     func tapCloseButton() {
-        tapButton("close")
+        if isIPad {
+            app.navigationBars.firstMatch.buttons.element(boundBy: 1).tap()
+        } else {
+            tapButton("close")
+        }
     }
 
     func fillVehicleForm(vehicle: VehicleTestData, line: UInt = #line) {
