@@ -29,6 +29,16 @@ struct EventAddFormView: View {
                 addEventToggleSection
             }
         }
+        .onAppear {
+            if !showSyncWithLocalCalendarSection {
+                addEventToLocalCalendar = false
+            }
+        }
+        .onChange(of: showSyncWithLocalCalendarSection) { _, newValue in
+            if !newValue {
+                addEventToLocalCalendar = false
+            }
+        }
     }
 }
 
