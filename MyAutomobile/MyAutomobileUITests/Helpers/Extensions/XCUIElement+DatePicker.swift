@@ -25,10 +25,9 @@ extension XCUIElement {
             return
         }
 
-        let formatter = DateFormatter()
-        formatter.dateFormat = "MMMM yyyy"
+        let displayedDate = parseLocalizedMonth(currentMonthString)
 
-        guard let displayedDate = formatter.date(from: currentMonthString) else {
+        guard let displayedDate else {
             XCTFail("Could not parse displayed month: \(currentMonthString)", file: file, line: line)
             return
         }
@@ -48,6 +47,19 @@ extension XCUIElement {
         }
     }
     
+    private func parseLocalizedMonth(_ string: String) -> Date? {
+        let formatter = DateFormatter()
+        let localeIDs = ["en_US", "fr_FR", "de_DE", "it_IT", "es_ES", "ro_RO"]
+        for localeID in localeIDs {
+            formatter.locale = Locale(identifier: localeID)
+            formatter.setLocalizedDateFormatFromTemplate("MMMM yyyy")
+            if let date = formatter.date(from: string) {
+                return date
+            }
+        }
+        return nil
+    }
+
     private func monthsDifference(from fromDate: Date, to toDate: Date) -> Int {
         let calendar = Calendar.current
         let fromComponents = calendar.dateComponents([.year, .month], from: fromDate)
