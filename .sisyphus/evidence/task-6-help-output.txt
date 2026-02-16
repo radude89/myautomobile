@@ -1,0 +1,28 @@
+Usage: pipeline.sh [OPTIONS]
+
+Options:
+  --skip-extract              Skip raw screenshot extraction (use existing raw/ files)
+  --skip-cleanup              Leave YUZU Docker container running after completion
+  --xcresult-path <path>      Path to .xcresult bundle (required unless --skip-extract)
+  --help                      Show this help message
+
+Description:
+  Orchestrates the complete screenshot generation workflow:
+  1. Pre-flight checks (Docker, Node.js, Playwright)
+  2. Start YUZU Docker container
+  3. Extract raw screenshots from .xcresult (unless --skip-extract)
+  4. Generate framed screenshots with YUZU
+  5. Organize output to fastlane/screenshots/
+  6. Stop YUZU Docker container (unless --skip-cleanup)
+  7. Print summary report
+
+Examples:
+  # Full pipeline with extraction
+  pipeline.sh --xcresult-path ~/Library/Developer/Xcode/DerivedData/.../Test.xcresult
+
+  # Skip extraction (use existing raw/ screenshots)
+  pipeline.sh --skip-extract
+
+  # Skip cleanup (leave YUZU running for debugging)
+  pipeline.sh --skip-extract --skip-cleanup
+

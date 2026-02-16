@@ -122,3 +122,191 @@ Examples:
 - `node generate.mjs --config test-config.json` - Custom config
 - `node generate.mjs --yuzu-url http://localhost:8080` - Force local instance
 
+
+# Task 6: Pipeline Orchestration Learnings
+
+## Date: 2026-02-16
+
+### End-to-End Orchestrator Architecture
+
+Created `pipeline.sh` as the complete workflow orchestrator with 7 steps:
+1. Pre-flight checks (Docker, Docker Compose, Node 18+, Playwright)
+2. Start YUZU Docker container with health check
+3. Extract raw screenshots (or skip with `--skip-extract`)
+4. Generate framed screenshots via YUZU automation
+5. Organize output (transform nested to flat structure)
+6. Stop YUZU container (or skip with `--skip-cleanup`)
+7. Print summary with timing
+
+### CLI Flag Design
+
+**Implemented flags**:
+- `--skip-extract`: Use existing `raw/` screenshots (bypass XCUITest extraction)
+- `--skip-cleanup`: Leave Docker running for debugging
+- `--xcresult-path <path>`: Pass to extraction script (required unless --skip-extract)
+- `--help`: Show usage documentation
+
+**Use case**: `--skip-extract` enables rapid iteration during development without re-running UI tests.
+
+### Error Handling Strategy
+
+**Trap-based cleanup**:
+```bash
+trap cleanup EXIT ERR
+```
+
+- Cleanup runs on both normal exit and errors
+- Checks `DOCKER_RUNNING` flag before stopping containers
+- Respects `--skip-cleanup` flag
+- Prints exit code on failure for debugging
+
+**Pre-flight validation**:
+- Checks all tools before starting Docker (fail fast)
+- Node.js version validation (18+ required for Playwright)
+- Config file existence check
+- Clear error messages with install instructions
+
+### File Organization Logic
+
+**Transformation**:
+- Source: `tools/screenshot-generator/fastlane/screenshots/{locale}/{size-folder}/{screenshot-id}.png`
+- Destination: `fastlane/screenshots/{locale}/{screenshot-id}_{size-folder}.png`
+- Example: `en/iPhone_6.9/vehicle-list.png` → `en/vehicle-list_iPhone_6.9.png`
+
+**Rationale**: 
+- Flat structure easier for fastlane to consume
+- Filename includes size for clarity: `vehicle-list_iPhone_6.9.png`
+- Preserves locale organization: `en/`, `fr/`, `de/`, etc.
+
+### Health Check Implementation
+
+**YUZU health check**:
+- Endpoint: `http://localhost:8080/health`
+- Max wait: 30 seconds (configurable)
+- Uses `curl -sf` for silent fail checking
+- Polls every 1 second until healthy or timeout
+
+**Why**: Docker container may take 5-10 seconds to fully start. Health check prevents premature YUZU automation.
+
+### Output Path Configuration
+
+**Reading from config.json**:
+```bash
+local output_path=$(node -p "require('$CONFIG_FILE').output.path")
+```
+
+Uses Node.js to parse JSON (avoids jq dependency). Works because Node.js is already required for Playwright.
+
+### Timing and Reporting
+
+**Summary includes**:
+- File count per locale
+- Total files generated
+- Elapsed time in minutes and seconds
+
+**Calculation**:
+```bash
+START_TIME=$(date +%s)
+# ... pipeline execution ...
+elapsed=$(($(date +%s) - START_TIME))
+minutes=$((elapsed / 60))
+seconds=$((elapsed % 60))
+```
+
+### Script Organization
+
+**Section markers**:
+```bash
+# ============================================================================
+# Helper Functions
+# ============================================================================
+```
+
+Used to divide 434-line script into logical sections:
+- Helper Functions (print_error, print_success, etc.)
+- Pipeline Steps (check_prereqs, start_yuzu, etc.)
+- Main Execution (argument parsing, main loop)
+
+### Color-Coded Output
+
+**Color scheme**:
+- RED: Errors
+- GREEN: Success messages
+- YELLOW: Info/warnings
+- BLUE: Step headers
+- NC (No Color): Reset
+
+**Step header format**:
+```
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Step 1: Pre-flight Checks
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+```
+
+Makes terminal output scannable during long pipeline runs.
+
+### Strict Mode Benefits
+
+**`set -euo pipefail`**:
+- `-e`: Exit on any command failure
+- `-u`: Error on undefined variables
+- `-o pipefail`: Fail if any command in pipeline fails (not just last)
+
+**Result**: Pipeline fails fast on errors, preventing partial/corrupted state.
+
+### Docker Compose Commands
+
+**Start**: `docker compose up -d`
+- `-d`: Detached mode (background)
+- Returns immediately, requires health check
+
+**Stop**: `docker compose down`
+- Removes containers (not just stops)
+- Clean shutdown
+
+**Working directory**: Must `cd "$SCRIPT_DIR"` before running (docker-compose.yml location).
+
+### Placeholder PNG Generation
+
+For testing without real screenshots:
+```bash
+printf '\x89\x50\x4e\x47...' > screenshot.png
+```
+
+Creates minimal valid 1x1 PNG. Sufficient for testing pipeline logic without image quality concerns.
+
+### Exit Code Propagation
+
+**Cleanup trap preserves exit code**:
+```bash
+local exit_code=$?
+# ... cleanup ...
+if [[ $exit_code -ne 0 ]]; then
+    print_error "Pipeline failed with exit code $exit_code"
+fi
+```
+
+Ensures pipeline reports original failure reason, not cleanup errors.
+
+### Script Portability
+
+**Path resolution**:
+```bash
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
+```
+
+- Works regardless of where script is called from
+- Absolute paths prevent relative path issues
+- Compatible with symlinks (uses `cd` + `pwd`)
+
+### Validation Before Execution
+
+**Extract validation** (when `--skip-extract`):
+- Checks if `raw/` directory exists
+- Checks if directory has content
+- Counts PNG files and reports to user
+- Exits with error if validation fails
+
+Prevents confusing errors later in pipeline.
+
