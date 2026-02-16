@@ -177,12 +177,6 @@ async function dismissDuplicateModal(page) {
     console.warn('    ⚠ Could not dismiss duplicate modal:', error.message);
   }
 }
-      }
-    }
-  } catch (err) {
-    // Modal not present or already dismissed - this is fine
-  }
-}
 
 /**
  * Upload a screenshot to YUZU
